@@ -1,1 +1,5 @@
-hi 
+*.log
+*.json
+*.aux
+*.tex
+*.xlsx

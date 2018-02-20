@@ -1,0 +1,201 @@
+interaction design:
+	goals:
+		efficiency: allow common tasks to be done fast
+		safety: make human error not dangerous
+		utility: is the right functionality included
+		learnability: is it easy to learn
+		memorability: can it be easily remembered
+	design principles:
+		visibility: find appropiate control for task (like correct icon)
+		feedback: always provide feedback to actions executed
+		contraints: restrict user to prevent malicious interaction 
+		mapping: map effects of real world (like arrows)
+		affordance: reuse known techniques or invent intuitive new ways
+		consistence: reuse as much as possible
+		
+	
+"Gestalt" Theory:
+	A group is formed by objects which are:
+		proximity: close to each other
+		similar: look similar
+		symmetry: symmetrical to each other
+	Figure - Ground: Identify a figure from the background
+	Law of closure: perceptual completing of incomplete objects
+	
+Gibson's Affordance Theory:
+	perception is designe dfor action
+	first think about the action, we look at the interface with a clear action we want to execute
+	
+approaches:
+	top down: if you expect what you see its faster to process. Learned interfaces (such as maps) are easy to understand even if they are very complex.
+	bottom down: if you just get the data, and now have to make sense from it.
+
+seven design principles:
+	most important in line of view
+	most frequent in line of view 
+	displays used for a single task close
+	grouped infos
+	close goes together
+	consistency
+	clutter avoidance
+	
+cognitive walkthrough:
+	performed by analyst
+	examines specific user task
+	focus on easy of learning
+	preparing phase:
+		define inputs
+		what users (backgorund, population)
+		tasks (what functionalities)
+		action sequences (correct action sequence for each task)
+		interface description (how the interfaces reacts to inputs)
+	analysis phase:
+		walking through the actions
+		each step ask yourself:
+			will user try to archieve the right effect
+			will user notice that correct action is available
+			will user associate correct action with the effect it archieves
+			will user see progress made towards a solution to the task
+		construct success (users fulfil all requirements to fulfill task) and failure stories (one of the question is no)
+	bad:
+		focus on only one attribute of usability (easy of learning)
+		no "real" user asked
+		negative score for features which increase productivity
+	difficulties:
+		choosing tasks difficulties
+		first question of analysis difficult
+		analyist performs more of a user test than a cognitive walkthrough
+	
+heuristic evaluation:
+	performed by user
+	use usability principles to save on time and money
+	general:
+		interative process
+	preparation:
+		choose different evaluators (performance will differ)
+		choose if observer present (answer questions, speed up process, formualte questions in a usable way)		
+		choose appropiate heuristics (analysis of existing products, abstraction from common issues)
+	steps:
+		each evaluator will inspect interface alone:
+			1-2h per session, multiple inspections
+			use list of heuristics
+			can ask questions, add other elements
+		then discussion:
+			specify feelings about problems (find precise explanation why something is broken)
+			build up consensus of the analysis
+		then build final usability report:
+			written / spoken
+			presented to developers
+	good:
+		cheap 
+		lots of freedom
+		explains why there are flaws
+	bad:
+		no systematic fixes for flaws (may miss some)
+		may finds a lot of false positives (problems which are none)
+	example heuristics:
+		visibility of system status (red/green)
+		match between system & real world (known words / tools)
+		user control and freedom (can go back if necessary)
+		consistency and standards (buttons always similar)
+		recognition rather than recall (use icons)
+		prevention of errors (make clear interface)
+		flexibility and efficieny of use (can adapt to user preferences)
+		aestetics and minimalist design (fibonaccy)
+		help users with errors (allow to go back)
+		help and documentation (explanation text)
+	example heuristic (The center for universal design 1997):
+		equitable use (everyone can use it)
+		flexibility of use (accomodates individual preferences)
+		simple use (easy to understand regardless of experience and knowledge)
+		perceptile information (effective transfer of information)
+		tolerance of error (minimizes hazard)
+		low physical effort (efficent and comfortable use)
+		size and space for approach and use (appropiate size for buttons regardles of user ability)
+
+heuristic walkthrough:
+	performed by both users and analysts
+	combines heuristic evaluation and cognitive walkthrough
+	phase 1:
+		task oriented evaluation
+		prepare set of thought-provoking questions (how can I assign events)
+		prepare set of priorized tasks which should be evaluated (assign events)
+		walk through product using questions and tasks
+		document usability problems
+	phase 2:
+		free form evaluation
+		walk thorugh the interface using checklists
+		expert can use tools he want (heuritcs he chooses or adapts to the product)
+		and will document usability problem
+	phase 3:
+		assign severity rating to problems
+		contact developers
+	good:
+		replies both on users and experts
+		quick, and can be made by amateurs
+		probably finds local, global, minor problems
+		good mis between users & expers
+	bad:
+		requres skilled evaluators (product dependent)
+		moderator needs to be able to cover all important questions and tasks 
+
+assessing usability experience:
+	user based testing:
+		formative testing: early in dev, get qualitative feedback (brainstorm) on low fidelity (less details) prototype
+		summative testing: after high-level decisions made, get quantitative feedback (specific) on high fidelity prototype
+		validation testing: shortly before release, get comparisations (to other products) on final product
+	necessary steps:
+		develop study plan
+		prepare environement
+		find subjects
+		conduct tests
+		debrief participants
+		analyze data
+		report findings
+	most common measures:
+		efficiency: time spent
+		effectiveness: correctness, successful tasks
+		user satisfaction: use standardized survey tool (recommended is System Usability Scale - SUS)
+	likert scale: 
+		state level of agreement
+		questions and then agree or disagree with it
+		example is scan.co.uk 
+	semantic differential scale:
+		presenting pairs of bipolar or opposite scale
+		"the checkout was straightforward _ _ _ _ _ confusion"
+	guidelines for rating scales:
+		include negative AND positive statements
+		use an odd number of raiting points
+		use unmodified versions of adjective (not EXTREMLY or similar)
+		be careful about different words in semantic scales	
+
+GOMS:
+	Goal: 
+		what you want to archieve
+		splitted in subgoals
+	Method:
+		what you actually do to archieve subgoal
+		splitted in operations (like move mouse, click)
+		operations can be formulated as subgoals if more granularity is needed
+	
+different GOMS models:
+	Keystroke Level Model (KLM):
+		decompose task
+		measure time for each task
+		sum up to determine whole length of task performed
+		only good for simple tasks
+	CMN:
+		adds goals, subgoals, selection rules to KLM
+		useful because there may be different subgoals one can use interchangebly to archive same goal
+		calculate time for each subgoal
+	Natural GOMS Language (NGOMSL):
+		formel language with restricted english syntax
+		can use selection rules (selecting different methods, recursive)
+		can include working and longtime memory in model
+	CPM-GOMS:
+		HPM based (Human Processor Model):
+			PP Perceptual Processor (perceives environement)
+			CP Cognitive Processor (takes decisions)
+			MP Motor Processor (perform actions, channels for hands, eyes, ...)
+			different processors can be parallelized
+		

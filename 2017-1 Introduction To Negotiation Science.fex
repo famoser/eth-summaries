@@ -1,0 +1,541 @@
+CHAPTER 1
+=========
+
+common in negotiations
+	2 or more parties
+	conflict of needs
+	choice
+	give-or-take process
+	prefer to negortiate instead of fight openly
+	tangibles & intangibles (materielles vs immaterielles)
+	
+when is it advisable not to participate in negotiations
+	no willingness to make concession
+	demands are unethical
+	other side acts in bad faith
+	badly prepared
+	
+mediation:
+	action taken on by an actor that is not direct party to the crisis, which tries to remove problems of the bargaining itself and therefore facilitates negotations
+
+negotiation
+	behaviour: Norm in groups, possibility of threats, ethnic standarts
+	number of issues: one issue, many issues
+	confidentiality: public, private
+	time: deadline, no deadline
+	frequency: on-time deal, repeated interaction
+	composition of parties: compount, monolith
+	number of participating parties: N=2, N > 2
+	
+decision making:
+	individual
+		descriptive (behavioral): how decisions are made. how and why individuals think and act the way they do
+		normative (maths): first order approximations of real behaviour. how rational, intelligent people should act 
+		prescriptive: how decisions by a real person could be made better (practical view)
+	group of individuals:
+		seperate & interactive (Game Theory)
+		Joint (Negotiation Theory)
+		
+rationality:
+	a: action, w: outcome, u: utility, y: probability, p(w|y): probability of w
+	payoff: pi(a) = sumof(p(w|y(a)) * u(w))
+	rational under certanity:
+		completeness: w1 >= w2 oder w2 >= w1
+		transitivity: w1 >= w2 && w2 >= w3 => w1 >= w3
+	rational under uncertanity:
+		Monotonicity: 
+		Continuity
+		Independence
+	
+Behaving rationally
+	objectives based on comprehensible motivations
+	measeures to archive it are consistent and do not violate conventions
+	hypothesis when negotation is rational:
+		done by professionals
+		some persons work in a back office to gather info for the negotiator
+		culture must permit internal objective/critical discussion
+		
+philosophical concepts
+	matter of counting lives, weigthing cost & benefit & consequences? -> Utilarism
+	or are some morals higher than calculations and must be protected at all cost?
+	Utilarismus:
+		Bentham: The highest principle of morality is to maximize happiness, the overall balance of pleasure over pain.
+		Mill: what will maximize welfare or the collective happiness of society as a whole. It is the result that counts. 
+	Kant:
+		Motive counts, not result
+		Categorical Imperative (universal law): "Act only according to the maxim whereby you can, at the same time, will that it should become a universal law"
+	Aufklärung ist der Ausgang des Menschen aus seiner selbst verschuldeten Unmündigkeit
+		Selbsverschuldet weil nicht wegen mangel an Intellekt
+		Unmündig weil nicht nachdenken ohne Hilfe von Drittpersonen
+		Sapere ade
+		
+	
+CHAPTER 2
+=========
+
+basic concepts:
+	distributive negotiation: competitive negotiation, one issue, win-lose situation (prize at bazar)
+	integrative negotiation: mutual gains, many issues, win-win approach. problem solving for mutual benefit. An agreement can be found that is better than what would have been possible with distributive negotation
+	target point: 'negotiator’s aspiration', point at which the negotiator would like to conclude its negotation
+	resistance point: 'reservation price', negotators bottom line; cannot go any furtherpoint
+	Starting point: 'initial offer', where the negotiations start
+	Zone of potential agreement (ZOPA): spread between resistance points of the two parties
+
+distributive model
+	formal model:
+		b: buyers resitance point, s: sellers resistance point, x: final price
+		seller surplus: x - s, buyers surplus: x - b, total surplus: b - s
+		note: if b - s >= 0 -> deal
+	negotiations process:
+		Dance of Concessions: inetrvalle nähern sich bis sich buyer & seller offer überschneiden
+		Achieve the most preferable outcome within the bargaining range (in ZOPA)
+		Subjective assessment/perception of the deal -> important that people feel as if they got the best possible deal
+		extreme offers, small concessions -> attempt to review the resistance points
+		
+integrative negotiation
+	steps:
+		agree on problem
+		interests behind problems
+		generate alternatives (expand pie, logroll (both get some), offer compensation in another area, minimize costs, bridge)
+		prioritize options and reduce
+		select solution
+	important points:
+		fairness (equally share outcome based on equity, needs)
+		avoid emotional escalation
+		take differences in account in risk preferences, expectations, time preferences
+		"nothing is agreed until everything is agreed"
+	ten best practices
+		Be prepared 
+		Diagnose the fundamental structure of the negotiation 
+		Work the BATNA (Best Alternative to a Negotiated Agreement) (what happens if talks fail?)
+		Be willing to walk away (and therefore accept BATNA)
+		Master paradox (claiming value vs creating value, sticking to principles vs going with the flow, sticking to strategy vs opportunismus, honest & open vs closed & opague, trust vs distrust)
+		Remember the intangibles (looking weak / strong, emotions, being fair, try to see what is not there!)
+		Actively manage coalitions (with you, against you, loose & undefined)
+		Savour and protect your reputation 
+		Remember that rationality and fairness are relative 
+		Continue to learn from experience (reflection after negotiation, personal diary on weaknesses & work on them)
+	harward method
+		people: seperate people & problem
+			Hard on the facts, soft on the people
+			seperate Working relationship from Subject of negotiation
+		interests: focus on interests (underlying motivation, concern, and importance) rather than positions (manifestation of an interest in a concrete manner)
+			most negotiations start with positions, first step therefore is to identify implicit and explicit interests of negotiations behind the positions
+		options: develop different possible mutually beneficially options to choose from
+			diagnose negotiation-situations around interests
+			Problem identification (whats wrong) -> Problem analysis (causes, symptoms) -> Approach definition (cures, strategies) -> Action definition (to do, steps)
+		criteria: develop an objective criteria to measure your negotiation result
+			as negotiator fall back to personal opinion if no other measure is around, develop one!
+			Develop, agree upon and apply objective
+		
+		if others are stronger (Other party has a stronger negotiation position):
+			Protect yourself: with BATNA and bottom line (to be revealed later in the negotiation if needed)
+			Make the most of your assets: relative negotiation strength is not only defined by resources but by alternatives
+		if other don't play (Other party sticks to positional bargaining):
+			Hold on to your strategy of focusing on merits: and hope others will see their error
+			"Negotiation jujitsu": look behind the other parties’ respective intention, or develop options to modify or influence the other parties' position 
+			Get other party to get involved on your behalf: or that introduces the focus on interests, options and criteria
+		if others use dirty tricks (Other party uses “dirty” tricks to throw you off balance):
+			apply key propositions: over and over again
+			Redefine "the rules of the game": over and over again
+		
+		questions:
+			does positional bargaining ever make sense? if effort for integrative solutions is not worth
+			what if the other side believes in a different standard of fairness? try to understand why and consequently argue for the more appropriate standard
+			should I be fair if I don’t have to be? not if you're a dick, and don't care about future interactions
+			what do I do if the people are the problem? dont get reactive, simply continue with rational behaviour
+			when does it make sense not to negotiate? always negotiate; it could give you information about the other party. if you have no BATNA you must anyways
+			adjust my negotiating approach for differenct cultures? principles stay the same (want to be acccepted), but try to analyze others
+			how do I move from inventing options to making commitment? choose the most impotant points and keep them always in focus
+			
+		critic of harvard method:
+			Too simplified for complex situations 
+			Not much beyond common sense. 
+			Of no use if a single aspect is being negotiated.
+			
+		concession responds with concession?
+			self interest (to get something in return), 
+			moral & social obligations (but magnitude must not correspond), 
+			personal stakes (to cease cooperation if refusing to gift other or gift ablehnen),
+			future of relationship (prolong the relationship)
+			
+Game Theory
+===========
+
+definition:
+	Game theory can be defined as the study of mathematical models of conflict and cooperation between intelligent rational decision-makers. 
+	Game theory provides general mathematical techniques for analyzing situations in which two or more individuals make decision that will influence one another’s welfare. 
+	Game Theory offers insights of fundamental importance for scholars in all branches of the social sciences, as well as for practical decision-makers.
+	
+secretary problem (choose best candidate, can only reject or accept instantly)
+	startegy S: rejcet first j candidates, then take the first which is better than the best of the already rejected ones
+	let n/e pass by, then start choosing
+	
+game against nature:
+	expected utility optimization (maximize payoff, p is known): probability multiple with payoff, choose the one action which has highest payout
+	laplace (p not known): if no probabilities are known, assume all have same probability
+	maxmin: choose action which has the highest minimum payoff (pessimist)
+	maxmax: choose action which has highest maximum payoff (optimist)
+	hurwicz optimism coefficient: choose p as "optimist paramater" then compute: p(row max) + (1-p)(row min) and then choose row which has highest average. (realist)
+	savage minimize regret: take largest payoff for each action, choose action with smallest largest payoff (regret matrix)
+		how to compute regret matrix: 
+			colum are random things, rows are choices
+			for each colum choose highest number. for each row of this column, calculate maxEntry - entry. 
+			from the resulting matrix, choose highest entry for each row, then choose the row which has the lowest entry
+	
+Non-cooperative: static games	
+=============================
+
+zero sum games:
+	sum of payoff in each cell is 0 or constant
+	interests of players are strictly opposite
+	
+pure strategy: 	
+	strategies:
+		choose maxmin for safety
+			maxmin Boris & Sophie are on same cell!
+		choose maxmax for max payoff, but game will not be safe anymore!
+			if other player know you play maxmax you may lose hooooorribly
+			
+	theorems
+		maxmin by Neumann
+			if p1 plays his optimal strategy, the expected gain will always be larger than V
+			if p2 plays his optimal strategy, the expected loss will be smaller or equal to v
+		Nash equilibrium:
+			Given the strategies of the other players, decide what maximizes your payoff!
+			No one has incentive to change strategy uniliterally
+			there may be games with no nash (and therefore no saddle point) -> maxmin not in equilibrium
+			
+	In maxmin equilibrium (saddle point) we have: 
+		build table of payoff only for row player (only one number in each cell): max column && min row erfüllt für saddle points
+			
+mixed strategy:
+	with probability p Sophie plays A, with (1-p) B: Boris is indifferent how to play if 3*p + -1*(1-p) = ... etc
+	
+non constant sum game:
+	pareto optimal:
+		no other outcome increases payoff of player and does not decrease payoff of another
+	pareto improvement:
+		if nash equilibrium is not optimal outcome (but the one the players choose for security), then the improvement is the optimal one, the worse one is parte inferior
+		
+static games:
+	chicken / hawk-dove game (mobilize/ refrain)
+		problem:
+			nash equilibrium if (one mobilize / one refrain) -> who mobilizes, who refrains?
+		A,B			mobilize	refrain
+		mobilize	0,0			4,2
+		refrain		2,4			3,3
+		
+		calculations:
+			A mobilizes with q, B with p
+			A can not decide if a = 0*q + 4*(1-q) = 2*q + 3*(1-q) = b -> q must be 1/3, same with B
+			A payoff = p*a + (1-p)*b -> A can only influece this by modifying q, so three cases
+
+	stag hunt (all catch stag, or traitor catches hare, deer vs rabbit):
+		all play for stag: -> each gets 
+		
+		philo background (jean rousseau)
+			 casual association first step of social cooperation ->  temporary cooperation among humans for a limited purpose
+			 but cooperation is fragile; if it survives “mechanical prudence" is developed -> climax in development of language
+				stag	haare
+		stag	3,3		0,2
+		hare	2,0		2,2
+	
+	arms race
+	
+dynamic games:
+	sequential move:
+		one player moves, then the other one
+	defintions:
+		subgame:
+			begins at decision node
+			player knows all decision up until the parent node reached
+			subtree contains all decision nodes that follow the initial node (and no others)
+		strategy:
+			a complete plan of actions, for every every point a decision might have to be taken by a player
+		backward induction, subgame perfect nash equilibrium:
+			start at the bottom, for each node choose the optimal solution each player would take
+			
+	Repeated simultaneous move games:
+		Grim Trigger:
+			cooperate at first
+			continue till other party stops cooperating
+			stop now forever
+		tit for tat ("friendly reciprocity"):
+			cooperate at first
+			repeat what other party has done in last step
+			strategy is: nice (start with cooperation), retaliation (punish opponent if he is mean), forgiving (stop punish if he is nice), clear (predictable by opponent)
+			
+cooperative games:
+	players talk to each other for mutual benefit
+	
+	security level strategy:
+		guaranteed payoff for a player if he plays non cooperative
+		
+	example game 1:
+	rose/colin	A	B
+	A			2/6	10/5
+	B			4/8	0/0
+	
+	non-cooperative approach:	
+		maxmin strategy: calculate p_sec
+			example game: p = 1/3 because 2*q + 4 * (1-q) = 10*q
+			
+		security level payoff: result with p_sec or logical one
+			example game: colin has 6 (cause A is his dominant strategy), rose has 10*p_sec=10/3
+
+		status quo point: where (pi(p_sec_colin), pi(p_sec_rose)) meet
+			example game: (10/3, 6)
+
+		negotiation set:
+			draw the graph, all points which are above the security level of both players -> pareto
+			
+		Nash Bargaining Solution axioms:
+			rationality: solution point must be in negotitaion set (see above how to find it)
+			linear invariance: if ether rose or colins utility are transformed by a positive, linear function, same should happen to the solution point (skew graphic)
+			symmetric: if polygon is symetric thorugh SQ then solution point will be on that line (if you connect point left bottom and SQ den solution point is on same line)
+			independence of irrelevant alternatives: suppose there is polygon P which is smaller than the original polygon G -> solution point is same
+		fair outcome with Nash Bargaining Solution NBS:
+			max{(pi_r - p_sec_r)*(pi_c - p_sec_c)} -> pi_r are the axis (so arbitrary) p_sec_r is the security level payoff
+			with conditions: pi_r >= p_sec_r && pi_c > p_sec_c && the point has to be on the negorations et line (as seen by graph above)
+			example game: max{(pi_r - 10/3) * (pi_c - 6)}
+			
+			
+defintions:
+	Game theory studies mathematical models of conflict and cooperation between intelligent rational decision-makers. 
+	A game consists of a set of players, for each player a set of actions, for each player, preferences over the set of actions (payoffs).
+	Non-cooperative game: Players decide their decisions individually, without cooperation with the other players. 
+	Cooperative game: Players decide jointly knowing that the implementation of the decision is enforceable. 
+	Static game: A decision is made by each player once and for all, and each player has no knowledge of the decision made by the other players before making his own decision, i.e. decisions are taken simultaneously. 
+	Dynamic game: Players have some knowledge about earlier actions in the game, i.e. decision-making happens sequentially. 
+	Zero-sum (constant-sum) game: the sum of payoffs for each outcome is zero (or another constant), i.e. what you get is what I lose. Examples: dividing surplus. 
+	Non-zero-sum game is a game which is not a zero-sum game. Examples: “Prisoners’ dilemma”, “Joint project”, etc.
+	Mixed strategy is a randomization over a combination of pure strategies, i.e. you choose your action according to certain probability distribution. 
+	Pure strategy is one in which there is no randomization. 
+	Dominant strategy is one if regardless of what any other players do, the strategy earns a player a larger (or not smaller) payoff than any other. 
+	Security level strategy is the strategy which guarantees the minimum payoff for a player, when he plays non-cooperatively.
+	Saddle point is an outcome in a zero-sum game with two players if the entry at that outcome is both less then or equal to any entry in its row (i.e. in payoffs to player 1), and less than or equal to any entry in its column (i.e. in payoffs for player 2).
+	In Nash Equilibrium, given the strategy adopted by the other player, neither player could do strictly better (i.e. increase his payoff), by adopting another strategy. In a Nash Equilibrium no one has an incentive to deviate unilaterally from the equilibrium strategy.  The strategies adopted by players are best responses. 
+	Outcome is Pareto optimal if there is no other outcome that increases the payoff to one player without decreasing payoff to another player. 
+	A Pareto improvement is a measure (change of strategy-combinations) that harms no one and increases the payoff of at least one player. If an outcome is Pareto optimal then no more Pareto improvements are possible. 
+	An outcome is Pareto-inferior if a Pareto improvement is possible.
+	Nash Bargaining Solution: an arbitration scheme which gives Pareto efficient division of utilities.
+	
+recommendations:
+	Define the key elements of the game: 
+		Who are the players?
+		Which actions and strategies does each player have?
+		How do the combinations of the strategies played determine the final payoffs?
+	When you don’t know what to do – think of maximizing your minimal gain!
+	Never play a dominated strategy
+	Calculate your and your opponents’ best responses!
+	Think carefully of your threat strategies to push opponents towards cooperation!
+	
+Benefits and limits of models (applicable if:)
+	there are at least two players: a player may be an individual, but it may also be a more general entity like a company, a nation, or even a biological species;
+	each player has a number of possible strategies, i.e. courses of action, which he may choose to follow; 
+	the strategies chosen by each player determine the outcome of the game,
+	are associated to each possible outcome of the game in a collection of numerical payoffs, one to each player; these payoffs represent the value of the outcome to the different players
+
+game theory:
+	powerful tool for the generation of insights into problems
+	high level of abstraction – in order to allow for sensible propositions
+	specifically useful for ex post analysis
+
+	
+CHAPTER 3
+=========
+
+definitions:
+	Negotiation: “A formal discussion between people who are trying to reach an agreement.” 
+	Engineering: “The application of science and mathematics by which the properties of matter […] are made useful to people.” 
+	
+Engineering method
+	“The strategy for causing the best change in a poorly understood or uncertain situation within the available resources."
+	solution oriented
+	looking for an answer
+	in relation to existing contrains
+	valuating different options
+	mathemetial language
+	heristic technique (rule of thumb, strategy, trick, simplification, any other means which reduce time to solve problem)
+	
+Negotiation Engineering: 
+	“We understand Negotiation Engineering as the decomposition and formalization of the negotiation problem, where the heuristic application of mathematical methods facilitates the process of reaching an agreement.”
+	application of engeneering reasoning to negotiation
+	in four steps:
+		decomposition: division in subproblem, reduction of complexity, identify key problems
+		formalisation: translation of critical problems into mathematical language, reduce problem to its most formal structure
+		mathematical method: if problem is stated mathematically, we can use: game theory, mathematical optimization, statistics
+		heuristics: experience based techniques, leaning and discovering, optimal not guaranteed (but good enough)
+	about:
+		puzzling out solution to specific problem	
+	but:
+		does not answer general question
+		does not concentrate on higher-level factors
+
+CHAPTER 4: Conflict
+===================
+
+definition:
+	violent dispute or incompabability of position
+	universal feature of society
+	cannot be eliminated, but violent expressions of it can
+	are solvable!
+	
+elements:
+	parties: individuals, groups, organisations
+	issues: disagreements over means or/and ends, rewards, content (resources, preferences, nature of relationship, values, beliefs)
+	environement: structured (institutionalized), unstructures (revolution)
+	attitudes: cognitive (beliefs), affektive (feelings), behavioural (respond readiness)
+	behaviour: persuasion, coercion (Zwang), reward
+	
+dealing:
+	prevention: 
+	management: prevent get worse, minimize suffering, limit escalation, allow interactions between agressors
+	containment: violence termination
+	transformation: transform institution and structures which reproduce violence
+	settelment: reaching an agreement; forstalls or end armend conflict
+	resolution: reaching an angreements which solves central incompabilities, accepts the other parties continued existence & creases all violence gainst each other
+
+mediation:
+	- any action from an uninvolved party to remove problems of negotitation itself
+	- action undertaken which the target to archive is to compromise a settelment
+	- external party who defines the problem and then approaches the aggressors which a solution
+	-> extension of conflict management, needs outsider, non-coercive, non-binding, non-violent, affektes changes influences or stops conflicts
+	-> mediators have knowledge, ideas, resources, interests
+	-> based on neutrality, confidentiality, volutariness
+
+
+CHAPTER 5
+=========
+
+steps of negotiation:
+	recognise / identify problems
+	explore negotiation principles
+	get mandate
+	signing
+	approval
+	entry into force
+	
+preparation:
+	explore: problem; other side's position; possibilities
+	mandate-drafting: ambituous, but possible, should not be needed to be changed on a later date
+
+each round: 
+	what to archive?
+	how to proceed?
+	which follow up?
+	preps: organization of your team, where, how, protocol
+	
+avoid common mistakes:
+	are you pursuing only to justify an earlier decision?
+	are you assuming whats good for you is bad for the other or vice versa?
+	are you irrationally affected by a proposed price?
+	is there another frame / less accessible information out there?
+	have you fuly thought about the decision of your opponent?
+	are you sure your fallible judgement is correct?
+	
+formulate positively:
+	Critique -> Comment
+	Debate -> Discuss
+	focus on differences -> search for common ground
+	opposing party -> other side
+	no -> yes "while I understand your concern, I would like to emphazise"
+
+non-verbal:
+	appearance
+	body language
+	-> always negotiate face-to-face
+	
+cultural:
+	focus on common things rather than differences
+	respect, humor & politeness is common in all cultures
+	learn the other culture, but don't stereotype
+	be aware of your own culture & how other perceive it
+
+seating order
+	according to objective standard, like Age, Alphabet, Hierarchy
+	
+time
+	use it to reach an agreement as fast as possible, but always leave room to prolong the negotiation
+	
+you:
+	be goal oriented & objective; be intellectually sceptical and distrustful, be polite
+	
+	
+CASE STUDY Negotiations with and within the EU 
+==============================================
+history:
+	1957/62/63: Three different attempts to create an Association-Agreement -> all three failed
+	1973: A Free Trade Agreement (FTA) was finally achieved
+	1989: Jacques Delors first launches the idea of an EEA
+	1992: The Swiss people turned down the EEA in a popular vote (50,3%) (probably because it would have been perceived as a loss of sovereignty)
+	1993 – 1998: Negotiations on Bilateral I
+	2000 – 2004: Negotiations on Bilateral II
+	Since 2007: Discussions on institutional framework -> no result so far
+	2014 - 2016: Negotiations on migration came practically to a halt, Brexit context, fall 2015
+	
+The Swiss Bilateral Approach
+	Goal: legal certainty and market access
+	Bil 0: Free Trade Agreement (1973)
+	Bil 1 (2002, linked together):  Free movement of persons (FMP), Technical barriers to trade (MRA), Public procurement markets, Agriculture, Land transport, Air transport
+		FMP & Agriculture: from EU
+		Air & Land transport: already exiting declarations
+		the rest: common interest
+	Bil 2 (2005, not linked): Schengen/Dublin (erst 2009), Taxation of savings, Combating fraud, Processed agricultural products, Environment, Statistics, MEDIA, Education, Pensions
+	Bil 3 (?): dynamic agreements
+	
+	advantages:
+		legal certainity
+		better marked access
+		only relevant for chosen sectors
+		certain level of freedom for not chosen sectors
+	disadvantages:
+		no full participation in policy 
+		no participation in other sectors
+		unsatisfied market access demands
+	all in all:
+		strong de facto integration
+		good relation through agreements
+	Constitutional article of 2014:
+		Limiting immigration vs. free movement of persons
+		Priority of Swiss nationals vs. non discrimination
+
+		
+case studies:
+	1: Case 1: Land Transport Agreement CH – EU
+		-> forderung: aller internationaler traffic muss auf die schiene, implementierung spielt damit.
+		approach 1: tarification of too much height; till its economically not viable anymore
+		approach 2: internatilisation of cost; EU did not like it
+		approach 3: formula
+	2: Case 2: Negotiation Menu (Bilateral II) 	
+		CH and EU in the beginning of the “Bilateral II”-negotiation did not agree on the “menu” (i.e. the issues to be negotiated)
+			CH wanted all 10 issues at the same time
+			EU wanted only 6 issues in a first phase and, depending upon the outcome in the fraud-dossier, eventually a second phase for the 4 issues: 
+		Game Theory decision because EU needed: Savings taxation, Fight against fraud 
+	3: Case 3: Schengen Association Agreement 
+		did not want to allow EU unconditioned rechtshilfegesuche
+		exception included specifically for switzerland for offences in the field of direct taxation which ist not punishable in switzerland
+		Thanks to the strong demand of the EU in savings taxation and to the tight link between the subjects made by CH → CH succeeded 
+	4: CH – EU Negotiations for the Free Movement of Persons Agreement
+		problem:  CH (Introduction of quotas, Priority to Swiss workers) vs EU (Free movement of persons (no quotas), Non-discrimination)
+		solution (declined):
+			accompaning measures:
+				reduce demand for foreign employees:  Incentive/disincentive system (e.g. taxes) for better use of domestic employees as refugees, elderly, woman |  Education/training efforts for rare professions 
+				Accompanying measures which absorb possible negative consequences of immigration: construction law, land-use planning, implementation of binding measures
+			Measures for Non-EU member states: Quotas for foreigners and priority of Swiss nationals
+			For EU member states: do not vioalate principle of free movements, but allow for safeguard clause in case of excessive migration (statistical point of view)
+				formula: di = m + (αi ∙ βi) ∙ n ∙ σ; di: target, m: average relative migration, ai: stock of EU citicens, bi: job marked, n*σ: standard derivation 
+				corrections: ai = 1 iff ai > 1 (-> very few foerigners), bi = 1 iff (bi > 1)
+		solution: inländervorrang light
+	7: UBS Banking secret
+		problem: UBS needed to hand out names to the US, and violate either swiss or US law. 
+		Convince US side to negotiate (because of Blocking Order), 
+		how to give client names (creative interpretation of law), how to reach target number due to possible appeals (rebalancing measures)
+	10: Iran – P5+1* talks
+		initial conflict: stop nuclear program, guarantee enrichments
+		basis of solution paper: no preconditions, freeze for freeze, phased approach (informal pre-talks, pre-talks, negotiations)
+		was ignored, but was basis of talks in 2008
+	11: Deutsche Bahn train drivers’ strike. DB – GDL Bilateral
+		Wage negotiation
+		score based approach, put it into map and look for solution in NE

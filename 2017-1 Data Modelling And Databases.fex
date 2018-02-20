@@ -1,0 +1,1496 @@
+INTRODUCTION
+============
+
+DataBase Management System (DBMS):
+	tool that helps run & develop data intensive applications
+	push the complexity of dealing with data (storage, processing, persistence) to the database
+	share the database
+	database is a tool
+	many form of engines: relational
+
+usages:
+	avoid redundancy & inconsistencies
+	rich access to data
+	synchronize concurrent access to data
+	recovery after system failures
+	security & privacy
+	facilitate reuse of data
+	reduce cost & pain of doing someting useful
+	
+database abstraction layers
+	data independence
+	logical data independence
+
+DATA MODELING
+=============
+
+data modeling:
+	conceptual model: 
+		captures the world to be represented (domain), collection of entities & their relations (Entity-Relationship)
+		manual modelling of ER schema, semi-automatic transformation to XML, relational, hierachical, object-oriented, ...
+		entity relationship, UML
+	logical model (schema): 
+		mapping of the concepts to concrete logical representations
+		flat file (SQLITE), relational model (SQL), network model (COBOL), hierarchical model (IBM IMS/FastPath), object-orientied model (ODMG 2.0), semi-structured model (XML), deductive model (datalog, prolog)
+	physical model: implementation in concrete physical hardware
+	
+ER MODELING
+===========	
+
+database design:
+	factors:
+		a) information requirements
+		b) processing requirements
+		c) DBMS
+		d) Hardware/OS
+	steps:
+		requirements engineering:
+			create a book of duty:
+				describe information requirements: objects used, identifiers, relationships, attributes)
+				describe processes: examination, degree, ...
+				describe processing requirements: cardinalities (how many entries), distribution (how many relationships), workload (how often a process is carried out), priorities & service level aggreements
+		conceptual modeling:
+			create a conceptual design (ER)
+		logical modeling:
+			create a logical design (schema)
+		physical modeling:
+			hardware / OS does this
+
+
+building blocks:
+	ellipsis (yellow): properties
+	rectangles (orange): objects
+	scewed rectangles (light green): relations
+	underline: key
+	undeline with dashes: secondary key
+	text besides relationships: roles (for example "attends")
+	double border relations & objects: weak entities, must have secondary key, relation AND object are weak
+	is-a (6 edges polygon, blue): "ineritance", generalization, arrow points to more general object (less specific one) employee(salary) -> is-a -> person (id, name). likes traits!
+	part-of (looks like relation, but green): frame - part of - bicyle (no arrows drawn)
+	
+creating models:
+	avoid redundancy
+	KISS
+	two binary vs one ternary: different use cases
+	attribute vs entity: attribute if 1:1 relationship, else entity
+	partitioning of ER models by domains good practice
+	do not: redundancy, performance improvements
+	do: less is better, consise, correct, complete, comprehensible
+	
+good to know about:
+	1:1: rel(_a_,b), addtional key _b_
+	n:1: A(_a_, b), B(a)
+	rule of thumb: put finger on all definined relations (all but one). if missing relation is a 1 -> fully definied
+	min/max: (2,*), (1,6), ...
+	weak entities: key is definied by primary key of relationed object & own secondary key. happens for example for building -> room. double borders for relationship, entity & connecting line
+	weak relations: do not exist! Only weak entity matters; and then mark the defining relation as weak too. (order_entry is not weak; even if order is)
+	generalization: using the is-a structure, more specific points to more general. one entity can have multiple specializations
+	aggregation: using the part-of structure
+	Professor 1 --- <gives> --- N Lecture
+	min max: (1:N) => (0,*) (0,1)
+	to be part of a relationship is optional; but if the relationsip is establised; it needs to connect all entitites part 
+	tertiary: MyTert (_a_, _b_, c); additional key: _a_, _c_
+	same underline for same key, even if it spans multiple attributes! R(_a , b_, c)
+	ER to Schema:
+		1) entities to tables
+		2) relationships to entites
+		3) combine entites which have generalization (copy all fields of more general into more specific)
+		4) combine relationships into entites where possible (same primary key)
+	
+difficulties:
+	create global schema from different views: 
+		want: no redundancy, no conflicts, avoid synonyms & homonyms
+		difficulties: detect generalizations, synonyms, different concepts of attribute domain
+		
+Unified Modeling Language
+===
+
+basics:
+	short: UML
+	ER vs UML
+		attribute, generalization same
+		entity vs class
+		relationship vs association
+		weak entity vs compositor
+	key differences:
+		methods are part of classes
+		keys are not part of UML
+		UML models explicitly aggregation
+		UML supports instance modeling
+	additional material
+		use cases
+		sequence diagram
+		object diagram
+
+building blocks:
+	create small tables for classes
+		first row: name of object (professor)
+		second row: property list & their type (PersNr: String, Age: Int)
+		last row: method names (promote())
+	associations:
+		arrows, with min/max notation at the end (1, 1..*, 0..*, 0..1)
+		example: Professor 1 --- gives ---> 0..* Lecture
+		other way around as compared with ER
+	aggregation:
+		arrow (with scewed rectagle as arrow head, not filled out)
+		example: Professor -----<WHITE> Group
+		"belongs to"
+	composition:
+		arrow (with scewed rectagle as arrow head, filled out)
+		example: Room -----<BLACK> Building
+		"is part of"
+	generalization:
+		arrows, with traingle as head
+		example: Professor ----|> Person
+		"is a"
+		
+RELATIONAL DATA MODEL
+=====================
+
+definitions:
+	relation: 
+		R untermenge D1 x D2 x D3
+		example: Addressbook untermenge string x string x int
+	tuple:
+		t element_of R
+		example: ("hi","mom")
+	schema:
+		associates labels to domains
+		AddrBook:{[_Id_: int, Name: string, Number: int]} -> undeline keys, done here with _KEY_
+	instance: set of db
+	key: monomialf set of attributes that identify each tuple uniquely
+	primary key: select one key, use it to refer to tuples
+	
+transform ER to RM:
+	entities to relations -> Student:{[_Number_: string, Name: string]}
+	relationships to relations -> attends:{[_Number_: string, _Lecture_: string]}
+	naming attributes: use names of roles if provided, else use key attribute name, else invent new names
+	merge relations with same key -> {[_A_: string, B: int]} + {[_A_: string, C: string]} -> {[_A_: string, B: int, C: string]}
+	generalization: copy all attributes of generalization into more specific relation, or not. but keep all tables (do not remove general tables like Person)! 
+	weak entities: must contain all keys (also from strong one)
+
+relational algebra:
+	atoms:
+		basic expressions
+		relation in database
+		constant relation
+	operators:
+		composite expression
+		selection, projection, carthesian product, rename, union, minus
+		no recursion!
+	selection s (sigma):
+		condition
+		s(semester > 10)(Student)
+	projection p (pi):
+		selection of columns
+		p(semester)(Student)
+	cartesian product cp (x):
+		all for all (n*m set)
+	(natural) join j (|><|):
+		S nj R = p(An, R.Bn, Cn)(s(R.Bn = S.Bn)(S j R)
+	theta join tj (|><| theta):
+		two relations with no common attributes + binary operator theta
+		S tj R = s(theta)(S x R)
+	rename r (p):
+		rename relation names to join multiple same tables
+		s(L1.age = L2.age)(r(L1)(Student) x r(L2)(Student))
+		rename attribute names
+		r(newName <- oldname)(Student)
+	set minus m (-):
+		gives difference of attributes (not data!)
+		R-S: all attributes in R which are not in S
+	relational division rd (./.):
+		R rd S 
+		S contains at least one column of R
+		S contains multiple rows
+		outputs all tuples from R which have all the values supplied by S -> so if S is (v1,v2) then R outputs m1 if R contains ([m1,v1], [m1,v2]) (so both v1 & v2 connected to m)
+		result set contains all columns from R which are not in S 
+		can be rewritten as: p(R-S)(R) - p(R-S)((p(R-S)(R) x S) - R)
+		"student who attends all lectures" R:attends, S:lecture
+	union u (U):
+		combines two sets with same attributes
+	intersection i (turned U):
+		only works if both relations have same schema (same attribute names & attribute domains)
+		i = R-(R-S)
+	semi-join (left) sjl (|><):
+		tuples from left matching tuples from right (only left columns)
+	semi-join (right) sjr (><|):
+		tuples from right matching tuples from left (only right columns)
+	left outer join loj (_|><|):
+		natural join + unmatched tuples from left (left+right columns)
+	right outer join roj (|><|_):
+		natural join + unmatched tuples from right (left+right columns)
+	full outer join foj:
+		natural join + unmatched tuples from left/right (left+right columns)
+		
+tuple relational calculus:
+	{t | P(t)}
+	more advanced: {t | t element_of Student ^ there_is a element_of attends(a.is_valid_entry => a.student_id = t.student_id ^ a.is_too_late)}
+	tuple relational calculus: standard calculus; atoms, formulas, constants, ...
+	safety:
+		restrict to finite answers (semantic not syntactic property! { n | not (n element_of Table) } would not be valid)
+		result must be a subset of the domain of the formula (domain: all constants, all relations used in formula)
+	
+domain relational calculus:
+	similar to relational calculus, but tuples are "written out" and specific properties are selected
+	example: 
+		{[l, n] there_is s ([l, n, s] element_of Student ^ there_is v, p, g ([l, v, p, g] element_of tests ^ there_is a,r, b([p, a, r, b] element_of Professor ^ a  = 'Curie')))} 
+	safety:
+		same as relational calculus
+	
+Codd's theorem:
+	relations, tuple relational (safe only), domain relational (safe only) algebra are all equivalent
+	SQL is based on relational calculus
+	SQL implementation is based on relational algebra
+	
+SQL
+====
+
+defintions:
+	SQL: Structured Query Language
+	DDL: Data Definition Language
+	DML: Data Manipilation Language
+	Query: Query language
+	
+DDL:
+	base:
+		CREATE TABLE person (nr INTEGER NOT NULL, street VARCHAR(50) DEFAULT "hi mom", CONSTRAINT my_const CHECK nr > 0, CONSTRAINT my_const_2 UNIQUE(nr), CONSTRAINT my_frkey FOREIGN KEY (other_person_id) REFERENCES person(id));
+		can add: new columns, CONSTRAINT, FOREIGN KEY, PRIMARY KEY
+		CREATE TABLE person (id INTEGER, email VARCHAR(50), CHECK (email IS NOT NULL));
+		DROP TABLE person
+		ALTER TABLE person ADD COLUMN (age INTEGER)
+	indexes:
+		CREATE INDEX my_index ON person (age, nr)
+		DROP INDEX my_index
+	columns:
+		ALTER TABLE person ADD COLUMN age INTEGER NOT NULL DEFAULT 0;
+		ALTER TABLE person ALTER COLUMN age TYPE varchar(50);
+		ALTER TABLE person ALTER COLUMN age SET NOT NULL;
+		ALTER TABLE person DROP COLUMN;
+	constaints:
+		ALTER TABLE person ALTER COLUMN age TYPE varchar(50);
+		ALTER TABLE person ADD CONSTRAINT age_bigger CHECK (age > 12);
+		
+DML:
+	inserts:
+		INSERT INTO person (age, street) VALUES (12, "streeT");
+		INSERT INTO copy_table (age, street) SELECT * FROM table;
+		INSERT INTO copy_table SELECT * FROM table;
+	sequence:
+		CREATE SEQUENCE my_sql INCREMENT BY 1 START WITH 1;
+		my_sql.nextval
+		DROP SEQUENCE my_sql;
+	updates:
+		snapshot semantics: mark tuples which are affected by update; then implement update on affected tuples
+		UPDATE person SET age = 12 WHERE age = 11;
+		UPDATE persone SET age = age + 1;
+	deletes:
+		DELETE FROM person WHERE age = 11;
+		
+ETL
+	extract, transform, load
+	populating a database needs:
+		extract: data from file
+		transform: into a form the database can use (type transformation, formatting)
+		load: insert into db as a bulk operation
+		
+Queries:
+	select / from:
+		SELECT * FROM person;
+		SELECT age FROM person;
+	where
+		SELECT * FROM person WHERE age = 11;
+	order
+		SELECT * FROM person ORDER BY age ASC, name DESC, age
+	distinct
+		SELECT DISTINCT age FROM person;
+	rename
+		SELECT * FROM person p;
+		SELECT age as person_age FROM person;
+	join:
+		SELECT * FROM person p, hero h WHERE h.id = p.id;
+	set operations:
+		(SELECT age FROM person) UNION (SELECT age FROM hero) //removes duplicates
+		(SELECT age FROM person) UNION ALL (SELECT age FROM hero)
+		(SELECT age FROM person) INTERSECT (SELECT age FROM hero)
+		(SELECT age FROM person) MINUS (SELECT age FROM hero) //same as except
+		(SELECT age FROM person) EXCEPT (SELECT age FROM hero) //same as minus
+	functions:
+		SELECT * FROM person WHERE SUBSTRING(name, 1, 3) = 'flo';
+		SELECT * FROM person WHERE date < NOW() AND date_part('year',date) = 2017 OR date = date('12.07.08');
+		EXTRACT(YEAR FROM orderdate);
+	aggregate:
+		SELECT AVG(age) FROM person;
+		SELECT MAX(age) FROM person;
+		SELECT MIN(age) FROM person;
+		SELECT COUNT(age) FROM person;
+		SELECT SUM(age) FROM person;
+	with:
+		create views only avalable in the subquery -> be careful with the ,
+		WITH my_table AS (SELECT * FROM person), my_table_2 AS (SELECT * FROM person) SELECT * FROM my_table, my_table_2
+	EXCEPT:
+		distinct rows from left which are not part of right 
+	INTERSECT:
+		distinct rows which are both in right & left set
+	subqueries:
+		SELECT age FROM person AS p1 WHERE (SELECT MIN(p2.age) FROM person p2 WHERE p2.name = p1.name) > 20
+		WITH my_range AS (SELECT age FROM (SELECT * FROM person pe ORDER BY pe.age LIMIT 0.55 * (SELECT COUNT(*) FROM person)) AS lowest55 ORDER BY age DESC LIMIT 0.1 * (SELECT COUNT(*) FROM person))
+		SELECT name, (SELECT AVG(age) FROM person) FROM person, (SELECT * FROM hero WHERE name = "hi mom")
+	grouping:
+		SELECT AVG(age), name FROM person GROUP BY name;
+	having:
+		SELECT AVG(age), name FROM person GROUP BY name HAVING AVG(age) > 11;
+	exists:
+		SELECT name FROM person p WHERE NOT EXISTS (SELECT * FROM hero h WHERE p.name = h.name) 
+	in:	
+		SELECT name FROM person p WHERE name NOT IN (SELECT name FROM hero h) 
+	all:
+		SELECT name FROM person p WHERE age >= ALL(SELECT age FROM hero h) 
+	for all tricks:
+		SELECT a.Legi FROM attends a GROUP BY a.Legi HAVING COUNT(*) = (SELECT COUNT(*) FROM Lecture);
+	NULL:
+		arithmetic results in NULL: NULL * 2 -> NULL
+		comparisation results are UNKNOWN: NULL > 2 -> UNKNOWN
+		nulls are not equal null: NULL <> NULL = true
+		nulls group to one group: GROUP BY mabye_column has NULL
+		where: only true evaluations
+		group by: if at least one NULL exists there will be group for NULL
+	UNKNOWN:
+		not: results in UNKNOWN
+		and: false and UNKNOWN -> false; other and UNKNOWN -> UNKNOWN
+		or: true or UNKNOWN -> true; other or UNKNOWN -> UNKNOWN
+	between
+		SELECT age FROM person WHERE age BETWEEN 2 AND 3;
+	in
+		SELECT age FROM person WHERE age IN (1,2,3);
+	case
+		SELECT age, (case when (age > 12) then "old" when (age < 12) then "young" else "12" end) FROM person;
+	like:
+		%: any amount of caracters
+		_: exactly one letter
+		SELECT name FROM person WHERE name LIKE "Marga%" OR name LIKE "M_rgareth"
+		you can choose a escape caracter by using ESCAPE: so LIKE "80!%" ESCAPE "!" would look for "80%" text vals
+	joins:
+		SELECT * FROM person, hero WHERE person.id = hero.id; crossproduct then filter
+		SELECT * FROM person JOIN hero ON person.id = hero.id; same as above
+		SELECT * FROM person NATURAL JOIN hero; removed duplicated columns
+		SELECT * FROM person LEFT JOIN hero ON person.id = hero.id; left table part fully filled out (n entries)
+		SELECT * FROM person RIGHT JOIN hero ON person.id = hero.id; right table part fully filled out (m entries)
+		SELECT * FROM person FULL OUTER JOIN hero ON person.id = hero.id; both tables in there, missing column values are null (m+n entries)
+	recursion: 
+		WITH RECURSIVE temp (n, fact) AS (SELECT 0, 1 UNION ALL SELECT n+1, (n+1)*fact FROM temp WHERE n < 9) SELECT * FROM temp;
+		WITH lectures (first, next) AS (SELECT prerequisite, follow-up FROM requires UNION ALL SELECT t.first, r.follow-up FROM lecture t, requires r WHERE t.Next= r.prerequisite)
+		WITH RECURSIVE R(r) AS (SELECT 1 UNION SELECT r+1 FROM R) SELECT r FROM R LIMIT 10;
+	views:
+		CREATE VIEW person_view AS (SELECT age, name FROM person)
+		updateable iff view involves: only one base relation; the key of that relationship; does not contain aggregates, group-by or duplicate-elimination
+		-> view columns do not change (not even if SELECT *) if the columns of base table change
+		
+INTEGRITY CONSTRAINTS
+=====================
+
+ways to constraint
+	schema (defines domain of the data & the captured concepts)
+	types (defines format & space reserved for values)
+	constraits (add additional contraints to attributes & relations)
+	
+constraits:
+	pre- & postconditions
+	way to make sure changes are consistent and do not cause trouble later on
+	control content of data and its consistency as part of the schema
+	avoiding problems:
+		inserting data without a key
+		adding references to non-existing tuples
+		nonsensival values for attributes
+		conflicting tuples
+	example constraints
+		keys
+		multiciplicy of relationships
+		attribute domains
+		subset relationship of generalization
+		referential integrity (foreign keys do indeed reference an existing key)
+	static constraints:
+		constraits any instance of DB must meet
+	dynamic constraints:
+		constraits on a state transition of the DB
+	why in database
+		good way to annotate schema
+		db is a central points; so has to be done once & for all cases
+		sofety net: in case feature missing in app
+		useful for DB optimization
+
+constraint examples:
+	UNIQUE: 
+		key, null each count as unique
+		CREATE TABLE person (id INTEGER PRIMARY KEY, email TEXT UNIQUE)	
+	PRIMARY KEY: 
+		entity integrity
+		CREATE TABLE person (id INTEGER PRIMARY KEY)
+		CREATE TABLE person (id INTEGER, PRIMARY KEY (id))
+		CREATE TABLE person (id INTEGER, age INTEGER, PRIMARY KEY (id, age))
+	FOREIGN KEY:
+		referential integrity: for every foreign key the value must be either NULL or the one of an existing referenced tuple
+		CREATE TABLE person (id INTEGER PRIMARY KEY, other_person_id INTEGER REFERENCES person)
+		CREATE TABLE person (id INTEGER PRIMARY KEY, other_person_id INTEGER, FOREIGN KEY (other_person_id) REFERENCES person ON DELETE SET NULL)
+		CREATE TABLE person (id INTEGER PRIMARY KEY, other_person_id INTEGER, FOREIGN KEY (other_person_id) REFERENCES person(id) ON DELETE SET NULL)
+	maintain integrity actions:
+		CREATE TABLE person (id INTEGER PRIMARY KEY, other_person_id INTEGER, FOREIGN KEY (other_person_id) REFERENCES person(id) ON DELETE SET NULL ON UPDATE SET NULL);
+		-> set foreign key to null if changed/removed
+		CREATE TABLE person (id INTEGER PRIMARY KEY, other_person_id INTEGER, FOREIGN KEY (other_person_id) REFERENCES person(id) ON DELETE CASCADE ON UPDATE SET NULL);
+		-> remove if foreign element is removed, set null if foreign element is updated
+		CREATE TABLE person (id INTEGER PRIMARY KEY, other_person_id INTEGER, FOREIGN KEY (other_person_id) REFERENCES person(id) ON DELETE NO ACTION UPDATE CASCADE);
+		cascade: propagate update & delete
+		set default, set null: set references to null or default value
+		restrict: prevents deletion of primary key if it still is referenced somewhere (checked immediately)
+		no-action: same as restrict, but checked at the end
+	implementation with triggers
+		ECA rule
+		Event -> check Condition -> execute Action
+	checks
+		CREATE TABLE person (age INTEGER, CHECK (age BETWEEN 1 and 5));
+		CREATE TABLE person (gender varchar(1), CHECK (gender IN ("m","f")));
+		CREATE TABLE person (born INTEGER, died INTEGER, CHECK (born < died));
+	triggers:
+		CREATE TRIGGER enforce_feminism BEFORE UPDATE ON Professor FOR EACH ROW WHEN (old.age != 1) BEGIN .... new & old, use if .. and .. then .. end if; END
+		
+NORMAL FORMS
+============
+
+redundancy:
+	problems:
+		waste of storage space
+		need to keep duplicates up to date
+	advantages:
+		improve locality
+		space is not so much of a problem anymore, time is
+		fault tolerance, availablity
+		
+multi-version database
+	storage is cheap -> never throw anything away
+	consequence 1: no delete (simply mark as deleted)
+	consequence 2: no update in place (create new version of tuple)
+	NoSQL Movement: denormalized data
+	
+functional dependency:
+	if prop A equal then prop B equal of two tuples
+	{A} -> {B}, A -> B as convention
+	armstrong axioms:
+		reflexivity: b subset_of a => a -> b
+		augmentation: a -> b => ay -> by (dont forget: a -> y = a -> ay)
+		transitivity: a -> b ^ b -> y => a -> y
+		complete, all other rules can be inferred from those three
+		union: a -> b ^ a -> y => a -> by
+		decomposition: a -> by => a -> b ^ a -> y
+		pseudo-transitivity: a -> b ^ yb -> g => ay -> g
+
+keys:
+	superkey:
+		(a determines whole relation)
+		a -> R
+		either superset of minimal key or candidate key
+		example: 
+			trivial: all atributes!
+			non-trivial: take candaidate key and add unnecessary attribute
+	minimal key: 
+		for_all A element_of a: not ((a - A) -> b) (no entry from key can be removed)
+		a ->. b
+		example: 
+			the keys which identify the row; as the id
+	(candidate) key: 
+		(a is minimal and determines whole relation)
+		a ->. R
+		example:
+			the attributes which closure allows to determine all attributes
+		
+cardinalities:
+	cardinalities define functional dependencies
+	functional dependencies determine keys
+	but not all functional dependencies are derived from cardinality information
+	
+closure of attributes:
+	input: F (set of functional dependencies (A->B)), a_set (set of attributes)
+	formula:
+		result = a_set;
+		while (resultChanges) {
+		foreach (a_set as a -> b) {
+				if (a element_of result) {
+					result += b;
+				}				
+			}
+		}
+		//closure is determininistic & terminates
+		//correctly done with mengen; so use submenge for element_of and union for +=
+		
+minimal basis
+	Fc is a minimal basis for F iff:
+		Fc == F (closure of attribute sets in Fc is same as F)
+		all functional dependencies in Fc are minimal:
+			for_all A element_of a: (Fc - (a-b)) union ((a-A)->b) !== Fc
+			for_all B element_of b: (Fc - (a-b)) union ((a)->(b-B)) !== Fc
+		in Fc, there are no two functional dependencies with the same left side
+	formula:
+		given: a->b, A element_of A, B element_of B, set of functional dependencies F
+		reduction of left sides: if (B element_of Closure(F, a-A)) then replace a->b with (a-A)->b
+		reduction of right sides: if (B element_of Closure(F-(a->b) union a->(b-B), a)) then replace a->b with a->(b-B)
+			example: B element_of Closure(F-(a->bc) union a->b, a)
+		remove Fd where a == empty
+		apply union rule to Fd where a1 == a2
+		
+decomposition of relations:
+	bad relation capture multiple concepts, so decompose them
+	lossless: 
+		S = S1 union S2
+		S = S1 natural_join S2
+	proove that it is lossless (direct proof):
+		show that it holds for column1 = R1 union R2 that column1 -> R1 or column1 -> R2
+	prove that is lossy (prove by counterexample):
+		let R have two entries
+		construct R1 and R2 from it
+		cosntruct R1 natural_join R2
+		show that the constructed table is not identical to R
+	prove that R = R1 natural_join R2:
+		assume R1 is of the form (a, b) and R2 is of the form (a, c)
+		prove R untermenge R1 natural_join R2 (if (a,b,c) element_of R, then ....)
+		prove R1 natural_join R2 untermenge R (if (a,b,c) element_of R1 natural_join R2, then show that its in R1 and R2)
+	preservation of depedencies: 
+		FD(R)+ == (FD(R1) union FD(R2))+
+		-> possible for lossless decomposition & but not preservation of dependencies if dependencies span the two tables
+
+remember stuff:
+	the key (1NF), the whole key (2NF) and nothing but the key (3NF), so help me codd
+	
+normal forms
+	to investige the normal form of a relation first find the candidate key (the minimal key) of the functional dependencies
+	for all FD example assume R(ABCD) with key AB
+
+minimal basis:
+	iff functional dependencies cannot further be reduced
+	algorythm:
+		left reduction: remove unnecessary part of keys from left
+		right reduction: remove unnecessary results from the right
+		remove empty FD: remove all FD which point to nothing
+	
+first normal form:
+	why:
+		only atomic domains (no JSON as value)
+	short:
+		no json
+	formal:
+		only atomic domains as values (no JSON, array or similar)
+		"no repeating groups"
+	disprove 1NF:
+		find JSON
+		"find repeating groups"
+	prove 1NF:
+		only atomic domains
+		"columns are all different (no columns which should be rows)"
+	example in 1NF:
+		[12, "hallo", "hi"]
+	example not in 1NF
+		[12, '['de': 'hallo', 'en': 'hi']']
+		(name, bestellung1, bestellung2 bestellung3)
+	
+second normal form:
+	why:
+		eliminate update anomalies
+	short:
+		must depend on whole key
+	formal:
+		no functional dependency exists which depends only on part of the candidate key
+		"each column must depend on the entire primary key"
+	prove 2NF:
+		check that all FD either depend on the full key or no key at all
+	example:
+		 valid: AB -> C, C -> D, C -> A
+		 invalid: A -> C
+	
+third normal form:
+	why:
+		Eliminating functional dependencies on non-key fields
+	short:
+		a is candidate key or B is part of candidate key
+	formal:
+		B is part of the key
+		B element_of a (a->B, trivial: AB -> B)
+		a is superkey of R
+	prove 3NF:
+		for all a check that its the key
+		the rest; check that the right side is part of the key
+	example:
+		valid: AB -> C; C -> A
+		invalid: C -> D;
+	synthesis algorythm:
+		compute minimal basis Fc (A -> B,C), (D,A are keys)
+		create relations for FD: for all a -> b create Ra := a union b ([A,B,C])
+		create relations for keys (if needed): if exists k untermenge R, and k is key of R create Rk := k ([A,B,C], [A,D])
+		eliminate redundant (submenge relations): eliminate Ra if exists Ra untermenge Ra' (eliminate unnecessary tables)
+	
+boyce codd normal form:
+	why:
+		eliminate FD which have no key
+	short:
+		a is candidate key
+	formal:
+		B element_of a (a->B, trivial)
+		a is superkey of R
+	prove BCNF:
+		for all a check that its the key
+	example:
+		valid: AB -> C
+		invalid: C -> A
+	decomposition algorythm:
+		any schemas can be converted to BCNM, but dependencies are not guaranteed to persist
+		decompose cyclic: create new table for cyclic FD, and remove new key from the old relation
+		result = a_set
+		foreach (a_set as a) {
+			if (a is not in BCNF because y -> z is evil) {
+				a1 = (y, z);
+				a2 = (a - z);
+				result = result - a + a1 + a2;
+			}
+		}
+
+fourth normal form:
+	why:
+		elimintate MVD anomalies
+	short:
+		only one concept per table
+	formal:
+		for every MVD the left side must be superkey
+	prove 4NF:
+		for all a->->B check that a is superkey
+	example:
+		valid: AB -> C
+		invalid: C -> A
+	decomposition algorythm:
+		result = a_set
+		foreach (a_set as a) {
+			if (a is not in 4NF because y -> z is evil) {
+				a1 = (y, z);
+				a2 = (a - z);
+				result = result - a + a1 + a2;
+			}
+		}
+	not dependecy preserving!
+
+MVD (Multi Value Dependency):
+	written as a ->-> b, person_id ->-> phone
+	if table can be restructured; so for example (person_id, language, skill)
+	if 1:n beziehung in same table; so (person_id, email, children_name)
+	formal: 
+		for_all t1,t2 element_of R and t1.a = t2.a => t3, t4 element_of R:
+		create table with four rows (t1,t2,t3), three columns (A,B,C). 
+		left column: all a
+		middle column: b1,b2,b1,b3
+		right column: c1,c2,c2,c1
+		a ->-> b && a->->c
+		now write down all the conclusions for t3,t4 -> proove stuff with that
+	laws:
+		generalization, promotion: a -> b => a->->b
+		reflexivity, augementation, transitivity
+		multi value augmentation, transitivity (in result is g sub_element h, so ag->ah)
+		complement: a ->-> b => a ->->R-b-a
+		coalesce: a ->-> b ^ (y sub_group b) ^ (z intersect b = empty) ^ z -> y = a -> y
+		multi-value union: a ->-> b ^ b -> -> c => a ->-> bc
+		intersection: a ->-> b ^ a ->-> c => a ->-> (b intersect c)
+		minus: a ->-> b ^ a ->-> c => a ->-> (b - c) ^ a ->-> (c - b)
+		WRONG: a ->-> by => a ->-> b ^ a ->-> y (example: a: person_id, b: language, c: skill)
+	trivial MVD:
+		b sub_group a OR b = R-a	
+	lossless decomposition:
+		(R1 union R2) ->-> R1
+	
+database schema:
+	captures:
+		concepts represented
+		attributes
+		constraints & dependencies over all attributes
+	good schemas:
+		ER as the basis
+		functional dependencies for constraining
+		normal forms for removing redundancies & anomalies
+		algorythms for decomposing & deriving normalized tables
+		
+OLTP
+	on-line transaction processing
+	workload with updates, online (time-critical), high volume of small transactions
+	integrity important (3NF+)
+	banking, shops
+	TPC-C:
+		wholesame supplier, stocks of products in stores, districts, warehouses
+
+OLAP
+	on-line analytical processing
+	workload with complex queries, data updates in batches
+	de-normalized schemas, with approaches as star/snowflake
+	marketing analysis
+	TPC-H:
+		pricing, analysis of sales
+	star schemas (not normalized tables): fact + domension tables (sales table with customer_id, part_id as fact table, customer + part tables as dimension tables)
+	why denormalized: not updated by hand, during data loading process constaints are controlled (application now responsible!)
+	snowflake schema (some dimension tables are normalized): so dimensiontables can itself have dimensiontables
+	TPC-DS:
+		sell analytics over multiple channels
+		seven fact tables, 17 dimension, 38 columns. large!
+		
+modern trends
+	working set in main memory
+	column stores at physical level
+	OLTP & OLAP in same system
+	specialitation for use case (denormalization etc)
+
+data cubes:
+	analysis & reporting
+	preaggregated data over several dimensions
+	example cube dimension: year, product category, store
+	support: 
+		slicing: fixing one dimension (select specific year) (removed on dimension of the cube)
+		dicing: select some values over all dimension of cube (sales of product by product_nr, time, region) (generalization of slicing; select multiple times & places)
+		roll up & drill down: group-by at different granuarities (sales by year or month, products by region or shop) (less or more cubes)
+		
+		
+DMBS
+====
+
+basis:
+	input: SQL
+	output: tuples
+	process:
+		application -> DML-Compiler -> query optimizer, schema -> runtime -> query processor, data manager (Indexes, Records), Storage Manager (pages)
+
+performance:
+	now assuming all data in main memory, before assumed data on disk
+	random vs sequential access: expensive (pollutes caches, generates faults, not predictable) vs fast (hardware prefeching works well)
+	
+storage system:	
+	storage systems basic:
+		organized in a hierarchy: combine different types to get desired result
+		can be distributed: organized in arrays, use cheap hardware, paralell processing, replication
+		non-uniform: varying distance to memory, sequential vs random access
+	storage manager:
+		controls access to disks: implements storage hierarchy (ssd -> tapes -> disks), caching, optimizes storage
+		management of files & blocks: keeps them in pages (granularity of access), keeps track of pages from DBMS (catalog)
+		buffer management: segementation of buffer pool, clever replacement policies, pins pages (no replacement)
+	bottleneck:
+		cache hiarchies requires careful placement of data
+		NUMA has big effect: memory access time not uniform (distance), memory on other cores may not be the same
+	store data:
+		records as tuples
+		collection of tuples same table as pages
+		parts/collection of pages as blocks
+		tablesspaces is the place on disk for the db to use
+	data manager:
+		maps tuples to pages
+	buffer manager:
+		maps pages in memory to ones on disk
+	catalog:
+		knows where which files are
+	oracle logical data organization:
+		extend: blocks of data (~pages) for the same purpose
+		segement: collection of extends stored in the same tablespace
+		
+persist stuff:
+	record structure:
+		fixed length fields: 
+			direct access
+			stored in system catalogs
+			no need to scan to find i-th entry
+		variable length fields: 
+			access in two steps (retrieve info about variable (length, pointer), retreive value)
+			field count + delimiter or array of field offsets at begining of space
+		NULL: 
+			bit set to indicate value is null
+	page structure:
+		fixed size:
+			header: slot directory (1 if valid, 0 if invalid), number of records in page, other stuff
+			entry: consists of rid (record identifier), payload
+			position of record in page: slotno * #record
+			->records can move inside page (on CRUD), do not need to regenerate indexes!
+		packed vs unpacked: no space between records (only at the end of page) vs does not care (may be better for access)
+		variable size:
+			header: slot directory (length of entries), number of slots in page, pointer to start of free space
+			record identifier as <page_id, record_nr>
+		full page but record grows:
+			row chaining: placehold PID (which points to another page); flexible, no need to update other references, but expensive
+		fixed-sized sequence of blocks
+		header page: references data pages (full and empty) & next header page
+	file:
+		variable-sized sequence of blocks
+	tablespace:
+		one or more datafiles
+		each datafile is only associated to one tablespace
+		an object in the tablespace may spans multiple datafiles
+
+buffer management:
+	target: keep pages in memory as long as possible
+	crictical: replacement policy (LRU, 2Q (active, inactive page, replace inactive, accessed pages moved to active queue)), when does writeback occurr of updated pages?
+	hides the fact that not all pages are in main memory which are operated on (which is assumed by query processor)
+	Buffer management of DBMS vs OS: 
+		DBMS has more insights as OS (access patterns)
+		problems: double page fault (as DBMS is on top of OS, replacement of page in Buffer may results in another replacement in OS)
+	access patterns:
+		sequential: 1 - 1000
+		hierachical: index navigation
+		random: index lookup
+		cyclic: nested loops (repeated access pattern)
+	replace policies:
+		LRU: Least Recently Used, replace oldest used page in cache -> problem sequential flooding (#buffer pages < #files in page)
+		MRU: Most Recently Used, replace newest used page in cache (example: buffer size 4, access: 1234512345)
+	DBMin:
+		observations: many concurrent queries, queries are made from operators
+		buffer segmentation; each operation has its own buffer size, replacement policy
+		exaples: scan 4pages MRU, indexScan 100pages LRU
+
+meta-data management
+	stored in tables, accessed internally with SQL
+	contains:
+		schema (to compile queries)
+		tablespaces (files)
+		histograms (statistics for query optimizations)
+		parameters (cost of IO, CPU speed, for optimizations)
+		compiled queries (used for prepared statements)
+		configuration (isolation level, AppHeap size)
+		Users (login, passwd)
+		Workload statistics (index advisors)
+
+
+QUERY PROCESSING
+================
+
+architecture:
+	compiler:
+		sql input
+		parser produces query graph model
+		rewrite produces QGM
+		optimizer produces QGM++
+		CodeGen produces the Execution Plan
+	runtime system:
+		Interpreter fetches the tuples
+	
+runtime system
+	compile query into maschine code: better performance, today's approach
+	compile query into relational algebra & interpret: easier debugging, portability
+	hybrid; e.g. compile predicates
+		
+relational algebra algorythms
+	query selectivity: #tuples in result vs #tuples in table
+	attribute cardinality: #distinctive values for attribute
+	skew: probability distribution of the possible values of an attribute
+	selectivity of index (over an attribute):  #diff values / #total rows -> high for unique keys; low for boolean
+	indexes: 
+		B-Tree of values; 
+		good on primary/foreign keys, attributes with high cardinality, attributes used in joins, conditions
+		needs space, maintenance, not useful if low index selectivity
+		clustered index: leafs of B-Tree hold data (and not just pointer). Only once per table
+	
+partitioning: 
+	divide a table into smaller chunks (by hash, range) for paralell access, cache fit, increase concurrency, distribute hot-spots
+	needs good heuristics to get right
+
+table access:
+	iterate over every tuple in table; match tuple against predicate
+	not so expensive because: selectivity, IO, block/page sizes
+	predictable runtime
+	scan:
+		no indexes relevant;  load each page
+		min / max pages: 1 / # of pages which can be served in one IO request
+	index scan:
+		relevant index found; need to scan whole index to find corresponding results
+		min / max pages: 2 / entire B-Tree + all pages -> use LRU
+	index seek:
+		index relevant found; but don't need to scan whole index only parts of it (BETWEEN query)
+	
+sorting:
+	sort vs hash: both O(nlogn); hash done before for partitioning, lower constants for CPU vs sorting more robust
+	needed for results; intermediate step for other operations
+	expensive in CPU, space
+	two-phase external locking: data does not fit in memory / memory already used by other queries
+	N size input pages, M size of buffer
+	One-Pass Merge:
+		phase I (create runs): load buffer space with tuples, sort tuples in buffer, write to disk, redo until all are done
+		phase II (merge runs): use priority heap to merge tuples from runs
+		special: M >= N: no merge needed, M < sqrt(N): multiple merges needed
+		merge runs: 
+			keep pointer in each run (start at 0); 
+			load items from pointer into memory
+			choose lowest item in memory
+			advance the pointer of the corresponding run by one and take the new item into memory -> back to choosing lowest
+	Multi-Way Merge:
+		generalization of one-pass merge
+		input file -> 1-page run (pass 0) -> produce 1-page sized runs
+		each consecutive run (called "pass") produces double sized runs (with merges)
+		analysis IO:
+			O(n) if m >= sqrt(n)
+				2n if m > n
+				4n if n > m >= sqrt(n)
+			O(n logm n) if m < sqrt(n)
+		analysis CPU:
+			if (m > sqrt(N)): create N/M runs of size M (O(N*log2 m)), merge n tuples (O(N*log2 N/M))
+		complexity: N*log(N) is correct, but db cares more about CPU/IO cost, constants, buffer allocation
+		two-way sort: 
+			parallize sorting, concurrent sorts, despite main memory large
+
+joins:
+	very common, expensive
+	performance factors: join algorythm, relative table sizes, number of tables to join, order of joins, selectivity, predicates of query, memory hierarchy, indexes
+	R table 1, S table 2
+	nested-loops NLJ:
+		two for loops: while more get tuple from R, scan S, output if match found
+		optmimization with blocks: get blocks from R, hash & compare to S (needs less S scans)
+		comparisations: R*S
+		IO cost: p(R) + p(S)*p(R)
+		min / max pages: 2 pages / all pages of inner, one of outer -> use MRU
+		good for: two small tables
+	canonical hash join:
+		build phase: build a hash table from all tuples in S
+		probe phase: scan S with the hash keys
+		easy parallizable
+		comparisations: S
+		IO cost: 3*p(R) + S (build hash table from R, compare with S)
+	grace hash join GHJ:
+		build partitions of the same hash value; 
+		scan R and S with the hash function and put tuple in correct partition
+		foreach partition do the canonical hash join
+		comparisations: max(R,S)
+		IO cost: 3(p(S) + p(R)) (read/write while hashing; afterwards read to compare)
+		min / max pages: sqrt(p(R)) + 1 page of bigger relation / p(R) + p(S)
+		good for: big tables
+	partitioned hash join PHJ:
+		create p partitions; then build & probe each partition
+		if p too big: TLB-misses or cache trashing
+	sort merge join SMJ:
+		sort both tables
+		merge them
+		comparisations: r*log(r) + s*log(s) + r + s
+		IO: 5(p(R)+p(S)) (read/write for sort, read/write for merge, read for match phase)
+		min / max pages: 2 pages for external sort & multiple merge steps or sqrt(p(R)) for one merge step / p(R) + p(S)
+		good for: small + big table
+	multi-pass radix partitioning:
+		recursively apply paritioned hash join; 
+		partition key is determined by log2 p bits of hash value
+	parallel radix join:
+		1st scan: local histograms
+		2nd scan: global histogram & prefix sum -> each thread knows when to output its tuples
+		
+group-by:
+	hash on group-by attribute; aggregate on hash collision
+	sort on group-by attribute; aggregate sorted ranges
+	-> choose whats best for the situation
+		
+		
+OPTIMIZER
+=========
+
+optimizer
+	plan is a tree of operaters; implementation can be chosen
+	
+step 1 (execution model):
+	pipeline execution of the tree (dataflow graph with records as unit of exchange):
+		define each operator independently
+		generic interface for each operator: open (cascades down the tree), next(produce next answer), close(cascades down the tree)
+		each operator implemented by iterator
+	iterator model: 
+		open goes down the tree, as soon as everything is open: 
+		next goes down the tree, data is passed from the very bottom to all nodes (which each call next)
+		from left bottom to right bottom, up & down in between
+		data flow bottom up; control top down
+		advantages; generic interface, supports buffer management, no overhead in main memory, pipelining & parallelism
+		disadvantages: poor cache locality, high overhead of method calls
+		alternatives: vectorized; use blocks instead of tupels, fast in column stores
+		improvements: adaptive execution, non-blocking operators, pull/push, query compilation techniques, streaming/partial results
+	dataflow operators:
+		union: read both sides, issue all tuples
+		union without duplicated: read both sides; only issue tuple if it has not been issued before
+		select: read tuple; while doesn't match predicate continue to read, else output
+		projection: read tuple; while more output specified attributes
+
+step 2 (choosing operators):
+	variables: b: number of blocks in relation, c: #of blocks in result set, h: cost of index lookup
+	selection (file scan):
+		A1 (linear search): 
+			cost b; cost b/2 if on key attribute,  
+			always applicable, equality
+		A2 (binary search):
+			cost log2(b) (location first block for condition) + c
+			ordered file, continuous blocks, equality
+	selection (using indexes):
+		A3 (primary index on candidate key, equality):
+			cost h + 1
+			equality (only one record retrieved)
+		A4 (primary index on nonkey, equality):
+			cost h + c
+			equality (multiple records retrieved)
+		A5 (equality of search-key of secondary index)
+			cost h+1 bzw h+c
+			potentially very expensive because each record may be on another block!
+	bc: bigger than condition, sc: smaller than condition
+	selection with comparisation:
+		A6 (primary index, comparisation):
+			bc: find first entry which is bigger with index; scan relation from there
+			sc: start scanning from the begginning till first tuple breaks condition
+		A7 (secondary index, comparisation):
+			bc: find first index of tuple which is bigger; continue to scan index from there and investigate pointers
+			sc: scan leaf pages of index till first does not satify conditions; follow pointers to data
+			-> need IO for each result; mabye sequential scan is faster!
+	c1, c2, c3: conditions
+	complex selections:
+		A8 (conjunctive selection using one index):
+			select a combinations of cn which is cheapest to do with A1-A7, apply rest after reading out
+		A9 (conjunctive selection using multiple-key index):
+			use multi-key index if available
+		A10 (conjunctive selection by intersection of identifier):
+			requires indices with record pointers
+			do each condition with its own index
+			do a conjunction of the retrieved record pointers of all indexes
+			read out records; apply the rest of the tests in memory
+		A11 (disjunctive selection by union of identifiers):
+			applicable if all conditions have index, otherwise do linear scan
+			take union of all identifiers
+		negation (not c1):
+			use linear scan
+			if very few records in c, and index for c1 is available use this
+			
+step 3 (generating equivalent plans):
+	equivalence rules:
+		conjunctive selection can be deconstructed into sequence of simple selections
+		selection operators are commutative (reordering)
+		only the last projection rule is needed, others can be ommitted
+		selections can be combined with carthesian products & theta joins (cross join + selection -> theta join)
+		theta / natural joins are commutative (can switch tables left & right)
+		theta / natural joins are associative (can change order, care with theta; conditions must only contains values of tables left&right)
+		selection / theta join can be distributed if only attributes of one of the tables matter (selection can be applied before join)
+		projection / theta join can be distributed when you split values to each source table (you can do the projection beforehand + don't forget to select all attributes used in condition)
+		union / intersection are commutative, assotiative
+		selection distributes over union, intersection, minus
+		projection distributes over union
+	query rewrite techniques:
+		unnesting of views (remove subqueries which are stupid)
+		predicate augementation (A.x = B.x and B.x = C.x -> augment C.x = A.x)
+		can use any semantically correct rewrite
+		try to: move contraints between blocks, unnest blocks
+		
+histograms:
+	equi-width: range same steps; age 10-20, 20-30
+	equi-depth: same number of records for range; age 10-22, 22-28, 28-40
+	multidimensional: multiple properties combined in histogram
+	
+enumerate alternative plans:
+	task: create query execution plan
+	main principle: search through set of plans, choose paths with least estimated cost
+	query optimization is NP hard
+	algorythms: greedy heuristics (highest selectivity join first), dynamic programming, randomized, other heuristics (tips by programmer), smaller search space 
+
+join plans for R join S
+	consider all combinations of access plans
+	consider all join algorythms (NL: nested loop, IdxNL: index nested loop, SMJ: sort-merge join, GHJ: grace-hash join)
+	consider all orders
+	-> for three way: consider prev. plans too
+
+join plans for multiple
+	use System-R, so consider only left-deep join trees (generate fully pipelined plans)	
+	enumerate Left-Deep plans:
+		find best 1-relation pass for each relation
+		find best way to join result of n-1 to n relation
+		for each step retain only plan overall, and cheapest plan for interesting order of tuples
+	order-by, group-by used as last step, using special operator or "interesting order" plan
+	avoid carthesian products
+	-> approach is exponential in # of tables!
+	interesting sort order: if r1 combined r2 have ordered attributes that also happen to be in r4 (which is to be joined later); merge-join may be useful later
+	each subset needs to have: best join order, overall and for all interesting sort orders -> does not increase complexity that much
+	heuristic optimization:
+		cost-based optimization is very expensive, use fixed set of rules that typically make things cheaper
+		selection as early as possible (less tuples)
+		projects as early as possible (less attributes)
+		more restictive selection / joins before less restictive ones
+		typical steps:
+			deconstruct conjunctive selections into sequence
+			move selection down the tree
+			execute joins / selections first which produce the smallest relations
+			replace carthesian followed by conditions to join with select
+			deconstruct & move down projections as far as possible, pssible selection new things (for relations above)
+			identify subtrees which can be pipelined and do it
+			more: degree of multiprogramming, reads vs writes, query result caching, stored procedures, prepared statements, materialized views (cache result of view), indexes
+
+
+TRANSACTION PROCESSING
+=====================
+
+notion of time:
+	concurrency control does not imply time ordering (implementation dependant)
+	find a way to execute operations in paralell while ensuring correct result
+	
+operations:
+	BOT: Begin Of Transaction
+	Commit: all changes have been made persistent
+	Abort: transaction is cancelled, all changes rollback
+	Read: read a data item
+	write: write a data item
+	a < b: a happens before b (partial order)
+	
+properties:
+	transactions start with BOT and end with abort or commit (but not both)
+	no more operations from transaction are possible after commit/abort
+	operations within a transaction are totally ordered
+	transactions can only read & write
+	transactions enter the database in consistent state and exit it in one too
+	
+ACID
+	Atomicity: 
+		executed in its entirety or not at all
+		atomic commitment protocol (like 2PC)
+	Consistency: 
+		executed over a consistent DB in its whole leaves the DB in a consistent state
+	Isolation: 
+		each transaction behaves as it would have the whole database for itself
+		guaranteed by 2PL
+	Durability: 
+		no commits are lost
+	
+management:
+	concurrency control: enforcing isolation among multiple running transactions
+	recovery: ensuring atomicity & durability
+	
+histories:
+	conflicting operation: two operations over the same item; one of them being a write
+	history: 
+		partially ordered sequence of operations from a set of transactions
+		if two operations are ordered in a transaction, they are in equal order in the history
+		if two operations conflict, then they are ordered with respect to each other
+	
+conflicts
+	a1: abort, c1: commit, w1(x): write to x, r1(x): read to x	
+	r1(x) and a2(x): conflict if 2 updated x
+	w1(x) and a2(x): conflict if 2 updated x
+	
+concurrency control theory
+	lost update phenomen (T1 running, in between T2 executes & commits, T1 continues and reverts changes of T2)
+	phantom items (T1 running (aggregates something), T2 inserts new item, T1 continues (aggregates again, but gets different results))
+	serial history
+		correct by defintion
+		if for all two transactions from the history all operations from one appear to be before or after the other all operations from the other transaction
+		called serializable
+		serializablity graph: edges are arrows, nodes are transactions, if acyclic then alles paletti
+	equal histories:
+		same transactions with same operations
+		conflicting operations are ordered in the same way
+	
+recovery theory
+	R1 (abort of single TA): undo changes of single TA
+	R2 (system crash, but disks are kept): redo commited TA's
+	R3 (system crash, but disks are kept): undo active TA's
+	R4 (crash with loss of disks): read backup of DB from tape
+	undo-redo possible because databases keep logs of all transactions with their changes
+	
+history types:
+	partial order of all operations 
+	total order of conflicting operations
+	conflict: write followed by read!
+	RC (recoverable): 
+		commit of conflict must be before own conflict ("write" commit before "read" commit)
+		if T1 reads x from T2 and commits, then c2 < c1
+		no need to undo a commited transaction
+		-> results of queries are guaranteed to be correct
+		-> if no read occurs we are fine!
+	ACA (avoid cascading aborts):
+		commit of conflict must be before read  ("write" commit before read occurrs)
+		if T1 reads x from T2, then c2 < r1[x]
+		aborting a transaction does not cause aborting others
+		-> no thrashing behaviour because cascading aborts all the time
+		-> if no read occurrs we are fine!
+	ST (strict):
+		commit / abort of conflict must be before write/read
+		if T1 reads or writes value written by T2 then c2 < r1[x] / w1[x] && a2 < r1[x] / w1[x]
+		undoing a transaction does not undo the changes of other transactions
+		-> recovery after a faillure is possible after a faillure
+	solve exercise:
+		check for write followed by read
+			if none, check for write on write
+				if none -> strict
+				if one, check if commit is between -> strict else ACA
+			if one, check if commit of write is between
+				if completely seperated -> strict
+				if multiple writes between commits -> ACA
+			if not, check if commits are in the correct order -> recoverable
+			if not -> not recoverable
+
+serializablity
+	only commited transations are of importance when evaluating if its serial or nots
+	convert concrete schedule (in which transactions can overlap, the way it happened in read live) to sequential history (where transactions are absolutely ordered)
+	draw a graph of the concrete schedule for the conflicting operations; if there are cycles it is not serializable
+	conflict equivalent: refers to the alternative sequential histories created; if the order of non-aborted conflicting operations were maintained those are conflict equivalent
+	conflict serializability: if the concrete schedule is equivalent to a sequential history
+	view equivalent: initial reads must be the same in the other histories, read/write conflict exists in the same order, final write must be done by the same transaction
+	view serializable: if the concerete schedule is view equivalent to a sequential history
+	view equivalent implies conflict equivalent
+	
+general:
+	concurrency control & recovery very powerful, but slow
+	tweak correctness: 
+		by clever combination; add, delete, multiply do not conflict
+		view serializability enforcing
+		restricting structure of transaction: no blind writes (must always read before write), only write one item, no reads after a write
+		postphoning correctness: eventual consitency, reconciliation, abandoning recoverability
+		
+database scheduler:
+	architecture:
+		transaction manager TM
+		scheduler
+		data manager: recovery manager -> buffer manager
+		storage system
+	pessimistic synchronization:
+		S: shared lock, needed for reads
+		X: exclusive, needed for writes
+		-> better than OS cause knows semantics of operations, two locks allows concurrent reads
+	2PL:
+		serializability guaranteed, but may non-recoverable history because of access to uncommited data
+		TA aquires lock before accessing object -> locked if it can't get it
+		Growth: aquire locks, never releases
+		Shrink: releases locks, never aquires
+		at EOT (abort or commit) all locks must be released
+		non-recoverable history possible!
+		-> if violated; non-serial history possible,
+		-> but still cascading aborts possible if transaction aborts after starting to release locks (because of uncommited reads)
+		-> does not fulfill ACID because of uncommited reads transaction may need to be reversed after commit!
+	strict 2PL:
+		can only release lock on commit / abort
+		-> avoids cascading aborts
+		-> visibility at commit (only ever see changed data after commit) in contrary to ACID enforced recoverability (which just says that it can't be reversed)
+	more on 2PL:
+		deadlock problem; needs to be detected with wait-for graph, abort conflicting transactions
+		OS vs DB: 
+			both use locking, DB focus on data (collection of resources), OS on critical paths / individual resource
+			OS assigns to process, DB to transaction
+			OS keeps lock as long as used, DB till end of transaction
+		no reordering of operations
+		does only accept serializable histories
+			
+snapshot isolation
+	TA receives timestamp on start
+	all reads are carried out with data from before the timestamp, writes changes in buffer
+	on commit, DB checks for conflict (any data which newer timestamp, because other TA's accessed the same object)
+	discussion:
+		phantoms dissapear (because no updates are seen while trans is running)
+		no read/write ever blocked
+		overhead: need to keep write set of TA (efficient to abort), no deadlocks but unnecessary rollbacks
+		write skew: might be that two TA's modify db in a correct manner, but combined it does not fulfil requirements anymore
+	reordering of R/W conflict operations
+	aborts to deal with WW
+	allows non-serializable histories! b1 b2 w2 r1 c1 w2 c2
+		
+asynchronous protocol:
+	no possible, must contains synchronous part or be able to tolerate faillure to some degree
+	communication fail
+	party may not be able to commits its own decision
+		
+isolation in SQL
+	read uncommited: allows the reading of uncommited values (of transactions which may be aborted later)
+	read commited: reads only values which are commited (but one TA may reads different values, if another TA writes in between)
+	repeatable read: prevent reading of different values, but phantoms may occurr (can see new rows! but already read out ones will be the same; and not removed)
+	serializable: full isolation, no funny business, no phantoms etc
+
+distributed systems:
+	eventual atomicity: at some point; or never (failures in one will result in compensation in already commited ones)
+	
+the consensus problem
+	distributed consensus: reaching an agreement among all working processes on the value of a variable
+	not difficult if system is reliable
+	asynchronous: not able to tell difference between slow conenction and failed process
+	if failures do occurr all entirely async protocols block -> no protocol that guarantees consensus can be created!
+	no commit protocol can guarantee independent recovers -> it will have to contact others about the decision which had been made
+	
+atomic commitment
+	AC1: all processors reach same decision (agreement)
+	AC2: a processor cannot reverse its decision (consistency)
+	AC3: commit can only be decided if all vote yes (no imposed decisions)
+	AC4: if not faillures occurred and all votes yes -> commit (non triviality)
+	AC5: if faillures have been repaired evetually a decision will be reached (liveness)
+	
+2PC protocol:
+	coordinator sends VOTE-REQ to all, writes START-2PC to log
+	all participants reply with YES or NO and abort. before sending answer persist in log
+	coordinator decides: if all YES then send COMMIT to all, if some NO send ABORT to all who votes YES. writes log before sending final answer
+	all participants do what operator tells them, and logs it
+	faillures:
+		if coordinator received timeout in waiting for VOTE-REQ response:
+			can decide to abort
+		if participant times out waiting for VOTE-REQ
+			can decide to abort (as no one will have commit yet for sure)
+		if participant times out waiting for descision:
+			it must ask around with Coordinative Termination Protocol CTP; if noone is certain this is called the uncertanity period
+	recovery & persistence
+		each state change in protocol is written to disk
+	linear 2PC: 
+		exploits linear network structure
+		-> if vote with NO, then it can be directly send back (does not need to reach the coordinator)
+	deadlock:
+		in case operator stops responding before sending first COMMIT message (which means all participants voted YES, but no-one can continue)
+		if a network split happens, this will block!
+	#number of messages: 3(n-1)
+	not live (cause of blocking), but safe
+		
+3PC protocol:
+	coordinator sends VOTE-REQ to all, writes START-3PC to log
+	all participants reply with YES or NO and abort. before sending YES persist in log, after sending NO persist in log
+	coordinator decides: if all YES then send PRE-COMMIT to all, if some NO send ABORT to all who votes YES. writes log
+	coordinator waits for ACK's, ignore those who time out
+	coordinator sends COMMIT
+	all participants do what operator tells them, and logs it
+	less timeout window that 2PC
+	too expensive for practice
+	in 2PC: 
+		if everybody is uncertain -> would be able to commit because everybody voted YES!
+		-> but there might be processes which decided to abort and then crashed
+		-> need a way to make sure all processes are uncertain (so we can commit)
+	NB rule: 
+		no operational process can commit if there are any operational processes which are uncertain -> the termination protocol takes care of this
+		coordinator must make sure everybody is out of the uncertanity periot (with PRE_COMMIT) before it can issue a COMMIT message
+		when running CTP and everybody is uncertain -> abort
+		implications:
+			coordinator times out waiting for VOTE_REQ: abort
+			participant times out waiting for VOTE_REQ: abort
+			coordinator times out waiting for ACK: simply ingore those
+			participant times out waiting for PRE_COMMIT: ask around 
+			participant times out waiting for COMMIT: ask around, but certain! 
+	another round of messages: after receiving all YES coordinator sends PRE-COMMIT to all participants and waits for all ACKs. then it sends the COMMIT message
+	if by asking around any pariticipant has a PRE_COMMIT message all can commit, else abort -> problem with network split!
+	#number of message: 5(n-1)
+	live & safe if network is reliable, else may not be safe (network splitting)
+	
+Termination Protocol
+	elect new operator
+	coordinate sends STATE-REQ to all
+	if aborted/commited received, do this
+	if some commitable -> send PRE-COMMIT to all
+	if all uncertain -> abort
+	-> failures of the participants on the termination protocol can now be ignored
+	-> only problem left: if operator fails before sending PRE-COMMIT we have to start all over again
+	
+No communication faillures:
+	we do not allow communication faillures (lost packets or similar)
+	problems:
+		lost NO votes
+		split networks (partitions) -> use quorums (blocking; no decision can be made)
+		after total faillures; we need to find the last active member (because he alone knows the read decision made)
+		
+		
+DATABASE REPLICATION
+====================
+
+replication strategies
+	when: synchronous / asynchronous
+	where: update everywhere / primary copy
+	
+why replication:
+	performance: local access is fast, remote slow
+	fault tolerance: different sites allow running system if one fails
+	application type: OLTP (transaction, fast updates) vs OLAP (analytical, lot of processing)
+
+why not:
+	replication needs time
+	higher space consumption
+	either lock or inconsistent state is archived by distributed write
+
+concepts:
+	synchronous replication:
+		full ACID
+		propagate changes to all instances of db immediately
+		advantage: no inconsistencies, all changes atomic, local copy always latest data
+		disadvantage: transaction has to update all sites (longer response time)
+	asynchronous replication
+		first executes update local, then propagate changes (copies are inconsitent while update is going on)
+		advantage: transaction is always local (good responsetime)
+		disadvantage: data inconsitencies, local read may be old data, changes to all copies are not instant, replication not transparent
+	update everywhere
+		changes can be intiated by all copies
+		advantages: any site can run an update, load is distributed
+		disadvantages: copies need to be synchronized
+	primary copy
+		only one can update (master), all others are updated reflection the changes to master
+		advantage: no inter-site synchronization is needed, one site has always all updates
+		disadvantage: load at primary copy can be quite large, reading local copy may contain old value
+		
+strategies:
+	sync & primary copy:
+		advantage: updates do not need to be coordinated, no inconsistencies
+		disadvantage: longest response time, only useful with a few updates (bottleneck primary copy), fault tolerant, local copies are read-only and almost useless, not scalable (probabilty of deadlocks too high)
+		conclusion: globally correct, remote writes
+		practical: too expensive (not so useful), not used
+	sync & update everywhere
+		advantage: consistent data, symetrical, very fault tolerant
+		disadvantage: long response time, updates need to be coordinated
+		conclusion: globally correct, local writes
+		practical: too expensive (does not scale)
+	async & primary copy:
+		advantage: no coordination necessary, short response time, nearly same performance as with no replication
+		disadvantage: local copies not up to date, inconsistencies
+		conclusion: inconsistencies
+		practical: feasible
+	async & update everywhere
+		advantage: no centralized coordination, shortest response time
+		disadvantage: inconsistencies, updates may be lost (reconciliation)
+		conclusion: inconsistencies & reconciliation
+		practical: feasible for some applications
+		
+ACID & replication
+	use 2PC for Atomicity
+	how to make sure serialization order is the same at all sites:
+		use replication protocol
+	quorum protocol: 
+		quorum of sites can aggree to perform an operation (if mayority)
+		"Quorums are sets of sites formed in such a way so as to be able to determine that it will have a non-empty intersection with other quorums"
+		quorum:
+			equal effort: all quorums should have about the same size
+			equal responsibility: all sites participate in same number of quorums
+			dynamic reconfiguration: establishing a quorum needs to be dynamic to account for faillures
+			low communication overhead: minimize messages being send
+			graceful degragation: effort proportial to amount of faillures
+		quorum consesus protocol (weighted quorums):
+			each site has weigth n, total weigth is N, let RT & WT read/write threshholds, such that 2 WT > N, RT + WT > N
+			each copy has version number
+			read quorum: 
+				if total weight is greater than RT
+				READ: contact sites with version number, until read quorum reached, then read the one with highest version number
+			write quorum: 
+				if total weigth is greater than WT
+				WRITE: contact sites till write quorum is reached, then write to all a new copy with version number k+1
+	sync & update everywhere:
+		read-one, write-all: 
+			use 2PL, read locally, write with distributed locking protocol (execution is serializable) -> you improve this by using quorums
+		write all available copies: 
+			read (read copy, if timeout try another), 
+			write (send write to all locations; if reject -> abort; if missing -> missing write), 
+			validation (check that all missing writes are still down and others all still up; yes -> commit, no -> abort)
+	sync & primary copy:
+		not used in practice
+	async & primary copy:
+		updates are executed at primary copy (uses 2PL) -> propagates transactions to after pages after termination
+		read are executed locally
+	async & update everywhere:
+		transaction are executed locally (2PL), afterwards distributed to other sites
+		updates need to be coordinated!
+		use reconcilliation: use patterns as latest wins, site priority, largest value, or ad-hoc (error handler decide on the spot)
+		
+KEY VALUE STORES
+================
+
+architecture:
+	schema: key + BLOB, index on key (hashing)
+	deployment: horizontal partitioning, replication of partitions
+	replication strategy: quorums, async replication (eventual consitency)
+	good: very fast lookup, easy to scale, useful for lookup
+	bad: no easy support for queries, inconsistent data
+	ugly: pushed complexity to the app, some operations are costly, works well as cache but not as full application
+	got rid of: schema, sql, ACID
+	
+specialized engines:
+	amadeus workload: one table, denormalized
+	cescando
+		made for amedeus workload
+		remove unpredictacility, make scalable
+		predictable performance: parameters are size of scan, number of queries per scan
+		optimize whole workload instead of sinlge queries -> scales nice with large number of clients & complex queries
+		split input into parallel streams of data which can be computed on different cores, and then results are merged again
+		
+
+questions: 
+	min pages for grace hash join / compare with other joins

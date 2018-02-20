@@ -1,0 +1,911 @@
+Introduction
+========
+
+user research method:
+	formative: 
+		helps to understand the problem and the users to inform design
+	build: 
+		create new version of the product using the formative methods
+	evaluative: 
+		help to understand how well design works
+		may inspire new formative methods
+human computer interaction:
+	human: 
+		single user, or friends, colleagues
+	computer: 
+		machine running program, distributed, heterogeneous
+	interaction: 
+		user provides input
+		machine communicates result
+		user interface main point of interaction between user / machine
+	
+human vs computers:
+	strength of human:
+		signal detection under noise
+		recognising complex signals (images, voice)
+		recognising complex configurations (scenes)
+		concentration to the essential
+		adaptation to unexpected situations
+		learning aptitude
+		memorizing cohesive information
+		intuition
+	strengths of computers:
+		superior if problem can be algorithmically formulated
+		detecting / recognising known signals
+		fast and reliable reaction to known signals
+		measuring and counting
+		storing large amounts of incoherent data
+		syntactic symbol manipulation
+		reliable, fatigue-free repetition of operations
+	
+components of cognition:
+	perception (using sensory systems):
+		Sight (visual)
+		Hearing (auditory)
+		Touch (haptic)
+		Smell (olfactory)
+		Taste (gustatory)
+		Balance and acceleration (vestibular)
+		Body awareness (proprioception, kinesthetic sense)
+		Temperature (thermo reception)
+	memory:
+		sensory
+		short-term STM (controlled cognitive processes)
+		long-term LTM (declarative, procedural knowledge)
+	action (using motor systems):
+		Arms, hands, fingers
+		Head, face, eyes
+		Vocal system
+		Legs, feet, toes
+		Jaw, tongue
+	attention flow:
+		stimulus
+		sensory organs (eye, ear, ...)
+		sensory register (visual, auditory, ..., may activates the motor system)
+		symbol recognition (uses LTM and STM)
+		LTM and STM may activate the motor system
+	anatomy eye:
+		light travels through cornea (skin around eye)
+		crystalline lens make image sharp
+		iris controls amount of light which enters the eye
+		retina contains rods and cones
+		rods see light (scotopic vision) but slow reaction
+		cones see colour (photopic vision) & fast reaction, S M L types
+		fovea contains cones and where humans see sharp
+		optic nerve transports information to visual cortex
+	acuity of visual field:
+		foveal vision (fine details), about 2degrees of sharp vision
+		peripheral vision (motion), visual acuity decreases with distances from fovea
+		horizontal field 60deg nasal, 90deg temporally
+		vertical field 60deg up, 70deg down
+	usefulness of visual field:
+		low character density 15deg
+		high character density 1deg-4deg
+	eye movements (gaze movements):
+		saccades (repositioning of fovea, 30ms (10ms-100ms), bad perception)
+		fixations (dwelling on a point, 230ms (150ms-600ms), 90% of the time)
+	implications for perception:
+		reading speed fixed (10words/sec)
+		context dependance of gaze movements
+		
+model human processor (MHP):
+	abstract understanding of perception, memory, motor system
+	can be used to estimate execution time, error rates, training effects
+	practice leads to skills which reduces cognitive effort
+	three processors with associated memory and runtime:
+		perceptual system for sensors & buffers
+		cognitive system for working memory content
+		motor system for movements
+	total processing time:	
+		overall system runtime is sum of all runtimes
+		240 ms = t_perceptual + t_cognitive + t_motor = 100ms + 70ms + 70ms	
+	perceptual processor:
+		how it works:
+			receives sensor signals and stores them in buffer (one buffer per channel)
+			perception time about 100ms (50-200ms) t_p
+		blochs law (for t < 100ms):
+			Response = Intensity * TimeOfExposure
+			can substitute intensity, duration and maintain constant effect
+			enforces limits on framerate for animations and videos
+	cognitive processor:
+		how it works:
+			operates on chunks of information
+			processing time about 70ms t_c
+			divided into STM and LTM
+		STM:
+			as working memory
+			control of cognitive processes (concious such as reading & multiplying, automatic such as visual searching)
+			repetition and building of connections stores information in LTM
+			can process limited by number of chunks, but not complexity
+			capacity 5-9 chunks for 2 sec, 2-4 for 7 sec
+		LTM:
+			as remembering memory, build on experience
+			divided in declarative (facts, past events) and procedural (skills)
+			capacity practically unlimited, but hard to organize for retrieval
+	motor processor:
+		how it works:
+			controls and runs motor system such as hands, arms, ...
+			processing time about 70ms
+		open loop:
+			70ms
+			no perceptual control
+			just motor processor commands
+			in pen experiment the number of changes in direction
+		closed loop:
+			250ms
+			with perceptual control
+			motor processor corrected after input from perceptual processor
+		
+Fitts Law:
+	predict movement time of rapid aimed movements
+	measure throughput of movements (reaching for stuff, clicking on icon)
+	very powerful, widely used, comparable over different experiments
+	fitts thesis:
+		fixed information-transmission capacity of motor system
+		most limiting ability is the processing of sensory input
+		tradeoff between speed & accuracy
+		ID = # of bits required to specify movement
+		MT = movement time
+		IP = ID/MT index of performance
+	formula:
+		difficulty I_d = log2(2D/W) for W target width and D target distance
+		movement I_m = 100ms/bit
+		T_pos = I_m * I_d
+	implications:
+		doubling distance adds constant to execution time
+		doubling target width is similar to halving distance
+	bandwidth factors (performance of use):
+		bandwidth of muscle group which uses device (human)
+		precision requirement of task (application)
+		bandwidth of input device (device)
+	target acquisition:
+		in intervals
+		come close fast, then correct
+		each proceeding is slower & more precise
+	visual feedback loop (using MHP):
+		t_p (observe hand position), t_c (plan movements), t_m (move hand)
+		one feedback cycle is (t_p + t_c + t_m) = t = 300ms
+		first cycle e*D moved, second e*(e*D), .. for e error, D distance
+		movement stops when (e^n)*D <= 0.5W for W width of target
+		resolve to n, use T = I_m * I_d to calculate I_m
+	in practice:
+		icons should be activatable at their edges (cause easier to hit)
+		larger icons which are far away
+		toolbars which appear directly between cursor
+		upper-left corner buttons
+		round menus rather than select
+		
+shannon:
+	process:
+		information source -> transmitter -> produce signal
+		signal is modified by noise
+		received signal -> receiver -> destination
+	formula:
+		C = H(signal) - H(noise) = W'log((S - N) / N)
+	shannon formulation:
+		A is amplitude (of information source)
+		W is width (of target)
+		a and b are empiric values, use linear regression
+		movement time MT = a + b log (A/W + 1)
+		information source is the amplitude, width is the noise
+		determine a, b for device by varying A, W in experiments
+		adjust the target width such that 96% hits
+		
+extensions of fitts law:
+	more dimensions:
+		UI's are mostly 2D, buts fitts only 1D
+		can generalize the formula for 2D, 3D, ...
+	angular motions:
+		consider rotations instead of linear motion
+		just replace A, W with angulars
+	steering law:
+		predicts time for trajectory movements
+		fits nested menus, handwriting, ...
+	continuous steering law:
+		steering along curve
+	
+applications of fitts law:
+	evaluate input devices:
+		empirically find a, b for different devices
+		compare devices
+		leads to optimized mouses
+	optimize user interfaces:
+		empirically find a, b for UI
+		optimize UI elements for predicted movement times
+		leads to optimized keyboards
+	does not include:
+		body asymmetries (left vs right hand, flexion vs extension)
+		parallelization strategies (two hands, multiple fingers)
+		cognitive factors (reaction time, searching time, ..)
+
+Interaction Paradigms & Computational UI Design
+=========
+	
+UX milestones
+	mouse 1964, usable at 1983
+	touch sensing table 1985
+	smartskin 2002
+	idea growth: 
+		invention
+		refinement & augmentation
+		traction (when its finally used)
+	
+interaction paradigms:
+	commands: directly typing in commands with the command line
+	dialogue systems: onscreen / speech-based dialogue systems
+	searching and browsing: list / grid with all items
+	direct manipulation rules: 
+		visibility of objects and actions (self-explanatory)
+		rapid, reversible, incremental actions (allows to recover)
+		direct, visual manipulation of object of interest (eases memorability)
+		
+emerging interaction paradigmas:
+	context sensitive UI: 
+		knows where you are
+		predicts your next action
+	natural language interface: 
+		speech commands
+		AI & search still bad
+	AI UI issues:
+		not self-revealing
+		difficult to understand what its capabilities are
+		severe novelty effect (only used at the beginning)
+		social acceptance issues
+		high cognitive load
+	augmented reality:
+		quite old, but old phase was not successful
+		next phase probably now
+
+UX livecycle:
+	costly, unrealiable, slow, subjective, non-accumulative
+	multiple iterations often better than single idea
+	getting the design right (refine existing design to perfection)
+	and the right design (change approaches to overcome local minima)
+	analyze: understand user works and needs
+	design: create interaction design concepts
+	prototype: realize design alternatives
+	evaluate: verify and redefine interaction design
+	
+model-based UI optimization:
+	designer proposes stuff (driven by design studies)
+	optimizer generates model (driven by computer science)
+	model is evaluated (by behavioural sciences)
+	then use model to create optimal user interface
+	in general:
+		minimize sum:
+			frequency of i used after k
+			effort from j to l
+			random variables i to j
+			random variable k to l
+			(random variables determine tested layout)
+		solve with: 
+			greedy (locally optimal choice)
+			dynamic programming
+			constraint programming
+			branch and bound
+		multi-objective optimization:
+			includes additional possible factors
+			performance (speed, accuracy)
+			experience (satisfaction, aesthetics)
+			effort (energy consumption, fatigue)		
+	linear assignment:
+		frequency factor:
+			entry value
+		effort factor:
+			fix value 1
+	keyboard:
+		frequency factor:
+			use dictionary
+			use world frequency
+		effort factor:
+			with fitts law
+			a + b log(D_ij/W_j + 1)
+	menu-optimizer:
+		adapt keyboard optimization
+		include SDP:
+			search (time to find item, increases linearly with items in menu)
+			decision (time to decide upon item, determined by experiment data)
+			pointing (time to point to right item, determined by fitts law)
+		consistency:
+			pull same items together
+			penalize wrong positioned items
+			remove not matching items
+		frequency factor:
+			number of items in menu
+			position of target menu
+			number of trials
+			decision entropy
+		effort factor:
+			fitts law
+		
+experimental design
+======
+
+evaluation types:
+	formative:
+		early in the design process
+		understand the user:
+			sanity check the right thing is built
+			observe and understand current processes
+			generalize observations into functionality
+			create scenarios for actual usage
+		prototype interfaces:
+			low fidelity techniques (paper, video)
+			interactive (limited functionality in high level language)
+	summative:
+		check if solution works, has been improved, compare with other solutions
+		measure quality:
+			analytics (experts)
+			empirical (measure how well task is completed)
+		measure statements:
+			less errors, faster completion time
+			check if target metric is reached on average
+		metrics:
+			effectiveness, efficiency, satisfaction
+
+study:
+	cause and effect:
+		cause has to precede effect
+		cause and effect need to correlate
+		all other possible explanations must be ruled out
+	infer causality:
+		experiment where cause is present (independent variable 1)
+		control group where cause is not present (independent variable 2)
+		choose dependent variable (like grade)
+		show correlation
+	characteristics for empirical:
+		objectivity, reproducible, relevance
+		external validity (good sampling, big sample sizes)
+		
+analyze data:
+	how to analyze data?
+	view data:
+		display max, min, n
+		mean (average over values)
+		median (number at middle of value)
+		mode (most frequent value)
+		range (value range, max - min)
+		check histogram (uniform, symmetric, skewed, bimodal)
+	representing error:
+		sum of squared error (sumof diff value to median)
+		variance (divide by n-1)
+		standard derivation SD (root of variance)
+		standard error SE (SD divided by sqrt(n))
+	t-test:
+		difference mean_test - mean_control, divided by SE_test
+	confidence interval:
+		replicate experiment extensively
+		persist confidence interval
+		then do statistical tests with the confidence intervals
+	writing up results:
+		define statistical procedure
+		describe samples with median, mean, confidence interval
+		describe difference with statistical values
+		visual representations
+	
+HCI studies
+=====
+
+survey of statistical problems in HCI
+	60% fail to report data appropiately
+	30% use wrong statistical assumptions (use non-applicable tests)
+	30% do over testing (using same samples for different purposes)
+	20% do inappropiate testing 
+	for published papers, in medicine report failure at 90%!
+	see wikipedia.org/wiki/Misuse_of_statistics
+	why:
+		p 0.05 value is arbitrary
+		only results published (if something does not work, its not published)
+		lack of awareness
+	problems with bigger samples:
+		more participants stabilize slowly, therefore costly
+		better measurements can also help to increase power
+	robustness:
+		statistical analysis robust when similar datasets create similar results
+		plot robust when difference clearly visible
+		interpretation robust when similar datasets imply similar interpretations 
+	possible solutions:
+		prohibit usage of p values to draw conclusions
+		researchers should refrain from final conclusions
+		
+study fundamentals:
+	within subject design:
+		everybody does everything
+		each subject sees all independent variables
+		need to permute presentation order to avoid learning effects
+		full randomization implies n! groups, use latin square counterbalacing
+		shift condition by one place per row, reorder rows, reorder columns
+	between subject:
+		only one condition per group
+		each subject sees only one independent variable
+		need to balance groups to account for different skill levels
+		personal interviews or random assignment
+	independent variables:
+		what is compared
+		categorical (unordered discreet, countries)
+		ordinal (ordered discreet, month)
+		cardinal / interval (continuous values, height)
+	dependent variables:
+		what is being measured
+		precise, unambiguous measurements
+		collect quantitative feedback (how many, how much)		
+		difference between behavioural (what is done) and attitudial (what is said)
+	extraneous variables:
+		what else is varied, but can't be accounted for
+		gender, age, nationality
+		
+how to do a study:
+	goal of study (what to investigate):
+		set a research question
+	study design:
+		define a goal, set a research question
+		define how to evaluate your research question
+		what is being compared (independent variables)
+		what are they compared with (dependent variables, metrics)
+		what is being varied (extraneous variables like age)
+	subjects design:
+		within design (but need to counter balance to avoid learning effects)
+		between design (but need to account for different skill levels)
+		define sampling (for example convenience sampling)
+	measurement design:
+		define metrics to measure your research question
+		think about multiple data sources 
+		find effects in different sources (triangulation)
+	possible metrics:
+		number of keystrokes, mouse clicks, page visits
+		self-reported values, observations
+		task completion time
+		error rates
+	standardized questionnaires:
+		NASA TLS (perceived task load)
+		SUS (system usability scale)
+		UEQ (user experience questionnaire)
+	study procedure:
+		what participants need to do
+		create a handout with detailed instruction
+		define what has to do before the task
+		how the task has to be done
+		what has to be done after the task
+		include open questions
+		include section for experiment conductor (starttime, endtime, notes)
+		include section at the end to say thanks
+	study evaluation:
+		define how the measures will be tracked
+	study hypothesis:
+		define whether qualitative (explain) or quantitative (measure)
+		define hypothesis and their reasoning
+	organisation:
+		ask people personally if they want to sign up
+		use a nice tool for them to register (for example typeform)
+		shortlink to pass around
+		confirm event personalized
+		bring something to eat
+		lottery if unable to pay participants
+		"thank you" email with results of study
+	write report:
+		use standard format like apa6
+		abstract for a short summary
+		introduction section contains motivation, explains product / functionality
+		methods section explains how study was performed
+		results section visualize quantitative results (p values, graphs)
+		discussion explains qualitatively the seen results (why, how to fix)
+
+interaction design:
+	applies	to desktop, mobile, web pages, ...
+	aiming:
+		support users rather than replacing them
+		enrich the user experience
+		10 minute rule (learn & use time for new users)
+	identify users:
+		all stakeholders
+		study setting, not individuals
+	general process:
+		requirement analysis
+		prototype continuously adapted by evaluation results
+		evaluation with studies
+	design process:
+		establish requirements
+		develop conceptual model (define interaction)
+		produce rough models
+		experiment with alternatives
+	scenarios:
+		informal narrative descriptions
+		"real world" events and the resulting interaction
+		develop into use cases
+		maybe create storyboards
+		establish requirements with customer
+	sketches:
+		quick, plentyful, disposable
+		clear vocabulary (not an implementation)
+		constrained resolution (capture only the concept)
+		refinement keeps concepts
+	prototypes:
+		turn sketches into interactions
+		can use paper (cheap, encourages creativity)
+	workflow to working system:
+		brainstorm different ideas (lot of sketches)
+		choose idea, and create rough interface (sketch variations)
+		task centered walkthrough (low fidelity prototypes)
+		fine tune interface with heuristic evaluation (medium fidelity prototypes)
+		usability testing (high fidelity prototypes)
+		limited field testing, alpha/beta testers (working system)
+	some targets:
+		rewarding, aesthetically pleasing, motivating, helpful, enjoyable, satisfiable
+		efficient & safe to use, easy to learn & remember, good utility
+	design principles:
+		visibility (show action user wants to perform)
+		feedback (visual, audio, tactile reaction of what is happening)
+		constrains (restrict actions to reduce errors)
+		mapping (natural control-action connection)
+		consistency (same workflows, grouping)
+		affordances (give clue of what is going to happen)
+		simplicity
+	text:
+		novice readers assemble words letter per letter
+		advanced readers skip assembling
+		avoid repetition and long paragraphs
+		avoid centred text
+	considerations:
+		allow for colour blindness
+		only small part is actually seen sharp
+		attract attention with movement or colour to important information
+		continuity (eye completes image)
+		figure / ground (eye assumes something to be in the front)
+		remind users of their actions (persist search query, use adaptive UI)
+		don't expect users to remember (show current step / progress, cleanup)
+		recognition easier than recall (shortcuts harder as finding menu element)
+		provide visual cues (show preview, show past actions)
+	visual hierarchy:
+		organize content using size, prominence, content relationships
+		vary text size, bold, order, grouping
+		use spacing and hierarchy for structure
+	gestalt laws:
+		emergence (form complex pattern from simple rules)
+		multistability (figure/background selection)
+		reification (brain assumes more content as explicitly shown)
+		invarriance (3D recognised in 2D)
+		closure (complete shapes)
+		similarity (similar objects form group)
+		proximity (close objects form group)
+		continuity (assume overlapping objects are simple shapes)
+		
+paper prototyping:
+	steps:
+		create user profile
+		decide on task
+		create prototype
+		perform walkthrough
+		plan study
+	good task:
+		critical for product
+		goal that matters for user
+		finite set of solutions
+		clear ending point
+	run study:
+		facilitor (guides the process)
+		computer (simulates the system)
+		observers (document the study)
+		helpers (provide help if asked to do so)
+	construct paper prototype:
+		list screens for each task and create them
+		break down screen into elements (can be switched)
+		hand-drawn vs screenshot mix
+	good at:
+		find issues with requirements
+		detecting unclear concepts
+		problems with navigation, workflow
+		define documentation and help requirements
+		find issues with layout
+	bad at:
+		find interaction issues
+		input methods (like scrolling)
+		response time
+		animations
+		
+video analysis:
+	why:
+		observing users can be more revealing than asking them
+		revisit scenes many times, focusing on different aspects	
+		collaborative analysis
+	captures:
+		basic actions
+		verbal communication
+		facial expressions
+		gestures, body movement
+		gaze
+	gain access:
+		management (in their interests, no interference with work)
+		workers (get insight into skills / issues, say not about optimising)
+	ethical considerations:
+		informed (everything which may occurs is disclosed)
+		consent (rational, mature, voluntary agreement, free from pressure)
+		formal informed consent required
+		give time to ask questions
+		inform detailed in public places
+		agreement of parents in schools
+		preserve privacy (blur, remove sensitive remarks)
+		determine how data is stored (time, place, usage, access)
+	recording:
+		sample recordings
+		wide angle captures scenes but loses details
+		short-angle captures interaction but loses expressions
+		external micro often required
+	get users to speak:
+		ask users to think aloud
+		work in pairs to hear discussion of problems
+	structuring data:
+		preliminary catalogue, describing all interviews which took place
+		transcribing segments for future reference
+		transcribing visible conduct for future reference
+		
+touch:
+	FBTouch:
+		basic touch optimization, multi-touch extensions
+		touch-enhanced interface (more spacing)
+		touch event handling
+		touch event tracking with easy matching
+		touch event capture and delegation
+		touch device detection
+	W3Touch:
+		logging, inspection, segmentation, adaptation
+		rather poorly optimizes non-mobile sites for mobile
+
+cross-device applications:		
+	eye-free pen interaction:
+		what:
+			handheld mobile device which can change colours, erase, stroke, undo/redo
+			use pen to "write" on whiteboard
+			recognised stroke then projected on whiteboard
+		study:
+			compare three UI's
+			eyes free uses touch gestures to command
+			classic uses big buttons
+			popup was displayed on the whiteboard
+		study process:
+			design (conditions, tasks, questionnaires, measurements)
+			implement (study setup, adapt software, logging)
+			pilot (test issues, time, instructions with pilot subjects)
+			recruit (find participants, schedule appointments)
+			run (keep conditions stable, collect data)
+			report (statistical analysis, interpret results)
+		study results:
+			eyes-free & classic faster than popup
+			no other significant results
+		study problems:
+			participants used classic UI also eyes free
+			too few participants
+			not so great logging
+	cross device testing:
+		what:
+			can debug on different device connected by wireless
+			shared css / javascript editor
+		study:
+			can't do proper study cause no time
+			instead 2-hours lab study with inexperienced developers
+			browser debugging tool as baseline
+			prepare remote debugging
+			two tasks to solve, one rather easy
+			recorded video, questionnaire, measured time, code written by participants
+		study results:
+			participants liked tool
+		study problems:
+			tasks not well balanced
+			not all features under test were used
+			participants were bad at judging their skills
+		
+digital pen & paper:
+	to bridge paper-digital divide
+	automated form processing:
+		pen strokes captured and stored on pen
+		data uploaded to pc	
+	paper point:
+		control powerpoint with printout
+		free pages for free drawing
+	multimedia pen:
+		capture audio, real time processing
+	iPaper:
+		create active areas inside pdfs and link to multimedia
+	EdFest:
+		tourist guide with paper documents & pen
+		interactive event brochure
+		can rate attractions, navigate on map
+		noone cared
+		lack of clear goals & hypothesis other than impress
+		lack of collaboration with designers, systems people
+		lack of frameworks made the application way to complex
+		needed nearby laptop to function properly (lol)
+	Print-n-link:
+		use digital services to search/retrieve cited publications
+	PaperProof:
+		edit on paper, changes are reflected on computer
+	iGesture:
+		draw gestures on paper, which will then be executed on pc
+	iTable:
+		map projected on table, can be written on
+
+adobe lightroom:
+	easy to use photoshop
+	task-based, modular
+	different applications:
+		wedding (post-processing, publish to webpage)
+		landscape (well prepared, filters & post-processing)
+		studio (well prepared, direct review, post-processing)
+		wildlife (catching the moment, lots of pictures)
+		sports (review in short time)
+	first phase:
+		user interviews (phone & personal visits)
+		walking through the activities of recent photo shoot
+		starting with high-level overview of last job, then communicating timeframe to discuss certain activity
+	impact of first phase:
+		general framework for workflows in the real world
+		users were patching together wide range of tools
+		found out which feature of PS are crucial
+	define task based environment:
+		used card sort to ask photographers how workflow should be structured
+		0. cards with tasks written on are given
+		1. exclude all cards which were not applicable
+		2. add new cards with missing functionality
+		3. grouping, duplicating & arranging cards
+		4. creating names for the groups
+		5. repeat 1&2 for feature cards
+		6. add the feature cards to the task groups
+		highly consistent workflows & features used could be shown
+		summarized results on poster
+	key features lightroom:
+		workflow top right (library, develop, slideshow, export)
+		user driven attributed (mark images)
+		faceted search & metadata (search by tags, labels, attributes)
+		in place image manipulation (marking, moving)
+		different visualization (fast change UI layout)
+		organize images into folders
+		select images based on ratings
+		compare images
+		simple post-processing
+		export as slideshow, print, web
+	online interview:
+		general background questions
+		scalar agreement questions (likert scale)
+		multiple choice questions
+		open questions
+	online interview considerations:
+		personal information can be sensitive
+		ask at the end of questionnaire as user more likely to answer
+		provide slider/ranges where applicable
+		recruited using social media
+		offer reward if it does not distort subject group
+		as short as possible
+		only few open questions
+		no jargon
+		what to do if running issues contains mistakes
+	study results:
+		browsing folders more common than search
+		keywords, smart collections not often used
+		
+communications:
+	everybody communicates; denying communication also communication!
+	not only worlds but also meta-info exchanged depending on speaker and target
+	rules of conversation:
+		next speaker starts talking, current speaker continues or chooses next
+		next speaker chosen by asking question, making request, inviting opinion
+	irritation:
+		if rules disobeyed, interrupt constantly, ignore cues
+	specifying length of talk:
+		state length explicitly, or finish with explicit sentence
+		shift body, change focus, use gestures
+	adjacency pairs:
+		multiple concurrent conversations in one using phrase pairs
+		first phrase determines which conversation continues
+	new forms of communication:
+		e-mail (clear turn taking, one to many, recipient controls pace)
+		emoticons (clearly communicate intention of sender)
+		social media (supports, relationships, lightweight conversations)
+		rich media (face-to-face communication like video calls)
+		lean media (text-only chat)
+	collaboration:
+		task-related goals with known team of small size
+		collaboratory are big collaboration groups
+		emails, calls, conferencing, shared files
+		goal-directed, time-limited, identified parters, assigned tasks, cross-review
+	effective collaboration:
+		abolishing emails may help
+		social media for workplace
+		simple tools as doodle can be very effective
+	crossover:
+		wikis, blogs, chats
+	social media:
+		tagging, rating, review
+		large scale
+		playful, unknown parters, act independently
+	crowdsourcing:
+		large-scale collaborations
+		unclear motivations, quality, ethical, social implications
+	effective crowdsourcing:
+		use algorithms which allow concurrent editing, undo/redo
+		use privacy sensitive environment (explicit push of changes, not WIP)
+		awareness of others work helps to avoid conflict
+	awareness mechanism:
+		awareness visualization (displays who did what)
+		awareness computation (finds out who did what)
+		consistency algorithm (sync stuff)
+		structured document (allows concurrent editing)
+		operations (persist actions performed)
+	organisation forms:
+		face to face interactions:
+			same place / same time
+			use presentations, whiteboards
+		continuous task:
+			same place / different time
+			project management, team rooms
+		remote interactions:
+			same time / different place
+			video, chat, screen share
+		communication / coordination:
+			different time / different place
+			emails, blogs, shared files, forums
+		
+ambient information:
+	inform without distracting (like steps in house warn of arrivals)
+	easy switch between periphery and centre of attention
+	nice to know, non-distracting, push rather pull
+	communication zones:
+		device with interaction, notification, ambient zone
+		active zone depending on distance of observer
+	examples:
+		informative art (image different depending on ambient)
+		info canvas (user chooses visualization if condition met)
+		composition (coloured, sized squares visualize weather)
+		live wire (moves faster if more bits in channel)
+		AuraOrbs (bubbles visualize presence of coworkers)	
+		medication boxes help to remember
+		umbrella lights up when ugly weather outside
+		light buildings according to events happening inside
+		
+other input methods
+========		
+		
+beyond mouse and keyboard:
+	mobile spread:
+		mobile are more common than desktops
+		responsive design focuses on adapting content rather than different modes of interaction
+	developers study tilt-and-tab:
+		js library for recognising tilt and tab gestures
+		goal:
+			easy to use according to developers
+		task:
+			create slideshow
+			small tasks including all major features
+			group work like real company
+			larger number of participants
+			but maybe only part involved, no lab environment
+		participants:
+			web students
+			perfect set of skills, but forced to do the exercise
+		evaluation:
+			grade of exercise, questionnaire
+			lot of feedback, but not allowed to link grade/feedback
+	
+gestures:
+	form of non-verbal or non-vocal communication in which visible bodily actions communicate particular messages 
+	motion of the body which contains information
+	types:
+		symbolic (single meaning within culture)
+		iconic (about size, shape, orientation)
+		pantomimic (use of invisible object)
+		deictic (specify object, directing attention)
+	define a good gesture:
+		design (by developer or user)
+		memorability (how well remembered form / action)
+		consistency (in form and action)
+		customization (how users customize it)
+		registration (part-gestures recognition)
+		segmentation (when it starts/end)
+		conflict (distinguish from others)
+		completeness (all actions covered by set)
+		
+psychology:
+	Inattentional Blindness:
+		attention is directed to different things; big changes can go unnoticed
+		unusual changes hard to detect (like fading building facades)
+	Perceived Dominance:
+		perception of factors such as power, intelligence based on appearance
+		height, age, facial features

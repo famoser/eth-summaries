@@ -24,6 +24,7 @@ It needs some time to get good at it, and I first needed to get used to the .fex
 | 2017-2 Human Computer Interaction | ★★★★☆ |
 | 2017-2 Managerial Economics | ★★☆☆☆ |
 | 2017-2 Network Security | ★★★★★ |
+| 2018-1 Intellectual Property | ★★★★☆ |
 | 2018-1 Internationale Politik | ★★★★★ |
 
 ## contribute

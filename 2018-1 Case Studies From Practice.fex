@@ -499,11 +499,12 @@ FP results:
 		more logic mistakes per statement
 		more LOC per function point
 		more defects per function point
-	changes with FP (1 -> 10000):
+	effort changes with increasing FP (1 -> 10000):
 		management effort (10 -> 16)
 		error correction (15 -> 35)
 		paper work (5 -> 31)
 		coding (70 -> 18)
+	risk changes with increasing (1 -> 10000):
 		changing requirements (0 -> 45)
 		poor project quality (0 -> 90)
 		observed project delay (0 -> 80)
@@ -903,7 +904,7 @@ credit suisse setup:
 		2015 decoupling of security processing from SBIP
 		since 2016 redesign
 	problems with migration:
-		analysis took to long (results outdates)
+		analysis took to long (results outdated)
 		limited people with strong business / IT skills to architect complex systems
 		reverse engineering impossible through continuous changes
 		design deadlock because of too many dependencies
@@ -991,7 +992,7 @@ lessons learned:
 		can transformed, replaced, or rewrite
 		some attempts to collect requirements failed
 		need for coexisting platforms due to step-by-step migrations
-	stategies:
+	strategies:
 		micro services for flexibility, but difficult to decompose systems
 		DLT, but bottlenecks to work at scale of bank (solutions exist)
 		utility approach, i.e. solutions shared with others

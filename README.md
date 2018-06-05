@@ -26,6 +26,7 @@ It needs some time to get good at it, and I first needed to get used to the .fex
 | 2017-2 Network Security | ★★★★★ |
 | 2018-1 Intellectual Property | ★★★★☆ |
 | 2018-1 Internationale Politik | ★★★★★ |
+| 2018-1 Case Studies From Practice | ★★★★☆ |
 
 ## contribute
 If you've found mistakes or spelling errors feel free to create a pull request (edit the .fex files like any other text file, the encoding is UTF-8). 

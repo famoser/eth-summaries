@@ -29,7 +29,6 @@ challenges in companies:
 		start with technical problem
 		describe business problem(s) it leads to
 		describe possible solution(s) for each business problem
-		
 
 information formats:
 	in general:
@@ -127,6 +126,32 @@ analyze company / products:
 		customer segments (target group)
 		revenue streams (billable services)
 		cost structure (expenses)
+		
+
+	business case:
+		define business problem:
+			about the project & key questions to be resolved
+			deliverables, objectives, outcomes
+		identify target customer needs:
+			where does it fit in customer journey
+			how does customer do it now, how will it change
+		outline benefits:
+			address issues, ensure alignment to overall strategy
+			increases in revenues, reductions in cost
+			customer loyalty & perception changes
+		estimate cost:
+			total investment (effort + expenses), timeline & different options
+			assumptions & likelihood of estimates
+		identify risks:
+			risk when doing projects vs when not
+			technology risks, technology changes
+			how to cover if over budget, time
+		calculate returns:
+			potential return (best/worst estimates)
+			resources needed to maximize returns
+		define success metrics:
+			implications on key performance indicators (best/worst estimates)
+			metrics to top-line (revenue) & bottom-line (profit) business gains
 		
 create new product:
 	startup vs internal development:
@@ -271,7 +296,7 @@ kaba exivo:
 		develop internally instead in startup to avoid reintegration issues
 	risks:
 		high investment to until customer value generated
-		balance brand value & early market release
+		need to balance brand value & early market release
 		established business processes difficult to adapt
 	timeline:
 		envisioning (create core-team, establish vision, scope, requirements)
@@ -284,7 +309,7 @@ kaba exivo:
 		customers need to be persuaded of new pricing, are more dependants
 		managers must take new end-to-end responsibility, new procedures
 		managers must manage touch points of new system with old business
-		managers must support development approaches (fail early, new tools, reporting)	
+		managers must support development approaches (fail early, new tools)	
 		hr/recruiting must attract new employees from different industry
 		sales needs to rethink measures of success
 
@@ -312,7 +337,7 @@ provide data:
 	aggregated by zip code, by weekday, by month, by day
 	legal issues:
 		set minimal bound according to regulations
-		respect general data protection directive GDPR, contry specific
+		respect general data protection directive GDPR, country specific
 		allow opt-out (usa with webpage, ignore foreigners)		
 	hosting issues:
 		AWS (very expensive due to constant, predictable load)
@@ -358,17 +383,10 @@ market platform:
 		value for each participant increases
 		competitors have hard start
 	introduction strategies:
-		letter of intent (register if 150 parties agreed)
+		letter of intent (promise to register if 150 parties found)
 		partnerships with TCS, SBB, tamedia
 		exclusivity (regional, limited in time)
-		
-find first 150 hotels:
-	cover all regions, types of hotel
-	letter of intent with exclusivity:
-		first signing right for 14 days
-		get exclusive regional access for limited time
-		hotels promise to create profile if 150 hotels found
-		
+	
 sales strategy:
 	sales partner like SBB, TCS
 	offer:
@@ -452,13 +470,16 @@ cost effectiveness and software metrics
 ======
 
 productivity of software development:
-	function points / person months inversed exponentials
-	10 points / months at 100 points
-	4 points / month at 2000 points
-	2 points / month at 8000 points
-	1 point / month at 16000 points, and decreasing further
-	comparison applies within same company or controlled environment
-	
+	development:
+		function points / person months inversed exponentials
+		10 points / months at 100 points
+		4 points / month at 2000 points
+		2 points / month at 8000 points
+		1 point / month at 16000 points, and decreasing further
+		comparison applies within same company or controlled environment
+	maintenance:
+		fixed at 10%-15% of project development effort
+		
 function point (FP):
 	metric to asses quality and productivity of software
 	convert requirements to FP, then estimate cost with past metrics
@@ -493,8 +514,12 @@ FP results:
 		1k P is commercial, 100k LOC, 1m, >1y
 		10k P for system, 1m LOC, 10m, 5y, 100people
 		100k P for OS, 12m LOC, 1bio, 8y
-	observations:
-		maintenance fixed at 10%-15% of project development effort
+	explanations why big is bad:
+		implementation of new functionality more difficult
+		large retesting efforts after each new change
+		maintenance effort bigger (missing support, libraries stop working, ...)
+		architecture degrades (unused code, now obsolete or unfit patterns)
+		knowledge gets lost (employee leaves, forgets)
 	low language levels:
 		more logic mistakes per statement
 		more LOC per function point
@@ -509,12 +534,6 @@ FP results:
 		poor project quality (0 -> 90)
 		observed project delay (0 -> 80)
 		project cancellation (0 -> 40)
-	explanations why big is bad:
-		implementation of new functionality more difficult
-		large retesting efforts after each new change
-		maintenance effort bigger (missing support, libraries stop working, ...)
-		architecture degrades (unused code, now obsolete or unfit patterns)
-		knowledge gets lost (employee leaves, forgets)
 	conclusions:
 		productivity decreases with size of system
 		synergies of projects must be high to be integratable in single product
@@ -522,15 +541,12 @@ FP results:
 		marginal requirements increase cost, risk exponentially
 
 estimate new project:
-	find efficiency at current FP level
+	find efficiency at current FP level (FP/PM)
 	calculate person months
 	take square roots for team size / duration
 	read out LOC / FP for the specific language
-	argue:
-		assume 30% for coding & 30% error correct
-		if another language, compare LOC/FP and change PM accordingly
-		if new language to learn, include performance reduction 10%
-
+	if another language, compare LOC/FP and adapt needed PM accordingly
+	if new language to learn, include performance reduction ~10%
 	
 AIP case study
 ====
@@ -632,7 +648,7 @@ workflow:
 		customer journey:
 			analyze customer touchpoints with brand/product before/after purchase using persona
 			discover (push info, ads / friends), explore (pull info, call / webpage), buy (purchase), engage (maintenance)
-			collected touchpoints describing actions of user, used channel, emotional response
+			collected touchpoints describing user actions & channels, emotional response
 			emotional responses can be frustration, anxiety, satisfaction, happiness
 	digital benchmark:
 		market analysis & trend forecasting
@@ -665,41 +681,18 @@ workflow:
 		quantify projects
 		create actionable roadmap
 		do final workshops, project team analysis
-		use prioritized portfolio, business case
-		business case:
-			define business problem:
-				about the project & key questions to be resolved
-				deliverables, objectives, outcomes
-			identify target customer needs:
-				where does it fit in customer journey
-				how does customer do it now, how will it change
-			outline benefits:
-				address issues, ensure alignment to overall strategy
-				increases in revenues, reductions in cost
-				customer loyalty & perception changes
-			estimate cost:
-				total investment (effort + expenses), timeline & different options
-				assumptions & likelihood of estimates
-			identify risks:
-				risk when doing projects vs when not
-				technology risks, technology changes
-				how to cover if over budget, time
-			calculate returns:
-				potential return (best/worst estimates)
-				resources needed to maximize returns
-			define success metrics:
-				KPI's affected, and their best/worst estimates
-				metrics to top-line (revenue) & bottom-line (profit) business gains
+		use prioritized portfolio
 				
 breitling:
-	product:
-		price to different socio economic background of clients
-		product features important
-		price compromised of value associated & material value
-	market:
-		informed buying, decision emotional
-		complex market with different brands, models
-		customers often online, susceptible for input from environment
+	setting:
+		product:
+			price to different socio economic background of clients
+			product features important
+			price compromised of value associated & material value
+		market:
+			informed buying, decision emotional
+			complex market with different brands, models
+			customers often online, susceptible for input from environment
 	non-digital customer journey:
 		discover:
 			advertisement seen (not personalized)
@@ -844,10 +837,10 @@ cyper-attack:
 		costs caused by disruption of services
 		post-breach protection/cyber security improvements
 	invisible impacts:
-		costs of regulatory improvements (GDPR)
+		costs of regulatory changes (GDPR)
 		loss of IP
 		loss of potential clients, devaluation of brand
-		increase of insurance premium
+		increase of insurance fees
 		organisational changes when executives change
 	
 credit suisse
@@ -886,13 +879,12 @@ history of banking systems:
 		new complex interfaces, must features, failed migrations
 		can't find new staff
 	current status:
-		40 year old applications till running on newest mainframe technologies
+		legacy applications both huge asset & burden
+		40 year old applications running on newest mainframe technologies
 		fit for purpose, highly scalable, rich applications
 		but difficult to manage (high complexity, lack of qualified staff)
 		lot of lost knowledge (business processes, requirements, code)
 		not fit for real-time processing, micro service
-	bottom line:
-		legacy application huge asset & burden
 	
 credit suisse setup:
 	swiss banking IT platform (SBIP)
@@ -904,7 +896,7 @@ credit suisse setup:
 		2015 decoupling of security processing from SBIP
 		since 2016 redesign
 	problems with migration:
-		analysis took to long (results outdated)
+		analysis takes to long (results already outdated)
 		limited people with strong business / IT skills to architect complex systems
 		reverse engineering impossible through continuous changes
 		design deadlock because of too many dependencies
@@ -914,7 +906,7 @@ credit suisse setup:
 		unable to obtain budget, too low priority
 		market events driven cost/investment rationalization
 	optimized mainframe:
-		rich business functionality
+		rich business functionality, still considered "fit for purpose"
 		high scalability (optimized code, timely distributed load)
 		highly integrated, single instance system
 		but decreasing supply of engineers, high platform cost
@@ -924,10 +916,34 @@ credit suisse setup:
 	parallel distributed system approach:
 		high scalability (distribution, parallelization)
 		business agility through segregated micro services
-		adaopt new technologies gradually
+		adapt new technologies gradually
 		low platform cost
-	
-	
+
+migration:
+	to stay relevant & competitive in fintech
+	rewrite (for new language, platform, apis; but not future ready)
+	replace (off-the-shelve with customizations, redesign business)
+	transform (green-field, reinvent business)
+	drivers:
+		expensive hardware, software licenses
+		not aligned to IT or business perspective anymore
+		high operational risk, production stability, change efforts
+		end of life of architecture, technology
+		skills & people risks
+		new approaches (DLT, ML, micro services)
+	challenges:
+		people (psychological bias against change, office push/pulls)
+		complexity (high volume, complex interfaces/integrations/maintenance)
+		financial (significant cost increase, multi-year commitments)
+		legacy knowledge (lost & forgotten, old philosophy & technology)
+		project management (different stakeholders, moving target, large project)
+	new technical approaches:
+		utilities (existing standard products)
+		distributed ledger technology (DLT) to ease communication
+		machine learning, artificial intelligence for big data problems
+		micro service architectures to replace monoliths
+		agile development for faster execution, validation of requirements
+
 security settlement engine (SE):
 	manages delivery, receipt of securities (dematerialized & physical)
 	35 years old, some automation, very efficient
@@ -958,44 +974,6 @@ security settlement engine (SE):
 		but needs fast, cheap way to build integration layer with current system
 		DLT to replace middle man, messaging
 		but needs sync between DLT & existing database
-
-migration:
-	to stay relevant & competitive in fintech
-	rewrite (for new language, platform, apis; but not future ready)
-	replace (off-the-shelve with customizations, redesign business)
-	transform (green-field, reinvent business)
-	drivers:
-		expensive hardware, software licenses
-		not aligned to IT or business perspective anymore
-		high operational risk, production stability, change efforts
-		end of life of architecture, technology
-		skills & people risks
-		new approaches (DLT, ML, micro services)
 	challenges:
-		people (psychological bias against change, office push/pulls)
-		complexity (high volume, interface/integration/technical/maintenance sophistication)
-		financial (significant cost increase, multi-year commitments)
-		legacy knowledge (lost & forgotten, old philosophy & technology)
-		project management (different stakeholders, moving target, large project)
-	new technical approaches:
-		utilities (existing standard products)
-		distributed ledger technology (DLT) to ease communication
-		machine learning, artificial intelligence for big data problems
-		micro service architectures to replace monoliths
-		agile development for faster execution, validation of requirements
-
-lessons learned:
-	mainframes:
-		40yrs old systems still considered "fit for purpose"
-		efficient code to operate on 40yrs old hardware with large business volume
-	migrations:
-		can transformed, replaced, or rewrite
-		some attempts to collect requirements failed
-		need for coexisting platforms due to step-by-step migrations
-	strategies:
-		micro services for flexibility, but difficult to decompose systems
-		DLT, but bottlenecks to work at scale of bank (solutions exist)
-		utility approach, i.e. solutions shared with others
-	DLT network challenges:
 		business challenges (network effect, get & align goals of participants)
 		technical side (new & old coexist, DB synchronization, many interfaces)

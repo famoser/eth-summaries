@@ -27,6 +27,11 @@ Generally, the newer the summary, the more consistent is the structure & the wor
 | 2018-1 Internationale Politik | ★★★★★ |
 | 2018-1 Case Studies From Practice | ★★★★☆ |
 | 2018-1 Project Management | ★★★★☆ |
+| 2018-1 Object Databases | ★★★☆☆ |
+| 2018-1 Object Databases (short) | ★★★★☆ |
+
+Comments:  
+Object Databases (short) is without general statements like "can be configured" and perceived irrelevant details (syntax for dead libraries) but may not be complete  
 
 ## contribute
 The summaries are written in the .fex format (https://github.com/famoser/FexCompiler), and then compiled to latex.

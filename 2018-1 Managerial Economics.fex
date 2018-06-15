@@ -1,0 +1,776 @@
+investment under uncertainity
+======================
+
+definitions:
+	opportunity cost:
+		price of investing in projects rather than in securities
+
+analyzing cash flows:
+	nominal cash flow (ncf): 
+		inflows minus expenditures, hard value of cash
+	real value of cash (rcf): 
+		ncf corrected for discount rate (dr)
+		rcf = ncf/(1 + dr)^t (example 860 = (1000/(1+0.05))^ 5)
+	
+compare options:
+	choosing the right indicator, comparing absolute values
+	payback period:
+		time taken for project to pay back its initial investment
+		attractive if time needed for payback lower than threshhold
+		0 = investment - cashflow_project_over_p_years
+		choose option with lowest p (shortest payback period)
+		but ignores dr & payback rate (lot early or late has same score)
+	net present value (npv):
+		projects net contribution to wealth (total money earned)
+		attractive if dr corrected payback > investment
+		npv = -investment + real_cashflow_project_over_p_years
+		choose option with highest npv (ensure npv >= 0)
+		good because opportunity cost is considered
+		but ignores different livetimes & absolute size
+	internal rate of return (irr):	
+		return rate of investment over whole expected live time n
+		attractive if highest possible discount rate is outperformed
+		0 = -investment + real_cashflow_project_over_n_years (set irr = dc)
+		choose option with highest irr (ensure irr >= dc)
+		good because opportunity cost considered, dc can be a function
+		but ignores absolute size (-100,200 lower irr than -200,+350)
+	profitability index (pi):
+		pi = irr / investment
+		choose option with highest pi
+		
+incorporating risks:
+	minimize uncertainty
+	risks may make investment unattractive
+	each risk has a probability and an extend of impact
+	calculating risk:
+		using historical data, theoretical and subjective inputs
+		combine different risk sources with monte carlo simulation
+	avoid risks:
+		change the country due to other regulations, structures, subventions, ...
+		mental frame of managers
+		regulations
+		correlations between different projects
+	risk graph:
+		y with return, x with risk (or standard derivation of expected output)
+		risk averse/neutral/seeking if lower/ignoring/higher risk 
+
+new markets:
+	invention workflow:
+		invention (development of an applicable new idea)
+		innovation (successful introduction into niche market)
+		diffusion (innovation spreads into broader market)
+	disruptive innovations:
+		develop in niche where standard product outperform marked demand
+		upon reaching mainstream market performance have better characteristics
+		market leader is driven out of business
+
+
+strategic responses to disruptive innovations:
+	relation of innovation to core business (x)
+	fit of innovation with company resources and competences (y)
+	possible decisions:
+		ignore (x low, y low)
+		embrace (acquisition, alliance) or distract (lobbying) (x high, y low)
+		create option value (patents) or ignore (x low, y high)
+		embrace or undermine (patent trolling) (x high, y high)
+	exploitation vs exploration:
+		successful firms hold the balance
+		existing capabilities vs emerging opportunities
+		competitiveness vs long term survival
+		refine, implement vs search, experimentation		
+		invest in production vs cooperate with universities/technology
+		
+		
+energy sector case study
+======
+
+german energiewende:
+	1970-1980 governments invest in early stage wind energy
+	big companies blocked effort, sabotaged GROWAN research project
+	local & regional energy monopolies
+	1998 energy market liberalized
+	2000 german energy law guarantees fixed payments
+	2002 political will to phase out nuclear power
+	2014 most renewables owned privately, most from conventional sources
+	additionally reduce ghc emissions/heat/total energy demand
+		
+RWE:
+	2007 RWE still has no wind energy
+	2008 RWE innogy established (1 bio EUR per year, focus in renewables)
+	
+EON:
+	top management more open to new technologies
+	1999 solar
+	2002 offshore windpark
+	2008 climate & renewables section established
+	2011 partnerships with energy startups
+	
+RWE EON common:
+	little investment in other technologies
+	lobbying for a nuclear fadeout (lobbying did delay need for change)
+	but external shocks (fukusihma) changed business over night
+	overreliance on old business model / technologies
+	
+
+strategies
+=========
+
+definitions:
+	strategy:
+		goal-directed actions of firm to gain and sustain competitive advantage
+		long-term commitments to create value, be unique and low cost 
+	competitive advantage:
+		superior performance relative to other competitors in the same industry
+		
+BCG matrix:
+	relative market share (x)
+	market growth rate (y)
+	quadrants:
+		poor dogs (low x, low y) have low return & growth
+		cash cows (high x, low y) are mature business generating cash
+		question marks (low x, high y) need high-risk investments
+		stars (high x, high y) need high investments, might become cash cows
+	good:
+		compare different business with structure
+		decide on investments and divestments
+	bad:
+		only two dimensions, missing absolute values
+		market share != profitability
+		market is difficult to define
+		static model, expected changes cannot be considered
+		synergies between units not taken into account
+		
+leaning curve:
+	cost reductions with increase in production
+	technology push reduces cost abruptly (not output driven)
+	demand pull reduces cost due to economics of scale (output driven)
+	calculate b with c_0/c_1 = (x_1/x_0)^b for c cost, x capacity
+	progress ratio PR = 2^-b, learning rate LR = 1 - PR
+	
+SWOT:
+	identify strengths and weaknesses (internal analysis)
+	asses threats and opportunities (external analysis)
+	match strengths/opportunities, minimize weaknesses/threats
+	variable checklist:
+		research and development (product, process, pilots)
+		operations (cost, capacity, quality, efficiency, raw material control)
+		marketing (product lines, pricing, channels, market share)
+		management (responsiveness, quality of information)
+		team (skills, values, coordination)
+		finance (financial/operational leverage, tax, stockholders)
+	opportunities and threats:
+		societal (changing customer preferences influence demand/design)
+		governmental (legislation/enforcement changes cost/demand/investments)
+		economic (income/interest rates influences cost/demand/profit)
+		competitive (new products changes market share/advertising/quality)
+		supplier (cost/produces influences availability/cost/quality)
+		market (new markets influences demand/prices/channels)
+	good:
+		takes into account "as-is", internal + external
+		basis for designing strategy
+	bad:
+		not prescriptive, ignores values & expectations
+		weakness/strengths of company may depend on market
+		
+porter's five forces:
+	four forces determine intensity of rivalry
+	if rivalry intensity low, then firm performance higher
+	defend from new entrants:
+		proprietary (product differences, learning curve, trade secrets)
+		unique access (distribution, capital, knowledge)
+		cost advantages (efficient manufacturing, economies of scale)
+		established (policy, high switching cost, retaliations, brand identity)
+	defend from substitute:
+		low price performance of substitutes
+		established (high switching costs, buyer doesn't trust substitute)
+	limit bargaining power of buyers:
+		buyer (low concentration & volume, uninformed, not price sensitive)
+		firm (brand identity, merges with competitors, low bargain incentive)
+		substitutes (none, major differences, high switching cost)
+		product (low per unit price, of high quality/performance)
+	limit bargaining power of suppliers:
+		product (low impact on cost/differentiation, 
+		industry (high/important market share, lot of competitions)
+		substitutes (low switching cost, existing)
+		firm (low threat of acquisitions)
+	intensity of rivalry:
+		industry (growth, overcapacity, diversity, balance, exit barriers)
+		firm (brand identity, stakes)
+		product (differences, cost/value)
+		buyer (switching costs, information level)
+	good:
+		assess current industry situation
+	bad:
+		no consideration for firm internal resources
+		limited consideration of regulations
+		no uncertainty modelled
+		
+resources and capabilities:
+	resource:
+		assets (cash, factories, IP) to use when crafting & executing strategy
+		tangible (capital, land, buildings, equipment, suppliers)
+		intangibles (culture, knowledge, reputation, IP)
+		are valuable (high perceived benefit) & for parity advantage (goodwill)
+		are rare (unique) & inimitable (at same price) for temporal advantage
+		are non-substitutable (no reasonable replacement) for sustained advantage	
+	capability:
+		organisational skill to orchestrate & use resources appropriately
+
+
+oerlikon case study
+=====
+
+oerlikon:
+	innovative, heavy research, 4.8bn sales
+	leading supplier of solar with leading tech know-how & first-mover advantage
+
+solar market: 
+	strong growth 2005-2008, 2009 40% price decline
+	pressure to reduce usd/watt, reduce balance cost, increase efficiency
+
+BCG matrix:
+	poor dogs are textile, drive systems
+	cash cows are coating, vacuum
+	question marks is solar
+	stars is advanced technologies
+
+SWOT with solar:
+	strengths, internal at r&d, respected customer base
+	weaknesses, internal at low efficiency, high manufacturing costs
+	strengths, external at public opinion/policies, big market
+	weaknesses, external at financial crisis, other established technologies
+
+five forces of solar:
+	new entrants (scale, other tech, low brand identity) at 0.5
+	substitutes (other renewables) at 0.75
+	bargaining power of suppliers (lot of competition) at 0.5
+	bargaining power of buyers (concentrated buyers) at 0.75
+	intensity of rivalry (high industry growth, overcapacity) at 0.75
+	therefore only medium attractive, but difficult to assess regulations
+	
+R&C:
+	solar patented technology & partnerships with research
+	other unique knowledge in vacuum and coating
+	comparison first solar with unique technology, vertical integration
+
+prinzipien der ökonomischen analyse
+==============
+
+managerial economics:
+	benutzt theorien und methoden aus economics und management
+	analysiert entscheidungsverhalten von firmen & marktergebnisse
+
+management:
+	einscheidungsprobleme einer bestimmten wirtschaft im kontext
+	analyse betriebswirtschaftlicher fallstudien (bottom-up ansatz)
+	ziele:
+		opportunitätskosten minimieren (resourcen effizient einsetzen)
+
+economics:
+	zusammenspiel firmen (angebot) mit konsumenten (nachfrage)
+	analyse volkswirtschaftlicher modelle (top-down ansatz)
+	mikroökonomie (fokussiert auf bestimmtes subjekt & bestimmter markt)
+	makrökonomie (wirtschaft als ganzes, BIP/arbeitslosigkeit/inflation/zinsen)
+	marktwirtschaft:
+		verhalten/zusammenspiel von firmen/konsumenten
+		wert gehandelter einheit = marktpreis
+		löst koordinationsproblem (nachfrage & produktionspläne)
+		löst anreizproblem (verarbeitung geänderter knappheitsrelationen)
+	wirtschaftssubjekt:
+		trifft ökonomische entscheidungen, beschränkte resourcen optimal einsetzen
+		konsumenten mit arbeits- vs freizeit, lohn, arbeitspräferenzen
+		firmen mit beschränktem wissen, produktionskapazitäten
+	entscheidungsgrundlagen unternehmen:
+		kundenverhalten (präferenzen, preis substitut, nachfrageelastizität)
+		produktionskosten (technologie, kosten, preis input, angebotselastizität)
+		konkurrenz (wettbewerbsstrategie)
+		rechtslage (staatliche eingriffe)
+	knappheit:
+		wenn verfügbare ressource nicht ausreicht um bedürfnisse zu befriedigen
+		wirtschaftssubjekte haben unbegrenzte bedürfnisse für begrenzte resourcen
+		beispiel einkommen, zeit, technologie, raw materials, kapital
+	ökonomische probleme:
+		welches produkt und wieviel soll davon produziert werden
+		welche materialien und technologien produzieren das produkt
+		welche zielgruppe und wie profitiert diese davon
+		maximiere payoff für alle mitglieder der gesellschaft
+		dezentralisierte entscheidung effizient, aber wo fair/wo nicht
+
+öknomische analyse:
+	positive:
+		untersucht das jetzt
+		beschreibung ökonimische zusammenhänge (ursache vs wirkung)
+		testet ökonomische theorien
+	normative:
+		untersucht wie es sein sollte
+		plant effiziente verteilung von gütern
+		voraussagt die auswirkungen von wirtschaftlichen eingriffen
+
+prinzipen:
+	modell-basiert:
+		mathematisches, empirisch-fundiertes modell
+	optimierung:
+		beste mögliche entscheidung unter gegebenen informationen
+		beispiele:
+			maximierung	steuereinnahmen staat, gewinn firmen, rendite investor
+			abwägung mit risiko, gesetzen, land, ...
+		optimierung in levels: 
+			wähle option mit höchstem nettonutzen
+		optimierung in differenzen: 
+			optionen ordnen, unterschiede für alle faktoren von i, i+1 berechnen
+			unterschiede aufsummieren, option mit tiefstem margin wählen
+		behavioural economics:
+			annahme von homo economicus zweifelhaft
+			fehlende selbstkontrolle, erfahrung handeln irrational
+	gleichgewicht:
+		niemand stellt sich besser durch andere entscheidung
+		ökonomische systeme tendieren zu gleichgewichtszustand
+		beispiel fixer preis:
+			nur firmen überleben die unter dem preis produzieren
+			käfer nutzen produkt nur falls aktivität wertvoller wie preis
+		markt:
+			käufer/verkäufer treffen zusammen
+			bestimmen preis durch direkte oder indirekte interaktion
+			tauschhandel kann verzögert werden durch zwischenmittel (geld)
+		markformen:
+			vollständiger wettbewerb (viele kleine anbieter, freier ein/austritt)
+			monopol (ein einzelner anbieter kann preise bestimmen)
+			oligopol (mehrere anbieter haben kontrolle über preis)
+			monopolistischer wettbewerb (anbieter mit differenzierten produkten)
+
+mikroökonimie:
+	versucht marktergebnisse (preis, menge, gewinne) zu erklären 
+	anhand der entscheidungen der marktteilnehmer
+	zentrale fragen:
+		verhalten von marktteilnehmer (wie einteilung budget)
+		marktergebnisse beschreiben (wie veränderung bei externen schocks)
+		marktergebnisse beurteilen (was wünschenswert)
+		wirtschaftspolitische massnahmen (wie marktergebnisse verbessern)
+		
+angebot & nachfrage 
+=====
+
+definitionen:
+	konsumentenrente (consumer surplus): 
+		differenz marktpreis & zahlungsbereitschaft
+	produzentenrente (producer surplus):
+		differenz marktpreis & produktionskosten
+	gesamtwohlfahrt:
+		summe kosumenten- und produzentenrente (+steuereinnahmen)
+	wohlfahrtsverlust:
+		differenz gesamtwohlfahrt vor/nach beachtung von markteffekten
+	
+marktannahmen (vollständiger wettbewerb):
+	angebotsüberschuss führt zu preissenkungen
+	angebotsknappheit steigert den preis
+	markt im gleichgewicht wenn angebot = nachfrage
+	angebot- und nachfragemodell:
+		nachfragefunktion wie p(q_n) = 1050 - 50*q_n
+		angebotsfunktion wie p(q_a) = 225 + 50*q_a
+		im gleichgewicht wenn p(q_a) = p(q_n)
+	adam smith's "invisible hand":
+		koordiniert egoisitisches verhalten (kein bedarf für sozialer partner)
+		alle handelsgewinne ausgeschöpft (kein handel mehr möglich zu preis)
+
+diagramm:
+	y preis, x menge
+	kurven:
+		angebotskurve von links nach rechts, von tief zu hoch c
+		nachfragekurve von links nach rechts, hoch zu tief p
+	determinanten angebotskurve:
+		bestimmt durch produktionskosten, wettbewerb, produzentenerwartungen
+		bei verschiebung nach rechts sinkt preis & steigt verkauf
+	determinanten nachfragekurve:
+		bestimmt durch einkommen, konsumentenpräferenzen
+		bei verschiebung nach rechts steigt preis & steigt verkauf
+	schnittpunkte:
+		c & p schneiden sich im gleichgewichts -preis & -menge
+	flächen:
+		links unterhalb schnittpunkt & oberhalb c ist produzentenrendite PR
+		links oberhalb schnittpunkt & unterhalb p ist käuferrendite KR
+	steuern:
+		angebotskurve (preis) in y richtung verschieben
+	preisobergrenze:
+		horizontale links von schnittpunkt
+		fläche von PR/KR links davon geht verloren (wohlfahrtsverlust)
+		nicht pareto effizient, anbieter müssen angebot verringern
+	beispiele:
+		für kupfer angebot/nachfrage gleich schnell gewachsen -> kein preisanstieg
+		für kohle angebot schneller als nachfrage gewachsen -> preisverlust
+	
+analyse:
+	unvollkommenheit märkte normallfall (regulierung, vorschriften)
+	dynamiken:
+		nachfrager mit höchster zahlungsbereitschafts erhalten gut
+		verkäufer mit tiefsten produktionskosten verkaufen gut
+		pareto effizienz (keiner besser ohne andere schlechter)
+	staatliche korrekturen:
+		verteilungspolitische unerwünscht (da wohlfahrtsverlust)
+		beispiel wohnungsmarkt (regulierung der mietpreise)
+		besser wäre nachträgliche korrektur durch steuern
+		effizienzpolitische erwünscht (um kosten internalsieren)
+		beispiel umweltpolitik (steuern auf CO2 ausstoss)
+		eingriff nötig für soziale kosten CO2 ausstoss
+	
+angebot/nachfrage elastizitäten:
+	veränderung nachfrage (price, p) bei veränderung angebot (quantity, q)
+	elastizitäten:
+		elastizität: 
+			e = %q/%p = (delta q / q) / (delta p / p)
+			wenn p sich um 1% ändert, um wieviel ändert sich q?
+		einkommenselastizität (income i): 
+			e_i = %q / %i
+			für einkommensänderung i
+		kreiz-preis-elastizität (p_m): 
+			e = %q / %p_m
+			für p_m preis eines anderen produktes m
+	special cases:
+		lineare nachfrage:
+			q = a - bp (für gegebene a, b)
+			zwei punkte aussuchen, dann e gemäss formel aussuchen
+			e ist beim "höheren punkt"
+		vollständig elastisch (e = unendlich): 
+			nachfragemenge nur abhängig vom preis
+			horizontale gerade, wenn grenze überschritten nachfrage 0
+		vollständig inelastisch (e = 0):
+			nachgefrage menge ist unabhängig vom preis
+			vertikale gerade, fixe nachfragemenge q
+	kurz/langfristige elastizitäten beispiele:
+		benzin nachfrage: 
+			kurzfristig inelastisch (also nachfrage bleibt fast gleich)
+			langfristig elastisch (kleinere autos werden gekauft)
+		autos nachfrage: 
+			kurzfristig elastisch (ersatz von autos wird aufgeschoben)
+			langfristig inelastisch (alte autos müssen ersetzt werden)
+		kaffee angebot:			
+			kurzfristig inelastisch (nur fixe # bohnen erntbar)
+			mittelfristig leicht elastisch (bäume besser bewirtschaften)
+			langfristig elastisch (gegeben durch produktionskosten)
+	steuern:
+		elastizität angebot s = %q/%p, elastizität nachfrage d = %p/%q
+		anbieterlast = s / (s-d); konsumentenlast = d / (s-d)
+		wer zahlt:
+			abgewälzt auf konsument (a), konsument kauft weniger (b)
+			von produzent bezahlt (c), ertrage fällt weg (d)
+			a + c bekommt staat (steuern), b + d geht verloren (wohlfahrtsverlust)
+		special cases:				
+			falls d = inf (substituierbar) oder s = 0 (produzentenrente 100%)
+			dann zahlt alles produzent (konsument zahlt bei vice-versa)
+	
+kosumenten und anreize
+==========
+
+definitionen:
+	güterbündel:
+		zusammenstellung bestimmter mengen eines oder mehrerer güter
+		kann verglichen werden mit anderen güterbündeln
+	inferiores gut (niedrige qualität):
+		verliert an nachfrage mit steigendem einkommen
+	substitutierbares gut (gleiche qualität):
+		beeinflusst preis der anderen produkte
+	komplementärgut (zubehör):
+		beeinflusst preis des ursprungsproduktes
+		
+kosumentenverhalten:
+	analyse:
+		untersuchung präferenzen: 
+			wie und warum konsumenten ein gut einem anderen vorziehen
+		betrachtung budgetbeschränkung: 
+			konsumenten berücksichtigen preise und haven beschränktes einkommen
+		bestimmung verbraucherverhalten: 
+			welche kombination aus präferenz/budget maximiert zufriedenheit?
+	präferenzrelationen:
+		strikte präferenz (>): 
+			x > y -> x wird y vorbezogen
+		schwache präferenz (>=): 
+			x wird mindestens so stark präferiert wie y
+		indifferenz (>= && <=): 
+			schwache präferenz in beide richtungen
+	annahmen an präferenzen:
+		vollständig (1): 
+			jedes beliebige paar von güterbündeln ist vergleichbar
+		transitiv (2): 
+			x > y ^ y > z => x > z
+		mehr ist besser (3): 
+			grössere menge eines güterbündels wird kleinerer menge vorgezogen
+
+diagramm:
+	indifferenzkurve:
+		konvexe, güternkombination (x,y) mit const u(x,y) für u utility
+	indifferenzkurvenschar:
+		mehrere indifferenzkurven, keine schnittpunkte (da (3))
+	budgetgerade:
+		güterkombination gleich dem einkommen (p_x*x + p_y*y = budget)
+		p_x*x + p_y*y < budget heisst budgetmenge
+	marktrate der substitution (steigung):
+		austauschrate von gut x durch gut y
+		MRS = 3 falls an diesem punkt -15 gleichwertig 5
+	optimale verbrauerentscheidung (punkt):
+		max u(x, y) mit nebenbedingung p_x*x + p_y*y = budget
+		schnittpunkt MRS = p_x / p_y (indifferenzkurve' = budgetgerade')
+		preis x (p_x) muss daher gleich grenznutzen x sein (u' nach x)
+	preis-konsum kurve: 
+		nutzenmaximierung für verschiedene preise
+		kurve durch jeweilige optimale verbraucherentscheidungen
+	income consumption courve (icc): 
+		nutzenmaximierung für verschiedene einkommen
+		kurve durch jeweilige optimale verbraucherentscheidungen
+		gerade für normales gut, gebeugt weg vom inferioren für inferiores gut
+		
+individuelle nachfrage:
+	nachfragefunktion: 
+		optimale konsumentscheidung nach preis/einkommen
+		je tiefer preis desto höher nachfrage (gesetz der nachfrage)
+	preisveränderung:
+		veränderung steigung der budgetgerade, neue optimale entscheidung
+		substitutionseffekt ist neue - alte steigung an alter indifferenzkurve
+		einkommenseffekt ist neue - alte indifferenzkurve mit neuer steigung
+
+anbieter & anreize
+===========
+
+firmen:
+	transaktionenkosten: 
+		vertrags- & überwachungskosten von externen aufträgen (outsourcing)
+		kosten fallen weg innerhalb von firma, effizientere koordination möglich
+	produktionsentscheidungen:
+		wahl der produktionstechnologie
+		kostenbeschränkungen, z.B. anhand preise inputs
+		wahl der inputs (bei gegebener technologie & preis)
+		kurzfristig wenn nicht alle inputs frei (z.b. gebäude, maschinen)
+		langfristig wenn alle inputs variabel
+	produktionsverfahren:
+		kombination von inputs zu herstellung output
+		inputs sind arbeit, rohstoffe, kapital
+		outputs sind dienstleistungen & produkte
+		produktionsplan ist inputvektor x mit output y
+		technisch am effizientisten wenn y = (x_1, x_2, ...)
+	produktion variabler menge q:
+		zuerst effizienter, dann wieder effizienzverlust
+		durchschnittsprodukt (average product AP):
+			output pro input, AP = y/q
+		grenzprodukt (marginal product MP):
+			zusätzlicher output für mehr inputs, MP = (y' nach q)
+		schnittpunkt MP AP:
+			AP wird wieder kleiner
+	produktion mit zwei variablen inputs:
+		grenzrate der technischen substitution (MRTS):
+			mögliche änderung der inputs bei gleichbleibendem output
+			isoquante als visualisierung, steigung für substitutionstradeoff
+		spezialfälle:
+			technologie mit perfekter substitution ergibt gerade
+			produktionsfunktion mit fixem input verhältnis ergibt L förmige isoquanten
+		grenzprodukt: 
+			veränderung output bei veränderung eines inputs				
+			fallende grenzerträge bei einseitiger erhöhung von input
+		skalenerträge: 
+			veränderung output bei veränderung aller inputs um gleichen faktor
+			visualisiert mit isoquanten
+			zunehmend wenn f(k*x_1, k*x_2) > k f(x_1, x_2) (autobau)
+			konstant wenn f(k*x_1, k*x_2) = k f(x_1, x_2) (reisebüro)
+			abnehmend wenn f(k*x_1, k*x_2) < k f(x_1, x_2) (koordinationsprobleme)
+	
+kostentheorie:
+	produktionstechnologie:
+		misst input / output relation
+		wichtig zur bestimmung vom optimalen produktionsniveau
+	kostenarten:
+		buchhalterische kosten:	
+			ausgaben (produktion) + abschreibung anlagegüter (investment)
+		opportunitätskosten: 
+			wert der entgangenen alternative (lohn während studiumszeit)
+		ökonomische kosten:
+			buchhalterische kosten + opportunitätskosten	
+		versunkene kosten: 
+			bereits entstandene kosten, nicht mehr beeinflussbar (bezahlte rechnungen)
+			dürfen entscheidung nicht beeinflussen
+		fixe kosten: 
+			ändern sich nicht mit produktionsniveau (gebäudemiete)
+		variable kosten:
+			ändern sich mit produktionneveau (stromverbrauch)
+		gesamtkosten: 
+			fixe + variable kosten
+		kapitalnutzungskosten:
+			wertverlust (ökonomische abschreibung) + opportunitätskosten
+			wertverlust = kaufpreis/lebenserwartung, zins ist gegeben
+			kapitalnutzungskosten im jahr i = wertverlust + zins * wert im jahr i
+	expansionspfad:
+		kostengünstigste kombination arbeit/kapital für produktion Y
+		kostenminimierende inputwahl:
+			min(wL + rK) mit nebenbedingung Y = f(L, K) für L, K > 0
+			Y = f(L, K) für L arbeit und K kapital
+			w lohnsatz arbeit, r abschreibungssatz & zinsatz kapital
+			für isokostengerade fixiere gesamtkosten C = wL + rK
+			steigung ist verhältnis lohn- zu kapitalnutzungkosten
+			kombiniere mit isoquante, schnittpunkte sind produktionsmöglichkeiten
+			optimum falls nur ein schnittpunkt wo gilt %L/w = %K/r
+		kostenoptimierung in kurzer frist:
+			kurzfristige expansionspfade können meist nur ein input erhöhen 
+			ineffizienzen entstehen, langfristig können diese wieder optimiert werden
+			fixkosten (FC) bleiben gleich
+			variable kosten (VC) variiert mit output (grenzprodukt der arbeit)
+			gesamtkosten (TC) sind FC + VC
+			grenzkosten (MC) steigung der vc kurve
+			durchschnittliche fix- (AFC), variable- (AVC), gesamtkosten (ATC)
+			schnittpunkt MC & AVC bewirkt steigung von ATC, AVC
+		kostenoptimierung in langer frist:
+			annahme das TC = VC weil firma fixkosten auch steuern kann
+			mehr output ermöglicht sinkendes ATC (skaleneffekte, spezialisierung)
+			durch koodinationsaufwand dann aber wieder steigendes ATC
+			langfristige durchschnittskostenkurve LATC gleiches verhalten
+			wähle produktionsgrösse dass LATC und nachfrage übereinstimmt
+		
+vollständiger wettbewerb
+=============
+
+maximiert volkswirtschaftlicher profit
+produzent/konsument jeweils keinen einfluss auf preisbildung
+produkte jeweils perfekte substitute der konkurrenz
+freier markteintritt / austritt möglich
+
+definitionen:
+	kosten: 
+		konvexe funktion, C(q)
+		steigung sind grenzkosten (MC, marginal cost)
+	umsatz:
+		konkave funktion, R(q)
+		steigung ist grenzerlös (MR, marginal revenue)
+	gewinn: 
+		differenz kosten C(q) umsatz R(q)
+		maximal wenn MR(q) = MC(q)
+
+zweifel an annahmen:
+	kompetitiver markt:
+		trotz vieler firmen uU. nicht kompetitiv (absprachen)
+		tiefe elastizität der nachfrage wirkt hemmend
+	gewinnmaximierung:
+		für keine firmen plausibel, fraglich für grosse
+		plausible ziele umsatz, reputation, kurzfristige gewinnmaximierung
+	
+sicht des unternehmens:
+	vollständiger wettbewerb für firmen unerwünscht da gewinn 0
+	gewinnmaximierung:
+		P = MR legt q fest
+		produziere falls P höher wie AVC, falls ATC höher wie P dann gewinn
+		gewinn/verlust bestimmt durch (P - ATC(q)) * q
+	nachfragekurve:
+		für einzelnen akteur horizontal da keinen einfluss auf preis
+	kurzfristige angebotskurve:			
+		markangebot ist summe aller angebotskurven unter dem marktpreis
+		firmen produzieren falls P höher wie AVC
+	langfristige angebotskurve:
+		markangebot ist summe der nachgefragten menge
+		preis ist minimum langfristige durchschnittskosten (LAC)
+
+monopol
+=========
+
+kollusion zwischen produzenten, keine substitute, geringe elastizität
+entsteht durch gesetzgebung, IP, skaleneffekte, netwerkeffekte
+"natürlich" wenn hohe fixkosten & niedrige grenzkosten
+gewinn maximiert wenn grenzerlös = grenzkosten
+	
+sicht unternehmen:
+	gewinnmaximierung:
+		MC = MR legt q fest, gewinn ist (AR - AC) * q
+		neu ist MR != P, daher werden weniger produkte verkauft
+	monopolmacht:
+		L = (P-MC)/P = -1/e, je höher wert desto höher macht (für e elastizität)
+		kann preis (P) berechnen wenn e bekannt
+	gesellschaftliche kosten:
+		unterschied produzierung MR zu P geht verloren
+		produzenten erhalten zusätzliche rendite von den konsumenten
+	preissetzung markmacht:		
+		da preis nicht mehr von markt vorgegeben
+		ziel ist umwandlung konsumentenrendite zur produzentenredite
+		preisdiskrimierungen, zweistufige preise, bundling
+	
+preisdiskriminierungen:
+	identisches produkt zu unterschiedlichen preisen
+	erster ordnung ("perfekte diskrimierung"): 
+		preise variieren nach zahlungsbereitschaft der konsumenten
+		keinen wohlfahrsverlust, kundenrendite nun prozentenrendite
+		vollständige fläche MC/P genutzt
+		beispiel autoverkauf
+	zweiter ordnung ("mengendiskrimierung"):
+		preise variieren nach kaufmenge oder kaufzeitpunkt
+		weniger wohlfahrsverlust, mehr produzentenredite
+		mehr ausschöpfung der fläche zwischen MC/P durch preiseblöcke
+		beispiel 2D tarife (grund/verbrauchpreis), mengenrabatte, packete
+	dritter ordnung (nach käufergruppen):
+		preise variieren nach zahlungsbereitschaft der konsumentengruppen
+		aufteilung in mehrere märkte, hoher preis für inelastische märkte
+		jeweils kleinere flächen, daher bessere ausschöpfung
+		beispiel studentenrabatte, gutscheine, sondertarife
+		
+zweistufige tarife:
+	eintrittspreis bevor einheiten (nutzungspreis) erworben werden dürfen
+	setzte nutzungspreis P höher als MC
+	setze eintrittspreis T gleich kosumentenrendite trotz nutzungspreis P
+	muss grenzkosten (für P) & unterschiedliche konsumenten (für T) kennen
+	
+monopolistischer wettbewerb
+======
+
+firmen bieten differenzierte produkte an (keine perfekte substitute)
+firmen haben marktmacht (preis höher als grenzkosten)
+markt hat keine ein/austrittsbarrieren
+
+sicht des unternehmens:
+	gewinnmaximierung:
+		P = MR setzt q fest, nur innerhalb markt der einzelnen firma 
+	lange frist:
+		neue firmen treten in markt ein, daher wird P=MR immer kleiner
+		trotz marktmacht keine gewinne möglich
+	regulierung:
+		möglicherweise schädlich (kleine märkte & variationen nützlich)
+		
+oligopolmärkte
+====
+	
+oligopolistische märkte:
+	industistrie aus wenigen firmen, entscheidungen beeinflussen sich
+	häufig in realität (auto, stahl, elektronik, chemie)
+	marktpreis/nachfrage abhängig vom verhalten anderer (gefangenen dilemma)
+	markteintrittsbarrieren:
+		natürliche barrieren (grössenvorteile, IP, kosumentenverankerung)
+		marktfeindliche strategien (flutung markt, kontrolle produktionsfaktoren)
+	cournot-duopol (simultane, menge):
+		produktionsentscheidung MR = MC, gegebene nachfragekurve D
+		reaktionskurve R_1 = P*Q_1, ableiten (gibt MR_1), nach Q_1 auflösen
+		gleichsetzen mit Q_2, game theory maximierung
+		bei kollusion maximierung Q anhand preisfunktion (pareto-optimal)
+		bei vollständigem wettbewerb maximierung Q das P >= 0
+	stackelberg-duopol (sequentiell, menge):
+		leader setzt mengenentscheidung fest, danach followers
+		erste firma antizipiert mengen von followers
+		leader macht >= gewinn wie in cournot
+	bertrand-duopol (simultan, preis):
+		annahme produktion homogenes gut, keine switching cost
+		wechselnde unterbietung preise führt zu gewinn = 0
+		fehlendes vertrauen / gesetze verhindern kartellabsprachen
+	sequentielle preissetzung (sequentiell, preis):
+		für unendliche spiele
+		berechne cheat/cooperate mit auszahlung & zinssatz i am zeitpunkt
+		cheat = 12 + 12*(1/(1+i)) + 12*(1/(1+i)^2) + 12*(1/(1+i)^3) + ... 
+		angenähert cheat/cooperate = payoff_now + payoff_later/i
+		cheat - cooperate = sofortgewinn + zukünftige gewinneinbussen
+		falls cheat < cooperate dann cooperieren
+		für endliche spiele mit endwahrscheinlichkeit a
+		cheat = 12 + 12*(1-a) + 12*(1/(1-a)^2) + 12*(1/(1-a)^3) + ...
+		falls cheat < cooperate dann cooperieren
+	
+spieltheorie
+========
+
+ergebnis abhängig von entscheidungen von anderen 
+untersucht verhalten in strategischen, interactiven entscheidungssituationen
+games wie prisoners dilemma beschreiben verhalten
+trigger strategien wie tit for tat beschreiben optimales verhalten
+
+nash-gleichgewicht:
+	jeder spieler verhält sich optimal, gegeben das verhalten der anderen spieler
+	führt nicht zwingend zu pareo-optimalem ergebnis
+
+invisible hand:
+	"broken", da strategisches verhalten vorliegt

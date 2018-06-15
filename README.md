@@ -21,7 +21,6 @@ Generally, the newer the summary, the more consistent is the structure & the wor
 | 2017-2 Distributed Systems Part2 | ★★★★☆ |
 | 2017-2 Human Computer Interaction Cognition And Usability | ★★★☆☆ |
 | 2017-2 Human Computer Interaction | ★★★★☆ |
-| 2017-2 Managerial Economics | ★★☆☆☆ |
 | 2017-2 Network Security | ★★★★★ |
 | 2018-1 Intellectual Property | ★★★★☆ |
 | 2018-1 Internationale Politik | ★★★★★ |
@@ -29,6 +28,7 @@ Generally, the newer the summary, the more consistent is the structure & the wor
 | 2018-1 Project Management | ★★★★☆ |
 | 2018-1 Object Databases | ★★★☆☆ |
 | 2018-1 Object Databases (short) | ★★★★☆ |
+| 2018-1 Managerial Economics | ★★★★☆ |
 
 Comments:  
 Object Databases (short) is without general statements like "can be configured" and perceived irrelevant details (syntax for dead libraries) but may not be complete  

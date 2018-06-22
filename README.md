@@ -29,6 +29,7 @@ Generally, the newer the summary, the more consistent is the structure & the wor
 | 2018-1 Object Databases | ★★★☆☆ |
 | 2018-1 Object Databases (short) | ★★★★☆ |
 | 2018-1 Managerial Economics | ★★★★☆ |
+| 2018-1 Information Retreival | ★★★★☆ |
 
 Comments:  
 Object Databases (short) is without general statements like "can be configured" and perceived irrelevant details (syntax for dead libraries) but may not be complete  

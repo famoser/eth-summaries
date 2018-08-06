@@ -1,5 +1,5 @@
 # ETH summaries
-Some summaries created for ETHZ courses. If you want to use some of these please be aware that:
+Summaries created for ETHZ courses. If you want to use some of these please be aware that:
 
 - they are written to be helpful to memorize facts, and explicitly not to understand the course
 - none has been reviewed by professors, and only a few ones by fellow students
@@ -30,9 +30,11 @@ Generally, the newer the summary, the more consistent is the structure & the wor
 | 2018-1 Object Databases (short) | ★★★★☆ |
 | 2018-1 Managerial Economics | ★★★★☆ |
 | 2018-1 Information Retreival | ★★★★☆ |
+| 2018-1 Information Security Part1 | ★★★★☆ |
+| 2018-1 Information Security Part2 | ★★★★☆ |
 
 Comments:  
-Object Databases (short) is without general statements like "can be configured" and perceived irrelevant details (syntax for dead libraries) but may not be complete  
+Object Databases (short) is without general statements like "can be configured" and perceived irrelevant details (syntax for dead libraries) but may not be complete.
 
 ## contribute
 The summaries are written in the .fex format (https://github.com/famoser/FexCompiler), and then compiled to latex.

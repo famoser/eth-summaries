@@ -268,7 +268,8 @@ block ciphers:
 		x can be inverted knowing key without any other information
 		(stream cipher additionally needs to know position)
 	modes of operations:
-		PRF with key k, F, message in blocks m_i, random in blocks r_i
+		PRF with key k, F, message 
+		in blocks m_i, random in blocks r_i
 		prove with F_k replaced by truly random for distinguisher
 		why:
 			encrypt long messages (longer than block size)
@@ -722,9 +723,9 @@ Or-Proof:
 		t1/t2 is known to V too (but without s1/s2)
 	protocol:
 		P chooses random r1, r2, w
-		P -> V:: x1 = g^r1 * t1^-w, x2 = g^r2
+		P -> V:: x1 = g^r1, x2 = g^r2 * t2^-w
 		V -> P:: c
-		P -> V:: c1 = w, c2 = c-w, y1 = r1 + s1*c1, y2 = r2
+		P -> V:: c1 = c-w, c2 = w, y1 = r1 + s1*c1, y2 = r2
 		V verifies c = c1 + c2, x1 = g^y1 * t1^-c1, x2 = g^y2 * t2^-c2
 	soundness:
 		send c1 = r_1, get y1 & y2

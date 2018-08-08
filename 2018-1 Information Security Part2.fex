@@ -123,7 +123,7 @@ security as risk minimization:
 			weakness can be exploited by threats to cause damage
 		reduction steps:
 			identify assets to protect
-			identify risks to those assets, risk = (change * impact) of abuse
+			identify risks to those assets, risk = (chance * impact) of abuse
 			deduce how well countermeasures reduce risk and their tradeoffs
 			employ most effective countermeasures (intrusion detection vs prevention)
 	apply risk analysis:

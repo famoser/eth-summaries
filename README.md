@@ -29,7 +29,7 @@ Generally, the newer the summary, the more consistent is the structure & the wor
 | 2018-1 Object Databases | ★★★☆☆ |
 | 2018-1 Object Databases (short) | ★★★★☆ |
 | 2018-1 Managerial Economics | ★★★★☆ |
-| 2018-1 Information Retreival | ★★★★☆ |
+| 2018-1 Information Retrieval | ★★★★☆ |
 | 2018-1 Information Security Part1 | ★★★★☆ |
 | 2018-1 Information Security Part2 | ★★★★☆ |
 | 2018-1 Compiler Design | ★★★★☆ |

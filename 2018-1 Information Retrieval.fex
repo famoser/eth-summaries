@@ -1,38 +1,38 @@
 introduction
 ======
 
-history:
-	1970 relational area ("throw data at computers")
-	1980 object area ("throw computers at computers")
-	2000 no sql area ("throw computers at data")
-	now machine learning ("throw data at data")
-	
-three V:
-	Volume (how much data there is)
-	Variety (how well structured it is)
-	Velocity (how fast the analysis has to take place)
-
-essential factors:
-	capacity (how much data)
-	throughput (how fast transmitted)
-	latency (when data receival start)
-	
-data shapes:
-	structured (text, graphs, trees, tables, cubes)
-	unstructured (more common, implicit features like grammar)
-	
-semantic gap:
-	representation vs semantic description of information
-	
-data and information in perspective:
-	information = data + meaning
-	knowledge = information + application
-
-target of information retrieval:
-	find unstructured data satisfying an information need 
-	from within large collections
-	
-
+information retrieval:
+	target:
+		find unstructured data satisfying an information need 
+		from within large collections	
+	history:
+		1970 relational area ("throw data at computers")
+		1980 object area ("throw computers at computers")
+		2000 no sql area ("throw computers at data")
+		now machine learning ("throw data at data")
+	core models:
+		list of words (words with exact positions)
+		bag of words / vector model (words with frequency)
+		set of words (words with boolean occurrence)
+		
+data:
+	three V:
+		Volume (how much data there is)
+		Variety (how well structured it is)
+		Velocity (how fast the analysis has to take place)
+	essential factors:
+		capacity (how much data)
+		throughput (how fast transmitted)
+		latency (when data receival start)		
+	data shapes:
+		structured (text, graphs, trees, tables, cubes)
+		unstructured (more common, implicit features like grammar)	
+	semantic gap:
+		representation of data vs semantics of information
+	information in perspective:
+		information = data + meaning
+		knowledge = information + application
+		
 definitions:
 	document:
 		the indexed element
@@ -41,36 +41,29 @@ definitions:
 	vocablary:
 		(term, posting list) dictionary
 	token:
-		parsed from the raw text ("words")
-		characters grouped together as unit of processing
+		parsed from the raw text, chars grouped together for processing
+		specific occurrence of a term/type at some place in a document
+		positional posting in list of words model
 	type:
-		class of all tokens with same character sequence
-		normalize with liguistic processing
+		a word, class of all tokens with same character sequence
 	term:
-		(normalized) type included in index
-		entry in index dictionary
-		row in adjacency matrix
+		a word, possibly normalized type with liguistic processing
+		entry in index dictionary, row in adjacency matrix
 	posting:
 		records that term appears in document
-		needs to record at least docid
-		possibly containing location of term
+		needs to record at least docid, possibly containing location of term
 	
 boolean retrieval
 ===========
 	
 grep:
-	usage:
-		grep keyword file | grep -v non_keyword
-	limitations:
-		cannot rank results
-		no proximity semantics
-		cannot scale
+	usage like grep keyword file | grep -v non_keyword
+	but cannot rank/scale, no proximity semantics
 	
 indices:
 	everywhere, for example book glossary
-	incidence matrix:
-		y, x are terms, documents
-		1 denotes a match (very sparse matrix)
+	incidence matrix with y, x are terms, documents
+	1 denotes a match (hence a very sparse matrix)
 
 inverted index
 ====
@@ -91,7 +84,7 @@ index construction:
 	collect document:
 		process sequence of characters, character sets
 		UTF-8:
-			characater, unicode defined codepoint, then binary
+			maps character with unicode defined codepoint to binary
 			dynamically extend encoding size
 			0_ for 1 byte, 110_ 10_ for 2 bytes, 1110_ 10_ 10_ for 3 bytes
 		detect content:
@@ -261,14 +254,13 @@ spelling correction:
 			but would need to compute union/intersection for all matches
 		speed up jaccard:
 			#(k-grams in intersection) divided by
-			#(query grams) + #(found term grams) - intersection
-			#(query grams) can be computed from length of string
+			#(query grams) + #(found term grams) - #(intersection)
 	context-sensitive corrections:
 		enumerate collections of certain amount of words
 		then correct to most likely with minimum editing distance
 		
 phonetic correction:
-	every word to 4 caracter fingerprint
+	every word to 4 character fingerprint
 	build B+ tree of these phonetic fingerprints to words
 	table:
 		AEHIOUWY -> 0
@@ -390,7 +382,7 @@ dictionary compression:
 		include keyword size into blob, reduce pointers (only after k terms)
 		but search time increases
 	front coding:
-		common prefix elimination (8automat*a1_e2_ic3_ion_3ata)
+		common prefix elimination (8automat*a8_e9_ic10_ion)
 
 posting file compression:
 	observe gaps between postings are short for frequent terms
@@ -469,14 +461,14 @@ vector space model:
 		but large number of vectors (documents) with high dimensions (terms)		
 	efficient evaluation:
 		drop dimensions not needed for given query
-		formula is = tf_tquery * idf_term^2 * tf_tdocument / ||query|| * ||document||
-		result is matrix (x is documents, y for term), calculate term or document wise
+		tf_tquery * idf_term^2 * tf_tdocument / ||query|| * ||document||
+		matrix (x for documents, y for term), calculate term or document wise
 		create bucket per document to aggregate result (avoid matrix contruction)
 		sort buckets with priority queue O(2N)
 		take top K results (repeated O(log n))
 	efficient storage:
 		don't store weight within postings because kills index compression
-		for documents store tf_tdocument in posting, ||d|| & idf_term at dictionary key
+		store tf_tdocument in posting, ||d|| & idf_term at dictionary key
 		for query precalculate tf_tquery & ||q||
 		
 SMART weights:
@@ -484,9 +476,9 @@ SMART weights:
 	first group for document weights, second for query weights
 	each group specifies term frequency, document frequency, normalization
 	term frequency scalings:
-		(n) natural (tf = wf)
+		(n) natural (wf = tf)
 		(i) sublinear (wf = 1 + log(tf) for tf > 0, else 0)
-		(a) augmented (a + (1-a)tf/tf_max for a ~ 0.5, tf_max is max tf in document)
+		(a) augmented (a + (1-a)tf/tf_max for a ~ 0.5, tf_max = max(tf in document))
 		(b) boolean (1 for tf > 0, else 0)
 		(L) low-average ((1 + log(tf)) /1+log(average) for t > 0, else 0)
 	document frequency scaling:
@@ -516,7 +508,7 @@ optimized query:
 	optimized formula is idf_term * tf_tdocument / ||d||
 	
 pre-query optimizations:
-	inexact top K retreival; only look at documents which are likely to be top K
+	inexact top K retrieval; only look at documents which are likely to be top K
 	low idf drop:
 		drop keywords which have high idf because irrelevant
 		long posting lists removed
@@ -581,7 +573,7 @@ basic notation:
 		can write p_x(event) or P(X = event), but not differently
 		join with P(X = event, Y=event2), treat like events
 	
-probability model for documet retrieval:
+probability model for document retrieval:
 	query as a random variable, probability ranking principle
 	P(R=1|D=d ^ Q=q) for query q, document d, relevance indicator R = 1
 	probability ranking principle (PRP):
@@ -590,7 +582,7 @@ probability model for documet retrieval:
 		sort results by probability
 	PRP with retrieval costs:
 		define C_0 for false positives, C_1 for false negatives
-		return d with lowerst C_0*P(R=0) - C_1P(R=1)
+		return d with lowerst C_0*P(R=0) - C_1*P(R=1)
 	learning:
 		take a lot of users running query q, which are given d as a result
 		how many of these users clicked on it (R=1)?
@@ -627,7 +619,7 @@ binary independence model (BIM):
 language model:	
 	finite state automaton (FSA):
 		start / accept state, arrows connecting state
-		if at the end of the word in accept state, FSA acceptss
+		if at the end of the word in accept state, FSA accepts
 		transfer function $(q_1, a) = q_2, omega as language space (symbols)
 		can generate random words by assigning probability to arrows
 	unigram model:
@@ -647,7 +639,7 @@ information need may depend on context (pet vs programming python)
 test with datasets like cranfield, TREC
 
 effectiveness:
-	true are returned, postives are relevant & vice-versa
+	true are returned, positives are relevant & vice-versa
 	true positives = relevant & returned 
 	false positives = not relevant & returned (type I error)
 	false negatives = relevant & not returned (type II error)
@@ -658,15 +650,15 @@ effectiveness:
 		recall = #true positives / #true
 		high recall implies few false negatives
 		specifity = #true negatives / #negatives
-		high specifiy means no negatives in result
-		accuracy = #true / #false + #true
+		high specifity means no negatives in result
+		accuracy = #true / (#false + #true)
 		high accuracy means small type I and type II errors
 	combining precision P & recall R:
 		more returned documents leads to less precision & higher recall
-		use arithemtic mean (P + R)/2, but 50% score when returning all
+		use arithmetic mean (P + R)/2, but 50% score when returning all
 		use harmonic mean 1/((a/P) + (1-a/R)) for weighting factor a 
 		
-evaluating ranked retreival:
+evaluating ranked retrieval:
 	use precision/recall measures to measure effectiveness
 	precision at k:
 		only measure inside a specific range
@@ -675,8 +667,8 @@ evaluating ranked retreival:
 		only compare with known subset r
 		for query with r known results, look at matches in actual top k
 	ROC:
-		plots recall to senstivity, want extremes (high/high or low/low to invert)
-		sensitivity definied as (1-specifity)
+		plots recall to sensitivity, want extremes (high/high or low/low to invert)
+		sensitivity defined as (1-specifity)
 		awful if recall / specifity same values
 	
 

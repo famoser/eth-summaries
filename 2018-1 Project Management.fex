@@ -46,7 +46,7 @@ project livecycle:
 project management (PM):
 	science & art of solving a given problem within time & resource constraints
 	"shouldering just enough risk to escape with intact career"	
-	importance::
+	importance:
 		traditional hierarchical management declining
 		consensual management increasing
 		reliance on systems engineering increasing
@@ -150,7 +150,7 @@ IPMA:
 			fundamental PM elements ("solid elements")
 			project management success
 			interested parties, procurement & contract
-			requirements & objectives, , scope & deliverables, resolution
+			requirements & objectives, scope & deliverables, resolution
 			risk & opportunity, quality, structure
 			resources, changes, cost & finance
 			organisation, teamwork, communication
@@ -217,7 +217,7 @@ general process:
 
 pre-study:
 	align project with strategy, existing portfolio
-	define project framework (ibc, prince 2, ...)
+	define project framework (ICB, prince 2, ...)
 	identify stakeholder needs/requirements
 	evaluate technical/economical feasibility
 	conduct initial risk analysis
@@ -311,13 +311,13 @@ create work packages:
 		level 1 project title ("bike")
 		level 2 activities ("concept", "manufacturing")
 		level 3/4 tasks/subtasks ("build", "test")
-	object oriented:
+	object oriented WBS:
 		focus on system hierarchy
 		electrical, mechanical system
 		level 1 system name ("bike")
 		level 2 part name ("frame")
 		level 3 smaller parts name ("screws")
-	process/phase oriented:
+	process/phase oriented WBS:
 		focus on project phases
 		planning, implementation
 		level 1 process name
@@ -386,9 +386,15 @@ scheduling:
 		node contains all info of activity (possibly connected to WBS)
 		deterministic duration estimation by calculating critical path
 		can use PERT (stochastic method) for probabilistic estimation
-		for optimistic o, realistic m, pessimistic duration b 
+		for optimistic a, realistic m, pessimistic duration b 
 		expected duration = ((a + 4m + b) / 6); variance (b-a/6)^2
 		but hard to connect to timeline, distinguishing activities hard
+	schedule compression:
+		overtime usage (but more flaws, slower progress)
+		more ressources (but aquire needs time, existing ressources do training)
+		reducing scope (but customer needs all agreed on features)
+		outsourcing (but insecurity with quality/schedule of supplier)
+		overlap serial activities (but increased risk/rework of changes)
 		
 cost planning:
 	calculation terms:
@@ -415,9 +421,8 @@ cost planning:
 project organization
 ====
 
-in general:
-	need intensive interdisciplinary cooperation
-	need specific tasks, workflows, leadership tasks & structure, motivation
+needs intensive interdisciplinary cooperation
+needs specific tasks, workflows, leadership tasks & structure, motivation
 	
 internal organization:
 	tasks:
@@ -485,7 +490,7 @@ external organization:
 			size, duration, risk, frequency, number of project
 			importance to business, availability of resources
 			necessity for interdisciplinary cooperation
-		need for change a change:
+		need for a change:
 			due to natural workflow of project (changing content, objectives)
 			because important staff members change 
 	pure project organisation:
@@ -608,7 +613,7 @@ controlling:
 	primarily by changing assets, altering activities
 	PM must pay attention to both conservation & regulation
 	PM must guard physical, human, financial resources
-	causes:
+	underlying issues of problems:
 		performance:
 			technical, quality, reliability, interfunctional problems
 			insufficient resources available
@@ -643,7 +648,7 @@ controlling:
 	controlling change:
 		single most important problem
 		changes due to customers/members to improve end result
-		PM must control way changes are introduced
+		PM must control the way changes are introduced
 		change control system:
 			review all requested changes and identify impact
 			translate impact to performance/schedule/cost
@@ -666,10 +671,9 @@ monitoring & control systems:
 		draw projects as cycles (size for budget, fill for completion percentage)
 		add arrow with estimated tendency
 	earned value chart:
-		aggregated performance measure 
+		aggregated performance measure, reports cost & performance
 		take into account amount of work completed relative to cost
 		multiply completion percentage with planned cost for each task
-		combines cost reporting & performance reporting in single chart
 		draw planned baseline, actual cost, actual earned value
 		read out time / cost (y-axis), schedule (x axis) variance
 		cost C, schedule S, time T performance index by dividing key factors
@@ -713,7 +717,7 @@ leadership:
 			participate leadership (team involved in decision making)
 			supportive leadership (show personal concern for well being)
 		tannenbaum/schmidt:
-			manager as shares power with non-managers
+			manager shares power with non-managers
 			manager makes temporary decision & sells it, answers questions 
 			non-managers provides input, make limited/joint decision
 		blake/mouton:
@@ -761,7 +765,7 @@ negotiation:
 		(1) be hard on problem, soft on people (keep separate)
 		(2) focus on interests, not positions (concerns, hopes, interests, fears)
 		(3) invent options for mutual gains (win-wins)
-		(4) objective criteria for evaluation of claims, options, alternatives$
+		(4) objective criteria for evaluation of claims, options, alternatives
 	other important points:
 		active listening, show interest, appreciate interests of the other party
 		good negotiation climate (demanding discussions, food for thoughts)
@@ -791,7 +795,7 @@ auditing:
 		status of crucial tasks
 		risk assessment
 		information crucial to other projects
-		limitation of report
+		limitations of report
 	comments on:
 		methodology, procedure, records, properties
 		budgets, expenditures, degree of completion
@@ -924,7 +928,7 @@ agile methods:
 		definition of done
 		lead time (requirement to fulfilment time)
 		kanban board (task board with limited items per columns)
-		kanban no based on sprints, rather continuous
+		kanban is continuous (not based on sprints) 
 	scrum:
 		iterative development, iterations, daily meeting
 		timebox (work on task till time done, then evaluate)
@@ -969,7 +973,7 @@ agile methods:
 SCRUM:
 	"agile process delivering highest business value in shortest time"
 	inspect actual working software in short, regular intervals
-	business set priorities, but team self-manages
+	business sets priorities, but team self-manages
 	characteristics:
 		self-organizing teams, no given specific engineering practice
 		generative rules to create agile environment
@@ -1093,11 +1097,11 @@ rapid results:
 		urgent & compelling area to work on (sense of urgency)
 		experimental, fun, innovative (exciting, game-like)
 		visible leadership demanding measurable results (high stakes)
-	low-hanging fruit:
-		handle simple items to get quick results (boring)
+	low-hanging fruit (supposedly boring):
+		handle simple items to get quick results
 		focus on easy stuff, no learning required, no maintenance required
-	rapid results:
-		scope out result with large improvement opportunity (fun)
+	rapid results (supposedly fun):
+		scope out result with large improvement opportunity
 		focus on specific area with both hard & easy problems
 		learnings as important result
 		change work processes to sustain results
@@ -1109,13 +1113,11 @@ rapid results:
 		probably need to ignore some opportunities, and focus on specific parts
 		aim for specific improvements, then try to find ways to do archive it
 		
-SD model:
-	defines product, release, iteration backlog
+SD (System Dynamic) model:
+	defines product, release, iteration, backlog
 	defines error, change, approval rates at each step in the process
 	then simulates certain projects with different amount of unknowns
-	type of unknowns:
-		unknown unknowns (unexpected issues)
-		known unknowns (not yet clearly defined issues)
+	assumes unknown (unexpected) / known (pending) unknown types
 	pro agile:
 		with high unknown rates agile outperforms
 		the higher the insecurity, the shorter release cycles should be
@@ -1157,9 +1159,10 @@ agile culture:
 		be comfortable with change, new ideas & new technology
 		accept & prepare for the iterative character of projects
 		
-		
 teamwork:
 	three fundamentals allow the big five of teamwork to happen
+	other contributing factors are team size/autonomy, meeting frequency, executive support, release cycles, know unknowns
+	lead to faster change analysis, decision taking & communicating changes
 	shared mental models:
 		anticipate & predict other's needs
 		implicitly adjust strategies
@@ -1189,10 +1192,6 @@ teamwork:
 	team orientation:
 		weight different opinions & determine most correct one
 		be in an involving, sharing, participatory setting
-	other contributing factors:
-		team size/autonomy/meeting frequency
-		executive support, release cycles, know unknowns
-		lead to faster change analysis, decision taking & communicating changes
 		
 		
 terradine case studies
@@ -1245,7 +1244,7 @@ organisation structures:
 			verify product functionality & prepare shipment
 			deliver proof of manufacturing, final customer experience elements
 			done with full, cross function development team
-			gate reviews deliverables, actions plans, approves first customer shipment FCS
+			gate reviews deliverables/plans, approves first customer shipment FCS
 		phase V:
 			release product & processes to routine production, sales, support
 			deliver assessment, market analysis, future plans
@@ -1307,16 +1306,16 @@ jaguar project:
 			earned value charts clearly showed this behaviour, but PM in denial
 		alpha tech incident:
 			big customer threatened to leave, put immense pressure on dev team
-			management committed to detailed plan with AlphaTech, monthly meetings
+			management committed to plan & monthly meetings with AlphaTech
 			real customer was motivating, but overworking, burn out
 			software team only fixed bugs
 			but the agreed on deadline was met
 		public release:	
-			software team was just fixing bugs, more staff thrown at problem
+			software team was only fixing bugs, more staff thrown at problem
 			delayed for 6 months to stabilize software
 	reflections:
 		project archived goals, but organisation was suboptimal
-		debatable weather tools were helpful or distracting
+		debatable whether tools were helpful or distracting
 		giebel found them helpful, but wrong usage
 		jack found them helpful, but criticised missing reactions to warnings
 		generally leaders found it helpful, but engineers thought its wasting time

@@ -831,10 +831,12 @@ complex systems:
 	complicated vs complex:
 		complicated projects have little insecurity (go to the moon)
 		complex projects have great uncertainty (raising a child)
+		use ralph stacy matrix to visualize (includes simple & chaotic problems)
 	problem types:
-		simple (few, known variables)
-		organized complexity (moderate amount of unrelated variables)
-		disorganized complexity (like understanding laws of nature)
+		simple (few, known variables; just do it)
+		organized complexity (moderate amount of unrelated variables; trial & error)
+		disorganized complexity (like understanding laws of nature; trial & error)
+		chaos (experiment)
 	agents:
 		all components of the application 
 		interact/influence each other in unpredictable ways
@@ -896,7 +898,7 @@ agile manifesto:
 agile methods:
 	lightweight, people based rather than plan based
 	several methods (XP, scrum, rapid results, ASD, DSDM)
-	agile manifesto closest to definition
+	in complex environment (between ad-hock & waterfall)
 	workflow:
 		product backlog fuels sprint backlog
 		sprints in 2-4 weeks, daily scrum every 24h
@@ -950,10 +952,10 @@ agile methods:
 		velocity (give points to user stories, count how many completed)
 		user stories (defines what in short phrase, implemented in sprint)
 		collective ownership (nobody owns code, anyone may modifies any file)
-		continuous integration (unit tests upon git push)
+		continuous integration (integrate changes fast into product)
 		simple design (justify pattern cost, YAGNI)
 		refactoring (restructure code to make it more robust, easier)
-		TDD (test driven development, first failing unit test, then implement)
+		TDD (test driven development, first failing unit test, then implement, then refactor)
 	testing:
 		usability testing (end user fulfils given task)
 		exploratory testing (continuous testing by autonomous tester)
@@ -969,11 +971,13 @@ agile methods:
 		role-feature-reason (to create user stories; "as a ... i want ... such that ...")
 	devOps:
 		version control, automated build, continuous integration & deployment
+		deploy installs bugsfixed & hidden new features often & automatic
+		release is a scheduled publications including changes for the user
 		
 SCRUM:
 	"agile process delivering highest business value in shortest time"
 	inspect actual working software in short, regular intervals
-	business sets priorities, but team self-manages
+	business sets priorities, but team self-manages	
 	characteristics:
 		self-organizing teams, no given specific engineering practice
 		generative rules to create agile environment
@@ -983,55 +987,6 @@ SCRUM:
 		from product backlog, a sprint log is created
 		daily scrum meeting during the sprint
 		at the end of sprint shippable product increment available
-	roles:
-		product owner (defines & manages product backlog, prioritizes)
-		scrum master (ensures agile values, principles)
-		team (shared accountability)
-	sprint:
-		full RE, design, coding, testing during single sprint
-		no changes during sprint, but scope negotiations with product owner
-	sprint planning:
-		meeting at start of sprint
-		select items from backlog for next sprint log
-		whole SCRUM team participates
-	sprint review:
-		informal meeting at end of sprint
-		set next objectives to increase value
-		key stakeholders invited by product owner
-		product owner explains what backlog items have been Done & not Done
-		development team discusses good, bad, found solutions, demonstrates Done
-		product owner discusses state of project, estimates delivery dates
-		all collaborate what to do next as input for sprint planning
-		review if value propositions still hold
-		review timeline, budget, potential capabilities
-		backlog adjusted to reflect results of sprint review
-	sprint retrospective:
-		after sprint review, before sprint planning
-		focus in inspection, adaptations to improve processes
-		answer what went well, what did not, how to improve in next sprint
-	daily scrum meeting:
-		team reflects on work from past 24 hours (done)
-		team plans work for the next 24 hours (todo)
-		team resolves interdependencies issues (blocked?)
-		yesterday done, today do, any blockades?
-		for self-organization, honest status, focused on outcome (not progress)
-	scrum of scrums:
-		ambassador of scrum goes to bigger meeting
-		frequency of meetings based on coupling
-		include up to 800 people in single scrum process
-	product backlog:
-		single source of requirements for product finish, constantly adapts
-		features, functions, requirements, enhancements for next iteration
-		continuously refine items till able to do in one sprint
-		use backlog to estimate development speed, release dates, etc
-	sprint backlog:
-		selected items from backlog, at least one hig-level, high-priority one
-		can only be modified by development team during the sprint
-		keep track of work remaining, work to do and put it in chart
-	burndown chart:
-		publicly displayed chart visualizing current work status
-		remaining effort (% completed), remaining tasks (done, not done)
-		ideal burndown (line), completed tasks (as boxes)
 	pros:
 		fully developed, tested features in short time frames
 		simple process with clear rules
@@ -1041,6 +996,96 @@ SCRUM:
 	cons:
 		undiciplined hacking with no real documentation
 		violation of responsibilities
+	roles:
+		scrum master:
+			helps the team to reach its potential
+			needed mostly in the beginning solving problems inside the team
+			then moves on to optimiye environment
+		business owner:
+			refines backlog, can answer questions about the product & can take decisions
+			advantages if dev include same vocabulary, higher acceptance 
+			disadvantages if dev include losing sight of business, micromanagement
+		team:
+			shared responsiblity & accountability for result
+	artificats:
+		product backlog (PB):		
+			single source of requirements for product finish, constantly adapts
+			features, functions, requirements, enhancements for next iteration
+			continuously refine items till able to do in one sprint
+			use backlog to estimate development speed, release dates, etc
+		product backlog item (PBI):
+			feature from the view of the bussines with conrete value following the vision
+			can be included in the sprint if it is concrete & concise enough
+			will be split into different tasks needed for the implementation
+		sprint backlog:			
+			selected items from backlog, at least one hig-level, high-priority one
+			can only be modified by development team during the sprint
+			keep track of work remaining, work to do and put it in chart
+		sprint:
+			fixed duration (1-4 weeks) where selection of PBIs are implemented			
+			PBI are implemented completely, including requirements engineering, design, coding & testing
+			no change of PBIs during sprint, but scope negotiations with product owner
+		sprint goal:
+			catchphrase to sell sprint to business and motivate team
+			helps to group similar PBI
+		burndown chart:
+			publicly displayed chart visualizing current work status
+			remaining effort (% completed), remaining tasks (done, not done)
+			ideal burndown (line), completed tasks (as boxes)
+			alternatively use public kanban board or similar
+	events (ordered):
+		planning:
+			ensure to be in 8h
+			to commit to work to be done in the next sprint
+			define work to be done (functionality for next increment)
+			define how it can be implemented
+			establish sprint goal, common goal to motivate & unite team members
+		review:
+			attendees are product owners, key stakeholders & dev team
+			to inform stakeholders of progress
+			PO explains DONE and not DONE
+			dev team explains what went well & what did not, demonstrates DONE
+			PO discusses backlog status
+			groups dicusses what to do next to prepare sprint planning
+			review of marketplace / target of product, value propositions
+			review of timeline, budget, capabilities, marketplace for next product iteration
+			backlog adjusted to reflect results of sprint review
+		retrospective:
+			after sprint, for dev team, timebox to 3h & ensure positive atmosphere
+			inspect people, relationships, process & tools
+			to formulate work items from good to leverage & bad to optimize
+			priorize work items & create a plan to implement
+		daily scrum:
+			happens daily, for dev team, timebox to 15 minutes
+			for self-organization, honest status, focused on outcome (not progress)
+			discuss, assign & distribute tasks inside the dev team
+			use classic setup (discuss done, will do, possible interdependencies)
+			use feature setup (kanbanboard, starting from the right, "what can I do today to move task x forward")			
+		scrum of scrums:
+			ambassador of scrum goes to bigger meeting
+			frequency of meetings based on coupling
+			include up to 800 people in single scrum process
+	artifacts:
+		product backlog:
+			work items & definition of DONE
+			dev team estimates, estimates used to monitor progress (speed)
+		sprint backlog:
+			work items of sprint, hence a preview of next increment
+			used for daily scrum & owned by dev team			
+		defintion of done:
+			use closed questions to formulate
+			examples include unit test passes, code style & coverage not decreased, BA has verified functionality, code review done		
+	testing:
+		principles:
+			testing as an activity not a phase
+			prevent bugs instead of find bugs
+			dont be a checker (checks can be automated) be a tester (creative)
+			dont try to break the system, help the system
+			whole team is responsible for quality
+		types:
+			development (stability, safetly)
+			acceptance (quality, regression, acceptance)
+			exploratory (edge cases, new ways to use system)
 		
 extreme programming:
 	"extremifies good programming practices"
@@ -1193,6 +1238,25 @@ teamwork:
 		weight different opinions & determine most correct one
 		be in an involving, sharing, participatory setting
 		
+soft skills:
+	lead a workshop:		
+		"have I forgotten something"
+		"has everyone heard this before"
+		"have we talked about everything"
+		ask the audience questions instead of explaining the answer
+		"time starts, ..., now!"
+		include leaders and experienced (hence potentially bored) audience members
+	explain technical dept:
+		x axis time, y axis features implemented
+		draw features implemented as every decreasing value
+		ask why it decreases, what the time is spent on
+		explain that it is technical complexity
+		dramatically draw the technical complexity courve
+	
+dev culture:
+	architect:
+		(senior) developer in team
+		mentors & lead the team with a technical vision (and shows that it works)
 		
 terradine case studies
 =====

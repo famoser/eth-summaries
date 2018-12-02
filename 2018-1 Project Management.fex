@@ -1053,7 +1053,8 @@ SCRUM:
 		retrospective:
 			after sprint, for dev team, timebox to 3h & ensure positive atmosphere
 			inspect people, relationships, process & tools
-			to formulate work items from good to leverage & bad to optimize
+			use templates like mad/sad/glad or start/stop/continue to help with brainstorm
+			formulate work items from good to leverage & bad to optimize
 			priorize work items & create a plan to implement
 		daily scrum:
 			happens daily, for dev team, timebox to 15 minutes

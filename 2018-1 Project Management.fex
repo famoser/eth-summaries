@@ -824,6 +824,20 @@ termination:
 		lesions learned (benchmarks, killers)
 		to enable better project management in the future
 		
+development process
+====
+
+roles:
+	developer dev (has technical knowhow)
+	quality assurance QA (ensures high quality of product)
+	business analyst BA (knows the business)
+	requirements engineer RE (can formulate clear requirements)
+	
+test types:
+	development (ensure safety & stability, for/by devs)
+	acceptance (ensure quality & reqression & acceptance, for/by BA)
+	exploratory (find new use cases; for/by user)
+		
 agile principles
 =====
 
@@ -960,11 +974,12 @@ agile methods:
 		usability testing (end user fulfils given task)
 		exploratory testing (continuous testing by autonomous tester)
 		unit tests (pass/fail execution of short part of code)
-		TDD (single test -> write just enough code to pass -> simplify)
+		TDD (single test -> write just enough code to pass -> refactor & simplify)
 		mock objects (mock implementations)
 		acceptance tests ([automatic] user story test)
 		ATDD (acceptance test driving development, customer creates)
 		ATDD answers what problem, how solved, what about edge cases
+		ATDD creates failing acceptance tests then implements until all passed
 		BDD (behaviour driven development, synthesis of TDD, ATDD)
 		BDD answers five Why's, defines task cleary, focuses on business value
 		given-when-then (template for acceptance tests for user stories)
@@ -1075,7 +1090,9 @@ SCRUM:
 			used for daily scrum & owned by dev team			
 		defintion of done:
 			use closed questions to formulate
-			examples include unit test passes, code style & coverage not decreased, BA has verified functionality, code review done		
+			include technicals such as build passes (unit test, coverage, code style)
+			include organisationals such as code review done, QA/BA have verified
+			formulate as closed questions
 	testing:
 		principles:
 			testing as an activity not a phase
@@ -1247,12 +1264,17 @@ soft skills:
 		ask the audience questions instead of explaining the answer
 		"time starts, ..., now!"
 		include leaders and experienced (hence potentially bored) audience members
+		ask easy yes/no questions ("have you heard of...") and raise hand to animate others
 	explain technical dept:
 		x axis time, y axis features implemented
 		draw features implemented as every decreasing value
 		ask why it decreases, what the time is spent on
 		explain that it is technical complexity
 		dramatically draw the technical complexity courve
+	lead a meeting:
+		make attendance optional
+		distribute an agenda of points to be discussed
+		timebox the event
 	
 dev culture:
 	architect:

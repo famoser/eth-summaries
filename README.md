@@ -33,6 +33,9 @@ Generally, the newer the summary, the more consistent is the structure & the wor
 | 2018-1 Information Security Part1 | ★★★★☆ |
 | 2018-1 Information Security Part2 | ★★★★☆ |
 | 2018-1 Compiler Design | ★★★★☆ |
+| 2019-2 Digital Sustainability | ★★☆☆☆ |
+| 2019-2 E-Business Recht | ★★★★☆ |
+| 2019-2 Security Engineering | ★★☆☆☆ |
 
 Comments:  
 Object Databases (short) is without general statements like "can be configured" and perceived irrelevant details (syntax for dead libraries) but may not be complete.

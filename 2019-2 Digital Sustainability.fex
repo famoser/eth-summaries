@@ -1,0 +1,511 @@
+Digital Sustainability
+===
+
+introduction:
+	high prices need scarcity, which needs rivalry
+	logins:
+		provide personalization & privacy for user
+		make information like physical possession; get statistics about usage		
+	difference physical / informational:
+		both have an apple and exchange it -> both have one apple
+		both have an idea and exchange it -> both have two ideas		
+		physical:
+			one original (no copies)
+			one consumer
+			denying others access is practical
+		informational:
+			identical copies
+			many consumers
+			denying others access is challenging
+	characteristics of goods:
+		excludable access (easy/difficult to deny others)
+		consumption rivalness (diminish of value when others consume too)
+		dimensions:
+			easy/low like club goods (fire protection, cable TV)
+			easy/high like private goods (cars, books)
+			hard/low like public goods (sunset, peace, defence, knowledge/cultural)
+			hard/high like common pool (library, environment)
+	digitalization:
+		applies to science, traditions, art, software, ...
+		pre-digital area:
+			costly production & distribution
+			originals finite, scarce, of different quality
+			needs risky investment which needs incentives to do it
+		after digitalization:
+			cheap production (computer) and distribution (internet)
+			concept of original does not make sense
+			less investment needed
+			mostly only transaction cost (contacting sources/target)
+	intellectual property rights (IPR):
+		for knowledge scarcity
+		exclude others from access/use by legal means (copyrights, patents, trademarks)
+		assumption that no new knowledge without financial incentives & rewards	
+		ethical position:
+			"things that are not diminished when shared must be shared"
+			how to use digital resources in our society?
+		contribution positions:
+			all alone:
+				one genius alone did all the relevant work
+				hence ensure protection & incentives for creator alone
+			builds upon previous work:
+				the innovation was only possible thanks to previous
+				hence ensure access & information flow for all
+
+scientific publishing:
+	scholars publish articles in journals
+	system of referencing (citations):
+		to show other relevant previous work and how own work differs
+		avoids repeating and allows to discover & build up on previous work (and not just re-do it)
+		measure performance
+	mechanism important:
+		knowledge exchange
+		reputation building (but not an incentive for quality)
+	cycle:
+		scientists write papers & applies for journal
+		scientists peer-review (get reputation but no money)
+		journal proof-reads / edits paper & aquires copyright
+		journal publishes & sells subscriptions
+	market:
+		top journals can not be substituted (demand independent of supply)
+		hence prices most likely much higher than cost
+	industry:
+		ca 8 firms control about 2/3 of the 7.3 billion dollar market
+		while costs sinks (digitalization) demand stays constant (loyal readers)
+		illegal downloading of papers if heftly punished
+		sci-hub and library genesis as pirate alternatives
+	Open Access:
+		wants to change (remove) the industry behind scientific publishing
+		make information / tools openly accessible for the public
+		berlin declaration (2003):
+			"mission of dissiminating knowledge is only complete if all have access"
+			"openly accessible & compatible tools & content"
+			1) users get free, irrevocable, worldwide right to access, copy, use, distribute, transmit and display
+			2) complete version of work is deposited in online repository	
+		implementation:
+			free for readers
+			author pays up-front
+			contractural expiration of copyright
+		implementation alternatives:
+			golden (payed publishing as a service)
+			green (can additionally publish on own website with some restrictions)
+		examples:
+			public library of science plos.org
+			open science online courses foseropenscience.eu/courses
+			open access journals doaj.org
+		blockchain for science:
+			can takle malfunctioning processes
+			reward first mover (prove who was first)
+			do peer reviews (protect against tampering)
+			incentivise sharing earlier (prevent double work or late knowledge exchange)
+
+property:
+	property vs possession:
+		possession is to have it physically, the stronger one wins
+		property is a structure of law, rationale are effort & scarcity
+	history:
+		german law includes use & ownership of produced items
+		roman law additionally includes abuse (can do anything you want with it)
+	property forms:
+		private property (owned by specific person)
+		public property (owned by all, but maybe not payed by all)
+		common property (usable by all with some limitations)
+
+knowledge:
+	what:
+		data is a collection of data points
+		information is the combination of data
+		knowledge is the interpretation (biased by culture, education, ...) of information
+	how:		
+		needs tangible medium 
+		artifact like books, articles
+		facilities like libraries, repositories
+		regulation happens on this level
+	who:
+		public domain:
+			abstract space nobody owns
+			unlimited acces, use without restrictions
+			basis of cultural heritage (receips, traditions, literature)
+			initiatives like gutenberg, cpdl, mutopiaproject allow upload/downlad of copyrightfree works
+			in contrary enclosure (public goods declared private like wild west) 
+
+tragedy of the commons:
+	each rational separate actor benefits when overconsuming scarce resources
+	everyone has the right to use, noone has the right to exclude others
+	hence prone to overuse
+	examples are forests, parks, high seas
+
+tragedy of the anticommons:
+	when commons is inverted
+	everyone has right to exclude others, no one has the priviledge of exclusive use
+	hence prone to underuse
+	examples are software patents, copyright
+	patents are legally binding even if not known to the offender, hence risky to use
+
+case study netscape:
+	94 mosaic netscape developed
+	95 IPO during internet hype
+	was defactor standard because free; mosaic got money with server software
+	95 release of internet explorer 1.0
+	microsoft abuses market power to force IE (bundled with windows)
+	feature bloat, instabilities, incompatabilities, bugs
+	IE does not respect standards, implements proprietary extensions
+	98 netscape dies
+	microsoft is sued, internet explorer usage explodes
+	innovation ceased
+	but dumped code to mozilla
+	02 release of mozilla 1.0
+
+intellectual property rights (IPR)
+====
+
+monopoly:
+	"alone-seller", single provider of service/product
+	hard to compete, substitute, enter market
+
+IPR:
+	knowledge has incentive problem (non-excludable, non-rival)
+	grants exclusive (create incentive), time-bounded (avoids monopoly) rights
+	incentive purpose:
+		create incentive to investment in R&D
+		but balance with optimal (hence public) ressource allocation 
+		change temporal (how long) and spatial (how much) dimensions
+	allocation purpose:
+		efficient (reduce transaction costs)
+		marketable (to get price the product is worth)
+	implementations:
+		copyright, patents, design rights, ...
+	alternatives:
+		culture flat rate (instead middle man taking cut)
+		innovation prices (many prices already exist)
+		trade secrets (but other cannot contribute)
+		subsidies of the state
+		competitions / hackatons
+		altruism
+		crowdfunding
+
+copyright:
+	protects original forms/expressions
+	exclusive rights for the work
+	history:
+		1662 licensing act (only printin guilde can copy)
+		1710 copyright 14 years
+	grant rights:
+		grants any rights in any forms
+		grant license (permission to use without ownership)		
+	neighbouring rights:
+		database rights ("leistungsschutzrecht" EU)
+		renting rights
+		performers rights
+	forms:
+		co-creators (each author has veto rights)
+		derivative works (ownership depending on contribution amount)
+	exceptions:
+		no need to pay if transaction cost higher than monetary value CITATION NEEDED
+		fair use for education/criticism
+	recent development:
+		for public:
+			public benefts from easy difficult-to-prevent distribution
+			license to reduce transation costs & define CC / copyleft
+		for author:
+			extend copyright duration & rights
+			prohibided to circumvent copyright protections
+			development of digital rights management (DRM)
+	motivations:
+		utility (maximize net social welfare)
+		labor (your worked for it)
+		personality (human needs, self expression)
+		social planning (justice)
+
+patents:
+	protects ideas/concepts
+	exclusive rights for the listed claims
+	history:
+		1474 venetia "new, ingenious, useful device"
+	preconditions:
+		patentable (for example math excluded)
+		novel (never seen before)
+		non-obvious (US) / inventive step (EU)
+		useful (US) / industrial application (EU)
+	issues:
+		block competition (expensive prosecutions)
+		races (around hype technologies)
+		trolls (buy patents to sue others)
+		thickets (many patents in same area)
+		lots of applications (slow granting process)
+		cumulative inventions:
+			composed out of many previous work
+			previous strongly protected work may prevent further because too similar
+	solutions:
+		pools (many owners act and use jointly)
+
+patents vs copyright:
+	both grant time-limited exclusive rights
+	idea/concept vs expression
+	application fee & reviewed vs free & immediate
+	defined by work vs by fuzzy claims
+	disclosed implicitly vs exlicitly
+	unintentional infringement unlikely vs more likely
+	monitoring costly vs cheap
+	limitations for other creators big vs small
+	transaction cost high vs lower	
+
+IP architecture:
+	WIPO:
+		for wordwide IPR with treates
+		can not publish defectors because part of UN
+		grants copyright to software
+		history:
+			1886 copyright (bern convention)
+			1883 patents (paris convention)
+			1961 performers/producers (rome convention)
+		internet:
+			1996 copyright & performers/producers
+			2000 patents (PCT)
+			bit later EU & CH 
+	WTO:
+		for trade relations with TRIPS contracts 
+		can punish members that do not uphold contract
+		protects software like literary works
+		allows to grant patents of any form
+	EU:
+		defines implementation with EPC (european patent convention)
+		excludes discoveries, theories, math, aestetic creations, mental acts, playing games, doing business, computer programs, presentation of information
+		but only if its referred as such 
+		hence can reformulate abstract ideas to automata
+
+software:
+	source code is compiled to binary
+	approaches:
+		proprietary:
+			bill gates is a market person, sees software as a product for profit
+			only binary distributed with EULA describing how usage should be done
+		free software:
+			richard stallman is an societal activist, sees software as commons for freedom
+			source code published with four freedoms
+			free software as a social movement
+		open source:
+			linus torvalds is an engineer, sees software as tool for hobby
+			full source code disclosed
+			open source as a development methodology
+			developed much later in internet 
+	licenses:
+		four freedoms:
+			right granted to use/read/modify/distribute
+		copyleft:
+			"all rights reversed" or "share-alike" (as CC)
+			published derivatives fall under GPL too
+		vitality:
+			if you combine with free software, you also need to use GPL
+		examples:
+			GPL/AGPL with copyleft & vitality
+			LGPL/MPL with copyleft
+			BSD/APL as permissive licenses
+			public domain which removes copyright
+			dual licensing with multiple licenses for different groups
+	societal questions:
+		who:
+			mainly young, male, high education
+		why:
+			rewards (learning, solve own problems, low sharing cost, monetary reward)
+			incentives (reciprocity, reputation, future career benefits, freedom)
+			enjoyment (fun, coding as art, altruism, ego-boosting)
+			obligation (sense of community, adherence to community norms, political like GPL, reputation)
+			no skills/interest in sales/marketing
+		how:
+			project defining communcation, conflict resolution, release schedule
+			collaborative work on repository
+			communication over mailing lists, chats, meetings, conferences
+			companies as part of the community
+
+open source community:	
+	characterization:
+		user engagement (else no point in having project)
+		transparent (developments, decision taking)
+		collaboration (work together with diverse set of people)
+		agility (adapting to changing environment)
+		sustainability (keeping up pace for needed period of time)
+		tools (wikis, bugtracker, versioning, email lists)
+	management methodologies:
+		cathedral (single contributor) vs bazaar (many contributors)
+		dictator (single decisionmakers) vs meritocracy (many decide)
+		examples:
+			GNU emacs as cathedral, dictator
+			Linux as bazaar, dictator
+			HTTPD as bazaar, meritocracy
+			apache OODT as cathedral, meritocracy
+			ubuntu as in between
+	governance design:
+		choice of license (to only allow wanted behaviour)
+		legal sanctions (to deal with misbehaviours)
+		protect brand (with trademarks)
+		legal setup (like a foundation)
+		organisational (responsibilities, support, contribution process)
+
+examples:
+	openness:
+		data/content:
+			opendefinition to check what is open or not
+			creativecommons which provides licenses
+			projects include wikipedia, openclipart
+		format/protocols:
+			open communications protocols like http/ftp/...
+			file formats like odt, ogg, png
+			technical standards
+	limitations:
+		format/protocols may be proprietary
+		technical standards:
+			legal open but may lack technical details
+			publicly available as royality free / RAND
+			standards of organisation which must be bought (ISO, DIN, IEEE)
+
+history of free software:
+	1950 computers as big as a room with user manuals (software)
+	1969 unbundling of hardware, software by IBM
+	1975 microsoft, apple
+	1984 GNU
+	1989 copyright for software
+	1992 openSuse, redhat, linux
+	1995 IE with browser wars
+	1998 haloween documents (microsoft identifies FOSS as major threat)
+	2002 OpenOffice
+	2007 java under GPL
+
+open source usage:
+	higher in software industry
+	importance of factors (decreasing):
+		security updates
+		stability
+		documentation
+		support-guarantees
+		compatability
+		adjustments
+		release planning
+		knowledge
+		support
+		legal bindings
+		trainings 
+
+business models:
+	distribution:
+		provide packages (OS, security tools, ...) and schedule releases, delivery, support
+		need expertise, community relations, developer access
+		earn with dual licensing, proprietary additions, consulting, support
+		examples are redRat, mySQL
+	service provider:
+		provide business process expertise, IT consulting, training
+		need business knowhow, topic scouting, event management
+		earn with support/training, consulting
+		examples are accenture, ibm, CMS provides
+	hardware:
+		provide free/open hardware
+		need to be able to build hardware
+		earn with hardware, merchandise
+		examples are fairphone, Edge, Vivaldi
+	retail:
+		provide specialized sales channel
+		need sales experience
+		earn with books, tutorials, merchandise 
+		examples are oreilly
+
+open source policy:
+	policy:
+		guideline, plan of action
+		must not be adhered to, but will be tried to be followed
+	arguments:
+		cost (relative to GDP quite significant)
+		data exchange (incompatabilities or inaccessibility)
+		independence (reduce influence of other entities)
+		education (others must be able to study others code)
+		cultural diversity (remove restrictions to others)
+
+distributed ledgers:
+	multiple nodes agree on what transactions are included in log
+	removes intermediary normally do the tasks
+	forms are blockchains, directed ascyclic graph (DAG), hashgraphs
+	blockchains:
+		forms are smart contracts, currencies
+		form of currencies are bitcoin, litecoin
+	blockchain 2.0:
+		transactions are code
+		code execution is verified
+		hence blockchain is now verified execution
+	drawbacks:
+		privacy:
+			transaction are public; only addresses are not trivially known		
+			-> privacy coins that try to encrypt DL
+		decentralized:
+			ripple has no open network ("permissioned"), bitcoin all in china 
+	workings:
+		create block from hash of previous block, transactions
+		change nonce and hash itto get some non-invertible function (hash)
+
+sustainability:
+	aspects:
+		intragenerational (for fellow citizens; but who decides)
+		intergenerational (for our children; but who represents)
+	definitions:
+		by UN:
+			sustainable development meets the need of the present
+			without compromising the ability of future generations to meet their own needs
+		strong sustainability:
+			keep stock constant, consume only renewable part
+			von den zinsen leben
+		weak sustainability:
+			assume resources can be substituted / are replaced in the future
+			gamble with the future
+		systemic view by Bundestag:
+			use of self-regenerating system
+			such that it preserves its properties
+			and such that it can rebuild itself
+		3-pillar view:
+			ecological
+			financial
+			social
+	resource focus:		
+		physical:
+			because finite, scarce, depletable
+			trade using money or distribute using a fixed system
+		digital:
+			not so much discussed because immaterial and invisible
+
+digital sustainability:
+	if utility for society is maximized equally for present/future generations
+	hence if minimum technical, legal, social restrictions
+	digital resources are digital knowledge/cultural artifacts as text, image, audio, ...
+	pillars:
+		code (free / open source software)
+		formats (open formats & protocols)
+		data (open data such as research results)
+		content (open content such as music, social networks, ...)
+	renewable:
+		accessible (anyone, forever, everything)
+		and resuable (legally, technically, socially)
+	systemic view:
+		need to know what natural state of system are
+		to be able to help them being preserved
+	vs physical:
+		physical can be depleted to be unavailable
+		digital can be opened to be available
+
+digital human rights:
+	debate culture:
+		re-frame old terms
+		coin new terms
+	definition power:
+		social, cultural reality is created in discourse
+		definition power have actors which dominate the discourse
+		this agenda setting can influence debates
+	digital divide:
+		different definitions influence debate
+		who (countries, communities)
+		which (income, education, age)
+		how (access, use, reuse)
+	comunication rights:
+		public sphere (freedom of expression, access to information, diversity of content)
+		knowledge (knowledge-share regime, availability of knowledege)
+		TODO slides
+		civil (related to the processes of communication in society)
+		cultural (communication of cultural information, for different cultures)
+	openness:
+		describes technical & legal to use/distribute digital content
+		but terms used differently based on community

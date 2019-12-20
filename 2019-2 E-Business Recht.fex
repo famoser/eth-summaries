@@ -1,0 +1,1106 @@
+E-Business Recht
+=====
+
+relevante konzepte:
+	suveränität (CH):
+		ausländischen staaten darf nicht geholfen werden
+		rechts/amtshilfe möglich soweit vertretbar durch schweizer recht
+		datenauslieferung bankengeheimnis dadurch zunächst unmöglich
+	territorialsprinzip definiert:
+		lokale behörde setzt regelungen für das jeweilige territorium um
+		wenn sachverhalte im territorium stattfinden
+		wenn auswirkungen im territorium (trotz sachverhalte ausserhalb)
+	fahrlässig:
+		wenn kein versuch unternommen wird, recht nicht zu brechen
+		wie bei urheberrecht den vermuteten rechteinhaber zu fragen/bezahlen
+	vorsatz:
+		schädiger rechnet mit schaden und nimmt ihn in kauf
+		irrelevant ob schaden gewünscht war oder nicht
+	rechtswidrig:
+		verletzung absolutes rechtsgut (sach- und personenschaden)
+		verletzung schutznorm (gesetzesbruch gegen schadensfall wie DSG)
+		nicht zwingend strafrechtliche konsequenzen
+
+anwendbares recht:
+	prozess:
+		territorium bestimmen:
+			klasssisch (wohnsitz/aufenthaltsort, handlungsort)
+			auswirkung (zielpublikum, auswirkungsort)
+			vertraglich (explizit in vertrag, nutzer fragen)
+		zuständigkeit:
+			staat/behörde erklärt sich zuständig; anhand vom territorium
+			abkommen verhindern überschneidungen oder kläger wählt aus
+			anderweitige bearbeitung verhindert erneute annahme (ausnahme bussverfahren)
+		anwendbares recht bestimmen:
+			anhand bundesgesetze (IPRG), internationaler abkommen, territorialprinzip
+		implikationen:
+			angaben des nutzer verlässlich (FINMA)
+			technische einschränkungen (währungswahl, IP blocking)
+			seitenaufruf ungenügend um lokales recht anzuwenden 
+			B2B verträgen legen rechtsstandort explizit fest
+			günstige standortwahl (firma, server, provider)
+			einschränkung angebot auf wichtigste/strengste regulierungen
+			italien torpedo (gegenklage in italien um verfahren herauszuzögern)
+	durchsetzung:	
+		faktisch mehr eine frage, wie/ob es durchgesetzt werden kann
+		cloud-act (USA):
+			kann auch auf daten zugreifen, die nicht in den USA gespeichert sind
+			durchsetzung möglich da sonst USA markt verschlossen
+		DSGVO (EU):
+			gilt für Waren, Dienstleistungen (inkl. Tracking) in EU
+			auch wenn zahlung, erbringung im ausland stattfindet
+			somit explizit für hotels/shops und facebook/google
+			durchsetzung möglich da EU sehr gross
+		datenschutzrecht (CH):
+			ähnlich wie DSGVO (sogar noch stärker)
+			nicht international durchsetzbar
+		zugriff auf ausländischer provider (CH):
+			verfügung nicht durchsetzbar
+			zugriff nehmen aber erlaubt (auch mit bruteforce)
+		street view (CH):
+			ausländischer anbieter & ausländisches angebot
+			aber auswirkungen in der schweiz hoch
+			gerichtbeschluss dass datenschutzbeauftragter trotzdem zuständig
+	anwendung:
+		konsumentenschutz (CH):
+			zwingende sonderregeln (auch für ausländische anbieter)
+			vollstreckt innerhalb von europa
+			anwendungsrecht:
+				im land wo bestellung entgegengenommen wird
+				oder werbung dazu gesehen wird die zu vertragabschluss führte
+				oder aus dem konsument anreist für vertragsabschluss
+			CH vs EU:
+				EU kennt 2 jahre garantierecht, CH ist nachgezogen
+				EU kennt widerrufsrecht, CH nicht
+		unerlaubte handlungen (CH):
+			anwendungsrecht:
+				falls vorhanden, gemeinsames recht
+				sonst falls realistisch für schädiger, erfolgsort
+				sonst handlungsort
+			sonderfall unlauterer wettbewerb:
+				anwendung dort, wo wirkung entfaltet wird
+		persönlichkeitschutz (CH):
+			falls bezug zur schweiz, schweizer datenschutz anwendbar
+			anwendungsrecht:
+				geschädigte person kann auswählen
+				falls realistisch für schädiger, aufenthaltsort
+				sonst falls realistisch für schädiger, erfolgsort
+				sonst aufenhaltsort des schädigers
+		urheberrecht (CH):
+			falls wohnsitz/gewöhnlicher aufenhalt in der schweiz klage möglich 
+			anwendungsrecht:
+				verletzungsort
+		aufsichtsrecht (CH):
+			umfasst regulierungen über bewerbung & verkauf von waren
+			beispiele sind werbeverbot alkohol, meldepflicht esswaren
+			anwendungsrecht:
+				territorialsprinzip
+
+urheberrechtsgesetz (URG)
+===
+
+schützt werke von schöpferischem tun
+
+konkretisierungsgrade:
+	idee (gedanke; information wahlergebnis, idee für buche)
+	werk (umsetzung; formulierung artikel, erstellung universum)
+	werkexemplar (verkörperlichung; als print in zeitung/buch)
+
+schutzumfang:	
+	exklusive autorität über verwendung/änderung eigenes werkes
+	gilt bis 70 jahre nach tod des authors, 50 für quellcode
+	vermietungsrechte (anspruch auf anteile der vermietung)
+	zutrittsrechte (zutritt falls erforderlich für rechtsausübung)
+	ausstellungsrecht (ausstellung falls grosses interesse an werk)
+	schutz vor zerstörung (rückgabe zum materialpreis vor zerstörung)
+	schutz vor umgehung "geeigneter" technischer vorkehrungen
+	schutz vor entfernung informationen zur durchsetzung urheberrecht
+	persönlichkeitsrechte:
+		anerkennung authorenschaft
+		recht über erstveröffentlichung
+		änderungs/bearbeitungsrecht (änderungen dürfen nicht ruf schaden)
+		schutz vor entstellung oder beeinträchtigung
+
+schutzbedingungen:
+	für jegliches werk
+	form unerheblich (sprache, kunst, wissenschaftliche darstellungen)
+	qualität unerheblich (zweck, legalität, richtigkeit, wert, zustand, inhalt)
+	schutz automatisch erteilt unerheblich der herkunft des urhebers
+	schutzlandprinzip (recht des landes angewandt wo schutz ersucht wird)
+	ausnahmen sind amtliche erlasse/dokumente, zahlungsmittel, patentschriften
+	geistige schöpfung:
+		erkennbarer bewusster gestaltungswille
+		ausgeschlossen ist radarfallenbild, überwachungskamerabild, affenselfie
+		eingeschlossen ist jenseitige inspiration (von gott gegeben)
+	individueller character:
+		erkennbare individualität, statistisch einmalig
+		abhebung vom allgemein üblichen relativ zur gegebenen freiheit 
+		ausgeschlossen ist fleissarbeit, handwerksarbeit, panoramabilder, luftaufnahme, abstrakte idee, beipackzettel
+		ausgeschlossen sind generische AGBs/werbetexte/disclaimers
+		eingeschlossen ist SBB uhr, liveübertragungschnitt, handgezeichnete landkarten
+		eingeschlossen sind jegliche bilder (neu in CH)
+
+weitere schutzformen (CH):
+	wenn als teil eigenes werkes andere verwendet werden
+	ursprüngliche authoren müssen weiterverwendung zustimmen
+	werke zweiter hand:
+		weiterentwicklungen (übersetzungen, bearbeitungen, kunst)
+		verblassungsformel ("individualität neues werk stärker als älteres")
+		eingeschlossen sind warhol bilder
+	sammelwerke:
+		sofern bei auswahl/anordnung schutzbedingungen erfüllt
+		eingeschlossen sind nachschlagwerke
+
+einschränkungen (CH):
+	sofern ökonomische interessen unberührt
+	eigentümer datenträger verfügt über deren inhalt
+	eigengebrauch:
+		sofern für persönlicher bereich, lehre, interne dokumentation
+		nur für veröffentlichte werke
+		darf auch durch dritte ausgeführt werden
+		eingeschlossen ist zattoo, kopien von zugänglich gemachten werken 
+		ausgeschlossen sind tauschbörsen (auch fragmente)
+	entschlüsselung computerprogramme:
+		sofern information nur für entwicklung gegen schnittstellen verwendet wird
+	staatliche verwertungsgesellschaften:
+		grossflächiges senden erlaubt, ausgeschlossen fernsehen & programme
+		wiedergabe archivwerke (>10 jahre, produziert von sendeunternehmen)
+		wiedergabe verwaister werke (unbekanntes urheberrecht)
+		wiedergabe gesendeter musikalischer werke (produziert von sendeunternehmen)
+		vervielfältigung zu sendezwecken
+		erhobene abgaben werden statistisch an inhaber ausbezahlt
+	archivrecht:
+		sofern als archivexemplar gekennzeichnet, nur eine kopie
+	zwangslizenz tonträger:
+		sofern in/ausland bereits verbreitet wird
+	vorübergehende vervielfältigung:
+		sofern flüchtig, wesentlich, nötig & wirtschaftlich unbedeutend
+	aufbereitung für disabilities:
+		sofern werk in ursprünglichen form nicht/schlecht konsumierbar ist
+		sofern kein gewinnzweck & nur von behinderten benutzt
+		bei grossflächiger vervielfältigung kann rechteinhaber gebühr verlangen
+	abbildung in katalogen:
+		sofern ausstellung öffentlich zugänglich
+	zitatrecht:
+		wenn minimaler ausschnitt, quellenangabe, verbindung zu inhalt
+		eingeschlossen meta-artikel der klatschpresse
+		ausgeschlossen ist loriotbiographie (zu lange zitate), bilder ohne inhaltlichen bezug
+	berichterstattung:
+		sofern nur erforderliche teilausschnitte wiedergegeben werden
+		schützt nicht thumbnails da diese volle nutzung des bildes sind
+	erschöpfung:
+		wurde werk gekauft, darf es auch weiterverkauft werden
+		gilt auch für computerprogramme (inkl. onlineverkauf) 
+		nur nationale erschöpfung für audiovisuelle werke die noch im kino laufen
+
+verwandte rechte (CH):
+	ausübende künstler:
+		rechte an dienstleistung
+		wahrnehmungsart, (weiter-)sendung, aufnahme, vervielfältigung, werbung
+		anerkennungsrecht
+	mehrere ausübende künster:
+		veranstalter ist rechteinhaber sofern niemand anderes bestimmt
+		insbesondere dirigent, solisten, regisseur rechteinhaber
+	hersteller ton & tonbildträger:
+		alleinige rechte an aufnahmen
+		vervielfältigung & zugänglichmachung
+	sendeunternehmen:
+		alleinige rechte an sendung
+		sendung, warhnehmung, aufnahme, vervielfältigung & zugänglichmachung
+
+internationale rechte:
+	abklärung schutzzustand (EU):
+		muss neu vom anbieter gemacht werden (angabe nutzer nicht ausreichend)
+	datenbankschutz (EU):
+		geschützt auch wenn nicht urheberrechtlich relevant
+		wenn wesentliche investitionen zur erstellung getätigt wurde
+	verwertungsrechte urheber (EU):
+		listet explizite rechte (kein generalrecht wie CH)
+		rechte zur publikation, vervielfältigung, verbreitungsrecht, vermietrecht, vortragsrecht, wiedergaberecht, senderecht
+		iFrame anderer urheberrechtinhaber legal (in CH nicht)
+	fair use (USA):
+		gerichte entscheiden was ausgenommen ist
+		erlaubt verwendung wenn hauptzweck/subjekt nicht geschützt ist
+		erlaubt video mit hintergrundmusik falls musik irrelevant für video
+
+beschaffung von rechten:
+	kein gutglaubensschutz (nutzer verantwortlich für einholung erlaubnis)
+	vermutung urheberschaft bei kürzeln/namen auf/am werk inkl. wasserzeichen
+	alle urheber müssen einig sein sein (oder anteilmsmässig falls möglich)
+	lizenzen:
+		befugnis für gewisse tätigkeiten des rechteinhabers
+		beliebige gestaltungsmöglichkeiten (z.B. exklusivlizenz, vermietung)
+		rechte & durchsetzungsgewalt bleiben beim rechteinhaber
+		wechselt rechteinhaber so werden vergebene lizenzen wertlos
+		einseitige erklärung auch möglich (open source lizenz, robots.txt)
+	übertragung von rechten:
+		übertragung von vermögensrechtlichen rechten möglich
+		ganze klausel wird nichtig wenn zu viel übertragen wird (EU)
+		übertragung persönlichkeitsrechte:
+			nicht immer übertragbar (EU)
+			so kann architekt gegen änderung seines gebäudes klagen
+		übertragung arbeitgeber:
+			nicht automatisch, rechte müssen vereinbart werden (implizit auch möglich)
+			automatisch bei computerprogrammen
+		übertragung kunde:
+			nicht automatisch, im zweifel wurde recht nicht übertragen
+			unbekannte nutzungsarten können nicht übertragen werden (netflix)
+			nutzungsrecht richtet sich nach zweck arbeitsverhältnis
+		verwertungsgesellschaften:
+			abgeltung von kollektiver rechtsverwertung (versenden, kopieren, speichern)
+			vermittlung von rechten von registrierten kreativen
+			mit staatlicher zulassung/überwachung und ggf. pflicht
+
+haftung (CH):
+	zivilrechtliche haftung:
+		klage muss durch urheberrechtsinhaber oder alleinigem lizenznehmer erfolgen
+		schadenersatz nur wenn fahrlässig & schaden entstanden ist
+		rechteinhaber kann schaden mit ensprechender lizenz begründen
+		beispiele praxis:
+			zeitungen veröffentlichen bild; author muss lizenzgebühr eintreiben
+			wayback maschine / suchmaschinen / youtube user-content wiedersprechen oft urheberrecht
+			projekt gutenberg (digitalisierung bücher) hat für zu erwartende klagen reserven
+			marions kochbuch macht SEO für alltägliche bilder und verlangt geld von nutzern
+			argumentation valid dass nutzung bei preisbekanntheit nicht stattgefunde hätte
+	strafrechtliche haftung:
+		sofern vorsätzlich & zivilklage vorhanden
+		freiheitstrafe 1 jahr / CHF 4000, höher bei gewerbsmässigkeit
+
+verwandte rechte:
+	markenrechte, datenschutzrecht, vertragsrecht
+	lauterkeitsrechte:
+		ziel das man sich im markt fair verhält
+		straftbar wenn marktreife arbeitsergebnisse ohne eigenen aufwand verwertet werden
+	beispiel comparis:
+		inserate nicht urheberrechtlich geschützt
+		nicht unlauter da aufwand durch crawler & eigene aufbereitung hoch
+		nutzungsbestimmungen webseite nicht akzeptiert durch blosses laden der webseite
+		crawler nutzen server nicht übermässig
+			
+haftung
+===
+
+pflicht für entstandenen schaden aufzukommen
+vertragliche und ausservertragliche (gesetzliche) haftung
+
+datendiebstahl voraussetzungen:
+	besonders gegen unbefugten zugriff gesichert (erkennbare zugangssperre)
+	beschaffung von daten erfolgt (täter muss daten gebrauchen können)
+	beispiele:
+		bankencloud fraglich ob es gemäss DSG angemessen geschützt wird
+		WEF mitgliederliste leak OK da keine bereicherung, unbefugtes eindringen (standardpasswort)
+		aber WEF selber haftbar gemäss DSG da personendaten ungeschützt
+
+rechtsfolgen:
+	zivilrecht:
+		zivile anklage gegen andere, monetärer ausgleich
+		anklage von juristischer person zu anderer
+		haftung, abwehransprüche
+		vertragsfolgen (konventionalstrafen, ...)
+		vertragsauflösung
+	strafrecht:
+		staat bestraft schwere vergehen, persönliche bestrafung
+		strafuntersuchungen
+		bussen
+		freiheitsstrafen für verantwortliche
+	verwaltungsrecht:
+		wenn behörden geschäfte näher überwachen
+		verwaltungsuntersuchungen
+		bewilligungsentzug (FINMA)
+		bussen (kartellrecht, DSGVO)
+	
+arten:
+	unerlaubte handlung:
+		schaden ist entstanden
+		und dieser wurde rechtswidrig verursacht
+		und die verursachung ist adäquat (führt typischerweise zu diesem resultat)
+		und dieser wurde absichtlich/fahrlässig herbeigeführt
+		und ist nicht verjährt (1-3 jahre)
+	vertragsverletzung:
+		schaden ist entstanden
+		und dieser ist durch vertragsverletzung verursacht
+		und die verursachung ist adäquat
+		und dieser wurde absichtlich/fahrlässig herbeigeführt
+		und ist nicht verjährt (5-10 jahren)
+	
+fahrlässigkeit:
+	ausserachtlassen der sorgfalt
+	unter verkehrssitte mit dem handelnden (relativ zur kundenart)
+	unter den erkennbaren, konkreten umständen (relativ zu umständen)
+	härtegrade:
+		leichte fahrlässigkeit ("kann mal passieren")
+		grobe fahrlässigkeit ("darf nicht passieren")
+	andere konstrukte:
+		vorsatz wenn schädiger um schaden weiss und will/in kauf nimmt
+		kausalhaftung für bestimmte fälle (auch ohne vorsatz, fahrlässigkeit; wie produktversagen)
+		bei vertraglicher haftung muss schädiger nachweisen dass nicht haftbar
+		übertragsverschulden wenn nicht erbringbare leistung versprochen wird
+	beispiel:
+		nicht haftbar ist kunde weil IT experte beauftragt wurde
+		haftbar ist IT firma weil zu wenig kompetenz relativ zur kundenart (aber anders beworben)
+		haftbar sind beide wenn IT firma klar inkompetent ist
+
+schaden:
+	unfreiwillige verminderung des vermögens
+	immaterielle schäden können zu genugtuung führen
+	schadensaspekte:
+		vorher-nachher beurteilung
+		verminderung von aktiven (geld)
+		vermehrung des passiven (schulden)
+		entgangener gewinn
+	bespiele:
+		14 tage keine emails empfangen ist schwer nachzuweisen
+
+anklage:
+	ankläger kann selber ziel der anklage auswählen
+	unternehmen:
+		haftet für sich selbst und das handeln der organe
+		haftet für vertragserfüllung beigezogener mitarbeiter/dritte
+		haftet für unerlaubte handlungen wenn auswahl/instruktion/überwachung/organisation ungenügend
+	handelnde einzelpersonen:
+		wenn es um eine unerlaubte handlung geht
+		bei gemeinsamem verschulden haften alle solidatisch
+		intern kann ggf. rückgriff genommen werden
+
+arbeitnehmer:
+	haftet für absichtliche/fahrlässige schäden
+	die trotz entsprechender pflicht nicht verhinderte schäden
+	aspekte sorgfaltspflicht:
+		berufsrisiko (fehler können passieren)
+		erforderliche fachkenntnisse vs jene die tatsächlich vorhanden sind
+		übernahmeverschulden (wenn arbeitnehmer wusste das er das nicht kann)
+	aspekte weisungen:
+		mitarbeiter haben anspruch auf erteilung einer weisung
+		aber befreien nicht von verantwortung über eigenen entscheidungen (insbesondere bei spezialisten)
+		widerrechtliche/unsittliche weisungen dürfen nicht befolgt werden 
+		gesetz muss nur gekannt werden, wenn es erwartet werden kann
+	beispiele:
+		bei möglichem gesetzesbruch von klärung mit rechtsabteilung verlangen 
+		schriftlich wiederrechtliche weisung bestätigen lassen
+
+arbeitgeber/organe:
+	verwaltungsrat:
+		sorgfaltspflicht für übertragene aufgaben & interessensbewahrung
+		einbeziehung spezialisten, festlegung von vorgaben und zielen
+		oberaufsicht dass weisungen und gesetze befolgt werden
+	faktische organe:
+		übernehmen selbständige, eigenverantwortliche, dauernde zuständigkeit
+		haftet für übertragene aufgaben
+		
+strafbarkeit:
+	zielt auf natürliche personen (menschen)
+	juristische personen (unternehmen) nur wenn keine verantwortliche person
+	anstiftung & gehilfenschaft auch strafbar
+	zivilrechtlich:
+		kläger muss gerichts & anwaltskosten (von beiden) bezahlen
+		gerichtsverfahren eher unattraktiv
+		spezialregeln die dies vereinfachen z.B. bei arbeitsrecht 
+		in der regel reicht fahrlässigkeit zum gesetzesbruch
+	strafrechtlich:
+		der staat geht amteswegen (bei offizialsdelikt) oder nach hinweis dagegen vor
+		zivilrechtliche forderungen können "angehängt" werden
+		attraktiv da staat sich um verfahren + kosten kümmert
+		in der regel muss vorsatz nachgewiesen werden
+
+enthaftung:
+	vertragsklausel (z.B. keine gegenseitige anklage, gerichtsstandort)
+	transparenz (ehrliches marketing, warnhinweise, disclaimers)
+	markierung priviledged (markierung von anwalts emails)
+	grobe fahrlässigkeit:
+		enthaftung nicht möglich
+		geschädigter hat beweispflicht
+	anwendung:
+		priviledged anwaltsemails dürfen bei strafverfahren nicht verwendet werden
+		"hohe qualität!" marketing erleichtert grobfahrlässigkeitsklage
+		quellenangabe mit zuverlässigkeitsbeurteilung wirkungsvoll
+		email disclaimers / "I accept" unwirksam ohne vertragsabschluss
+
+haftung einfordern:
+	sachlage ermitteln:
+		dokumentation von inhalten & websites
+		identifikation beteiligter (haupttäter, hosting, nameserver, registrar)
+	rechtsansprüche klären:
+		persönlichkeitsrechte, ehrverletzung, geheimnisverrat
+		nötigung, drohung, erpressung, betrug, geldwäscherei
+		urheberrechtsverletzung, unlauterer wettbewerb, markenverletzung
+	gegen einzeltäter vorgehen:
+		falls bekannt strafrecht / zivilrecht 
+		falls nicht bekannt über strafrecht; provider muss infos herausgeben
+		möglich über DNS records, IP adresse
+	gegen provider vorgehen:
+		um einzeltäter zu identifizieren & take down der inhalte
+		hosting einfacher haftbar wie access provider (kausalzusammenhang)
+		muss nicht im vornerein inhalte prüfen 
+		muss take downs machen und wiederkehrende verletzungen verhindern
+	kontaktaufnahme:
+		an behörde; ggf auch direkt einloggen und inhalte löschen
+		an privatperson mit abmahnschreiben oder bittschreiben (verweis AGB)
+		an provider mit hinweis auf AGBs oder auf rechtslage
+		an höhere autoritäten bei DNS vergabe oder hosting organisationen
+		jeweils in muttersprache, mit belegungen & handlungsaufforderung
+
+beispiele:
+	nigeria scam kein betrug da nicht arglistig (schwer zu durchschauen) 
+	selbstanklage nicht erforderlich; auch lügen "erlaubt"
+	pen testing nicht strafbar da verletzer in strafbestand eingewilligt hat
+	schwere körperverletzung strafbar auch wenn verletzter eingewilligt hat
+	links auf illegale inhalte:
+		strafbar wenn der inhalt "zu eigen" gemacht wird
+		wenn die seite sich also nicht explizit davon distanziert
+		disclaimers helfen nicht, wenn sonst anderer eindruck erweckt wird
+	cablecom leak:
+		zivilrechtlich strafbar da fahrlässig; datenschutz & fernmeldegesetz verletzt
+		strafrechtlich strafbar falls vorsätzlichkeit nachgewiesen werden kann
+		verwaltungsrechtliche sanktionen da fernmeldegeheimnis verletzt
+
+namensschutz
+===
+
+schutz vor namensanmassung; auch für pseudonyme
+entfällt bei gleichem name oder pseudonym mit markenschutz
+verfügung zur unterlassung, schadenersatz
+
+markenschutz:
+	schützt kennzeichenformen (macht klar woher etwas kommt)
+	setzt internationale / nationale registrierung voraus
+	prüfung bei registrierung und streitfall
+	nicht für gemeindegut (wie beschreibendes)
+	nicht für irreführende, illegale, unsittliche angaben
+	schutzumfang gegen:
+		identische zeichen für gleiches
+		identische zeichen für ähnliches falls verwechslungsgefahr
+		ähnliche zeichen für gleichartiges falls verwechslungsgefahr
+		ähnliche zeichen für andersartiges falls berühme marke
+	einschränkungen:
+		nicht möglich gegen ältere zeichen & nutzungen
+	auslegungen:
+		um "beschreibend" zu verwenden muss nachweis aus zielpublikum erbracht werden (Freitag, Zürich)
+		natelinfo ursprünglich marke, dann aber aufgeweicht (nicht nur mit swisscom assoziiert)
+		nur beschreibende begriffe nicht schützbar als marke (pneu-online)
+
+laterkeitsrecht:
+	verbietet unlauteren wettbewerb (unfair/verfälscht)
+	erforderlich ist bösartige absicht & in keinem konkurrenzverhältnis stehend 
+	verbietet verwechslungsgefahr, behinderung, zweckentfremdende registrierung, anlehnung, irreführung
+
+domain-namen:
+	regulierung:
+		global reguliert durch ICANN 
+		vergabe durch private stellen
+		in der schweiz gilt verordnung über internet-domains
+	top level domains:
+		ccTLD (länderspezifisch)
+		gTLD (generisch) mit potentiellen beschränkungen (juristisch, branche)
+		eigene sind denkbar mit einreichung business plan
+	schutz:
+		kein staatliches schutzrecht, da eine neue dienstleistung
+		obwohl es adressierungselement wie telefonnummern ist
+		domains müssen aber "den gebotenen abstand" einhalten (markenschutz)
+		zudem gilt das lauterkeitsverbot
+		alternative rechtsdurchsetzung:
+			staatliche gerichte durch vorsorgliche massnahmen, klagen
+			aber langsam und ineffizient; früher sehr viele verfahren
+		UDRP:
+			privates schlichtungsverfahren der registraren (UDRP)
+			führt zur übertragung oder löschung der domain
+			global durchsetzbar durch vertragliche bedingung
+			wenn beschwerdeführer markenrecht hat
+			wenn angeklagter bösgläubig, ohne legitimes interesse registriert & nutzt
+			lediglich registrieren ist nicht genug
+		automatischer schutz:
+			kantone, gemeinde (ausser zuerich, winterthur)
+			bundesbehörden/betriebe, bunderäte, offizielle gebäude
+			internationale organisationen
+			technische (registrierungsbetreiber, top-level domains)
+	anwendung markenschutz:
+		blosse registrierung reicht nicht für streitfall
+		schreibfehler verhindern anspruch nicht
+		bei ähnlicher interessenslage first come first serve
+		grosser markenname erhält vorrang (maggi.ch zu marke übertragen)
+		bösgläubige registrierung um ausschreibung zu gewinnen (berneroberland.ch)
+	anwendung lauterbarkeitsschutz:
+		verwendung sachbezeichnung falls neutralität unklar
+		systematische registrierung aller sachbezeichnung
+		verwechslungsgefahr auch wenn kein markenschutz
+		kennzeichnung (VW-land) (reine beschreibung OK, wie VW-Spezialist)
+	weitere sprechungen:
+		es müssen nicht alle domains registriert werden (anspruch bleibt)
+		schweizer zuständigkeit auch bei internationalen domains
+		passivlegitimation (gewährung für lange zeit verwirkt anspruch)
+	
+verträge
+===
+
+handlungsverflichtung nur durch mündige/urteilsfähige personen
+
+abschluss:
+	übereinstimmende angebotserklärung (email, offerte) 
+	und annahmeerklärung (bestätigung, lieferung, kartenbelastung)
+	nebenpunkte können später geklärt werden; falls parteien nicht einig entscheidet richter
+	entscheidend ist geäusserter wille nicht gebrauchte formulierung
+	kann ausdrücklich (worte, dokument) oder konkludent (durch explizites verhalten) sein
+	angebot:
+		unbestellte sachen sind kein angebot; daher keine (rücksende-)verpflichtungen
+		behaftung ablehnende klausel entkräftet angebot
+		tarife, preislisten an sich kein angebot
+		warenauslage mit preisschildern ist ein angebot
+		ausschreibung auftrag gegen leistung ist ein angebot
+		widerruf möglich wenn gleichzeitig oder vorher zur kenntnis genommen wird
+	annahme:
+		anwesende angebote (telefon, mündlich) müssen sofort angenommen werden
+		abwesende angebote gültig im zu erwartenden antwortzeitraum
+		wird frist geäussert bindet diese bis zum ablauf
+		stillschweigende annahme möglich wenn offensichtlich oder vorher vereinbart
+		falsch ausgelieferte sachen müssen dem eigentümer gemeldet werden
+		widerruf möglich wenn gleichzeitig oder vorher zur kenntnis genommen wird
+	beginn:
+		ab erklärung der annahme
+		oder ab erfüllung bestimmer form des vertrages die eine partei wünscht
+	beispiele:
+		angebotserklärung bei auslage mit preisschild, downloads, numeriertes kinoticket 
+		keine angebotserklärung durch produktekatalog, online-shopping
+		offensichtlich falsche preise nicht verbindlich vor versand
+		"bestellung sobald als möglich bearbeiten" noch keine annahmeerklärung
+		"freuen uns sie als kunde zu begrüssen" ist annahmeerklärung
+		nach kauf zusätzliche bedingungen unzulässig (AGBs, autoverträge)
+		unbestellte persönliche fotos können behalten werden
+		falsch versandte IKEA möbel werden von IKEA abgeholt
+		zustimmung sofern nicht widersprochen wird unzulässig
+		"I accept" zeigt nicht genügend wille zu vertragsabschluss
+		registrierung mit name / email zeigt wille zu vertragsabschluss
+		
+form:
+	abänderungen an vertrag in gleicher form wie ursprünger vertrag
+	zustimmung kann auch durch app / knopfdruck / programm gegeben werden
+	schriftliche form nur erforderlich für spezialfälle (grundstück, ehe, kredit)
+	unterschrift (schriftlich):
+		muss eigenhändig und auf fester unterlage sein (einscannen)
+		nachbildung nur gültig sofern üblich in geschäft
+		digitale unterschrift möglich sofern von staatlich anerkanntem CA
+	beispiele:
+		unterschrift auf tablet nicht gültig
+
+inhalt:
+	beliebig sofern innerhalb gesetzlicher schranken
+	
+beschränkung der gültigkeit:
+	binnen jahresfrist muss widerspruch angekündigt werden
+	beginnt mit auflösung der furcht oder aufdeckung der täuschung / irrtum
+	beweispflicht bei der anspruchnehmenden partei (emails, screenshots, screencast)
+	nichtigkeit:
+		klauseln die unmöglich, widerrechtlich, verstoss gegen gute sitten sind
+		vertrag wenn ohne nichtige klauseln nicht abgeschlossen worden wäre
+	übervorteilung:
+		wenn leistung / gegenleistung in klarem missverhältniss stehen
+		und abschluss durch ausbeutung notlage, unerfahrenheit, leichtsinn
+		kann innerhalb jahr davon zurückgetreten werden
+	irrtum:
+		wenn anderer vertrag (falsches dokument unterschrieben)
+		wenn anderes ziel (andere sache / person)
+		wenn andere leistung / belohnung (höhere leistung, geringere belohnung)
+		wenn grundlage des vertrages fehlt (wesentliche leistung)
+		aber nicht wenn sich vertragsmotivation ändert oder bei rechnungsfehlern
+		der irrtum muss überzeigend sein und ein irrtumsbefreites angebot muss eingegangen werden
+		bereits erbrachte leistungen müssen durch fahrlässige partei übernommen werden
+	täuschung:
+		sofern täuschung nicht hätte erkannt sollen / erkannt worden ist				
+		bespiele:
+			internet kostenfallen
+			willensäusserung vor vertragsabschluss der im vertrag nicht wiedersprochen wird
+	furchterregung:
+		wenn leib/leben, ehre oder vermögen bedroht wird um übermässige vorteile einzuräumen
+		leistung an andere partei verbindlich wenn diese nicht an der furchterregung beteiligt war
+
+spezialregelungen:
+	haustürgeschäfte:		
+		über CHF 100 & für persönlichen gebrauch (ausser versicherungen)
+		angebot an arbeitsplatz, haustüre, strassengeschäft, kaffeefahrt, telefon
+		ausser keine überrumepungsgefahr (kunde beginnt, mark/messestände, onlinekäufe)
+		kunde muss über widerrufsrecht informiert werden vor annahme vertrag
+	widerruf haustürgeschäfte:
+		innerhalb 14 tage nach information über widerrufsrecht & annahme vertrag
+		für gebrauch ist mietzins, auslagen, verwendung zu bezahlen
+
+vertragsbruch:
+	nicht strafbar aber konsequenzen gemäss vertrag müssen befolgt werden
+	leistungsauftrag:
+		bezahlt werden muss min(belohnung, bereits entrichtete leistung)
+		ausser nachweis dass volle leistung nicht erbracht hätte können
+
+e-business
+===
+
+internet-auktionen:
+	vertrag zwischen nutzern und betreibern einer plattform
+	kaufverträge unter benutzern der plattform 
+	AGB regelt details (laufzeit auktionen, fees)
+	verbindlicher vertragsabschluss benutzern:
+		vertrages zwischen verkäufer und käufer (nicht betreiber)
+		für höchstes angebot während auktionslaufzeit
+		kann dies nicht durchgesetzt werden, zählt nächsthöheres
+
+blockchain:
+	distributed ledger als kontrolliertes, dezentrales register
+	serie von datensätzen die öffentlich und manipulationssicher miteinander verkettet sind
+	smart contract als abwicklung von vertrag auf der blockchain
+	neue form von wertpapieren ohne regulierende autorität braucht anpassungen am recht
+
+AGB:
+	nicht zwingend nötig; regelt aber oft haftung & gewährleistung explizit
+	gültigkeit:
+		wenn vor vertragsschluss zumutbar lesbar (druckbar) & darauf hingewiesen
+		keine explizite bestätigung notwendig (wie checkbox "gelesen und verstanden")
+		ungewöhnliche klauseln müssen markiert sein
+		individuelle vereinbarungen gehen vor
+		unklarheiten gehen zu lasten der verwenderin
+	beispiele:
+		datenschutz EU zusätzliche entscheidung; darum dafür checkbox nötig
+		AGB auf kassenzettel ungültig weil erst nach kauf vorgelegt
+		präsentierte lizenzbedingungen nach kauf nichtig
+		konventionalstrafe ungewöhnlich darum nichtig wenn unbekannt
+		wird AGB geändert von kunde und von anbieter angenommen gilt dies als individuelle vereinbarung
+		alle vereinbarungen müssen vor dem bestätigen knopf sein
+		kommentarfeld vor bestätigen knopf kann für individuelle vereinbarungen genutzt werden
+		CH AGB darf stärkere klausel reinschreiben; richter reduziert auf maximal erlaubtes
+		DE AGB klausel ungültig wenn stärker wie gesetzlich erlaubt
+
+e-commerce:
+	informationspflichten:
+		vollständige angaben über identität, kontaktadresse & elektronischer kontakt
+		vertragsabschluss muss klar feststellbar sein ("bestellen" knopf)
+		technische mittel zur verfügung stellen um eingabefehler zu verhindern
+		bestellungsbestätigung auf elektronischem weg zukommen lassen
+		beispiele:
+			bestätigungsbildschirm mit möglichkeit zur korrektur notwendig
+			amazon zeigt preise in CHF an wegen preisbekanntgabeverordnung
+	weitere produktverkaufsregelungen:
+		werbe/verkaufsvorschriften (lebensmittel, ...)
+		lauterkeitsrecht (keine irreführende angebote)
+		preisbekanntgabe (preis inkl. MWSt in CHF sofern für privatkunden)
+	wiederrufsrecht:
+		nicht existent da keine überrumpelung
+	EU vorschriften:
+		informationspflichten (lieferzeitraum & -bedingungen, mängelrechte / garantien, eigenschaften ware)
+		nummer für vertragsangelegenheiten, kaufvertragsbestätigung per E-Mail
+		hinweis auf schlichtungsplattform https://webgate.ec.europa.eu/odr/
+		bei zusatzleistungen mit kostenfolge darf entsprechende checkbox nicht voreingestellt sein
+		bezahlung ohne zuschlag muss möglich sein
+		zahlungsmöglichkeiten müssen von beginn weg deklariert sein
+		button muss klar machen dass zahlung erfolgen muss ("kaufen", "zahlungspflichtig")
+		widerrufsrecht:
+			ausser individuelle / hygienische produkte; kann bei digitalen inhalten abgetreten werden
+			formular / mündliche empfangnahme ohne angabe von gründen
+			14 tage nach lieferung & information über widerrufsrecht (max 1 jahr)
+			rücksendung innerhalb 14 tage, erst danach rückzahlung
+			rücksendegebühr wird von käufer getragen; sonst nichts
+		beispiel:
+			wasserbettern können auch zurückgesendet werden
+			onlineauktionen haben auch widerrufsrecht
+
+datenschutzgesetz (DSG)
+===
+
+konzept:
+	ziel ist informationelle selbstbestimmung
+	was mit daten passiert und was nicht
+	fraglich ob identifikation relevant (da auch ohne diskrimiert werden kann)
+
+geltungsbereich:
+	privatpersonen
+	bundesbehörden
+	ausnahmen:
+		eigengebrauch
+		edigenössicher rat / kommissionen
+		zivilprozesse, strafverfahren
+		öffentliche register
+	beispiele:
+		bei bundesbehörden muss bei jeglicher bearbeitung jeweils gesetzliche grundlage oder notwenigkeit vorliegen
+
+grundbegriffe:
+	personendaten:
+		angaben von bestimmten oder bestimmbaren personen
+		beispiele sind emails, profile, fotos, kundendaten
+		bestimmbar wenn identifizierung interessant durch den bearbeiter
+		besonders schützenswert:
+			gesundheit, intimsphäre, rassenzugehörigkeit 
+			politsche, religiöse, gewerkschaftliche, weltanschauliche ansichten
+			vorstrafen, sozialhilfe
+			jedoch nicht finanzielle daten
+		persönlichkeitsprofile:
+			zusammenstellung von daten die beurteilung wesentlicher aspekte erlaubt
+			wird ersetzt im neuen DSG durch generischeres profiling
+		beispiel:
+			IPs für provider personendaten (da bestimmt)
+			IPs für normale webbetreiber keine personendaten (da nicht bestimmbar)
+			IPs für urheberrecht eintreiber personendaten (da bestimmbar)
+			graffiti personendaten für polizei
+			graffiti keine personendaten für laien
+	anonymisierung:
+		daten die keiner person (mehr) zugeordnet werden kann
+		pseudoanonymisierung erlaubt reidentifikation mittels code
+		big-data steigert risiko über reidentifikation
+		beispiele:
+			anonym wenn deanonymisierung nur durch betroffener möglich
+			anonym wenn aufwand zur deanonymisierung zu hoch 
+			anonym wenn deanonymisierung erst wenn daten irrelevant sind
+
+bedingungen zur bearbeitung:
+	rechtmässig beschafft (nicht erzwungen / wiederrechtlich beschafft)
+	nach treu und glauben (nicht im geheimen; "anständig")
+	verhältnismässig (nötig, geeignet und zumutbar)
+	zum angegebenen / ersichtlichen zweck (bei erhebung definiert)
+	beschaffung & verwendung transparent (es muss klar sein, dass die daten verarbeitet werden)
+	einwilligung bei besonders schützenswerten personendaten
+
+einwilligung:
+	nur nötig wenn grundlagen eingehalten werden
+	nur gültig wenn nach angemesser information & freiwillig
+	kann jederzeit wieder entzogen werden (aber nicht rückwirkend)
+	jede bedingung zur bearbeitung kann abgetreten werden
+	wird zuviel abgetreten wird freiwilligkeit der einwilligung fraglich
+
+richtigkeit:
+	daten müssen für verwendungszweck richtig & vollständig sein
+	sonst vernichten oder berichtigen
+	betroffene personen können berichtigung verlangen
+
+weitergabe:
+	wenn person daten selber veröffentlicht hat (und weiterverwendung nicht wiedersprochen hat)
+	wenn nicht besonders schützenswert
+	an dritte wenn:
+		bearbeitung im gleichen rahmen wie auftraggeber (zweck/umfang)
+		gesetzliche / vertragliche pflichten es zulassen
+		auftraggeber kontrolliert dass dritter datensicherheit gewährleistet
+	ins ausland wenn:
+		angemessene gesetzesgebung existiert
+		vertrag der schutz gewährleistet
+		explizite einwilligung der betroffenen person
+		zur vertragserfüllung des vertragsparters gebraucht
+		zum schutz öffentlichen interesses
+		zur durchsetzung von rechtsansprüchen
+		zum schutz des lebens der betroffenen person
+		andere partei gleiche juristische person oder gleicher leitung untersteht
+		umsetzung für valider transfer:
+			datenschutzverträge
+			einzelfälle (vertragsabwicklung, gerichtsverfahren)
+	beispiele:
+		zweck aufbewahrung kundendaten muss angegeben werden
+		bei überraschenden regelungen muss informiert werden (da nicht ersichtlich sonst)
+		CH <-> EU jeweils angemessenheit datenschutz, freier transfer
+		CH -> USA braucht angemessenheitsgrund (z.B. vertrag)
+		privacy shield für USA firmen (öffentliche erklärung dass eingehalten wird)
+		privacy shield muss eingehalten werden sonst wettbewerbsverstoss
+		anfechtung der USA privacy shield / datenschutzverträge da überwachung US behörden
+		abwicklung vertrag wie überweisung geld
+		dritte dürfen daten nicht für eigene zwecke noch auswerten
+
+auskunftsrecht:
+	anfrage ist kostenlos
+	anfrage:
+		an inhaber der datensammlung
+		an verwerter falls inhaber unbekannt / aus der ausland
+	antwort:
+		alle daten inklusive herkunft dieser
+		zweck & rechtsgrundlage der bearbeitung
+		kategorien der bearbeiteten daten
+		an sammlung beteiligter
+		datenempfänger
+	einschränkungen:
+		wenn gesetz / überwiegende interessen Dritte das vorsehen (bundesbehörden)
+		wenn überwiegende eigene interessen und keine weitergabe an dritte (privatpersonen)
+		wenn enwürfe/informationsquellen/freie meinungsbildung gefährdet (medienschaffende)
+		grund für verweigerung, einschränkung und aufschiebung muss bekannt gegeben werden 
+	beispiele:
+		kann auch gegenüber staat verlangt werden (FINMA)
+		öffentlichkeitsprinzip (alle nicht geheim = öffentlich) eingeschränkt durch DSG
+		viel gebrauches instrument in bankenklagen zur falschen beratung
+
+datensammlung:
+	sobald einzelne person gesucht werden kann
+	anmeldepflicht bei besondern schützenswerten daten
+	praxisirrelevant weil gesuch immer angenommen wird
+
+weitere bestimmungen:
+	datensicherheit (angemessene technische & organisatorische massnahmen)
+	zertifizierungsverfahren für datenverarbeitungssysteme
+	cookies:
+		in CH OK sofern in zugänglicher datenschutzerklärung (keine akzeptanz nötig)
+		in EU muss immer akzeptiert werden ohne vorauswahl
+		technische cookies sind OK
+		technisch schlechte lösung für abwahl OK
+
+massenwerbung:
+	ohne direkter zusammenhang mit angefordertem inhalt unlauter
+	muss absender & problemlose/kostenlose ablehnungsmöglichkeit enthalten
+	opt-in:
+		einwilligung der person mit checkbox / AGB
+		double-opt-in kombiniert mit bestätigungsemail
+	opt-out für bestehende kunden:
+		sofern darauf hingewiesen wurde (keine explizites agreement nötig)
+		wenn für eigene / ähnliche waren
+	beispiele:
+		abonnierter newsletter darf werbung enthalten da direkter zusammenhang
+
+sterneintrag telefonbuch:
+	werbeanruf nur OK wenn einwilligung oder kundenbeziehung
+	muss durchgesetzt werden
+	freiwillige systeme postverkehr (robinsonliste)
+
+persönlichkeitsverletzung:
+	wenn DSG nicht entsprochen wird (insbesondere transparenz, verhältnismässigkeit)
+	einschränkungen:
+		können grundsätze überschreiben, nicht aber flankierende massnahmen
+		einwilligung (nach angemessener information, freiwillig)
+		überwiegendes privates interesse (überwachung gegen diebstahl)
+		überwiegendes öffentliches interesse
+		gesetzliche rechtfertigung
+	rechtfertigungsgründe:
+		zur erfüllung vertragpflichten, kreditwürdigkeitsprüfung oder wirtschaftlichen wettbewerbs mit betroffener person
+		daten werden für forschung, planung, statistik gesammelt und person wird unkenntlich gemacht
+		daten werden für journalistische zwecke gesammelt 
+		daten sind über das öffentliches leben der person die in diesem bereich wirkt
+	beispiele:
+			vertragsabwicklung rechtfertigt persönlichkeitsverletzung
+			überlegter entscheid braucht bessere information bei heikleren vorgängen
+
+sanktionen:
+	klage auf schadenersatz, gewinnhergabe, unterlassung, öffentliche bekanntmachung
+	meist keine konsequenzen ausser reputationsschaden
+	untersuchungen durch EDÖP der ergebnisse auch gerichtlich durchsetzen kann
+
+neues datenschutzgesetz:
+	damit GDPR entsprochen werden kann und CH datentransfer legal bleibt
+	GDPR:
+		um onlineunternehmen mehr zu belangen
+		auch für unternehmen ausserhalb des EWR
+		die waren im EWR anbieten und verhalten im EWR beobachten
+		compliance check mit dsat.
+	wesentliche änderungen:
+		pflichtinformation vonnöten zum transparenzerhalt
+		werden daten verwendet von anderen müssen diese darüber informiert werden
+		datenbearbeitung muss in inventar aufgenommen werden
+		datenschutz-folgeabschätzung bei datenverarbeitung
+		pflicht zur behörden-meldung bei sicherheitsvorstössen
+		voreinstellung muss privacy-default sein
+		bei computerentscheidungen muss mensch intervenieren können
+		bussen sowie interventionsmöglichkeiten für entscheidungsträger
+		datenportabilität in machinenlesbarer form
+	sanktionen:
+		zivilrechtliche durchsetzung neu ohne gerichtskosten
+		EDÖP neu verfügungsrecht
+		bussen bis CHF 250k bei vorsatz
+
+durchsetzung:
+	meist gilt was gefühlt richtig ist
+	nicht zwingend was im gesetz steht
+	da unverhältnismässig oder zu schwach
+	so gibt EDÖP z.T. andere vorgaben wie das es das gesetz erlaubt
+
+EU:
+	opt-in prinzip (verboten ausser rechtfertigungsgrund)
+	jedoch auch vertragsabwicklung, notwendigkeit
+	abschliessende liste von gründen
+		
+providerverträge
+===
+
+aufträge:
+	berating, konzeption, gestaltung
+	entwicklung, vertrieb, wartung, support
+	lizenzierung, übertragung rechte
+	betrieb von IT infrastrukturen
+	auslagerung von geschäftsprozessen
+
+vertragsfreiheit:
+	freie regelung unter beachtung von zwingendem gesetzesrecht
+	wird nichts vereinbart gilt dispositives gesetzesrecht (standardregelungen)
+
+beispiele:
+	verantwortung dienstleister:
+		"implementiert lösung unter mitwirkung kunden"
+		"behebt fehler gemäss SLA"
+	verantwortung kunden:
+		"unterstützt bei umsetzung"
+		"behebt fehler umgehend"
+
+grundformen:
+	inhalt bestimmt vertragsform (nicht titel des vertrages)
+	werkvertrag:
+		resultatsbasiert (resultat OK, alles OK)
+		kein spezielles vertrauen nötig (keine treuepflicht)
+		beispiele:
+			projektleistung mit abnahme (konzepte, software)
+			wartung (korrektiv, perfektionierende, adaptive)
+			betriebsleistungen (Outsourcing, SaaS)
+		bedingungen:
+			resultat mit bestimmten eigenschaften
+			abnahme des werks durch kunden
+			mängelrechte + schadenersatz
+			2 jahre garantie
+			nicht vorzeitig ohne folgen kündbar
+	auftrag:
+		vertrauensbasiert (höchstleistung erwartet)
+		vertrauen als grundlage (jederzeit kündigung)
+		beispiele:
+			consulting
+		bedingungen:
+			arbeit mit bestimmter sorgfalt (kein ergebnisszwang)
+			keine abnahme
+			schadensersatz
+			10 jahre verjährung
+			treuepflicht (interessen des kunden wahren)
+			jederzeit kündbar
+	kaufrechtlich:
+		einräumung/übertragung nutzungsrechte
+		erwerb datenträger
+	lizenzcharakter:
+		einräumung/übertragung nutzungsrechte
+		kein im gesetz vorgesehene vertragsform (innominal)
+		könnte über das pacht- / mietrecht abgebildet werden
+
+inhalt:
+	leistungsumschreibung (wer, was, inhalt)
+	mitwirkungspflicht des kunden (infos, personal, entscheidungen)
+	entgeld (anzahlungen, teilzahlungen, kostenkontrolle)
+	organisatorisches (anpassung requirements, vertrag)
+	verzug, abnahme, gewährleistung (verspätungen, mängel)
+	geistiges eigentum (wie, inkl. herausgabe daten)
+	datenschutz & geheimhaltung (regelungen auftragsbearbeitung)
+	haftungsbeschränkung 
+	dauer und beendigung (folgen bei abbruch, rückabwicklung)
+	diverses (gerichtsstand, vertragsänderungen)
+
+ziel:
+	klärung aller wesentlicher sachverhalte
+	in detailgrad der von von vertragspartnern gewünscht wird
+	missverständnisse klären
+	praxis:
+		anpassung providerverträge schwierig, kommerziell aber möglich
+		IT liest vertrag nicht durch, Jus spezifikationen nicht
+
+service level agreement (SLA):
+	definieren messbare kriterien wie dauerleistungen erbracht werden
+	bezüglich ausfällen, fehlern pro zeiteinheit
+	leistungen selber in leistungsvereinbarung
+	definiert:
+		messmethoden, reporting, zeitraum
+		vorbehalte (unauthorisierte eingriffe durch nutzer)
+		konsequenzen (schadenersatz, konventionalstrafe, kündigung)
+	beispiele:
+		"durchschnittlich" gilt über gesamte vertragsdauer
+		definitionen für verfügbarkeit/kündigung genau anschauen 			
+
+sachmängel:
+	ist-zustand entspricht nicht dem rechtlichen soll-zustand
+	bereits bei ablieferung vorhanden
+	zugesicherte eigenschaft fehlt:
+		zusicherung wenn verbindliche, klare ässerung des providers
+		auch unbedeutende abweichungen sind mängel
+	beschaffenheit entgegen normalität:
+		wert muss objektiv erheblich gemindert sein
+		indem es zum verwendungszweck nicht gut gebraucht werden kann
+	beispiel:
+		handy rostet entgegenen normalität (seit ablieferung)
+	rechtsmängel:
+		wenn sache nicht verkauft werden kann (z.B. bei diebstahl)
+		gff. muss käufer sache an eigentümer zurückgeben
+
+gewährleistung:
+	einstehen für mängel
+	kann nicht begrenzen durch arglistige verschweigung von mängeln
+	kann für nicht explizit vereinbarte eigenschaften ausgeschlossen werden
+	herstellergarantie:
+		was hersteller zusätzlich ohne kaufvertrag versprechen
+		wie umtausch geräte in jedem laden der kette
+	vertragsgestaltung (kundensicht):
+		verantwortung für schnittstellen und deren instandhaltung klären
+		könnte projekt zweiteilen (zuerst spezifikation erstellen lassen unter treuepflicht, danach erst auftrag dafür geben)
+		gewährleistung:
+			mangelfreie arbeitsergebnisse
+			erbringung zugesicherter eigenschaften
+			erbringung eigenschaften die in gutem treuen vorausgesetzt wird
+			erbringung aller leistungen zum vorausgesetzten gebrauch
+			dazu verwendungszweck und rahmenbedingungen mit festhalten
+	vertragsgestaltung (provider):
+		keine gewährleistung für nicht explizit vereinbarte eigenschaften
+		gewährleistung regeln da sonst kunde sich auf OR berufen kann
+		haftungausschluss bei leichter fahrlässigkeit
+	beispiel: 
+		kauf resultiert in kaufvertrag mit laden -> gewährleistung
+		hersteller verspricht einseitig leistungen -> herstellergarantie
+		offensichtliche unspezifizierte funktion fehlt, muss nicht nachgeliefert werden weil ausgeschlossen für nicht explizit vereinabrete eigenschaften
+		langsames system muss dank klar kommunizierter nutzungserwartung gefixxed werden
+
+umgang mit mängeln:
+	kaufvertrag hat weniger, auftrag garantiert kein ergebniss
+	wahlrechte bei werkvertrag:
+		nachbesserung oder preisminderung
+		vertragsrücktritt bei erheblichen mangeln
+		nur eine der option pro mangel möglich
+		kann vertraglich abgeändert werden
+		verschulden anbieten irrelevant
+	ersatzvornahme:
+		nach angemessener frist durch dritten vornehmen lassen
+		auf rechnung des vertragspartners
+	haftung:
+		nur bei fahrlässigkeit/absicht
+	beispiele:
+		nachlass bei unzureichendem serverbetrieb
+		rücktritt weil software sehr mangelhaft
+
+abnahme:
+	auf offene mängel muss sofort geprüft und die gefundenen gerügt werden
+	versteckte mängel können auch später noch gerügt werden
+	nach entdeckung muss sofort gerügt werden, sonst verfällt anspruch
+	bei rügung muss fehlerbild und vertragsverletzung geltend gemacht werden
+	ersatz produkt erneuert die gewährleistung nicht erneut
+	reparatur eines ersatzteiles ergibt garantie für dieses ersatzteil
+	konsumtenschutz gilt nicht wenn für arbeit entwickelt
+	unterbruch verjährung:
+		betreibung oder ankläge
+		vereinbarung
+		wenn anbieter beginnt, den mangel zu beheben
+	beispiel:
+		produktiver gebraucht system sollte nicht als abnahme gelten -> was wenn lieferant zu spät?
+		sobald erkannt soll als gerügt gelten; längere rügungsfrist vereinbaren
+		vereinbarung von tests zur abnahme mit dem provider
+		eine woche zu kurz -> es greifen die 2 jahre 
+		wartungsvertrag vereinbart wie schnell die mängel behoben werden
+		erste jahre weniger für wartungsverträge
+		
+schwierigkeiten:
+	unklare/unvollständige leistungsumschreibung
+	abweichen vom vertrag von beiden seiten
+	ermessensfragen
+	ausübung der wahlrechte bei mängeln
+	
+instrumente im streitfall:
+	entgeld zurückbehalten:
+		bezahlung erst nach erbringung gegenleistung
+		bei werkvertrag erst bei ablieferung bezahlen
+	verzugsrechte:
+		nachfrist ansetzten, nachher rücktritt/leistungsverzicht
+		bei werkverträgen auch vor frist falls auslieferung unrealistisch
+	
+kündigung:
+	werkverträge:
+		nicht möglich asser bei mängeln
+		oder vereinbarter abbruch
+	dauerverträge:
+		jederzeit bei aufträgen (ggf. entschädigung falls zu unzeit)
+		sonst 6 monate falls nichts anderes vereinbart
+		jederzeit aus vereinbarten "wichtigen gründen" 
+	
+erläuterungen:
+	einfache gesellschaft:
+		mit gemeinsamen mitteln gemeinsames ziel erreichen
+		OR 530ff
+	garantie:
+		deckt mängel zum zeitpunkt der abnahme
+	treuepflicht:
+		bei interessenskonflikt konkurrenzverbot
+
+beispiele:
+	wartungsvertrag mit höchstleistung:
+		jährlicher bezahlter betrag
+		maximal erbrachte leistung pro jahr

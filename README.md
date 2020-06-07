@@ -38,6 +38,7 @@ Generally, the newer the summary, the more consistent is the structure & the wor
 | 2019-2 Security Engineering | ★★☆☆☆ |
 | 2019-2 Algorithms Lab | ★★★★☆ |
 | 2020-1 Startups und Steuern | ★★★☆☆ |
+| 2020-1 Wirtschaftssoziologie | ★★★★☆ |
 
 Comments:  
 Object Databases (short) is without general statements like "can be configured" and perceived irrelevant details (syntax for dead libraries) but may not be complete.

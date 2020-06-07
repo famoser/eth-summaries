@@ -1,0 +1,1330 @@
+rechtliche grundsätze
+===
+		
+schweiz:
+	bundesverfassung 1848:
+		von staatenbund (kantone als staaten mit diversen abkommen)
+		zu bundesstaat (staat bestehend aus kantonen)
+		staatliche hoheit bleibt aber weiterhin bei kantonen
+		bundesverfassung (BV) schreibt bund explizit kompetenzen zu
+	gesetze:
+		aus verfassung motiviert
+		bundesgesetze brauchen expliziten bundesverfassungsanker
+	verordnungen:
+		werden von regierung erlassen
+		definieren ausführung des gesetzes
+		können vor gericht eingeklagt werden
+	verwaltungspraxis:
+		beziehung bürger/staat basiert auf treu und glauben
+		verwaltung veröffentlicht transparente arbeitsweise 
+		z.B. mit kreisschreiben (beständig), rundschreiben (öfter aktualisiert), merkblätter (details)
+		
+rechtformen:
+	ZGB definiert verein, stiftung
+	OR definiert die anderen formen 
+	personenunternehmen:
+		zahlen keine steuer; die natürlichen personen dahinter machen das
+		auch personengesellschaften (ausser eF)
+		einzelfirma (eF): 
+			keine gesellschaft, selbstständig
+		einfache gesellschaft (eG):
+			gemeinsamer zweck
+			und gemeinsame kräfte (arbeitseinsatz) oder mittel (material)
+			wenn keine andere form spezifiziert
+			gesellschafter haften solidarisch unbegrenzt
+			keine handelsgesellschaft
+		kollektivgesellschaft (KG):
+			haftung unbegrenzt
+			zuerst das gesellschaftsvermögen nachher individuell
+		kommanditgesellschaft (KomG):
+			komplementär (wie GP) haftet unbegrenzt
+			kommanditär (wie LP) haftet gemäss eigener summe
+			wie limited partnership (LP) oder general partner (GP)
+			private (eigenkapital) equity (nicht an der börse)
+			GP kümmert sich um management; unbegrenzte haftung
+			LP sind anteilsnehmer die mit eigenem anteil haften
+			LP versprechen GP einen betrag (pledge) der eingefordert werden kann
+			GP investiert in AG; muss natürliche person sein in der schweiz
+	juristische personen:			
+		kapitalgesellschaften:
+			aktiengesellschaft (AG)
+			gesellschaft mit beschränkter Haftung (GmbH)
+		weitere formen:
+			genossenschaft & stiftung
+			verein
+			kommanditaktiongesellschaft
+			anlagefonds
+		societe d'investition collectif a capital variable (SICAV):
+			mit jedem neuen anleger gibt es neue quote	
+		SICAF:
+			gleich wie SICAV aber capital fixed
+		kollektivanlage kommandit gesellschaft (KKG):
+			wie KomG
+			aber GP darf juristische person sein
+			unter überwachung finma
+			schüttet dividenden an LP aus (somit keine AHV)
+	firma:
+		namen des unternehmens (keine rechtsform)
+		bei einzelfirma muss nachnamen des unternehmers enthalten
+		bei kollektivgesellschaft mit & Co zusatz
+
+drei säulen:
+	1ste säule:
+		staatlich vorgegeben & garantiert
+		umfasst AHV, IV, erwerbsersatz (EO), arbeitslosenversicherung (ALV)
+		arbeitnehmer/arbeitgeber teilen sich die die zahlungen
+		AHV mit umlageverfahren (geld direkt wieder ausgegeben)
+		AHV beitragsjahre bestimmt rente (nicht beitragshöhe)
+		steuerpflichtig bei auszahlung
+		pensionierung steuerlich kein begriff 
+		freibeträge AHV werden aber grösser
+	2te säule:
+		umfasst berufliche vorsorge, unfallversicherung, krankentaggeld
+		arbeitgeber entscheidet BV (ab 22k)
+		arbeitnehmer/arbeitgeber teilen sich 5% zahlungen
+		kapitaldeckungsverfahren; lohn bestimmt maximalbetrag 
+		beitragslücke wenn lohn steigt darf steuerfrei aufgefüllt werden
+		muss bis rentenalter gespart werden (ausnahme eigenheim)
+		steuerpflichtig bei auszahlung
+	3te säule:
+		umfasst gebundene (3a) vorsorge
+		für altervorsorge gebundenes vermögen (ausser eigenheim)
+		steuerliche begünstigung (keine einkommenssteuer/vermögenssteuer)
+		umfasst ungebundene (3b) vorsorge
+		freies vermögen (wie banksparkonten)
+
+doppelte buchhaltung:
+	buchungen:
+		jeder betrag wird zwei mal geschrieben
+		keine negativen zahlen
+		grundsätze:
+			immer von rechts nach links buchen
+			rechts schreiben wenn abziehen, links wenn addieren
+		naming:
+			target / source betrag
+			soll / haben (credit <- debit) betrag
+			links / rechts betrag 
+			kosten / reserve
+	aufteilung:
+		activa/passiva (bilanz):
+			geld im umlauf
+			activa (inventar, wo ist das geld)
+			passiva (herkunft, wem gehört das geld)
+			aktiva und passiva muss gleich sein
+		aufwand/ertrag (erfolgrechnung):
+			wird kontinuierlich angepasst
+			links kommen abschreibungen/ausgaben
+			rechts kommen einkünfte 
+			nicht zwingend ausgeglichen
+			saldo per ende jahre bei gewinn in passiva
+		konten:
+			bilanz & erfolgsrechnung sind in konten aufgeteilt
+			jedes konto hat wieder soll/haben spalten
+	beispiele:
+		kauf auto:
+			activa konto auto links wert auto
+			activa konto liquides rechts wert auto
+		kauf auto auf kredit:
+			activa konto auto links wert auto
+			passive konto darlehen rechts wert auto	
+		abschreibung aufwand:
+			aufwand konto abschreibungen links
+			activa konto auto rechts
+			danach bilanz in passiva anpassen
+		rückstellung steuern:
+			rückstellungen gemäss grenzssteuersatz aus steuergesetz
+			diese von der erfolgsrechnung abziehen 
+			aus rest wird dann steuern gezahlt ("effektiver steuersatz")
+			passiva konto rückstellungen rechts
+			aufwand konto steuern links
+		steuern zahlen:
+			activa konto liquidität links
+			passiva konto steuern rechts
+
+steuerliche grundsätze
+===
+
+allgemeine grundsätze:
+	jegliche besteurung muss im gesetz festgelegt sein
+	es wird alles besteuert ausser ausnahmen
+	gleichmässigkeit 
+	allgemeinheit gleichheitsgebot der besteuerung:
+		alle personengruppen werden nach gleichen grundsätzen besteuert
+		unzulässig wäre blondinensteuer da abgrenzung willkürlich
+	nach wirtschaftlicher leistungsfähigkeit:
+		definiert steuerprogression; je reicher desto mehr abgaben
+		unzulässig wäre kopfsteuer (alle zahlen gleichen betrag)
+
+steuergesetze:
+	bund:
+		bis 1sten weltkrieg nur gebühren erhoben
+		seit 95 keine vermögenssteuern mehr
+		steuern formell bis 2035 befristet, werden jeweils verlängert
+	strafbarkeit:
+		steuerhinterziehung (unvollständig; busse bis max 3x steuer)
+		steuerbetrug (falsch; gefängnis)
+	bankgeheimnis:
+		staat kann banken nicht für kontostände anfragen
+		sondern wird bei steuererhebung deklariert
+	doppelbesteuerungsabkommen:
+		damit steuern nur einmal pro steuerobjekt bezahlt werden
+		seit 60er jahren viele abkommen mit anderen staaten
+		druckmittel anderer staaten gegen bankgeheimnis
+	weissgeldstrategie 2012:
+		automatischer austausch bankkontodaten mit anderem land
+		somit kein bankgeheimnis mehr ins ausland
+		
+relevante gesetze:
+	überblick bund:
+		bundesverfassung BV
+		steuerharmonisierungsgesetz StHG (definiert mechanik der besteuerung)
+		direkte bundessteuergesetz DBG
+		verrechnungssteuergesetz VStG
+		steuergesetz StG (nicht strafgesetzbuch StGB)
+		mehrwertsteuergesetz MWSTG
+		wichtige verordnungen MVST, StG, VStG
+	überblick kantone:
+		jeweils ein steuergesetz das abzüge & sätze definiert
+		möglicherweise weitere abgabe / steuern wie vermögenssteuer
+		bestimmen jeweils steuerfuss
+	überblick gemeinden:
+		bestimmen jeweils steuerfuss
+
+steuerumgehung:
+	falls erfolgt, darf von zivilrechtlicher gestaltung abgesehen werden
+	sachbehalt darf neu aus steuerrechtlicher perspektive beurteilt werden
+	erfüllungsbedingungen:
+		absonderliche gestaltung ("ungewöhnlich"; schenkung + beratung)
+		ausschliesslichst zwecks steuerersparnis (sachverhalt billiger als alternative)
+		welche tatsächlich steuern spart (geschäft vollzogen)
+	verteidigung:
+		zeigen dass nicht absorderlich war
+		zeigen dass taxes follow business (es gab business gründe)
+	ethik:
+		business steuereffizient gestalten valid
+		da steuern so strukturiert wurden, um unternehmen auch zu unterstützen
+		aber taxes follow business, nicht der andere weg
+	umgehungshorizon 5 jahre:
+		wird als realitische zukunfsabschätzung angesehen
+		unternehmen proiizieren jeweils 5 jahre (nicht mehr)
+		wenn kürzer, werden z.B. schenkungen zu erbschaften umgewandelt
+	umgehungsverfahren:
+		wird struktur gewählt nur um steuern zu umgehen
+		dann wird die tatsächliche struktur angenommen & verrechnet
+	beispiele:
+		umgehung verkauf (schenkung für erhalt ware)
+
+spezialfälle staaten:
+	schweiz:
+		für steuern darf auf erfolgsrechnung rückstellung gebildet werden
+		andere staaten zahlen steuern auf earnings before taxes (EBT)
+		dadurch offizieller steuersatz schweiz effektiv tiefer
+	italien:
+		aktueller stand gesetz wird erreicht mit änderungsgesetzten
+		diese werden von bezahldiensten zusammengefügt
+	deutschland:
+		viel mehr klar ausformulierte gesetzte
+		weniger auf verordnungen angewiesen
+
+fallbeispiele:
+	abgabe für bäume/strassenreinigung hauseigentümer:
+		leistung des gemeinwesens? ja
+		zurechenbar? ja, zu anwohnern & strassenbenützer
+		jedoch kein sondervorteil eigentümer (da nicht zwingend anwohner)
+		verstösst gegen gleichheitsgebot
+		
+steuerrechtsverhältnis
+===
+
+steuererhebungskompetenz vom gemeinwesen in verfassung
+steuerleistungspflicht (voraussetzungen, umfang) durch gesetz
+
+mehrere arten von steuern werden erhoben
+grösster ertrag aus direkten steuern der kantone/gemeinden
+
+steuerhoheit:
+	wer die steuer erhebt
+	verfassungsmässige kompetenz des bundes/kantone
+	ertrags- und verwaltungshoheit auch durch gemeinden
+	arten:
+		steuergesetzgebungshoheit (darf steuern rechtlich definieren)
+		steuerertragshoheit (darf steuern verwenden)
+		steuerverwaltungshoheit (darf betrag einzelfall festlegen & einziehen)
+
+steuersubjekt:
+	wer steuerhoheit die steuer bezahlt
+	ist rechtsfähig & hat beziehung zum steuerobjekt
+	bei direkten steuern normalerweise auch steuerträger
+	juristische personen:
+		durch persönliche zugehörigkeit (sitz)
+		durch wirtschaftliche zugehörigkeit (geschäftstätig)
+	natürliche personen:
+		durch persönliche zugehörigkeit (wohnen, arbeiten)
+		durch wirtschaftliche zugehörigkeit (geschäftstätig)		
+	ausnahmen:
+		bund, kantone, gemeine
+		institutionen von öffentlichem interesse
+	steuerpflichten:
+		muss steuer gemäss veranlagung entrichten
+		verfahrenspflichten wie einreichung steuererklärung, auskunftspflicht
+		verfahrensrechte wie mitwirkung, rechtsmittel
+		steuersolidarität (uU gemeinsame beteiligung wie ehegatte)
+	beteiligung drittpersonen an rechte/pflichten:
+		steuersubtitution (von gesetzes wegen bei substituten; quellensteuer, beherbungssteuer)
+		steuersukzession (übertragung auf rechtsnachfolger; erben, übernehmende AG)
+		solidarische mithaftung (mithaftung dritter; schenkungssteuer, quellensteuer)
+		steuerregress (steuerträger übernimmt; MWST, VST)
+
+steuerobjekt (für was zahlen):
+	anhand welchem gegenstand die steuererhebung stattfindet
+	identifiziert durch verfassung & gesetzgebung
+	ausnahmen möglich (militärsold, unterstützungsleistungen)
+	arten:
+		zustand (zeitlich andauerned wie reinvermögen vs ruhend wie besitz)
+		ereignis (wertzufluss wie einkommen vs verkehrsvorgang wie dienstleistung)
+		subjetive leistungsfähigkeit (mit einfluss wie erbschaft vs ohne wie umsatz)
+		komplexität (einfach wie handänderungssteuer vs komplex wie einkommen)
+
+steuerberechnungsgrundlage (SBG):
+	messgrösse um steuerbetrag auf gegenstand zu berechnen
+	wie steuerbares einkommen/vermögen, stückzahl, PS-zahl
+	sachliche bemessung:
+		indirekt (!= steuerobjekt); verkehrswert, entgeld, stückzahl, gewicht
+		direkt (== steuerobjekt); einkommen/gewinn, grundstückgewinn
+	zeitliche bemessung:
+		zeitpunkt/zeitraum indem berechnungssgrundlage festgesetzt wird
+		zum exakten zeitpunkt (verkehrssteuern)
+		an einem stichtag (vermögen/kapital)
+		postnumerandobesteuerung, spezifische periode (einkommen/gewinn)
+	berechnung:
+		steuerperiode SP (steuerschuld zeitraum)
+		veranlagungsperiode VP (zeitraum bis anfang nächster veranlagung)
+		bemessungsperiode BP (berechnungsrelevanter zeitraum der steuerperiode)
+		gewinnsteuer in VP 2016 über SP 2015 mit BP 2015
+	
+steuermass:
+	auf SBG angewandter masstab zur steuerbelastung
+	einheitssteuersatz oder wertabhängig
+	steuersatz (immer wertabhängig):
+		proportional (relativ immer gleich)
+		progressiv (steigend mit bezugsgrösse; idR SBG)
+	steuerfuss:
+		angewandt auf resultat nach steuersatz (behält verhältnisse bei)
+		kurzfristige änderungen ohne gesetzanpassung möglich
+	beispiel:
+		einkommen 1k mit 3% steuersatz gibt 30
+		anwendung steuerfuss 110% gibt 33
+		steuermass somit 3.3%
+		
+beispiele:
+	startupinstrumente:
+		patentbox (patentgewinne maximal 10% steuer)
+		forschung durch schweizer firmen kann 150% abgezogen werden
+
+öffentliche abgaben
+===
+
+finanzielle leistungen von natürlichen/juristischen personen
+gemäss gesetzen der ihnen unterworfener hoheit
+einnahmequelle staat (neben privatwirtschaft & geldstrafen)
+	
+kausalabgaben:
+	für spezifische leistungen des gemeinwesens
+	einem individuum zurechenbar und von angemessener höhe
+	kostendeckungsprinzip (summe abgaben < kosten verwaltungszweig)
+	äquivalenzprinzip (einzelne abgabe = wert leistung)
+	gebühren:
+		zur deckung der kosten der amtshandlung / einrichtung
+		wird bei anspruchnahme leistung fällig
+		verwaltungsgebühr (staatliche tätigkeit; gericht, ausweise, kanzlei)
+		benutzungsgebühr (öffentliche einrichtung; spital, uni, museum, bad)
+		konzessionsgebühr (nutzung gemeindegut; infrastruktur eisenbahn)
+	gebühr einklagung:
+		unverhältnismässe leistung verfassungswidrig
+		bundesgericht entscheidet anhand art gebühr (name irrelevant)
+	beiträge (vorzugslasten):
+		für wirtschaftlicher sondervorteil aus öffentlicher einrichtung
+		grundeigentümerbeiträge (strassen, kanalisation, lawinenschutz)
+	ersatzabgaben:
+		für dispensierung von naturallasten (=persönlicher einsatz)
+		befreiung von feuerwehr-, militär- und zivildienstpflicht
+		befreiung von parkplatz- und zivilschutzraumerstellungspflicht
+
+steuern:
+	gegenstandslos geschuldet aufgrund zugehörigkeit zum gemeinwesen
+	keine bestimmte leistungserbringung & leistungsanspruchnahme irrelevant
+	fiskalsteuern:
+		zur finanzierung staatlicher aufgaben
+		typisch (für allgemeiner finanzbedarf) wie gewinnsteuer
+		atypisch (für bestimmen zweck) wie kurtaxe, motorfahrzeug
+	lenkungssteuern:
+		zur steuerung verhalten privatpersonen
+		grund der verrechnung ist ein bestimmtes verhalten
+		sekundär zur finanzierung staatlicher aufgaben
+		wie abgaben auf VOC, CO2, heizöl extraleicht, alkohol, tabak
+
+gemengsteuern:
+	verbindung aus gebühr & steuer
+	als gegenleistung für staatliche leistung (=abgabe)
+	aufgrund zugehörigkeit zu gemeinwesen (=steuer)
+	nicht durch kostendeckungs/äquivalenzprinzip begrenzt
+	wie hundesteuer
+
+steuerarten:
+	einkommens- und gewinnsteuern (bund/kantone):
+		auf einkommen/gewinn
+		allgemeine steuer & spezialsteuern auf einkünften/erträgen
+		wie quellen-, grundstück-, verrechnungssteuer, spielbankenabgabe
+	vermögen- und kapitalsteuern (kantone):
+		auf vermögen/kapital
+		allgemeine steuer & spezialsteuern auf grundbesitz
+		wie liegenschaftssteuer, minimalsteuer
+	rechtsverkehrssteuer (bund/kantone):
+		auf vorgang zur begründung von rechten und pflichten
+		wie stempelabgaben (bund)
+		wie erbschaft, schenkung, handänderung (kantone)
+	wirtschaftsverkehrsteuer (bund):                                                                      
+		auf vorgang zur erfüllung rechtsgeschäftlicher pflichten
+		auf handlung ohne zivilrechtliche rechtsbeziehung
+		wie MWST, zölle, verbrauchssteuern
+	besitzsteuern (kantone):
+		auf besitz bestimmer objekte
+		wie motorfahrzeuge, hunde, wasserkraftwerk 
+	aufwandsteuern (bund):
+		auf tätigkeit lebensaufwand, die zu ausgaben oder gebrauch führt
+		wie nationalstrassensteuer, LSVA, reklamesteuern (bund)
+	übrige steuern (kantone):
+		wie veranstaltungssteuern, beherbergungsabgabe, kurtaxe 
+		wie lotteriesteuern
+	andere gliederungen:
+		direkte vs indirekte (steuerträger = steuerschulder oder nicht)
+		periodisch vs nichtperiodisch (stichtag oder nicht)
+		beim empfänger erhoben vs quellensteuern
+		subjekt- vs objektsteuern (nach leistungsfähigkeit subjekt oder nicht)
+
+steuerbeispiele:
+	vermögen- & einkommenssteuer:
+		vermögem/einkommen von natürlichen personen
+		kapital/gewinn von personenunternehmung
+		beteiligung/ertrag aus beteiligung kapitalgesellschaft:
+	kapital- & gewinnsteuer:
+		kapital/gewinn von juristischen personen
+		wie kapitalgesellschaft / genossenschaften
+		wie stiftungen / vereine (nur zum Teil)
+	verrechnungssteuer (VST):
+		auf beweglichem kapitalvermögen (zinsen, lotterie, versicherungsleistungen)
+		wird bei angabe des vermögen auf steuerabrechnung zurückerstattet
+		um steuerhinterziehung zu verhindern
+	quellensteuer:
+		erhoben direkt vom lohn des arbeitgebers
+		bei ausländern ohne aufenthaltsbewilligung
+		bei zinsen ins ausland von hypotheken  
+	kurtaxe:
+		umweltabgabe an ferienorten
+	minimalsteuer:
+		minimaler steuerbetrag aufgrund grundstücksfläche
+		wird angewandt wenn alle anderen steuern tiefer wären
+	handänderungssteuer:
+		auf grundstück verkaufspreis
+		kantonal geregelt (0.1% - 2%)
+	stempelabgaben:
+		auf ausgabe (emmission) wertschrift (0.1% - 0.3%)
+		auf handel (umsatz) wertschrift (0.1% - 0.3%)
+		auf zahlung versicherungsprämien wie feuer (5%)
+	liegenschaftssteuer:
+		auf grundeigentum; auch grundssteuer genannt
+	reklamesteuer:
+		auf werbeeinnahmen
+	LSVA:
+		schwerverkehrsabgabe
+		abhängig von strecke, gewicht
+	lenkungssteuern:
+		heizöl extraleicht (da hoher schwefel/stickstoff gehalt)
+		VOC (da lösungsmittel der atmosphäre schaden)
+	RTV (fernesehabgabe):
+		früher begründete besitz des gerätes die abgabe
+		seit 2015 bei unternehmen nach umsatz (volksabstimmung)
+		dadurch wurde RTV zu einer steuer
+		jedoch darf der bund diese steuer nach BV nicht erheben
+		es hätte eine BV änderung gebraucht, 2015 wurde aber ständemehr nicht erreicht (nur volksmehr)
+		bundesgericht darf das nicht beurteilen; volk ist das verfassunggericht	
+	pauschalbesteuerung:
+		wenn nicht in der schweiz tätig / kein bürgerrecht
+		min(400k, siebenfache miete, dreifache pension)
+	grundstücksgewinnsteuer:
+		aus sicht bund ist privat steuerfrei, sonst gewinnsteuer
+		bei kantonen gibt es monistisch und dualistisches system
+		bei monistischem system (städte, deutschschweiz)
+		sowohl bei privat als auch juristisch
+		bei dualistischem system (franz.- & zentralschweiz, graubünden)
+		nur beim verkauf von privatkapital
+
+selbstständigkeit
+===
+
+einkommensermittlung aufgrund erfolgsrechnung
+statt bruttolohn & abzüge wie bei unselbstständig
+
+bestimmung selbstständigkeit:
+	keine legaldefinition gegeben
+	wenn kein arbeitsverhältnis vorliegt und grundelemente erfüllt
+	grundelemente:
+		eigene organisation der tätigkeit
+		eigenes risko & chancen
+		gewinneignung der tätigkeit
+		teilnahme am wirtschaftsverkehr
+	bei ständige ausübung:
+		wenn grundelemente und in keinem arbeitsverhältnis
+	bei nicht-ständiger ausübung:
+		wenn grundelemente gegeben sind anhand von indizien entscheiden 
+		viele transaktionen und kurze besitzdauer
+		inanspruchnahme von viel fremdkapital
+		einsatz von viel derivaten (aktien, zinsen, devisen)
+		weniger relevant ist zusammenhand mit beruf, systematisches vorgehen
+	verstärkung indizien selbstständigkeit:
+		eintrag ins handelsregister vornehmen
+		klare kommunikation das absicht selbstständigkeit besteht
+		gewinnabsicht/fähigkeit (sonst liebhaberei)
+	inidzien unselbstständig:
+		zeitliche verpflichtung, weisungsgebundenheit
+
+beispiele:
+	selbstständigkeit:
+		ausführung als erwerbstätigkeit
+		private vermögensverwaltung übersteigend
+	keine selbstständigkeit:	
+		zur privaten vermögensverwaltung
+		zur liebhaberei
+
+vermögensprinzipen:
+	nennwertprinzip:
+		keine abschreibungen aber freie kapitalgewinne
+		bei privatvermögen
+	buchwertsprinzip:
+		abschreibungen aber kapitalgewinne werden versteuert
+		bei geschäftsvermögen	
+			
+implikationen:
+	selbstständigkeit:
+		einkommen & kapital steuerbar
+		abschreibungen möglich
+	keine selbstständigkeit:
+		einkommen steuerbar; inkl. verluste abziehen
+		kapitalgewinne steuerfrei, da privat
+		keine abschreibungen
+
+rechtssprechung:
+	weinhandel:
+		verkauf sammlung grosser menge wein keine liebhaberei mehr
+		selbstständig weil wein nie selber getrunken hätte können
+	bau:
+		gebäude mit mehreren wohnungen bauen, eine damit gratis bekommen
+		selbsständig weil risiko selbst getragen
+	börsenhandel:
+		geld zu aktiven anlage an bankberater gegeben
+		selbsständig weil eigene organisation (auch wenn jemand anders ausführt)
+	
+dauer:
+	ab der ersten wirtschaftlichen handlung
+	bis übertragung/liquidation 
+
+ermittelung einkommen:
+	imparitätsprinzip:
+		verluste & gewinne bei jeweiliger realisation berücksichtigen
+	buchwertsprinzip:
+		veränderung des buchwertes ergibt steuerbares einkommen
+		daher muss geschäftsvermögen/aufwand von privatem getrennt werden
+	gemeinsame nutzung:
+		überwiegende nutzungsart entscheidet (präponderanzmethode)
+		sowie ausscheidung eines privatanteils
+	erträge:
+		laufende erträge (erlöse; erlösminderung abziehbar)
+		ausserordentliche erträge (liquidationsgewinne, aufwertung aktiven)
+	steueraufschub:
+		ersatzbeschaffungen (betriebsnotwenig; angemesse frist & innerhalb CH)
+		umstrukturierungen 
+	aufwendungen:
+		bei geschäftsmässiger begründung
+		wie abschreibungen, rückstellungen, verluste, vorsorge
+		vorjahresverluste sofern weniger wie 7 jahre her
+
+
+einkommenssteuer (natürliche personen)
+====
+
+jeweils im DBG und StHG genaue bedingungen definiert
+
+steuerhoheit:
+	bund darf bis 11.5%
+	kantone unbeschränkt
+	gemeinden je nach kanton
+
+steuersubjekt:
+	zurechnung:	
+		natürliche rechtsfähige personen
+		wer zivilrechtlich anspruch darauf hat
+		ausnahmen treuhänder, kinder, nutzniessung
+		bei verheirateten/eingetragener partnerschaft zusammen
+		bei scheidung/trennung wieder separat
+		bei kindern zurechnung zur elterlichen gewalt
+		bei personengesellschaften zurechnung zu beteiligten personen
+		bei erbe sind empfänger steuerpflichtig
+	persönliche steuerpflicht:
+		bei persönlicher zugehörigkeit ab geburt, volljährigkeit, zuzug
+		im hauptsteuerdomizil unbeschränkt
+		ausser betriebe & grundstücke im ausland
+		wohnsitz als mittelpunkt lebensinteresse
+		wo aufenthaltsort & dauerhafte verbleibensabsicht ist
+		aufenthaltort als arbeitsort / tatsächlicher aufenthalt
+		ab 30 tagen mit erwerbstätigkeit, 90 ohne 
+		ausser besuch lernanstalt, pflege in heilstätte
+	wirtschaftliche steuerpflicht:
+		bei wirtschaftlicher zugehörigkeit ab gründung, erstem kauf/verkauf
+		im nebensteuerdomizil nur beschränkte steuerpflicht
+		nur auf lokales einkommen anwendbar
+		bestimmung steuersatz aber ahand allem einkommen
+		grundeigentum 
+		geschäftsbetrieb (erwerbstätigkeit als inhaber)
+		betriebsstätte (quantitativ/qualitativ wesentlich für geschäft)
+		bezug sitzungsgelder, vorsorgeleistungen (aber nicht durchsetzbar)
+	ausnahmen:
+		diplomatische / konsultarische vertretungen (völkerrecht)
+		angestellte internationaler organisationen (in genf)
+		neuzuzüger, neugründungen
+	
+steuerobjekte:
+	alle wiederkehrenden & einmaligen einkünfte
+	wie einkommen, vermögensertrag, vorsorge
+	nicht erbschaft, schenkung, subvention, sold, schadenersatz
+	nicht privater kapitalgewinn (beträge oft anders besteuert)
+	kapitalgewinn (substanzverzehr) vs vermögensertrag (zinsen)
+	unselbstständiger erwerb:
+		anhand arbeitsentgeld - gewinnungskosten
+		entgeld wie lohn, familienzulagen, prämien, spesenvergütungen
+		drittzuwendungen wie trinkgelder, geschenke der eigentümer
+		naturaleinkünfte wie verpflegung, unterkunft, fahrzeug, aktien 
+		im lohnausweis explizit deklariert
+	selbstständiger erwerb:
+		anhand erfolgsrechnung
+	vermögensertrag:
+		zinsen auf vermögen
+		veräusserung / rückzahlung von obligationen neben marktwert
+		beteiligungen (dividenten, liquidationsausschüsse über marktwert)
+		anlagefonds (bei ausschüttung; bei neuverbuchung bei reinvestition)
+		nutzung/rechte an gütern (bodenausbeutung, patente, eigenmietwert)
+	weitere einkünfte:
+		ersatzeinkommen wie unfall- und arbeitslosenversicherung
+		lotterieeinkünfte mit freibetrag
+		unterhaltsleistungen 
+	1ste Säule:
+		beiträge voll abzugsfähig
+		renten/kapitalleistungen unterliegen einkommenssteuer
+		ergänzungsleistungen steuerfrei		
+	2te säule:
+		beiträge voll abzugsfähig
+		einkaufssummen beschränkt abzugsfähig
+		renten/kapitalabfindungen unterliegen einkommenssteuer
+	3te säule:
+		umfasst gebundene (3a) vorsorge
+		wenn 2te säule bis 8% des grenzbetrages BVG 8 I abziehbar
+		wenn keine 2te säule bis 20% einkommen & 40% grenzbetrag abziehbar
+		renten/kapitalabfindungen unterliegen einkommenssteuer
+		umfasst ungebundene (3b) vorsorge
+		beiträge als versicherung abziehbar
+		bei privaten lebensversicherungen auszahlung steuerbar
+		bei kapitalversicherung als vorsorge auszahlung steuerfrei
+	gewinnungskosten:
+		wenn direkter zusammenhang mit einkommen besteht
+		lebenshaltungskosten, anlagekosten, berufsausrüstung
+		notwendige fahrkosten, mehrkosten verpflegung
+		weiterbildungs- und umschulungskosten
+		bei selbständigkeit auch abschreibungen, vorsorgebeiträge personal
+	allgemeine abzüge:
+		besondere nötige aufwendungen
+		beiträge für vorsorge & versicherungen
+		schuldzinsen
+		unterhaltsbeiträge bei trennung / scheidung
+		krankheits-, unfall- und invaliditätskosten
+		spenden für gemeinnützige & öffentliche zwecke
+		doppelverdienerabzug bei zwei erwerbstätigen ehegatten
+	sozialabzüge:
+		bei nachweis bestimmter persönlicher verhältnissen
+		abzug für ehepaare, kinder, unterstütze personen
+	kapitalgewinn:
+		steuerfrei 
+		mit ausnahme kantonaler immobilienkapitalgewinnsteuer
+
+steuerberechnungsgrundlage:
+	= steuerobjekt; somit steuerbarem einkommen
+
+steuermass:
+	postnumerandobesteuerung (periodisch)
+	progressiver steuersatz, max 19%-40%
+	tarife je nach zivilstand (alleinstehend, verheiratet, eltern)
+	quellensteuer wenn keine niederlassungsbewilligung vorliegt
+
+ungefähre steuersätze:
+	AHV 10% + bundessteuern 10%
+	etwas mehr als 50% bei >1mio da stark progressiv
+	freibetrag chf 2500 pro jahr wenn unselbstständig
+	kein freibetrag wenn selbstständig
+	kantonsvergleich:
+		uri tiefe steuerprogression
+		romandie hohe steuerprogression
+		niedrigverdiener (20k):
+			uri sehr hoch
+			meiste kantone 0
+		mittelverdiener (70k):
+			bern hoch (10%)
+			rest tief (5%)
+		grossverdiener (1mio):
+			zug, NW, UW, uri, AI sehr tief
+			romandie sehr hoch (40%)
+
+beispiele:
+	liquidation AG:
+		liquidationsgewinn wird als einkommen versteuert
+		bei verkauf der anteile jedoch steuerfreier kapitalgewinn
+	
+vermögenssteuer (natürliche personen)
+====
+
+steuerhoheit:
+	bund keine kompetenz
+	kantone und gemeinde
+
+steuerobjekt:
+	aktiva - schulden
+	aktiven:
+		sachen und subjektive rechte
+		privat- & geschäftsvermögen
+		rückkauffähige lebensversicherungen
+		immaterielle, bewegliche und unbewegliche güter
+		jedoch ohne hausrat und persönliche gebrauchsgegenstände
+	bewertung aktiven:
+		verkehrswert unter brücksichtung ertragswert
+		bei geschäftsvermögen inkl. stille reserven
+		rückkaufswert von lebensversicherungen
+	schuldenabzug:
+		steuerpflichtiger weist nach
+		nur effektive, persönliche schulden (mit erfüllung ist zu rechnen)
+		periodische leistungen sind keine schulden (zinsen, alimente)
+
+steuerberechnungsgrundlage:
+	= steuerobjekt; somit reinvermögen
+
+steuermass:
+	postnumerandobesteuerung (periodisch)
+	steuerfreibeträge
+	progressiver steuersatz, zwischen 1-3 promille
+	steuerfuss gleich wie einkommenssteuer		
+
+gewinnsteuer (juristische personen)
+===
+
+erfolgsrechnung:	
+	enthält ergebnis der gesellschaft des jahres
+	alles muss jeweils geschäftlich begründet werden
+	teil des jahresabschlusses, der auch aktiva/passiva enthält
+	übersicht:
+		reingewinn (einnahmen - ausgaben)
+		- rückstellungen
+		- abschreibungen
+		- steuerneutrale einnahmen
+		- warendrittel (1/3 warenwert)
+		- debitorenkorrektur (5-10%)
+		- indirekte/direkte steuern (aber keine bussen)
+		- spenden (bis 20% reingewinn)
+		- rabatte, skonti
+		- zuwendungen personalfürsorgefonds
+		+ geschäftsmässig unbegründeter aufwand
+		+ korrektur übermässiger abschreibungen
+	rückstellungen:
+		erwartete ausgaben mit provisorischem charakter
+		wie steuern, warendrittel, ersatzbeschaffungen, debitorenkorrektur
+		wie unmittelbare verlustrisiken
+		aber nicht für kommende anschaffungen, risiken, aufwände
+		für diese müssen rücklagen gebildet werden
+	abschreibungen:
+		bildet ab dass sich inventar mit der zeit entwertet
+		entwertung anhand vorgegebenen abschreibungssätzen (SDV merkblatt)
+		expontentiell buchwert oder linear kaufwert mit halbem satz
+	steuerneutrale einnahmen: 
+		einzahlungen/einlagen in gesellschaftskapital
+		aufgelder/agio bei kapitalerhöhungen
+		sanierungsleistungen
+	geschäftsmässig unbegründeter aufwand:
+		leistung unter marktpreis an anteilshaber
+		wertvermehrende aufwendungen
+		unentgeltliche, freiwillige zuwendungen an dritte ausser werbung
+		gewinnausschüttungen
+		zinsen auf verdecktem eigenkapital
+	korrektur übermässiger abschreibungen:
+		wenn wert bei realisierung nicht mit buchwert übereinstimmt
+		hinzurechnung (zum saldo & zum kapital hinzurechnen)
+		einmalerledigung (ausgleichszuschlag einkommen, ohne buchwertkorrektur)
+		buchwertanpassung, steuerhoheitswechsel als weitere realisierungsformen
+
+steuerhoheit:
+	bund verlangt 8.5% lineare steuer
+	kantone bekommen >17% des ertrages
+	gemeinde gemäss kantonalem recht
+	
+steuersubjekt:
+	durch persönliche / wirtschaftliche zugehörigkeit
+	gemäss zivilrechtlichen verhältnissen
+	ab gründung, erstem kauf bis liquidation, aufgabe
+	betroffen:
+		juristische personen (in/ausländisch)
+		kapitalanlagen mit grundbesitz
+		investmentgesellschaften
+		bei steuerumgehungszweck nichtanerkennung 
+	umfang:
+		grundsätzlich unbeschränkt
+		befreiung von geschäftsbetrieben, grundstücken im ausland
+		verlust ausländischer betriebsstätten abziehbar
+		jedoch keine doppelte verlustabrechnung
+		bei neueröffnungen steuernachlässe möglich
+	ausnahmen:
+		bund, kantone, gemeinden
+		sozialversicherungen, ausgleichskassen, personalvorsorge
+		juristische personen mit öffentlichem/gemeinnützigem zweck
+		liegenschaften mit diplomatischem zweck
+
+steuerobjekt:
+	grundsätze:
+		vollständigkeit (gesamter reingewinn steuerbar)
+		periodizität (kein aufschub, keine doppelbezahlung)
+	reingewinn:
+		erfolg gemäss erfolgsrechnung
+		jahresabschluss muss handelrechtskonform sein
+		möglicherweise zusätzliche steuerliche korrekturvorschriften
+		handelrecht möchte unternehmenerfolg nicht zu positiv darstellen
+		darum höchstwerte auf aktiva & tiefstwerte passiva
+		steuerrecht umgekehrte motivation & grenzwerte
+	verdeckte geldwerte vorteile:
+		erbringung nicht-marktkonforme leistungen an anteilinhaber
+		zu wenig gegenleistung, ungewöhnlicher vorteil / charakter erkennbar
+		und belastung andere konti ausser reserven
+		wie ferienreise, übersetzer lohn/spesen, direkter ertragszufluss
+		beträge werden nachträglich dem gewinn zugerechnet
+		und anteilinhaber zahlt überhöhter anteil als gewinnausschüttung
+
+steuermass:
+	beteiligungsabzug:
+		um wirtschaftliche doppelbelastung zu reduzieren
+		bei mindestens 10% anteile oder 1mio verkehrswert
+		darum ab 10% anteile sind für empfänger 30% steuerfrei
+
+beispiel:
+	mehrere standorte:
+		persönliche zugehörigkeit zu sitzort
+		wirtschaftliche zugehörigkeit bei betriebsstandorten
+	rückstellungen:
+		für steuern OK da geschäftsmässig, unmittelbar
+		warenlager wertberichtung max 1/3
+		debitoren 10% ausländisch, 5% inländisch
+		mit nachweis höheres risikos auch mehr möglich
+		wiederberschaffung maschine falls ersatzbeschaffung DGB 64
+		rückstellungen forschung bei aufträgen an dritte; max 10% reingewinn
+	dividendenzahlungen:
+		wenn anteilsbesitzer mehr als 10% 
+		kann ausschüttung dividenden biliger sein als lohn
+
+kapitalsteuer (juristische personen)
+===
+
+steuerobjekt:
+	grund- und partizipationsscheinkapital:
+		nur einbezahltes kapital wird versteuert
+		immer zu versteuern (auch wenn ungedeckt durch bilanzverlust)
+	reserven:
+		reserven = buchwert - objektiver wert
+		offene reserven wie gewinnvortrag, verlustvortrag
+		stille reserven (nicht steuerrelevant)
+	verdecktes eigenkapital:
+		kapital nahestehender personen; wie eigenkapital
+		beurteilung steuerfolgen im einzelfall
+
+verrechnungssteuer (juristische personen)
+===
+
+steuerobjekt:
+	als quellensteuer:
+		sicherungssteuer für inländer
+		dass einträge korrekt deklariert werden
+		endgültige belastung von ausländern
+	erträge des beweglichen kapitalvermögens:
+		bei anteilen anlagefond:
+			wenn von inländer ausgegeben
+			ausnahme aus direktem grundbesitz
+			ausnahme bei ausländern wenn >80% ausländisches kapital
+		bei kundenguthaben banken:
+			jede geldwerte leistung die nicht rückzahlung kapitalschuld ist
+			ausgenommen < CHF 200, alters & invalideneinrichtungen
+		bei liquidationsüberschüssen:
+			formelle/faktische liquidation & sitzverlagung
+			mantelhandel
+		bei aktienrückkauf:
+			teilliquidation
+			auf differenz rückkaufspreis & nennwert+kapitalreserven
+		bei geldwerten leistungen ohne kapitalentnahme:
+			nennwerterhöhungen ohne gegenleistung
+			gratisaktien & partizipationsscheine
+		bei aktien, partizipations- & genussscheine:
+			jede geldwerte leistung ohne rückzahlung grund/stammkapital
+			bei drei partien (A zahlt B weil C es sagt) verschiedene ansätze
+			bei direktbegünstigungstheorie zahlt A verrechnungssteuer
+			bei dreieckstheorie zahlt C verrechnungssteuer
+	sonstiges:
+		bei lotterieeinkünften & versicherungsleistungen
+
+steuersubjekt:
+	schuldner der steuerbaren leistung & haftbar
+	35% sobald leistung fällig wird
+	meldeverfahren wenn entrichtung steuer offenbar hart
+		überwälzung:
+		steuer wird auf empfänger überwälzt
+	nachträgliche entdeckung:
+		aktionär zahlt 35% an gesellschaft
+		gesellschaft zahlt 35%/65%
+
+rückerstattung:
+	voraussetzungen:
+		empfänger steuerbaren leistung
+		wohnsitz muss im inland sein, sonst regelt DBA
+		wirtschaftliches nutzungsrecht
+	verwirkung:
+		wenn steuerbare leistung nicht bei steuern angebenen wird
+		wenn VSt einkünfte nicht ordnungsgemäss verbucht werden
+	durchführung:
+		gegenüber steuerbehörde
+		für jursitische per antrag an ESTV
+		barauszahlung oder verrechnung mit fälligen steuern
+
+emissionsabgabe (juristische personen)
+===
+
+steuerobjekt:
+	auf rechtsverkehr kapitalbeschaffung & umsatz mit urkunden
+	emissionsabgabe auf ausgabe beteiligungsrechte
+	gleichgestellt sind zuschüsse anteilsinhaber, mantelhandel
+	umsatzabgabe auf urkunden wie beteiligungen, obligationen
+	versicherungsprämienabgabe auf versicherungsprämien 
+	umstrukturierung als ausnahme
+	freigrenze von CHF 1mio für kapitalerhöhungen
+	freigrenze von CHF 10mio für sanierungen
+
+berechnungsgrundlage:
+	gegenwert der gesellschaft zufliesst, mindestens nennwert
+	bei über-pari emmissionen können emmissionsspesen abgezogen werden
+
+steuersubjekt:
+	gesellschaft
+	bei mantelhandel die veräusserer
+
+umsatzabgabe (juristische personen)
+===
+
+steuerobjekt:
+	bei übertragung eigentum 
+	wenn entgeltliche übertragung durch effektenhändler (banken, urkundenvermittler)
+	und urkunde steuerbar (obligationen, aktien)
+	ausnahmen für geldmarkt, optionen & bezugsrechte, äusländische effektenhändler
+		
+berechnungsgrundlage:
+	entgeld falls angemessen
+	sonst verkehrswert
+
+steuermass:
+	1.5 promille inländisch
+	3 promille ausländisch
+	eventuell halbe abgabe falls eine partei ausgenommen ist
+	
+steuersubjekt:
+	beteiliger effektenhändler
+	
+mehrwertsteuer
+===
+
+steuer auf eigenen mehrwert (lohn, zinsen auf fremdkapital, gewinn)
+andere mehrwerte werden auf nächsten überwälzt
+bundessteuer mit praxisfestlegungen von ESTV, EZV, OZD 
+
+steuersubjekt:
+	inlandsteuer:
+		auf lieferungen & dienstleistungen im inland 
+		selbstdekalaration & abrechnung ESTV
+		grundsatz:
+			nachhaltige erziehlung einnahmen
+			gewerblich/beruflich/selbstständig
+			auftritt mit eigenem namen
+			mehr als 100k umsatz
+			bezugssteuer gleiche grundsätze
+		befreiung:
+			(weltweiter)umsatz unter 100k pro jahr (sport/kultur 150k)
+			ausländische unternehmen die nur strom/steuerbefreites anbieten
+			umsatz nicht-gemeinwesen unter 100k pro jahr
+		freiwillige teilnahme:
+			mindestens für 1 jahr; frühestens laufende periode
+			lohnend bei grossen vorsteuern
+		umsatzberechnung:
+			lieferung/dienstleistung im in- und ausland
+			ausgenommen sind unselbsständige einnahmen 
+			ausgenommen sind nicht gewerbliche umsätze (einmalverkauf auto) 
+		bedingungen steuerrelevant:
+			steuerpflichtige person
+			MWST relevante leistung
+			ort der leistung im inland
+			keine definierte ausnahme
+		begin:
+			sobald 100k überschritten wird
+			sobald 100k voraussichtlich überschritten wird 
+			auf antrag
+		ende:
+			wenn weniger als 100k, auf antrag
+			für ausländische mit letzter leistung inland			
+	bezugssteuer:
+		bezug von leistungen von unternehmen im ausland
+		selbstdekalaration & abrechnung ESTV
+		anwendung:
+			für einfuhr von datenträgern/daten ohne marktwert
+			von ausländischem unternehmen ohne MWST nummer geleistete
+			dienstleistung oder unbewegliche lieferung (grundstück)
+		bedingungen:
+			empfänger MWST pflichtig
+			oder mehr als 10k bezugssteuerleistungen beziehen
+		abrechnung:
+			empfänger zahlt dann MWST 
+			diese darf dann wieder als vorsteuer abgezogen werden
+	einfuhrsteuer:
+		warenbewegungen vom ausland in schweiz
+		EZV erhebt steuer
+		
+steuerobjekt:
+	lieferung:
+		befähigung wirtschaftlich darüber zu verfügen (kauf)
+		ablieferung (eichen, prüfen, regulieren, behandlung)
+		überlassen zur nutzung (miete, pacht)
+	lieferort:
+		abholort, versandort
+		bei elektrizität empfangsort
+		bei lieferung aus ausland inland mit unterstellungserklärung
+	dienstleistung:
+		alles was keine lieferung ist
+		auch bei immateriellen werten & rechten
+	dienstleistungsort:
+		erbringungsort (wie heil, pflege, reisebüro)
+		tätigkeitsort (theater, gastgewerbe)
+		strecke (personenbeförderungsunternehmen)
+		ort gelegenen sache (grundstück, herberge)
+		bestimmungsort (entwicklungshilfe)
+		sonst empfängerort
+	ausnahmen:
+		von steuer ausgenommen, jedoch auch kein vorsteuerabzug
+		spital / heil / ärztliche behandlungen
+		soziales wie kinderbetreuung
+		kultur / ausbildung
+		geld/kapital/versicherungsumsatz
+		verkauf grundstück
+		postdienstleistungen
+	befreiung (0% gebühr):
+		sterusatz 0%, vorsteuerabzug möglich
+		lieferung/vermietung ins ausland
+		logistikgewerbe (einfur/ausfuhrleistungen)
+
+bemessungsgrundlage:
+	berechnet vom entgeld (marktwert, werklohn)
+	vermindert durch rabatte, skonti
+	leistung könnte rückgängig gemacht werden
+	fremdwährungen:
+		monatsmittel oder tageskurs
+		gleicher kurs für aufwand & ertrag
+	sätze:
+		2.5% grundbedarf (essen, trinken, medikamente)
+		3.7% sondersatz (beherbergung)
+		7.7% normal (alles andere)
+	rechnungsstellung:
+		name, ort, MWST leistungserbringer
+		name, ort leistungsempfänger
+		datum, zeitraum leistung und rechnung
+		art, gegenstand, umfang leistung
+		höhe entgeld & "inkl. 7.7% MWST"
+
+abrechnung:
+	saldosteuersatz:
+		halbjährliche abrechnung umsatz inkl. MWST * saldosteuersatz
+		variiert je nach branche; z.B. 6.1% architekturbüro
+		dafür muss (darf) kein vorsteuerabzug gemacht werden
+		nur für kleine umsätze möglich
+	effektive abrechnungsmethode:
+		quartalsweise abrechnung von erziehltem umsatz und abzug vorsteuern
+		zum zeitpunkt vereinbarung ("vereinbarten") oder bezahlung ("vereinnahmten")
+		bei abrechnung bezugssteuer
+		bei einfuhr am ende der abrechnungsperiode
+
+vorsteuerabzug:
+	vermeidung steuerkumulation:
+		A verkauft B verkauft konsument
+		A verrechnet leistung + MWST (überwälzung) für B 
+		A zahlt MWST an bund
+		B verrechnet leistung + MWST (überwälzung) an konsument
+		B zahlt MWST an bund minus betrag A's MWST (vorsteuerabzug)
+	voraussetzungen:
+		unternehmerische tätigkeit
+		subjektive steuerpflicht 
+		abrechnung nach effektiver methode
+		beleg dass steuer bezahlt wurde
+	arten gemäss MWSTG:
+		im rahmen unternehmerischen tätigkeit möglich (28)
+		bei teilweiser verwendung ausserhalb relative korrektur (30)
+		bei einfuhr ohne MWST pflicht ausgeschlossen (29)
+		bei subventionen wird mögl. gekürzt (13)
+
+MWST-NR:
+	UID nummer pro unternehmen mit suffix "MWST"
+	auf uid.admin.ch kann status nachgeschaut werden
+	impliziert mit 500k umsatz dass RTV abgabe anfällt
+
+MWST deklaration:
+	abrechnung innerhalb steuerperiode
+	1/4 jährlich regelfall; halbjährlich bei saldosteuersätzen
+	mit MWST deklarationsformular
+	online möglich
+	
+formularguide:
+	umsatz:
+		200 alle einnahmen dienstleistungen/lieferungen
+		inkl. zahlungenseingänge, gutschriften, forderungsverzichte
+		205 entgelte für schulungen, kultur, mieterträge
+		220 steuerlich befreit wie export
+		221 zB für anwalt/architekturleistung ausland
+		225 gemäss formular 764
+		230 wie mieterlöse, kultur, erlöse aus geld/kapitalverkehr
+		235 falls bei 200 noch nicht berücksichtigte rabatte
+		280 alles andere; möglichst 0 lassen
+		289 als total von 220-280
+		299 = 200 - 289
+	steuerberechnung:
+		302 als anteil 7.7% von 299 
+		312, 342 analog
+		382 bezugssteuer
+		399 als total von 300 - 381
+		400 als summe lieferungs-, dienstleistungs-, bezugssteueraufwand
+		405 analog
+		410 übernahme von privaten vermögenswerten zu unternehmerischen 
+		415 falls verwendunganteil für ausgenommene zwecke/eigengebrauch
+		420 ausgenommene verwendungszwecke (subventionen)
+		479 summe 400 - 420
+		500 399 - 479; was bezahlt werden muss innerhalb 60 tagen
+		510 falls 500 negativ ist; ESTV zahlungsangaben mitteilen
+	andere mittelflüsse:
+		900 nicht-entgelte (in 200 nicht enthalten, bei 420 berücksichtigt)
+		910 nicht-entgelte (in 200 nicht enthalten)
+
+beispiel:
+	hausbau & vermietung nachher:
+		vorsteuer grosser finanzposten
+		wenn für private wohnzwecke keine versteuerung möglich
+		dadurch aber auch kein vorsteuerabzu möglich (teuer)
+		wenn vermietung an mieter vorsteuer abziehbar
+		und mieter kann MWST an kunden weitergeben
+
+umstrukturierungen
+===
+
+steuerprobleme:
+	durch ausscheiden von wirtschaftsgütern gewinnverwirklichung
+	darauf sind steuern zu zahlen; somit auch bei umstruktuierung
+	jedoch steuerneutral unter gewissen voraussetzungen
+	steuerfrei umstruktuierung:
+		steuerpflicht bleibt in der schweiz
+		übernahme gewinn- und einkommenswerte
+
+umwandlung:
+	änderung rechtsform aber gleiche wirtschaftliche identität
+	einzelfirma -> AG:
+		AG bleibt in schweiz, beibehaltung geschäftsbetrieb
+		stille reserven darum steuerfrei 
+		keine emmissionsabgabe da weniger als 5 jahre/freigrenze
+		lieferungen/dienstleistungen zur übertragung MWST pflichtig
+		gesunde eigenkapitalbasis & übertragung allem betriebsnotwenigem
+		sonst könnte je nach kanton eindruck realisierung entstehen
+		sperrfrist 5 jahre für verkauf aktien sonst nachbesteuerung
+		unentgeltliche übertragung OK, sperrfrist weiter beibehalten
+	
+zusammenschluss:
+	zwei oder mehr unternehmen zu einer einheit
+	mit austausch/ausgabe beteiligungsrechte, mögl. geldleistungen
+	unechte/echte fusion:
+		absorption/kombination
+	quasifusion:
+		wirtschaftlicher zusammenschluss
+		gesellschaft übernimmt alle aktien der anderen
+		aber juristische person besteht weiter
+	AG1 absorbiert AG2:
+		verkehrswert = aktienkapital + offene + stille reserven
+		innerer wert aktie = verkehrswert / #aktien
+		AG1 kapitalerhöhung = AK1 * VK2 / VK2
+		neue aktien1 = kapitalerhöhung1 / aktienwert1
+		um gerades austauschverhältnis zu erhalten
+		ausgleichszahlung & niedrigere kapitalerhöhung
+		ausgleichszahlung = VK1 / AK1 * (differenz kapitalerhöhung)
+		ausgleichszahlung wird anteilsmässig an AG2 ausgeschüttet
+		keine gewinnsteuer da valide umstrukturierung
+		keine sperrfrist da absorption 
+		steuerfreie übertragung anteile (umsatzabgabe)
+		steuerfreie übertragung liegenschaften  (handänderungssteuer)
+		mögl. MWST-pflichtige übertragung gegenstände/dienstleistungen 
+	AG1 quasifusioniert AG2:
+		keine emmissionsabgabe wenn mehr als 50% übernahme
+		keine umsatzabgabe
+		keine MWST, aber auch kein vorsteuerabzug (zB beraterhonorare)
+	AG1 absorbiert tochter AG2:
+		unechter fusionsverlust wenn AG1 buchwert von AG2 zu hoch
+		aber AG2 verkehrswert - AG1 buchwert > 0
+		echter fusionsverlust wenn differenz < 0, abzugsfähig
+
+spaltungsformen:
+	abspaltung:
+		teil der vermögenswerte wird auf andere gesellschaft übertragen
+		abspaltende gesellschaft wird entreichert
+	aufspaltung:
+		alle vermögenswerte werden auf andere gesellschaft übertragen
+		bisherige gesellschaft wird aufgelöst
+	ausgliederung:
+		vermögenssubstanz der gesellschaft ändert sich nicht
+		z.B. neue gesellschaft als tochterunternehmen
+	steuerfrei:
+		keine buchmässigen aufwertungen
+		übertragung betriebe mit angemessenem EK
+		weiterführung der betriebe nach der spaltung
+	AG1 erstellt tochter AG2:
+		keine sperrfrist wenn steuerfrei voraussetzungen erfüllt
+		keine umsatzabgabe da auch keine gewinnsteuern
+		keine verrechnungssteuer da reserven insgesamt gleich bleiben 
+		keine grundstücksgewinnsteuer & handänderungssteuer 
+		anwendung MWST anhand meldeverfahren  
+		
+
+startups aus sicht inkubator
+===
+
+startup aufbau:
+	vom wissenschaftler zu enterpreneur
+	von der uni zu eigenen örtlichkeiten
+	von grundlagenforschung zu prototypes
+	financial timeline:
+		third party funds
+		family, friends, fools
+		angels, start-up funds
+		early venture capital
+		late venture capital
+		mezzanine
+		IPO/trade sale
+	
+inkubatoren:
+	bieten räumlichkeiten an (labors etc)
+	coaching zum unternehmertum
+	bei early venture capital sehr nützlich
+
+schweiz:
+	mehr finanzierungsrunden; höhere finanzielle beträge
+	
+glatec business incubation:
+	für spinoffs der empa (materialwissenschaften) und eawag (wasser)
+	für externe startups und spinoffs von firmen
+	fokus auf frühphasenprojekte material-, umweltwissenschaften
+	nach 3-4 jahren auszug & erscheinung als KMU
+	bietet coaching, miete, wissen an
+	selektion:
+		geschäftsstelle
+		beratungsauschuss der pitch bewertet
+		empa / eqwag direktion 
+	eawag spinoffs:
+		optotune (elektische/mechanische fokussierung von linsen)
+		compliant concept (leise umlagerung von bettlägigen patienten)
+		irsweep (analyse von gasen im labor)
+		qualysense (biochemische massenanalyse & -sortierung nahrungsmittel)
+		dagsmejan (optimierte pyjamas)
+		polarmond (zelte für outdoor bereich)
+		micos engineering (optische instrumente satelliten)
+		twig tec (kites um power zu generieren)
+		swiss wood solutions (aufwertung holz zur tropenholzqualität)
+	eawag spinoffs:
+		aquatox solutions (wasserqualität testen mit fischembrios)
+		oncyt microbiology (schnelle waserqualitätsmessung)
+		vuna (urinseparierung zur düngerherstellung)
+	
+technologie stand schweiz:
+	patente:
+		china sehr viel (exponentielles wachstum) aber viele irrelevant
+		usa sehr viel, viele relevant
+		schweiz wenig, aber sehr hohe relevanz
+	position technologie schweiz:
+		viel forschung, hoher output
+	werdegang medikament:
+		ca 15-20 jahre entwicklungszeit
+		5 jahre frühe phase; suche nach wirksamer substanz
+		5 jahre präklinisch; präparat finden
+		10 jahre klinische tests
+		dann verkauf unter patentschutz 10jahre
+	kosten:
+		mehr als 1 mia nötig im durchschnitt
+		exponentielles wachstum der kosten durch zunehmende regulation
+		chronische erkrankungen schwieriger zu verstehen/behandeln
+	klinische tests:
+		tierversuche
+		phase 2 einzelne ausgesuchte patienten
+		phase 3 grosse anzahl patienten
+		wenn wirkung nachgewiesen und nebenwirkung OK dann zulassung
+	
+bio technopark:
+	entstehung:
+		1984 ehemalige fabrik eisenbahnwagons
+		1986 ETH institute mit labors
+		1998 professuren ziehen auf hönggerberg
+		2001 startups ziehen ein
+		2003 biotech center zürich
+		2010 professionalisierung
+		2013 laborgebäude für uzh
+		2018 laborgebäude für roche
+		2020 neues gebäude computertomatographie
+	CT:
+		misst radioaktive zucker ablagerungen 
+		ablagerungen bei stark aktivem gewebe
+		kurze halbwertszeit darum herstellung zeitkritisch
+	erfolge:
+		medikamententwicklungen; davon eines bereits zugelassen
+		übernahmen
+		schlieren wächst stark und einnahmen nehmen stark zu
+
+anhang
+===
+
+crypto:
+	payment token:
+		um etwas zu zahlen; wie andere währung
+		bitcoin, ether, bitcoin cash
+		zählt zu vermögensverwaltung
+	utility tokens:
+		um dienstleistung zu nutzen
+		steuerbar bei ausgabe
+	crypto tokens:
+		um anteile an etwas zu haben
+		werden wie aktien behandelt
+		
+ressourcen:
+	admin.ch:
+		unter Bunderecht -> systematische rechtssammlung
+		nummerierung
+		614.2 mehrwertssteuer (kapitel)
+		614.20 gesetz
+		614.21 verodnungen, ...
+	estv.admin.ch:
+		eidgenössische steuerverwaltung
+		publiziert verordnungen & arbeitsweise
+	zh.ch:
+		kantonales steuergesetz (StG-ZH)
+		kantonale steuern wie erbschaftssteuergesetz
+		je nach kanton mehrere gesetze oder einzelens

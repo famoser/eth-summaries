@@ -3,7 +3,7 @@ Summaries created for ETHZ courses. If you want to use some of these please be a
 
 - they are written to be helpful to memorize facts, and explicitly not to understand the course
 - none has been reviewed by professors, and only a few ones by fellow students
-- the quality varies greatly with how well I've liked and understood the course
+- the perceived quality is not necessarily linked with how well I've liked and understood the course
 
 I will list all summaries and my perceived level of quality. 
 Generally, the newer the summary, the more consistent is the structure & the wording. 

@@ -37,6 +37,8 @@ Generally, the newer the summary, the more consistent is the structure & the wor
 | 2019-2 E-Business Recht | ★★★★☆ |
 | 2019-2 Security Engineering | ★★☆☆☆ |
 | 2019-2 Algorithms Lab | ★★★★☆ |
+| 2020-1 Advanced Systems Lab - Part1 | ★★★★☆ |
+| 2020-1 Advanced Systems Lab - Part2 | ★★★☆☆ |
 | 2020-1 Startups und Steuern | ★★★☆☆ |
 | 2020-1 Wirtschaftssoziologie | ★★★★☆ |
 

@@ -1,117 +1,3 @@
-sparse linear algebra
-====
-
-linear algebra usually memory bound
-hence for sparse matrixes, compression pays off
-for BLAS 1, only 18% performance in 8mb working set
-
-sparse matrix vector multiplication (MVM):
-	core building block of sparse linear algebra
-	y += A * x; execute many times for different x's
-	operational intensity:
-		for K nonzero entries
-		W(n) = 2K (one add, one mul per entry)
-		Q(n) = K + 3n (load nonzeros; load y,x; store y)
-		hence upper bound <= 1/4 for doubles (8*Q(n))
-	trivial storage format:
-		many zeros stored; unnecessary operations & movements
-		operational itensity very low
-		hence need better storage formats
-
-compressed sparse row format (CSR):
-	NM matrix A, K non-zero entries
-	values with non-zero entries in row-major (K length)
-	col_idx with column of respective value (K length)
-	row_start with index where new row starts (m+1 length)
-	storage:
-		2K (values & column array) + m+1 (row_start array)
-	code:
-		loop over m rows
-		go to next row when col_idx[i] >= row_start[j]
-	example:
-		[a,0,b; 0,c,0; 0,0,0]
-		values [a,b,c]
-		col_idx [0,2,1]
-		row_start [0,2,3]
-	advantages:
-		only nonzero values stored
-		all arrays accessed consecutively (good spatial locality)
-		good temporal locality with y 
-	disadvantages:
-		insertion into A costly
-		bad spatial & temporal locality with x of y = A*x
-		because columns (hence matching entry of x) unordered 
-	comparison to dense MVM:
-		2x slower compared to trivial loop
-		performance is input dependent
-		blocking requires change of data structure
-		
-blocked CSR (BCSR):
-	block for registers to reduce traffic with x 
-	NM matrix A, K non-zero entries, r*c blocksize 
-	store whole blocks including zero-values
-	b_values with all blocks which have non-zero entries
-	b_col_idx with block-based column of block
-	b_row_start with index where block-based row starts 
-	storage space:
-		rcK (blocks) + K (values) + m/r+1 (row_start)
-	code:
-		loop over m/r+1 rows
-		dense micro MMM in inner loop
-	example:
-		[a,0,b,0; 0,c,0,0; 0,0,0,0; 0,0,0,0]
-		for r=c=2
-		values [a,0,0,c,b,0,0,0,0]
-		col_idx [0,1]
-		row_start [0,2]
-	advantages;
-		temporal locality of x and y
-		less index storage
-	disadvantages:
-		need to store some 0s (storage, computational overhead)
-		relevant bc problem already memory bound
-		
-choose CSR / BCSR:
-	performance hard to predict, maschine dependent
-	BCSR often better in well-known sparse matrix set
-	but CSR also has winning scenarios 	
-	by extensive search:
-		transformation cost CSR -> BCSR equals 10 SMVM
-		hence extensive BCSR block size search too slow
-	by estimating gain/loss:
-		estimate gain with dense performance of BCSR / CSR 
-		is machine dependent, hence could do at compile time
-		estimate loss with matrix values of BCSR / CSR
-		is data dependent, hence likely need to do at run time
-		choose best gain / loss ratio
-		
-principles:
-	optimize memory hierarchy:
-		blocking for registers (same as ATLAS)
-		change data structure of A 
-		optimizations are input dependent
-	fast basic blocks (micro MVM):
-		unrolling / scalar replacement
-	search for CSR, BCSR & block size:
-		use performance model to choose best variant
-		(versus mesuring runtime like in ATLAS)
-		
-other ideas:
-	cache blocking:
-		divide sparse matrix into smaller sparse matrixes
-		only useful for very large matrixes
-	value compression:
-		only store unique values
-		replace values array with index to its unique value
-	pattern-based compression:
-		extend BCSR with bit patterns defining non-zero entries
-		choose different kernel for each bit pattern
-		in values, no longer need to store 0s now
-		like 0306 -> bit pattern 0101; values 142
-	multiple inputs szenario:
-		block accross multiple MVM runs
-		hence do A * yxz in single run
-
 fast fourier transform (FFT)
 ===
 
@@ -199,18 +85,18 @@ cooley-tukey FFT:
 			n log(n) complex adds; each needs 2 real adds
 			n log(n)/2 complex mults; each needs 2 adds, 4 mults
 			hence 3n log(n) adds, 2n log(n) mults = 5n log(n)
-			reduce op count depending on recusion
+			reduce op count depending on recursion
 			because can simplify *i or *1
 		recursive vs iterative:
 			calculation order different (DAG equivalent)
 			iterative in stages (compute all of same kind of butterfly)
-			recursive in recusion (compute butterfly as soon as dependency resolved)
+			recursive in recursion (compute butterfly as soon as dependency resolved)
 			only order of operation changes, not count
 			recursive better on caches bc temporal locality
 		
 FFT variants:
 	iterative:
-		inital permutation step
+		initial permutation step
 		then bigger and bigger butterflies
 		size of butterflies defined by radix
 	pease:
@@ -255,7 +141,7 @@ optimizations:
 			introduce interface DFTrec(m, x, y, k, j)
 			for m size, x/y vectors, k input stride, j output stride
 			out-of-place (reads x, writes y)
-			called recusively (just change stride)
+			called recursively (just change stride)
 		DFTscaled:
 			fuse T3,T4 (read stride m, prescale, DFT_k, write stride m)
 			introduce interface DFTscaled(k, y, d, m)
@@ -285,12 +171,12 @@ optimizations:
 			but then need 31 DFTrec & DFTscaled each
 			can be generated (as its done by FFTW)
 	adaptivity:
-		adapt recusion strategy to platform
+		adapt recursion strategy to platform
 		do search within init function (reuse DFT_init(n))
 		use dynamic programming (saves perf. compared to exhaustive) 
-		valid recusions:
+		valid recursions:
 			generated droplet for base cases must exist
-			DFTscaled as a basecase (hence always right-recusive)
+			DFTscaled as a basecase (hence always right-recursive)
 
 FFTW (fastest fourier transform in the west):
 	generates codelets using SIMD
@@ -305,13 +191,13 @@ FFTW (fastest fourier transform in the west):
 			mults (0*x => 0, similar cases for -1,1)
 			distribution laws (kx + ky => k(x+y))
 			canonicalization (x-y,y-x => x-y, -(y-x))
-		common subexpression eliminiation (CSE):
+		common subexpression elimination (CSE):
 			use temporary variables to avoid double computation
 		reduce constants (DFT specific):
 			has many multiplications with many different constants
 			each constant used positive & negative (bc sin(a) = -sin(a))
 			reduce register pressure by storing only positive constant
-			and use subtraction where -sin(a) would be nedeed
+			and use subtraction where -sin(a) would be needed
 	scheduler:
 		transform DAG to c under register spill minimization
 		want to reach target I = O(log(C)) for cache size C
@@ -331,7 +217,7 @@ comparison:
 	DFT (FFTW)
 	cache optimizations:
 		blocking for MMM, SMVM
-		recusive FFT & fusion of steps for FFTW
+		recursive FFT & fusion of steps for FFTW
 	register optimizations:
 		blocking for MMM, SMVM
 		schedule small FFT for FFT
@@ -346,7 +232,7 @@ comparison:
 	adaptivity:
 		search blocking parameters for MMM
 		search register block size for SMVM
-		search recusion strategy for DFT
+		search recursion strategy for DFT
 
 spiral:
 	specifically to optimize FFT

@@ -18,7 +18,7 @@ motivation:
 		filters/correlations/convolutions
 		equation solving
 		dense/sparse linear algebra
-		coders/decodes
+		coders/decoders
 		graph algorithms
 	
 archive speedups:
@@ -33,19 +33,17 @@ archive speedups:
 		adapt to memory layout
 		use vector instructions
 		use parallelism
-	archievable:
+	achievable:
 		20x through memory hierarchy (caches)
 		4x through vector instructions
 		4x through parallelization
 	optimized code in practice:
-		heavy LoC count 
-		needs manual intervention to build
-		reduces cache misses (potentially more operations)
-		uses vector instructions and parallelization
+		heavy LoC count, manual process with some generated parts
 		often not portable to other microarchitecture
 		may violate software engineering practices
-		some parts maybe generated automatically
-
+		uses vector instructions and parallelization
+		reduces cache misses (potentially at the cost of more operations)
+		
 naive matrix multiplication (NMM):
 	for n times n matrixes
 	O(n^3) operations
@@ -66,9 +64,9 @@ basics
 	
 o-definitions:
 	O(f(n)) is set of functions; f element_of O(g)
-	O(g) (nicht wesentlich schnelleres wachstum)
-	theta(g) (genauso schnelles wachstum)
-	omega(g) (nicht wesentlich langsameres wachstum)
+	O(g) (only reasonable faster growth)
+	theta(g) (equally fast growth)
+	omega(g) (only reasonable slower growth)
 	order:
 		1 < log log (n) < log(n) < sqrt(n)
 		n < nlog(n) < n^(1+e) < n^2 < n^m < 2^n < n!
@@ -103,7 +101,8 @@ performance:
 		max flops possible on that machine
 		useful to compare to archived flops
 		90% peak percentage possible for matrix multiplication
-		48 Gflops = 4 cores * 2 SSE * 1 add/mul * 3 GHz
+		2 flops/cycle = 1 fma
+		32 Gflops = 4 cores * 2 AVX * 1 add * 3 GHz
 	performance NMM:
 		C(n) = (fladds(n), flmults(n)) = (n^3, n^3)
 		for n = 10, cost = 2000, runtime = 1000, peak performance = 2
@@ -119,23 +118,25 @@ performance:
 operational intensity:
 	I(n) = W(n) / Q(n)
 	for flops (floating point operations) W(n)
-	for bytes transferred (assumming empty cache) Q(n)
+	for bytes transferred (assuming empty cache) Q(n)
 	intensity factors:
 		computer (memory bandwidth, peak performance)
 		implementation (degree of locality, SIMD)
 		measurement (warm cache, cache source, ...)
-	compute-bound (I>1):
-		archives 80-90% of peak performance
+	compute-bound:
+		if I > peak performance / memory bandwidth ("high", often n factors)
 		computation uses same value often; work package in cache
-		cache miss time neglectable compared to computation
+		cache miss time negligible compared to computation
 		improve performance by keeping floating point units busy
-		reduce cache misses & register spills, use ILP & vectorization
-	memory bound (I<1):
-		archives 40-50% of peak performance
+		use ILP & vectorization
+		80-90% of peak performance archivable in practice
+	memory bound:
+		if I < peak performance / memory bandwidth ("low", constant)
 		computation needs many values; work package too big for cache
 		cache miss time bigger factor than computation time
 		improve performance by reducing memory traffic
 		reduce cache misses & register spills, use compression
+		40-50% of peak performance achievable in practice
 
 operational intensity examples:	
 	y = y + x O(n) / O(n)
@@ -144,20 +145,22 @@ operational intensity examples:
 	C = AB + C O(n^3) / O(n^2)
 	fma two array sum:
 		W(n) = 2n flops needed (add + mul per row)
-		Q(n) >= 16n (need 2 n-arrays; hence 16n byte loads)
+		Q(n) >= 2n (need 2 n-arrays)
 		I <= 1/8; hence memory bound
-		n/2 without vector ops (use 2 fma ports)
-		n/8 with vector ops (do 4 at same time)
-		n/4 L1 & L2 (do 8 loads, need 2 per op)
-		n/2 L3 (do 4 loads, need 2 per op)
-	double matrix multiplication:
+		W' = n/2 without vector ops (use 2 fma ports)
+		W'' = n/8 with vector ops (do 4 at same time)
+		Q' = n/4 L1 & L2 (do 8 loads at same time)
+		Q'' = n/2 L3 (do 4 loads at same time)
+		for double, multiply Q by 8 bc double needs 8 bytes
+	matrix multiplication:
 		W(n) = 2(n^3) flops needed (add + mul per row/column combination)
-		Q(n) >= 3*8*(n^2) (need 3-n*n matrixes; as doubles)
+		Q(n) >= 3*(n^2) (need 3 n*n matrixes)
 		I(n) <= n/12; hence compute bound
-		(n^3)/2 without vector ops (use 2 fma ports)
-		(n^3)/8 vector ops (do 4 at same time)
-		(n^2)*3/8 L1 & L2 (do 8 loads, 3 matrixes of size n*n)
-		(n^2)*3/4 L3 (do 4 loads, 3 matrixes of size n*n)
+		W' = (n^3)/2 without vector ops (use 2 fma ports)
+		W'' = (n^3)/8 vector ops (do 4 at same time)
+		Q' = (n^2)*3/8 L1 & L2 (do 8 loads, 3 matrixes of size n*n)
+		Q'' = (n^2)*3/4 L3 (do 4 loads, 3 matrixes of size n*n)
+		for double, multiply Q by 8 bc double needs 8 bytes
 
 locality:
 	algorithm use data near or equal to those used recently
@@ -180,7 +183,7 @@ history:
 
 intel history:
 	fully backwards compatible (hence instructions never removed)
-	end of moores law means no longer free speedup for legacy code
+	end of moore's law means no longer free speedup for legacy code
 	x86-16:
 		8086 
 	x86-32:
@@ -212,31 +215,6 @@ intel history:
 		issue/execute multiple instructions in one cycle
 		instructions taken from sequential instruction stream
 
-ports:
-	multiple ports available with different execution units
-	can activate one execution unit per port per cycle	
-	instruction level parallelism (ILP):
-		requires super-scalar processor
-		intructions are parallelized automatically
-		by using different ports for different instructions
-		example t2 = t0 + t1; t0, t1 calculation can be parallelized
-	example haswell:
-		for address generation as AGU, sub/add/bitwise as alu
-		0 with int alu/div, int vector alu/mul, fp fma/mul/div, branch 
-		1 with int alu/mul, int vector alu, fp add/fma/mul, bit scan
-		2 AGU, loads
-		3 AGU, loads
-		4 stores
-		5 with int alu, vector shuffle, int vector alu, AES
-		6 int alu, branch
-		7 AGU
-	application haswell:
-		n adds, n mults in c -> n/2 (use fma)
-		n adds, n mults in assembly -> n (cause only n adds)
-		n adds in c -> n/2 (could map n/2 adds to fma)
-		n adds in assembly -> n (cause only n adds)
-		n adds, n/2 mults in c -> n/2 (n/2 fma, n/2 adds)
-
 memory:
 	bottleneck:
 		processor performance doubles every 18 months
@@ -260,15 +238,17 @@ memory:
 		RAM with 125 latency, 2 throughput
 
 virtual memory system:
-	processor works on virtual addresses
-	but caches work with physical addresses
+	instruction uses virtual addresses
+	caches work with physical address + 12bit tag
+	physical address given by lower bits of virtual address
+	virtual address mapped to tag with lookup in TLB 
 	page size can be 4KB, 2MB, 1GB (page size step = 2^9)
 	x86 L1 cache:
 		64 (2^6) block size
 		64 (2^6) sets
 		8 associativity
 		32 KB
-	x86 L1 loopup:
+	x86 L1 lookup:
 		can do concurrently with address translation 
 		because location inside cache given by lower 12 bits
 		which are not part of page identifier (as page size >= 2^12)
@@ -288,133 +268,11 @@ virtual memory system:
 		then block B & C not contiguous (NB + K + NB pages)
 		copying to continuous memory may pay off
 
-optimizations
-===
-
-compiler optimizations:
-	optimizations compiler is likely to do
-	mapping program to machine:
-		register allocation
-		code selection & ordering
-		dead code elimination
-		eliminating minor inefficiencies
-	inline procedure calls:
-		reduce overhead by call, bounds checking, ...
-		need to compile source code together
-	code motion (precomptation):
-		reduce computation frequency of pure computation
-		like moving code out of loop (loop-invariant code motion)
-		for example [i*n + j]; precompute i*n
-	strength reduction:
-		replace costly operation with cheaper one
-		like shift/add instead of multiply by 2
-		for example [i*n + j]
-		transform i*n to addition in outer loop
-	share common subexpression (if recognised):
-		reuse portion of expressions
-		for example [(i+1*n) + j] [(i*n) + j+1]
-		replace with [c + n] and [c + 1] for c = i*n + j
-
-compiler optimization blockers:
-	even unrealistic scenarios must not change
-	analysis constrained (only static procedure-wide info)
-	can't test different choices (for ILP, locality)
-	hence algorithmic restructuring hard
-	procedure calls:
-		treated as black box with potential side effects
-		hence can not simply reorder, precompute
-		compiler may detect pure (built-in) functions 
-	memory aliasing:
-		overlapping memory prevents reuse optimizations
-		like reducing loads/stores, precompution
-		compiler may add case distinction for aliasing (a+n < b || b+n < a)
-		and then use optimized code when no memory alias
-		
-manual optimizations:
-	algorithm:
-		restructure for ILP, locality
-		use simple data represetations; best are arrays
-		watch inner-most loop closely for overhead
-		unroll loops to enable other optimizations
-		try out different algorithms
-	optimize procedure calls:
-		reduce overhead when calling procedures
-		precomputate manually (taking out of loop & similar)
-		provide source code instead of linking (to enable inlining)
-	scalar replacements (avoid aliasing):
-		copy reused elements in local variables
-		structure algorithm in load, compute, store
-	unroll loops:
-		unroll loop by some factor
-		do scalar replacement to save on loads
-		measure outcome and autotune unrolling factor 
-	generate code:
-		capture algorithm with domain specific language (DSL)
-		decide on choices with bruteforce/machine learning
-		generate easily transformable code to profit from compiler
-	tell compiler no aliasing:
-		use compiler flag -fno-alias
-		use #pragma ivdep
-		pass argment with restrict keyword
-
-loop unrolling:
-	more work inside single loop iteration
-	faster iterator incrementation
-	but just unrolling usually no advantage
-	need to transform (reassociation, dependecy reduction)
-	example:
-		create two accumulators i0, i1
-		sum up i and i+1 into respective accumulator
-		sum up i0 + i1 in the end
-	compilers:
-		transformations may break associativity
-		hence compiler not allowed to do so
-		many different forms of how to unroll
-		hence compiler search space too big
-	generalization:
-		use K accumulators and L unrolls (for K divides L; L >= K)
-		choose K/L combination with best performance
-		but processor-specific hence often unportable
-		called autotuning, processor-tuning
-	approaches:
-		try out K,L then measure and choose best
-		but large overhead for small inputs
-		pick best K,L using latency/throughout model
-		but models may not work in practice
-
-loop unrolling examples:
-	based on sum of array
-	trivial:
-		for (entry in array) sum += entry;
-		each computation pays full latency
-		because always dependency on operation before
-	loop unrolling:
-		for (entry, next_entry in array) sum = (sum + entry) + next_entry;
-	loop unroll, separate accumulator:
-		for (entry, next_entry in array) sum1 += entry; sum2 += next_entry
-		now depedencies reduced by half
-		but for floats behaviour changes
-		for integer fine bc. overflow preserves associativity
-	loop unroll for mul:
-		ceil(5 lat/0.5 gap) operations need independence
-		hence choose L=K=10
-	loop unroll for add:
-		ceil(3 lat/1 gap) operations need independence
-		hence choose L=K=3
-		but best performance measured at L=K=8
-	loop unroll for add using fma:
-		ceil(5 lat/0.5 gap) operations need independence
-		another 2x speedup bc one additional port used
-	
-instruction set architecture (ISA)
-====
-
-defines instruction set, registers
-implemented with microarchitecture
-which then defines caches, frequency, virtual memory
-	
-instructions:
-	executes logic upon values in registers
+instruction set architecture (ISA):
+	defines instruction set, registers
+	implemented with microarchitecture
+	which then defines caches, frequency, virtual memory
+	instructions execute logic upon values in registers
 	flynns taxonomy:
 		single/multiple instructions(S/MI)
 		per single/multiple data (S/MD)
@@ -425,7 +283,7 @@ instructions:
 	single instruction multiple data (SIMD):
 		for parallel computation on short int/float vectors
 		allow to compute on up to 8 numbers at the same time
-		useful (many applications have fine-grained parallism)
+		useful (many applications have fine-grained parallelism)
 		doable (easy to design, simply replicate units)
 	SIMD history:
 		MMX for integers / 64bit (pentium MMX)
@@ -464,6 +322,244 @@ instructions:
 		same for vector instructions (except div)
 		each register has space for 256 bits (4 doubles, 8 ints)
 
+memory
+===
+
+cache:
+	memory with short access time
+	for frequently or recently used data/instructions
+	supports temporal locality (by definition)
+	may supports spatial locality (with lines, blocks)
+	general mechanics:
+		data is copied/replaced in block units (intel core 64bytes)
+		faster cache has subset of blocks of larger memory
+		placement policy determines where block is placed
+		replacement policy determines which block is replaced
+	cache organization:
+		B for #blocks (size of single entry)
+		S for #sets (number of addresses)
+		E as #lines per set (associativity)
+		capacity = S * B * E
+	cache types:
+		direct mapped (E=1); each block has unique location
+		associative (E>1,S>1); each block has many possible location
+		fully associative (S=1); each block to any location
+	tradeoff associativity:
+		increase associativity if reused elements have same offset 
+		increase sets if then reused elements have different offsets
+	placement policy:
+		memory locations are mapped to sets based on offset
+		for constant capacity tradeoff E with S
+		usually more E better (but more expensive to build)
+		but for pattern 0, 1, 3, 0 E=1,S=2 better than E=2,S=1
+	replacement policy:
+		defines replacement if all possible locations full
+		only relevant for associative caches (multiple possible locations)
+		for example least recently used (LRU)
+	type of cache misses:
+		compulsory, cold (on first access)
+		capacity (working set larger than cache)
+		conflict (many blocks map to same slot) 
+	performance metrics:
+		miss rate (references not in cache; misses/access)
+		hit rate (references in cache; 1-miss rate)
+		hit time (deliver block from cache to CPU; 3 cycles for L1)
+		miss penalty (time required for a miss; 100 cycles for L2)
+	writes to memory:
+		on cache hit write immediately (write-through)
+		or defer until line replaced (write-back)  
+		on cache miss write directly (no-write-allocate)
+		or load line and then write (write-allocate)
+		intel core uses write-back and write-allocate
+
+examples:
+	simple:
+		for E=1, B=4 double, S=8
+		lower 3 bits 0 because doubles are 8 bytes
+		3 bit determine sets, 2 bits for block
+		data identified by 56 bit tag in single possible location
+	conflict:
+		for E=1, B=2 double, S=8
+		loop with a[j][i] for n = 16
+		hence a[2][0] conflicts with a[0][0]
+	examples:
+		for E=1, B=2 double, S=2 
+		access 0123456701234567
+		8 miss, 8 hits; spatial yes, temporal no
+		access 0246135702461357
+		16 miss; spatial no, temporal no
+		access 0123012301230123
+		4 miss, 12 hits; spatial yes, temporal yes; optimal
+
+traffic examples:
+	vector addition (z = x + y):
+		memory traffic 4n doubles = 32n (bc measured in bytes)
+		operational intensity 1/4 (hence memory bound)
+	naive matrix multiplication:
+		for cache size y << n, block size 8
+		gives n^2 * 9n/8 cache misses
+	blocked matrix multiplication:
+		for block size b such that 3b^2 <= cache size y 
+		gives (n/b)^2 * nb/4 cache misses
+		3b^2 bc 3 little matrix need to fit into cache
+	strided working sets problem:
+		common in FFT, 2d transformations
+		assume two loops for (i < n; i+=t) for t stride
+		see how locality changes with different strides
+		if stride = 1 then spatial full, temporal if W <= C
+		if stride = 2 then spatial B/2, temporal if W <= 2C
+		if stride = 4 then spatial B/4, temporal if W <= 4C
+		(if stride not power of two not that much of an issue)
+		need to separate computation in chunks
+		need to copy data to better memory layout
+
+memory dependencies:
+	read after write (RAW):
+		also called true dependency
+		r1 = r3 + r4; r2 = 2*r1
+	write after read (WAR):
+		also called antidependency
+		r1 = r2 + r3; r2 = r4 + r5
+		dependency on r2 only by name
+	write after write (WAW):
+		also called output dependency
+		r1 = r2 + r3; r2 = r4 + r5
+		dependency on r2 only by name
+	resolve by renaming:
+		with single static assignment (SSA) code style
+		automatically by compiler (but black box)
+		hardware can do dynamic register renaming
+		needs separation of architectural (assembly) / physical layer
+		needs more physical than architectural registers 
+
+optimizations
+===
+
+compiler optimizations:
+	optimizations compiler is likely to do
+	mapping program to machine:
+		register allocation
+		code selection & ordering
+		dead code elimination
+		eliminating minor inefficiencies
+	inline procedure calls:
+		reduce overhead by call, bounds checking, ...
+		need to compile source code together
+	code motion (precomputation):
+		reduce computation frequency of pure computation
+		like moving code out of loop (loop-invariant code motion)
+		for example [i*n + j]; precompute i*n
+	strength reduction:
+		replace costly operation with cheaper one
+		like shift/add instead of multiply by 2
+		for example [i*n + j]
+		transform i*n to addition in outer loop
+	share common subexpression (if recognized):
+		reuse portion of expressions
+		for example [(i+1*n) + j] [(i*n) + j+1]
+		replace with [c + n] and [c + 1] for c = i*n + j
+
+compiler optimization blockers:
+	even unrealistic scenarios must not change
+	analysis constrained (only static procedure-wide info)
+	can't test different choices (for ILP, locality)
+	hence algorithmic restructuring hard
+	procedure calls:
+		treated as black box with potential side effects
+		hence can not simply reorder, precompute
+		compiler may detect pure (built-in) functions 
+	memory aliasing:
+		overlapping memory prevents reuse optimizations
+		like reducing loads/stores, precomputation
+		compiler may add case distinction for aliasing (a+n < b || b+n < a)
+		and then use optimized code when no memory alias
+		
+processor optimizations:
+	out-of order-execution:
+		dynamically reorders instructions
+		to resolve dependencies early & use free ports
+	register renaming:
+		resolve WAW, WAR dependencies
+	branch prediction:
+		execute instructions before branch result known
+		result instantaneously ready if branch result predicted correctly
+		
+manual optimizations:
+	algorithm:
+		restructure for ILP, locality
+		use simple data representations; best are arrays
+		watch inner-most loop closely for overhead
+		unroll loops to enable other optimizations
+		try out different algorithms
+	optimize procedure calls:
+		reduce overhead when calling procedures
+		precompute manually (taking out of loop & similar)
+		provide source code instead of linking (to enable inlining)
+	scalar replacements (avoid aliasing):
+		copy reused elements in local variables
+		structure algorithm in load, compute, store
+	unroll loops:
+		unroll loop by some factor
+		do scalar replacement to save on loads
+		measure outcome and autotune unrolling factor 
+	generate code:
+		capture algorithm with domain specific language (DSL)
+		decide on choices with bruteforce/machine learning
+		generate easily transformable code to profit from compiler
+	tell compiler no aliasing:
+		use compiler flag -fno-alias
+		use #pragma ivdep
+		pass argument with restrict keyword
+
+loop unrolling:
+	more work inside single loop iteration
+	faster iterator incrementation
+	but just unrolling usually no advantage
+	need to transform (reassociation, dependency reduction)
+	example:
+		create two accumulators i0, i1
+		sum up i and i+1 into respective accumulator
+		sum up i0 + i1 in the end
+	compilers:
+		transformations may break associativity
+		hence compiler not allowed to do so
+		many different forms of how to unroll
+		hence compiler search space too big
+	generalization:
+		use K accumulators and L unrolls (for K divides L; L >= K)
+		choose K/L combination with best performance
+		but processor-specific hence often unportable
+		called autotuning, processor-tuning
+	approaches:
+		try out K,L then measure and choose best
+		but large overhead for small inputs
+		pick best K,L using latency/throughput model
+		but models may not work in practice
+
+loop unrolling examples:
+	based on sum of array
+	trivial:
+		for (entry in array) sum += entry;
+		each computation pays full latency
+		because always dependency on operation before
+	loop unrolling:
+		for (entry, next_entry in array) sum = (sum + entry) + next_entry;
+	loop unroll, separate accumulator:
+		for (entry, next_entry in array) sum1 += entry; sum2 += next_entry
+		now dependencies reduced by half
+		but for floats behaviour changes
+		for integer fine bc. overflow preserves associativity
+	loop unroll for mul:
+		ceil(5 lat/0.5 gap) operations need independence
+		hence choose L=K=10
+	loop unroll for add:
+		ceil(3 lat/1 gap) operations need independence
+		hence choose L=K=3
+		but best performance measured at L=K=8
+	loop unroll for add using fma:
+		ceil(5 lat/0.5 gap) operations need independence
+		another 2x speedup bc one additional port used
+
 vectorization
 ===
 
@@ -472,19 +568,18 @@ use SIMD instructions to parallelize computations
 implementation options:
 	vectorized library (but seldom available)
 	compiler flags (but seldom works)
-	intrinsics (but limited optimzations possible)
+	intrinsics (but limited optimisations possible)
 	assembly (but no help anymore from compiler)
 
-compiler vectorization:
-	options:
-		ensure data always aligned and use aligned loads
-		use unaligned loads
-		execute first entries unvectorized until aligned ("peel")
-	decision tree:
+data layout:
+	aliased data can not be vectorized (result could be different)
+	unaligned data has slower loading performance
+	compiler decision tree:
 		if a,b aliased then unvectorized code
-		else if a,b aligned then vectorized
-		else peeling & aligned loads or unaligned loads
-		but impractical on large code bases
+		else if a,b aligned then load aligned
+		else use unaligned loads
+		or execute first entries unvectorized ("peeling")
+		impractical to do on large code bases
 	detect vectorization:
 		annotation flags of compiler
 		generate vectorization report
@@ -588,7 +683,7 @@ intrinsics:
 		permute2f128_pd(a, b, mask) -> [a1 or a2 or b1 or b2 or 0, ...]
 	stores:
 		store_pd(pointer); pointer must be 32bit aligned
-		storeu_pd(unaliged pointer); used to be more expensive
+		storeu_pd(unaligned pointer); used to be more expensive
 		maskstore_pd(pointer, __m256i mask with 0x0 and 0xFFFF)
 		storeu2_m128d(low bits pointer, high bits pointer)
 		stream_pd(pointer) (no caching) 
@@ -632,110 +727,6 @@ intrinsic examples:
 		v1v2d = _mm256_castpd128_pd256(v1v2)
 		v = _mm256_insertf128_pd(v1v2d, v3v4, 1)
 
-memory
-===
-
-cache:
-	memory with short access time
-	for frequently or recently used data/instructions
-	supports temporal locality (by definition)
-	may supports spatial locality (with lines, blocks)
-	general mechanics:
-		data is copied/replaced in block units (intel core 64bytes)
-		faster cache has subset of blocks of larger memory
-		placement policy determines where block is placed
-		replacement policy determine which block is replaced
-	type of cache misses:
-		compulsory, cold (on first access)
-		capacity (working set larger than cache)
-		conflict (many blocks map to same slot) 
-	cache types:
-		direct mapped (E=1); each block has unique location
-		associative (E>1,S>1); each block has many possible location
-		fully associative (S=1); each block to any location
-	replacement strategy:
-		for associative caches (multiple possible locations)
-		defines replacement if all possible locations full
-		for example least recently used (LRU)
-	cache organisation:
-		E as lines per set (associativity)
-		B for #blocks
-		S for #sets
-		cache block is the saved data
-		cache line = valid bit, tag + cache block
-	performance metrics:
-		miss rate (references not in cache; misses/access)
-		hit rate (references in cache; 1-miss rate)
-		hit time (deliver block from cache to CPU; 3 cycles for L1)
-		miss penalty (time required for a miss; 100 cyles for L2)
-	writes to memory:
-		on cache hit, defer until line replaced or write immediately 
-		called write-back or write-through 
-		first one used by intel; useful for many algorithms
-		on cache miss, first load cache or write directly
-		called write-allocate or no-write-allocate
-		first one used by intel; whole cache line loaded not just single element
-
-examples:
-	simple:
-		for E=1, B=4 double, S=8
-		lower 3 bits 0 because doubles are 8 bytes
-		3 bit determine sets, 2 bits for block
-		data identified by 56 bit tag in single possible location
-	conflict:
-		for E=1, B=2 double, S=8
-		loop with a[j][i] for n = 16
-		hence a[2][0] conflicts with a[0][0]
-	examples:
-		for E=1, B=2 double, S=2 
-		access 0123456701234567
-		8 miss, 8 hits; spatial yes, temporal no
-		access 0246135702461357
-		16 miss; spatial no, temporal no
-		access 0123012301230123
-		4 miss, 12 hits; spatial yes, temporal yes; optimal
-
-traffic examples:
-	vector addition (z = x + y):
-		memory traffic 4n doubles = 32n (bc measured in bytes)
-		operational intensity 1/4 (constant; this is bad)
-	naive matrix multiplication:
-		for cache size y << n, block size 8
-		gives n^2 * 9n/8 cache misses
-	blocked matrix multiplication:
-		for block size b such that 3b^2 <= cache size y 
-		gives (n/b)^2 * nb/4 cache misses
-		3b^2 bc 3 little matrix need to fit into cache
-	strided working sets problem:
-		common in FFT, 2d transformations
-		assume two loops for (i < n; i+=t) for t stride
-		see how locality changes with different strides
-		if stride = 1 then spatial full, temporal if W <= C
-		if stride = 2 then spatial B/2, temporal if W <= 2C
-		if stride = 4 then spatial B/4, temporal if W <= 4C
-		(if stride not power of two not that much of an issue)
-		need to separate computation in chunks
-		need to copy data to better memory layout
-
-memory dependencies:
-	read after write (RAW):
-		also called true dependency
-		r1 = r3 + r4; r2 = 2*r1
-	write after read (WAR):
-		also called antidependency
-		r1 = r2 + r3; r2 = r4 + r5
-		dependency on r2 only by name
-	write after write (WAW):
-		also called output dependency
-		r1 = r2 + r3; r2 = r4 + r5
-		dependency on r2 only by name
-	resolve by renaming:
-		with single static assignment (SSA) code style
-		automatically by compiler (but black box)
-		hardware can do dynamic register renaming
-		needs separation of architectural (assembly) / physical layer
-		needs more physical than architectural registers 
-
 roofline plot
 ===
 
@@ -759,14 +750,14 @@ roofs:
 		use stream benchmark to measure (could be conservative)
 		measured values up to 60% of theoretical possible from manual
 		B >= Q / T = P/I => log(P) <= log(I) + log(B)
-		y=x line with offset to cut peak performance root at pi/B
+		y=x line with offset to cut peak performance root at pi/beta
 	interpretation:
-		left intersection beta/pi memory bound, right compute bound
+		left of pi/beta is memory bound, right is compute bound
 
 observations:
 	introducing SIMD:
 		increases pi roof => more memory bound
-		bc can execute many opertions in parallel
+		bc can execute many operations in parallel
 	different algorithmic operation mix:
 		lowers pi roof => more compute bound
 		bc different available units/ports
@@ -799,11 +790,125 @@ examples:
 		I <= n/16
 		in plot, nearly hits peak performance
 		for small inputs I increases (as long as cache available)
-		for large inputs, I only slighlty smaller (bc of blocked implementation)
+		for large inputs, I only slightly smaller (bc of blocked implementation)
 		for parallel, nearly hits increased peak performance
 		for parallel, gets closer to hit capacity line
 		good algorithms are compute bound
 		trivial triple loop is memory bound
+
+sparse linear algebra
+====
+
+linear algebra usually memory bound
+hence for sparse matrixes, compression pays off
+for BLAS 1, only 18% performance in 8mb working set
+
+sparse matrix vector multiplication (MVM):
+	core building block of sparse linear algebra
+	y += A * x; executed many times for different x's
+	operational intensity:
+		for K nonzero entries
+		W(n) = 2K (one add, one mul per entry)
+		Q(n) = K + 3n (load nonzeros; load y,x; store y)
+		hence upper bound <= 1/4 for doubles (8*Q(n))
+	trivial storage format:
+		many zeros stored; unnecessary operations & movements
+		operational intensity very low
+		hence need better storage formats
+
+compressed sparse row format (CSR):
+	NM matrix A, K non-zero entries
+	values with non-zero entries in row-major (K length)
+	col_idx with column of respective value (K length)
+	row_start with index where new row starts (m+1 length)
+	storage:
+		2K (values & column array) + m+1 (row_start array)
+	code:
+		loop over m rows
+		go to next row when col_idx[i] >= row_start[j]
+	example:
+		[a,0,b; 0,0,0; 0,c,0]
+		values [a,b,c]
+		col_idx [0,2,1]
+		row_start [0,2,2,3]
+	advantages:
+		only nonzero values stored
+		all arrays accessed consecutively (good spatial locality)
+		good temporal locality with y 
+	disadvantages:
+		insertion into A costly
+		bad spatial & temporal locality with x of y = A*x
+		because columns (hence matching entry of x) unordered 
+	comparison to dense MVM:
+		2x slower compared to trivial loop
+		performance is input dependent
+		blocking requires change of data structure
+		
+blocked CSR (BCSR):
+	block for registers to reduce traffic with x 
+	NM matrix A, K non-zero entries, r*c blocksize 
+	store whole blocks including zero-values
+	b_values with all blocks which have non-zero entries
+	b_col_idx with block-based column of block
+	b_row_start with index where block-based row starts 
+	storage space:
+		rcK (blocks) + K (values) + m/r+1 (row_start)
+	code:
+		loop over m/r+1 rows
+		dense micro MMM in inner loop
+	example:
+		[a,0,b,0; 0,0,0,0; 0,0,0,0; 0,c,0,0]
+		for r=c=2
+		values [a,0,0,c,b,0,0,0,0]
+		col_idx [0,1]
+		row_start [0,1,2]
+	advantages;
+		temporal locality of x and y
+		less index storage
+	disadvantages:
+		need to store some 0s (storage, computational overhead)
+		relevant bc problem already memory bound
+		
+choose CSR / BCSR:
+	performance hard to predict, machine dependent
+	BCSR often better in well-known sparse matrix set
+	but CSR also has winning scenarios 	
+	by extensive search:
+		transformation cost CSR -> BCSR equals 10 SMVM
+		hence extensive BCSR block size search too slow
+	by estimating gain/loss:
+		estimate gain with dense performance of BCSR / CSR 
+		is machine dependent, hence could do at compile time
+		estimate loss with matrix values of BCSR / CSR
+		is data dependent, hence likely need to do at run time
+		choose best gain / loss ratio
+		
+principles:
+	optimize memory hierarchy:
+		blocking for registers (same as ATLAS)
+		change data structure of A 
+		optimizations are input dependent
+	fast basic blocks (micro MVM):
+		unrolling / scalar replacement
+	search for CSR, BCSR & block size:
+		use performance model to choose best variant
+		(versus measuring runtime like in ATLAS)
+		
+other ideas:
+	cache blocking:
+		divide sparse matrix into smaller sparse matrixes
+		only useful for very large matrixes
+	value compression:
+		only store unique values
+		replace values array with index to its unique value
+	pattern-based compression:
+		extend BCSR with bit patterns defining non-zero entries
+		choose different kernel for each bit pattern
+		in values, no longer need to store 0s now
+		like 0306 -> bit pattern 0101; values 142
+	multiple inputs scenarios:
+		block across multiple MVM runs
+		hence do A * yxz in single run
 
 compilers
 ===
@@ -818,3 +923,33 @@ gcc:
 	matrix multiplication example:
 		1300 cycles at -O0 
 		150 cycles at -O3 -m64 -march
+
+exercise tools:
+	numbers:
+		2^10 = 1kb
+		2^20 = 1mb
+	bounds:
+		runtime like 3N cycles
+		performance like 2flops/cycle
+		performance = #flops / #cycles
+	operational intensity:
+		for W, include reads + writes & multiply by data size
+		W(n) of A*y = 2(n^2)
+		W(n) of A*B + C = 2(n^3)
+		I < pi/bandwidth for memory bound
+		W/pi = Q/beta for tipping point of compute/memory bound
+		Q(n) of Y = X + Z = 3(x^2) bc have to include load + store
+		I(n) accurate if all fits in cache
+		write-through cache does not allocate result
+	cache:
+		offset of storage relevant for set placement
+		miss rate = miss / total * 100
+		spatial if neighbours accessed
+		temporal if same element used multiple times
+		levels are L1, L2, ..., DRAM
+	roofline:
+		intersection point x-axis at peak / bandwidth in bytes
+		performance within memory bounds <= B * I
+	CSP:
+		#row_start = #rows + 1
+		last number row_start = #non-null elements

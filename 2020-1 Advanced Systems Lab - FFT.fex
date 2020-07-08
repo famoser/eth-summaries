@@ -1,12 +1,11 @@
 fast fourier transform (FFT)
 ===
 
-used to do signal processing analog (with currents)
-
 introduction:
 	history:
-	1805 Gauss discovered FFT for personal paper-interpolation
-	1965 FFT cooley tukey rediscovers; enables digital processing
+		1805 Gauss discovered FFT for personal paper-interpolation
+		signal processing done analog (with currents)
+		1965 FFT cooley tukey rediscovers; enables digital processing
 	purpose:
 		change of basis by multiplying with fixed matrix
 		is a linear transform (n-vector input/output)
@@ -124,9 +123,8 @@ complexity:
 	lower bound:
 		L_c(DFT) >= 1/2 n log_c(n)
 		hence as n goes to infinity then constant c also goes to infinity
-		current existing algorithm is close under 4n log(n) for n=2^k
-	current usage:
-		algorithm currently in use uses bit more than 4nlogn
+		fastest algorithm found is close under 4n log(n) for n=2^k
+		fastest algorithm in use needs little more than 4nlogn
 
 optimizations:
 	choice of algorithm:

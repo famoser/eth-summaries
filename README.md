@@ -40,6 +40,7 @@ Generally, the newer the summary, the more consistent is the structure & the wor
 | 2020-1 Advanced Systems Lab | ★★★★☆ |
 | 2020-1 Advanced Systems Lab - FFT | ★★★☆☆ |
 | 2020-1 Startups und Steuern | ★★★☆☆ |
+| 2020-1 Verteile Algorithmen | ★★★★☆ |
 | 2020-1 Wirtschaftssoziologie | ★★★★☆ |
 
 Comments:  

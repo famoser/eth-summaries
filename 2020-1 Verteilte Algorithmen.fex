@@ -62,7 +62,7 @@ grundbausteine:
 		log(a^b) = b*log(a)
 		log_a(b) = log_c(b) / log_c(a)
 	harmonische reihe:
-		1 + 0.5 + 0.3333 + 0.25 + ... -> log(n) + gamma (=~0.5)
+		1 + 0.5 + 0.3333 + 0.25 + ... -> ln(n) + gamma (=~0.5)
 		1 + 0.5 + 0.25 + ... -> 2
 	erwartungwert:
 		sum_of probability * result
@@ -175,7 +175,6 @@ modelle:
 	interpretation realen geschehnisse für modellinput
 	interpretation output modell für schlussfolgerungen realität
 	nachrichtengesteuertes modell / transaktionsmodell (prozesse/nachrichten):
-		auch transaktionsmodell genannt
 		aktive prozesse versenden nachrichten oder werden passiv
 		passive prozesse werden durch empfang nachricht aktiv
 		common knowledge (alle gleicher zustand) unerreichbar
@@ -464,7 +463,6 @@ mind n-1 nachrichten benötigt
 nach topologie:
 	für ring wenn token zurück beim initiator
 	für spannbaum wenn n-1 nachrichten versandt
-	für hypercubes algorithmus wie 
 	für beliebig algorithmus wie flooding, echo
 	
 anwendungen:
@@ -510,14 +508,14 @@ beliebige topologien:
 		danach wandern echos auf baum zurück, braucht n*1 einheit
 
 hypecubes:
-	hypercube dimension broadcast:
+	dimension broadcast:
 		jede iteration in entsprechende dimension senden
 		d iterationen mit 2^d - 1 nachrichten (optimal)
 		000 -> 001
 		000 -> 010, 001 -> 011
 		000 -> 100, 001 -> 101, 010 -> 110, 011 -> 111
 		aber slow start, heavy use am ende
-	hypercube parallel broadcast:
+	parallel broadcast:
 		jeweils an alle "höheren" nachbarn (0-prefix)
 		somit zB für 3er 0-prefix an 3 nachbarn
 		d iterationen mit 2^d - 1 nachrichten (optimal)
@@ -525,7 +523,7 @@ hypecubes:
 		001 -> 011, 001 -> 101, 010 -> 110
 		011 -> 111
 		frühe information, wenig parallele nachrichten
-	hypercube d-message broadcast:
+	d-message broadcast:
 		broadcast mit d nachrichten gleichzeitig
 		wie dimension broadcast & jedes packet wählt andere dimension
 
@@ -718,8 +716,8 @@ arora algorithmus (falsch!):
 	terminieren wenn alle nachbarn passiv
 	gegenbeispiel:
 		terminierungstoken verlässt pj, wird über pk pi erreichen
-		pi sendet zur gleichen zeit auftrang an pj
-		pj führt rechnung aus, terminiert aber aktiviert auch andere
+		pi sendet zur gleichen zeit auftrag an pj
+		pj aktiviert andere & terminiert
 		pi terminiert da alle nachbarn terminiert sind
 		=> weil nur nachbarstate getracked wird
 	
@@ -755,7 +753,7 @@ klassifizierungen:
 		braucht election für tokenverlust, a-priory unbekannten ressourcen
 	request basiert:
 		request set wird gefragt um erlaubnis
-		aber safetly, deadlock nicht trivial
+		aber safety, deadlock nicht trivial
 	zentraler manager:
 		eine instanz vergibt zutritt
 		wie request/token basiert zusammen
@@ -864,7 +862,7 @@ modell:
 	k <= n initiaten; rest bleibt passiv
 	k=1 sollte minimale nachrichtenzahl implizieren
 	provozieren in der praxis mit zufälligen timeouts (wie ethernet)
-	k=n als theretisch interessante worst-case complexity
+	k=n als theoretisch interessante worst-case complexity
 	k>1 mit grundidee dass grösster prozesses die anderen passiviert
 	sparsamkeit bezgl. nachrichtenanzahl
 
@@ -933,29 +931,28 @@ nachrichtenkomplexität chang roberts:
 		nk - k(k-1)/2 für k = #starter
 
 hirschberg-sinclair (bidirektionaler ring):
-	prozesse starten aktiv und senden identität links/rechts
-	jeweils 2^i knoten entfernung in runde i
-	passiv werden wenn grössere nachricht eintrifft
-	passive knoten leiten nur noch nachrichten weiter
+	prozesse senden id links/rechts zu 2^i knoten entfernung in runde i
+	grössere identität auf weg sendet veto zurück; dann passiv werden
+	sonst sendet ziel ein echo zurück; dann nächste runde starten
+	passive knoten leiten nur nachrichten weiter
 	terminieren wenn zwei mal eigene identität empfangen wird
 	nachrichtenkomplexität:
 		kann nur kette von 2^i starten, wenn 2^(i-1) überlebt
 		innerhalb 2^(i-1) kann höchstens ein prozess starten
 		somit max n/(1+2^i-1) starter bei runde i
 		jeweils max 2 (hin/her) * 2 (links/rechts) * 2^i (segment) nachrichten
-		max 1 + log(n) phasen
 		=> max 8 n log(n) = 11.53 n ln(n) nachrichten
 	zeitkomplexität:
 		jeweils 2^i nachrichten warten pro runde 
 		und weil 2 + 4 + ... + 2^(i-1) < 2^i
+		max 1 + log(n) phasen
 		=> 2^(1+log(n)) = 4n
 
 peterson's election algorithm (bidirektionaler ring):
 	prozesse starten aktiv und senden identität links/rechts
-	wiederholen wenn kleinere identitäten eintreffen
-	passiv werden wenn grössere identität eintrifft
-	passive knoten leiten nur noch nachrichten weiter
-	terminieren wenn eigene identität empfangen wird
+	zwei nachrichten schlucken; wenn beide kleiner wiederholen sonst passiv werden
+	passive knoten leiten nur nachrichten weiter
+	terminieren wenn eigene identität eintrifft
 	beispiel sortierte anordnung:
 		erste phase elimiert alle ausser grösster identität 
 		da alle anderen eine jeweils grössere identität empfangen
@@ -1089,7 +1086,7 @@ mark & sweep:
 	alle unmarkierten objekte einsammeln
 	mit "stop the world":
 		mutator anhalten
-		markt & sweep durchführen
+		mark & sweep durchführen
 		mutator wieder starten
 		aber schlechte lösung für real-time/interaktive anwendungen
 	concurrent/parallel/on-the-fly:
@@ -1361,7 +1358,7 @@ schnappschuss
 
 anwendungen:
 	analytics wie lastverteilung, geld im umlauf bankensystem
-	globale eigenschaft	wie deadlock, terminierung, garbage
+	globale eigenschaft wie deadlock, terminierung, garbage
 	konsistenter zustand verteilter datenbanken
 
 herausforderungen:
@@ -1411,7 +1408,7 @@ logische zeit
 
 gesucht sind logische zeitstempel zur aussage über kausalität 
 für abbildung C :: E->H (ereignis -> zeit) soll e' < e => C(e) < C(e')
-falls mäglich soll umkehrung / weiteres mit C möglich sein
+falls möglich soll umkehrung / weiteres mit C möglich sein
 
 anwendungen:
 	debugging (ursachenfindung, replay, synchronisationsfehler)

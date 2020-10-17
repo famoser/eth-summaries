@@ -1,0 +1,468 @@
+theory
+===
+
+preferences:
+	rational prefences:
+		totality (a < b ^ b < a)
+		transitivity (a < b & b < c => a < c)
+	intransitive preferences:
+		can be used as a money pump
+		"give me 1$ so I accept a > b"
+		"give me 1$ so I accept b > c"
+		"give me 1$ so I accept c > a"
+		...
+	condorcet paradox:
+		if indivial preferences are transitive
+		collective preference might not be transitiv
+	arrows impossiblity theorem:
+		when voters have three alternatives
+		no voting system can convert into collective preference
+	agenda setting:
+		discussion set depending on first introduced themes
+		vote option1 vs other options
+	three-vote strategies:
+		sincere voting (vote always for most preferred solution)
+		strategic voting (vote such in the end win)
+	alternatives:
+		look for alternative solutions
+		but probably have to reevaluate mandate
+
+cognitive bias:
+	used in decision making instead of strict totality & transitivity
+	lot of different biases exist
+	anchoring effect:
+		irrelevant information used to estimate unknown value
+		while not being aware of it
+		bc depending on value, thinking of different aspects
+		like "cars & 100k -> ferrari" vs "cars & 30k -> renault"
+	realistic start value:
+		creates environment in which bargaining unfolds
+		if honest bargaining, leaks your zone of agreement
+		might want to avoid making the first move
+	random start value:
+		when completely unclear in which area offer will be
+		can get other party to cling to this number
+		bc under (wrong) assumption other side has reasoning
+		defend self by being well prepared, wiping number from mind
+		like initial price offer as reference
+		like higher price estimated for owned goods than reasonable
+	framing:
+		if formulated as loss, prefer more risky option
+		to avoid loss at any cost, risk-seeking
+		if formulated as gain, prefer more save option
+		to guarantee payoff, risk-averse
+
+automated negotiation:
+	unknown utility function of other parties
+	too many combinations to simply calculate all
+	but potential to simulate coarse grained
+	then with additional information, improve models
+	libratus (pocker AI):
+		too many states to calculate all possibilities
+		needs to adapt to individual player's style
+		before the game:
+			pre-calculate NE of simplified version of game
+			like permutation of suits, fewer denominations
+		during the game:
+			calculation of endgame strategies "on the go"
+			exactly postcompute probabilities after choices of players 
+		overnight:
+			adapt strategies to actions of players
+
+fairness:
+	distribute continuous good over members
+	distributions:
+		total equality (each gets same absolute share)
+		mainmonides rules (each same share, but max investment)
+		equal losses (each suffers same absolute loss)
+		proportional to claim
+		proportional to utility
+		lottery proportional to claim
+	sharpley value:
+		each party takes until claim fulfilled or empty
+		try out all combinations
+		each party gets mean over all combinations
+	CO2 application:
+		equity (each state gets same amount)
+		grandfathering (each state gets same share as now)
+		capability (each state gets inv. proportional to GDP)
+
+rationality:
+	complex, many different forms
+	the neoclassical orthodoxy
+	on nature of rationality
+	on economic theory
+	neoclassical economy:
+		distribution of goods in market through supply/demand
+		mediation by maximizing utility by income contrained individuals
+		homo economicus (rational, defined preferences, maximises own benefit)
+	rationality:
+		substantive (what decisions are taken)
+		procedural (how decisions are tkane)
+	decisions:
+		some preferences are revealed through past decisions
+		some seemigly irrelevant alternatives may has effects (like moral)
+	probability interpretations:
+		physical probability (like dice rolling)
+		evidential probability (p assigned to hypothesis & test)
+	small worlds:
+		the limited environment in which games of game theory work 
+		but enough if all players successfully predict other strategies
+
+prospect theory:
+	certainity effect (risk averse sure gains, risk seeking unsure gains)
+	reflection effect (risk seeking sure losses, risk averse unsure losses)
+	isolation effect (shared components between options ignored)
+	editing phase:
+		prospects are reformulated and reorganised
+		coding (evaluated relative to reference point)
+		combinations (probability of equals are combined)
+		segregation (separate risky and riskness components)
+		cancellation (specifics evaluated, isolation effect)
+		simplification (simplify probabilities / options themselves)
+		dominance detection (high probability options detected)
+	evaluation phase:
+		value of prospect = weight of probabiliy * subjective value of x
+		overall highest valued prospects is selected
+	probability weighting function pi(p):
+		higher p perceived lower than real
+		overweighting low probabilies
+		subcertainity (two certain outcomes together are still perceived as uncertain)
+		subproportionality (smaller p perceived as closer together than high)
+	value function v(x):
+		value perceived in terms of changes it introduces
+		hence deviation of reference point perceived
+		concave for gains (smaller values overproportionate)
+		convex for loss (stronger slope than gains)
+	interpretation:
+		for value function, reference point is very relevant
+		like framing used in marketing, sales, insurance, ...
+		coding of options might changes perceived value
+		like reformulating loss to gain, small to high probability, ...
+		
+negotiation science:
+	at the table:
+		to negotiate or not:
+			continue talking if constructive effects / sideeffects
+			some external changes might make agreements more pressing
+		dual effects of alternatives:
+			more alternatives lead to more creative solutions
+			but many options expensive to develop thouroughly
+		information exchange:
+			might prefer to work with information available
+			as more info could lead also to new incompatabilities
+		on flexible bargaining:
+			quick concessions could lead to suboptimal agreements
+			even for both parties (and even for if mutually agreed upon)
+		on emotional expressions:
+			usually rational expressions preferable
+			but anger (targeted at tasks) could lead to better outcomes
+			first stance at first, then later concessions
+			too many compliments may lead to manipulation fears
+	around the table:
+		representative:
+			inform masters but keep them away from the table
+			as less concessions can be reached
+			more involved => easier to get to agree to result afterwards
+			but less involved => easier to actually get a result
+		on risk perception:
+			publicity surrounding (pressure to finish vs no concessions)
+			time pressure (increase risk perception)
+		on the medium:
+			over internet more effective if task specific
+			but empathy of negotiatiors lower
+			mediation equally more effective but not perceived positive
+		configuration of furniture:
+			archive more agreements when talking without tables
+			(but not observed in the real world)
+		third party inputs:
+			view from outside might help develop options
+			but bias must be avoided
+	away from the table:
+		context:
+			matters at lot
+			broader conflict affects process / durability of agreement
+		mutual pain:
+			might be important to get parties to negotiate
+			but might only lead to "cease-fire" rather than long-term solution
+		power imbalance:
+			low-powers have been found to threaten more
+			but high powers can actually escalate and force settlement
+		equality:
+			long-lasting agreements generally follow adhere to equality
+
+turkey vs armenia case study
+===
+
+mediation partner:
+	helps to solve conflicts two sides can not
+	powerful states with economic & other powers
+	less powerful states that supply constructive proposals
+
+switzerland as mediator:
+	not in european union, not own party
+	too small to hurt / influence
+	credible statement that switzerland has no hidden agenda
+	one of the external politics goal is peace-keeping
+	money invested well
+
+involved countries:
+	azermbaijan AZ (mulimic country, turkish language)
+	armenia AR (christian country, different language/culture)
+	turkey TK (muslim country, allay AZ)
+	russia (allay AR, controls regions)
+
+setting of conflict:
+	turkey vs armenia:
+		closed border to turkey, no diplomatic relations
+		armenian people likely not interested on solution
+		azerbaijan no interest to have turkey make peace
+	past problems:
+		disagreement over end of ottoman emipre in april 1915
+		armenian claimed genocide of population
+		deeply rooted in national culture
+		turkey disagrees, percepts tragic events during war
+	geopolitical situation:
+		turkey member of NATO
+		used to be EU candidate, wanted to solve neighbourhood problems
+		but not realistic candidate at the moment
+		armenia ex russian part
+	nagomo-karabach:
+		part of azerbaijan, but armenian language/culture
+		armenia tried to overtake region
+		but azerbaijan defended, cease fire followed
+		but now (summer 2020) conflict escalated again
+	unsatisfactory situation:
+		turkey (faced with genocide accusation, neigbourhood problems)
+		armenia (poor, closed border, conflict with AZ)
+
+2007 negotiation/mediation:
+	asked for by one party to mediate between turkey / armenia
+	switzerland started to be facilitator / mediator
+	bilaterial meetings (getting to know parties, problems, interests)
+	confidential trilateral meetings:
+		bring "watchdogs" with them; they check statments of officials
+		before meeting, ask officials without oversign how to facilitate
+		good start; switzerland does not impose view
+		very long meeting, some shouting
+		in the end asked "how to continue"; checked at home
+		confidential talks continued four times
+	further meetings:
+		further talks, at convenient locations
+		like WEF, berlin, ...
+		2. april 09 initialling (start of talks)
+		6. april 09 approval of USA
+	negotiations:
+		bad history, bad feelings / shouting but contructive spirits
+		what points to address? how to frame? which formality?
+		armenia wants border open (turkey used it as leverage)
+		turks wants working group of international, independent historians
+	negotiation result:
+		agreed to border opening & establishing of working group
+		armenian demanded first move (very well hidden in signed document)
+		signed in aula of university zurich
+		but not ratified by turkey (likely bc azerbaijan interviened)
+
+business negotiations talk
+===
+
+trends:
+	degree of freedom reduced due to additional rules
+	like WTO (world trade organisation)
+	like GPA (government procurement agreement)
+	like technical rules (interopability, standards)
+	like safety, disability, discrimination rules
+	consequences:
+		increasingly formal negotiations with public authorities
+		tender process detached from relations
+		legal issues increasingly important
+		influencing tender decisions harder
+		instead influence at creation of tender
+
+negotiation:
+	culture:
+		goal (contract vs relationship)
+		attitude (consensus vs confrontation)
+		style (formal vs informal)
+		communication (direct vs indirect)
+		like USA vs eastern countries
+		time and punctionality (high vs low sensitivity)
+		emotions (high vs low)
+		agreement form (general vs specific)
+		building of agreement (bottom-up vs top-down)
+		team (leader vs team consensus)
+		risk taking (high vs low sensitivity)
+	choosing a leader/senior:
+		attitude (collaboration vs confrontation)
+		form (general vs specific)
+		building (top-down vs bottom up)
+		internal leader might be different
+	team:
+		everyone knows their position / influence
+		be prepared to have escalation levels
+		(hence avoid senior being always present)	
+	the others:
+		firm (areas of business, strategy)
+		people (background, position in firm /  negotiation team)
+		intangibles (flexibility, risk-averseness, decision-making)
+		governmental / private sector
+	approach:
+		get to know other side, including personally
+		prefer formal at start, less formal as talks go on
+		have escalation levels ready (senior, ...)
+		dont trust too much (go by contract)
+
+conflicts:	
+	acting:
+		intelligent (but too smart could backfire) 
+		dumb (but too naive unbelievable)
+	defending:
+		only contract counts in the end
+		defend globally vs defend each critique by its own
+
+free trade negotiations (FTA) talk
+===
+
+why FTAs useful:
+	trade to exotic places:
+		trading to far away places should not be difficult
+		artificial factors (border) make no economic sense
+		like licensing restrictions, discrimination
+	why trade is useful:
+		lack of resorces (energy, goods, ...)
+		highly specialised market overproduces (watches)
+		niche products (specialized but only very few customers)
+		small domestic market (makes specialization harder)
+	target:
+		FTA should remove artificial factors
+
+swiss FTA network:
+	contries:
+		with basically all europe
+		some america (mexico, canada; but not US)
+		some asia (japan, china, ...)
+		40 countries in total
+	agents:
+		bilateral with japan, china, eu, EFTA
+		EFTA states agreed upon the others
+		under negotiation with malaysia, vietnam, ... (6 more)
+
+organisations:
+	WHO:
+		mostly stuck to find new regulations
+		unoperational by US actions
+		still valuable, but more and more in doubt
+
+negotiation objectives:
+	reliable & enforceable rules:
+		to complement (beyond) WTO regulations
+		to supplement EU relations
+	improvable maret access:
+		dismantle artificial obstables (discriminatory)
+		eliminating / lowering custom duties
+		reducing discriminatory regulations
+		protection of intellectual property rights (IPR)
+	compatability with sustainability:
+		to proect environment, labour standards
+	formalised cooperation:
+		with custom offices, market/ competition authorities 
+		like connections to move container if needed, ...
+
+FTA with china:
+	history:
+		1950 CH recognises PRC (founded in 1949)
+		since 1978 opening up to more trade
+		1980 first joint venture in china with swiss company
+		2002 china joins WTO
+	negotiation process:
+		2008 - 2010 exploration (visits, workshops, feasibility study)
+		minister for commerce pro, but many others needed to be convinced
+		organized workshops with industry representations from both sides
+		first switzerland-only created feasibility study & sent to china
+		included all wishes but without deterrence
+		china never responded, but helped to align incentives internally
+		2013 after 9 rounds of negotiations FTA signed
+		2014 ratification
+	coverage & content:
+		tarif reduction altough agricultural sector stays protected
+		with long introduction period, 95% reduction
+		flexible rules of origin (like coffee; OK if beans imported raw)
+		intellectual property protection as china more specialiced
+		international labour provision similar as newseeland
+
+how negotiate successfully:
+	know your file (examples, comparisons, statistics, ...)
+	relationship of trust (consistent argumentation, credibility)
+	understand other side (political / legal system, culture)
+	preparation (find preceding cases, exploratory process)
+	anticitate reactions (conceive future steps)
+	overcome resistance (ask questions, be patient/creative)
+	keep momentum (avoid untimeply concessions)
+	two-front affair (convince own lord & masters too)
+	"nothing is agreed until everything is agreed"
+
+how to anticipate reactions:
+	intuition and experience
+	learn reaction
+	informal talks help to understand how culture / person works
+
+personal experience talk
+===
+
+general recommendations:
+	do not fight the rules of the game
+	eg structure, mandate, people, ...
+	analysis:
+		before asking for, accepting or refusing negotiation
+		perform analysis to avoid sending wrong signal
+	confidence:
+		be polite, create confidence, do not play dirty
+		but do not trust; play tit for tat strategy
+	coherence:
+		be consistent with actions & scientific background
+		argument consistently unless new objective facts appear
+	careful:
+		do not disclose red lines (resistance points, reservation prices)
+		if disclosed for tactical reasons, might lose credibility later
+		do not burn bridges (as position might needs to be reversed)
+	demands / counter demands:
+		assure they are well founded
+		include realistic assessment of capabilities of other side
+		does not need to coincide with offers made from other side
+		"do A?", "yes, but I think we should do B" (so A + B are done)
+		cross-concession bear much value (if own cost < other value)
+	negotiation engineering:
+		facilitate negotiation by formulazing as mathematical problem
+		use models to find good alternatives
+	link dossiers:
+		creates more possiblities for cross-concessions are created
+		archive value of controversial > cost of less controversials
+	proposals:
+		if strong interest for negotiated conclusion & in weaker position
+		create proposals to solve problems of other side too
+		upon rejection for comprehensible reasons keep improving
+	phases:
+		fix the immediate result (orally, written)
+		declare non-intention to backpedal and expect same of other side
+		but also declare "nothing is agreed until everything is agreed"
+		allows to keep overview of longer negotiations 
+		start negotiating with small & difficult, or large & easy
+		to create optimal incentive to solve remaining issues in the end
+
+round of negotiation:
+	3 questions:
+		what do you want to archive
+		how do you want to proceed
+		which follow-up
+	organization:
+		team (who speaks?)
+		where (appropriate setting?)
+		style of negotiation?
+		protocol & communication to the outside?
+	in short:
+		be well prepared
+		generate options
+		stay goal oriented
+		argue coherently
+		be positive
+		be polite with sense of humour

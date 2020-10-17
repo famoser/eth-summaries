@@ -44,6 +44,7 @@ Generally, the newer the summary, the more consistent is the structure & the wor
 | 2020-1 Startups und Steuern | ★★★☆☆ |
 | 2020-1 Verteilte Algorithmen | ★★★★☆ |
 | 2020-1 Wirtschaftssoziologie | ★★★★☆ |
+| 2020-2 Applied Negotiation Seminar | ★★★★☆ |
 
 Comments:  
 Object Databases (short) is without general statements like "can be configured" and perceived irrelevant details (syntax for dead libraries) but may not be complete.

@@ -1,0 +1,1713 @@
+Introduction
+===
+
+lecturers:
+	alexander stremitzer (prof law at bonn)
+	nate atkinson (postdoc law & economics)
+
+target:
+	how to structure deals strategically
+	(off-topic is the legal language to implement this)
+	strategically read contracts:
+		when cost-plus -> expect cost control clauses
+		when fixed price -> expect quality control clauses
+	strategically write contracts:
+		choose appropriate overall structure
+		align incentives to reduce transactions cost
+
+why state enforces contracts:
+	well functioning system increases societal health
+	as voluntary transactions enhance welfare
+	bc seller sells only if price >= valuation
+	bc buyer only buys if price <= worth
+	worth - valuation = welfare increase
+	other arguments:
+		companies do not have to prepare for other scenarios
+	limitations:
+		duress,	misrepresentation, fraud, uninformed decisions
+		state must not enforce in these cases
+		like parties benefiting by hurting others (hitman)
+		like anticompetitive contracts (preisabsprache)
+		like externalized cost (selling drug)
+		like unknown interests (children, incapacitated)
+	enables economic growth:
+		specialization generates value, but needs division of labour
+		the cheaper trade, the more fragmented division possible
+		hence the richer society gets
+	transaction cost:
+		might make deal more expensive than what its worth
+		by this, may also prevent some deals to happen
+		need to optimize transaction cost by optimal clauses
+		contract writers as "transaction cost engineers"
+
+contractible effort
+===
+
+contract motivation:
+	coordination:
+		agreement about technicalities without conflict of interest
+		"cheap talk" is enough (no sanctions needed to enforce)
+		like on which street side to drive on generally
+		like at which time to deliver so buyer/seller meet
+	spot transaction:
+		immediate exchange of goods
+		like buying an apple & paying for it at the store
+	sequential transactions:
+		goods/services exchanged, potential conflict in the future
+		like sale (need guarantees product meets expectations)
+
+conflict of interest:
+	ex-ante (before) and ex-post (after) incentives might be different
+	rational choice could be to defect later on
+	as other party knows, might prevent contract
+	solution options:
+		use ex-ante interests to commit to value
+		to settle potentially conflicting ex-post incentives 
+		repeated transactions:
+			smaller contracts / reputation systems 
+			works if payoff defect < future transactions benefit
+		prevent problem:
+			agree on technical solution that prevent problem
+			like pulling teeth of viper, smart contracts, ...
+		compensation:
+			compensate for damages
+			prevents problem if compensation cost higher than defection payoff
+		criminal sanctions:
+			penalize injurer 
+			prevent problem if penalty cost higher than defection payoff
+
+value to commitment:
+	commit tools:
+		governance systems and institutions
+		contracts (use formal language to clearly commit)
+		promises (willingness to not break a promise, being honest)
+		moral institutions (willingness to be fair to others)
+		technical solution (like smart contracts)
+		enforce by law, continued relationships, reputation, social sanctions
+	smaller commits:
+		result in smaller temptations to break it
+		work with milestones (smaller units of work & payment)
+		transforms one-shot to repeated transaction
+
+contract structure:
+	define payoff resulting from different clause of action
+	depends on social model, contracts, institutions, ...
+	general approach:
+		outcomes result from human interaction, constrained by institutions
+		model behaviour to find out likely outputs
+		motivates institutions to be constructed
+	model human behaviour:	
+		assumptions need to be realistic
+		like "more money better", "less work better"
+	institution viewpoints:
+		evolutionary hypothesis (existing structures exist bc they work)
+		social engineering ("triumph of reason")
+		piecemeal social engineering (look at existing contracts)
+		utopian social engineering (mechanism design, game theory)
+	analyse existing contracts:
+		be humble (may contain concealed wisdom)
+		hence might not be best to simply rewrite contracts
+		but game theory / mechanism design helps to improve
+
+contract types:
+	care about risk, quality and cost
+	choose appropriate type so interests align
+	cost-plus:
+		seller invoices direct cost + some profit margin
+		fit if quality important / monitoring difficult, small companies
+		need to control cost, to avoid expected cost overruns
+		with cost ceiling, approval for bought products, ...
+	fixed price:
+		seller invoices full cost in advance
+		fit for large / diverse operator
+		need to control quality, to avoid expected quality underuns
+		with warranties, define product quality, certification
+		
+contract value:
+	work done:
+		seller is able to produce goods at some cost
+		which is lower than benefit of those to buyer
+	risk-shifting:
+		shift risk from risk-averse to risk-neutral party
+		like large operator can diversify / take risk better
+		shift risk to party controlling it
+		like seller might has superior information about the product
+		price rises due to the risk shifting, but worth to other party
+		like insurance contracts
+
+contractible effort examples
+===
+
+before/after incentives:
+	"the farmer and the viper" (fable by aesop)
+	setup:
+		viper is in a ditch, and cold / about to die
+		farmer wants to buy the viper, but does not want to get bitten
+		viper promises to not bite
+		farmer takes viper home and warms it up
+		viper bites farmer, farmer dies
+	trust game model:
+		farmer/viper payoff
+		(1) 0/-20 not saving viper; viper dies
+		or (2) saving viper, then
+		(a) 5/5 viper does not bite farmer
+		(b) -20/10 viper bites farmer
+		hence rational choice of viper to bite
+		hence rational choice of farmer not to save
+	save the viper:
+		need to change the game so viper does not bite any more
+		prevent bite by taking tooth out or mouth muzzle
+	interpretation:
+		at (1) interests align (viper live, farmer save)
+		but at (a or b), conflict of interests
+		hence need to agree at (1) to solution
+		at (2), an agreement is impossible
+
+conflict of interests:
+	inventor vs VC:
+		inventor / VS payoff
+		(1) 1/1 not revealing idea
+		or (2) revealing, then
+		(a) 6/6 VC cooperates
+		(b) -20/20 VS steals idea
+		hence VC will steal the idea
+	buyer vs producer:
+		if payment first, buyer risks low-quality product
+		if product first, producer risks missing payment
+		more drastic if tailored product 
+	insurance vs customer:
+		if house burns down, insurance does not want to pay
+	asymmetric information sale:
+		when selling something other has not full information about
+		need assurances, else transaction likely fails
+	conclusion:
+		client mistrusts if no warranty given as seller has information superiority
+		seller needs to grant warranty or else sale will no happen
+		hence used common interest ex-ante
+		to agree on terms which resolve different interests afterwards
+
+value to commitment:
+	warranty clause:
+		seller sells only high quality goods, valuation at 60
+		buyer values low/high quality at 20/80, but unable to detect quality
+		as buyer values product at 50, no sale happens
+		by including warranty clause (pay 60 if low quality)
+		sale happens, and surplus 20 is created (at buyer or seller)
+
+moral hazard
+===
+
+when agents actions are unobservable
+need to compensate on something different than effort
+creates incentive issues
+
+terminology:
+	incentive constraint:
+		if incentive exists to act as expected
+		for example contingency clause motivating high effort
+	participation constraint:
+		if deal has expected positive payoff for party
+		for example payoff higher than cost of production / risk
+	first-best:
+		exchange reached if everyone acts in the common interest
+		unreachable in practice (ignores private interests of actors)
+		first-best risk allocation when company takes all the risk
+		is only possible if agent is honest
+		contracts needed bc in reality agents use freedom for self advantage
+	second-best:
+		as close as possible to first-best but including private incentives
+		hence the realistic contract actually feasible in practice
+		lose some contractual pie to transaction cost, distortion
+	zero sum game:
+		if no value created (only allocated)
+		game-theory approach, but not always true in contracts
+		bc mutually beneficial clauses increase contractual pie
+	mutually beneficial term:
+		introduce clauses where costs of p1 < benefit for p2
+		because the contractual pie increases
+		hence can compensate other party for loss
+
+contingency contract:
+	payoff depending on result of project
+	legal remarks:
+		by law, some contingency may apply automatically
+		"auftragnehmer muss sorgfältig tätig sein"
+		=> by law required to deliver up to some quality
+		needs not to be spelled out in legal document
+		legal doctrine applies automatically
+
+non-contractable effort:
+	if effort not directly measurable contingency clause impossible
+	when missing:
+		describability (high-effort not known in context)
+		like travelling sales person; boss is not present
+		observability (monitoring might not be possible)
+		like software engineer; boss does not understand work
+		verifiability (effort not provable in court)
+		link employee performance; low effort might not be documented
+	alternatives:
+		contract on signal:
+			contingency clause on signal of effort
+			like commission, bonus, stock options, hours worked
+		invest in monitoring:
+			expand contractable contingencies to be observable
+			invest in monitoring, specialized courts / dispute boards
+			like cameras on construction sites, ...
+		self-enforcing mechanism:
+			reputation mechanism for repeated observable interaction
+			helps to reduce reliance on verifiability
+			needs observability to be useful
+			like not extending contract if performance bad
+
+contract on signal:	
+	signal types:
+		"perfect signal":
+			if output deterministically on effort
+			simply use contingency contract on signal
+		"stochastic signal":
+			if output influenced by other factors than effort
+			signal is noisy, has some error term
+			like general market health, colleagues in the office, ...
+			if output reasonable influenced by effort then still useful
+	strategies:
+		step function:
+			payoff as soon as some signal strength reached
+			if noise is known, can compensate all high effort equally
+			like shifting support scheme
+			but if noise not exactly known / error terms
+			then may lead to changed incentives throughout the project
+			if goal become unreachable or is already reached => low effort
+		linear:
+			payoff scales with signal strength
+			but if noisy, may gives different payoff to same real value
+
+risk sharing:
+	create value by shifting risk from risk averse to risk neutral party
+	principle:
+		"who controls the risk should bear risk"
+		like producer controls quality
+		like regional firms controls regional law changes
+	risk types:
+		risk neutral pays expected value
+		risk averse pays less than expected value
+		risk seeking pays less than expected value
+	assumptions:
+		risk averse individuals assumption:
+			decreasing marginal utility of money
+			if low income rather than millionaire
+			lifestyle changes more radically with same amount
+		prospect theory:
+			expected payoff usually not used by individuals
+			prefer lower but secure payoff than larger but insecure (risk-averse)
+			prefer higher but insecure cost than lower but secure (risk-seeking)
+			value own property higher than economic value
+		special case lottery participant:
+			actively risk-seeking
+			bc probably only way to earn that much money
+	risk diversification:
+		helps to reduce risk
+		can take higher risks, but still be risk neutral
+		example:
+			if owner of buildings & construction company at the same time
+			risk of earthquake close to neutralized
+		law of large numbers:
+			probability that car crashes unclear, risky
+			but overall number of crashed cars in some area similar
+	risk taking party:
+		less risk-averse party should take all risks
+		viewpoint conflicts:
+			from risk-sharing point of view "first-best risk sharing"
+			party which can take higher risks should bear it
+			from incentive point of view "first-best incentives provision"
+			party which controls risks should bear it
+			will lose welfare through transaction cost
+			for example manager more risk averse than employer, but controls risk
+
+uncertain output:
+	optimal incentive scheme not necessarily increasing in output
+	like fast delivery is good, but do not want recklessness
+	uncertain signals:
+		could be complex / non-linear
+		use probability density functions for good/bad measurements
+		use likelihood ratio of these curves to determine signal
+	mathematical foundation:
+		derivation exists on how optimal contract c depends on input/output
+		if effort contractible, c independent on output
+		if effort not contractible, c dependent on output
+		if likelihood ratio high, then agent should be rewarded
+		if likelihood ratio low, then signal must be higher for same reward
+
+effort measurement:
+	if effort contractable, then contract directly on it
+	if effort non-contractable, then optimal contract depends on output
+	principle:
+		relationship between optimal contract & output
+		works through information content of the outcome
+	valuable information:
+		information must be a signal rather than noise
+		(like slow delivery time could just mean full streets)
+		signal correlated to other contains no value
+	comparisons to other agents:
+		do relative performance evaluation to neutralize noise
+		like two investors in same market filter out noise
+
+distortion:
+	measured goals are targeted by actors if known
+	but potential problem if real target is not measured (only proxy)
+	"if measurement becomes a target, it ceases to be a measurement"
+	could try to be intransparent concerning what is actually measured
+	output factors:
+		relatively undistorted (like measure sales)
+		but very much noise (why is it high / low?)
+	input factors:
+		very distorted (how to measure effort?)
+		but not much noise (can observe single person)
+
+shifting support schemes:
+	assume curve known for low/high efforts
+	if supports (=ends) of distributions do not overlap
+	then can punish where only low effort was a possible input
+	no risks for compliant agents 
+	like claw back clause (some money not payed out at some signal)
+	robustness to error:
+		harsh punishments can  start as soon as no overlaps anymore
+		but if error in expected curves then could punish good agents
+		like incorrectly estimated market risk
+		linear contracts perform better with errors
+
+path dependence:
+	effort is chosen not only once
+	information & incentives might change over time
+	like if goal unreachable then step function motives low effort
+
+monitoring:
+	output monitoring:
+		more prone to error; increasingly when more "downstream"
+		external factors can affect output ("noisy signal")
+		but easy & inexpensive
+		like measuring worked hours, ...
+	input monitoring:
+		some signals very accurate
+		like "hours worked"
+		but might be expensive/hard to observe (supervisors, monitoring technologies)
+		like "working hard" is again hard to observe
+	distortion:
+		monitoring might not be able to catch all it needs to
+		agent will focus only on tested outputs
+		possibly better to not create incentives at all
+		like measure testing ability but not actual skill
+	reduce monitoring cost (becker):
+		make audits probabilistic & increase punishments
+		archive same deterrence with same expected cost
+		but limited wealth (simply cannot pay punishment)
+		but proportionality to crime lost (morally wrong)
+		but chilling effect (simply will not do task anymore)
+		but behavioural (small probabilities difficult to comprehend)
+	rules vs standards:
+		fixed rules define how agents have to perform
+		easy to enforce but distortion likely, inflexible
+		standards define general ways how to behave
+		by standards committees & other knowledge authorities
+		undistorted & flexible, but vague & difficult to enforce
+	incentive rent-extraction tradeoff:
+		low commission for distributor results in high profit per sale
+		but likely results in only low effort of distributor
+		vice-versa with high commission
+
+probabilistic monitoring:
+	monitor probabilistic while increasing punishment 
+	keeps same deterrence with lower monitoring cost
+	conflict of view:
+		breaks with traditional view of punishment proportional to crime
+		in favour of making it more efficient (mechanism design)
+	assumptions (which are likely wrong):
+		humans are rational with small probabilities
+		no wealth constraints
+		no monitoring mistakes
+		no "honest" mistakes (need to be able to observe intent)
+	conclusion:
+		simplifying assumptions make process look rational
+		but recommendation not that great when relaxing them
+		wrong assumptions introduce chilling effect
+		which prevents trade as risk of wrong punishment too great
+
+limited wealth changes risk behaviour:
+	limited liability / bankruptcy (can only pay what is available)
+	the less wealth, the lower potential downside
+	hence higher willingness to gamble upside
+	bc do not have to pay cost of downside
+	asymmetry in risks and rewards distorts behaviour 
+	willingness to game:
+		if utility does not decrease
+		like take money of company rather than personal reserves
+	prevent:
+		input monitoring for low-wealth individuals
+		safety monitoring 
+		capital requirements for banks
+		mandatory insurance	
+
+moral hazard examples
+===
+
+moral hazard:
+	firm (principal) introduces CRM to increase sales
+	consultant (agent) is payed to help introducing it
+	model:
+		consultant can choose high/low effort
+		for high effort, cost is 100, company benefit 200
+		for low effort, cost is 10, company benefit 20
+		high effort joint gain 100, low effort gain 10
+	fixed fee contract proposals:
+		(1) for fixed fee contract for 150 & low effort chosen
+		then principal loses 130, hence no deal
+		"participation constraint" violated
+		(2) for fixed fee contract for 15 & low effort chosen
+		then principal/agent both earn 5, hence contract entered
+	(3) contingent contract:
+		payment as function of condition
+		"if high effort, then 150 payed"
+		principal/agent both earn 50, hence deal valid
+		agent agrees to constraint bc else no contract
+	mutually beneficial term:
+		from (2) to (3) cost of agent increased by 100-10 = 90
+		but benefit for principal increased by 200-20 = 180
+		hence contractual pie increased by 180-90
+		use surplus money to pay agent
+
+non-contractable effort:
+	performance of manager depends on effort & market condition
+	setup:
+		manager spends low/high effort (10 / 100 cost)
+		company benefit for high effort 50% for 400 (success), else 0
+		company benefit for low effort 5% for 400 (success), else 0
+		best case output is hence 0.5*400 + 0.5*0 - 100 = 100
+	fixed salary:
+		company bears all the risks
+		manager has no incentive any more for high effort
+	step function:
+		300 bonus in case of success else 0
+		then manager chooses high effort
+		hence manager expected payoff 0.5*300 + 0.5*0 - 100 = 50
+		hence company expected payoff 50
+		best-case reached (as 100 is best-case joint surplus)
+		(depending on bargaining power, company or manager earns more)
+		like bonus depending on reached goals
+	sell shop:
+		manager buys company for 50
+		then manager chooses high effort
+		both again get expected payoff of 50
+		like management buyout
+	risk sharing:
+		for step function; both bear risk
+		for sell shop; agent bears all risk
+	risk averse manager:
+		step function compensation valued at 30 (-20)
+		sell shop compensation valued at 20 (-30)
+		step function preferred by manager
+		but joint surplus only at 80 (-20)
+	
+risk sharing:
+	cell phone insurance by apple:
+		able to diversify risks & enough money
+		but user controls risks if cell phone is destroyed
+		=> insuring increases risk of damage ("moral hazard")
+	landlord / tenant agreements:
+		risk neutral rich landlord 
+		values risk of loosing 100k close to expected cost
+		risk averse low income tenant
+		values it much higher bc of resulting lifestyle impact	
+	insurance:
+		risk neutral insurance
+		deductible (some low amount beared by the insured)
+		limits (max amount payed out)
+		co-insurance (some percentage beared by the insured)
+		exclusions (exclude some damages, reductions for recklessness)
+	mortgage crisis:
+		combine mortgage claims in packets (risk diversification)
+		distribute to many agents (low price -> risk neutral agents)
+		mortgage granted if background check passed for applicants
+		and if vehicle score > 620, then selling mortgage in the bonds possible
+		observed more defaults > 620, bc banks skipped background checks
+		as risk sold out, no incentive to evaluate risk (moral hazard)
+		resolve by "skin in the game" -> banks need to keep some part
+		many institutions bought these bonds bc AAA ratings & high interests
+
+production / distribution risk sharing:
+	distributor D earns 11% + expenses, rest for producer P
+	D high effort:
+		through payment structure, D only incentive to cover own cost
+		introduce monitoring through P (meaningful consulting, ...)
+		include non-discriminatory clauses to movies produced by D
+		(expected to be non-distorted, bc interests align)			
+	P high efforts:
+		P has requirements to involve key persons, minimum budget
+		P also has exclusivity clause (no different distributions)
+	no-cross-collateralisation:
+		(movies are accounted separately)
+		prevents D taking unnecessary risks after successful movie
+		prevents P to stop investing into films after bad movie
+	no sell-the-shop:
+		pricing unclear, effort unobservable
+
+uncertain output:
+	truck driver delivery speed
+	fast & intact delivery suggests good job
+	but too fast delivery suggests reckless driving
+	probability density function:
+		deliver speed curve c_good of good driver more to right
+		deliver speed curve c_bad of bad driver more to left
+		calculate likelihood ratio c_good / c_bad
+		as probability density gets higher, more likely good driver
+	include reckless driving:
+		curve of bad driver increases for very fast speeds again
+		hence likelihood ratio decreases again at the end
+
+path dependency:
+	bridge construction:
+		bridge designed for 5 year construction
+		in the final phase cable & damper technology installed
+		base payment & big bonus if some quality reached
+		but potentially during the project goal reached or unreachable
+		hence low/high effort incentive change
+		
+monitoring:
+	sales company:
+		unclear if contingency should be placed in sales or on monitoring results
+		sales could be too noisy or monitoring too expensive
+	southwest airlines:
+		employees with large profit sharing for employees
+		efforts of single employee has no real effect (signal is noisy)
+	wristband amazon:
+		allows to calculate how effective employees perform
+	teacher bonus:
+		paying teachers based on PISA test results
+		teachers will shift priorities to actually tested skills
+		might leaves out social skills, critical thinking, ...
+		might motivate to cheat
+	football:
+		get bonus with each goal
+		players argue over who shoots, rather than the best does
+	sears:
+		commission based on repairs
+		unnecessary repairs / disgruntled customers
+	salefites:
+		commission for each windshield installed
+		but if its broken, then had to fix for free
+		worked well
+	manager pay based on accounting:
+		managers might reduce R&D for short term benefit
+		use stock options, claw clauses, long-term payout to combat
+	agency marketing:
+		could contract to spend fixed amount on marketing specific product
+		but distortion possible, potentially nonsense amount
+		likely better to agree on "best effort" standard of industry
+	distributor:
+		with commission-based sales difficult to balance commission
+		with directly sold goods, distributor needs enough money to do so
+		could add reputation / repetition system
+
+probabilistic monitoring:
+	rent car:
+		forgot to pay for the gas at gas station
+		able to pay later + potentially a fine
+		with probabilistic monitoring, high fine / jail time required
+
+limited wealth problem:
+	manager bonus:
+		manager gets bonus of 10% of companies benefit
+		investment 1 has 50% that payoff 100, else 0
+		company expected = 50, manager expected = 5
+		investment 2 has 50% that payoff 100, else -200
+		company expected = -50, manager expected = 5
+
+legal regimes
+===
+
+how background rules affect contract design
+courts may not enforce contract as written
+
+tasks of contract designer:
+	economic problem (mechanism to minimize transaction cost)
+	legal problem (get court to enforce mechanism as intended)
+
+consideration:
+	to form contract consent is enough in civil law
+	else need "consideration" (own behaviour somehow restricted)
+	contracts without exchange potentially not enforceable
+	could ask for small monetary amount or "good faith"
+	but courts could also imply good faith without it being stated
+
+contract enforcement:
+	formation:
+		no contract exists
+		requirement as specified in contract unmet (like physical signature)
+		like amount > 500, duration > 1y need written contract (USA)
+		like sale of land without notary (CH)
+		like only promise exists (bc promise != contract)
+	defenses:
+		contract not enforceable
+		like misrepresentation, unconscionability
+		like public policy
+	interpretation:
+		contract means something else
+		most legal problems happen in this area
+		like price unreasonable for informed parties
+	excuses:
+		non-performance is excused
+		impracticability / frustration of purpose
+		like rented concert avenue burning down & owner not responsible
+		then can not sue him for lost money
+	remedies:
+		desired remedy (payoff) not available
+		under-compensatory damages (for example for immaterial damages)
+		like immaterial harm (band misses performance, privacy violations)
+
+remedies:
+	punitive:
+		additional to compensation get punishment
+		like additional money or material payout
+		less common in civil law
+	compensatory:
+		specific (breaching party forced to perform)
+		substitutional (other remedy payed out)
+	substitutional remedy amount:
+		expectation (as much as performance would have resulted in)
+		calculate like promised value - received value
+		reliance (restore pre-contract state)
+		calculate like value before - value now + damages incurred
+		restitution (reverse all exchanges; damages are not reimbursed)
+		litigated damages (contract predetermined amount payed)
+		default is expectation damages		
+	litigated damage clauses:
+		only enforced if not considered excessive, else "penalty clause"
+		but what may seems excessive ex post might be reasonable ex ante
+		convince court and/or declare explicitly in contract
+
+courts:
+	may not always enforce contracts such as it is written
+	will try to interpret contract to intended meaning
+	invalid clauses:
+		when unconscionable or against public policy
+		if appearing unfair (but might only be the case ex post!)
+	constructive conditions:
+		when conditions obviously depend on each other
+		does not always has to be specified explicitly
+		like when customer does not pay in sell contract
+		then do not have to deliver good
+	in court:
+		understanding the deal structure (ex-ante incentives) 
+		helps to make arguments & counterarguments in litigation
+
+legal regimes examples
+===
+
+substitutional remedy:
+	serious injury on hand results in work defects
+	doctor persuades patient for experimental hand surgery
+	doctor promises 100% restoration of hand function
+	but surgery went terribly wrong
+	model:
+		values always pre-op, post-op and promised
+		value of hand 5000/2500/10000
+		cost of operation 0/1000/1000
+		pain from surgery 0/1500/1500
+		assuming doctors experience benefit worth 2000
+	substitutional remedy amounts:
+		expectation damages 10000 - 2500 = 7500
+		reliance damages 5000 - 2500 + 1000 + 1500 = 5000
+		restitution damages 1000 + 2000
+
+hard to enforce:
+	NDA:
+		source of information is hard to determine
+		hard to enforce liquidated damages ex-post
+		hard to show actually incurred damages
+
+ex-ante remedies to enable contract:
+	inventor wants to work with VC for more success
+	but risky bc VC could disclose idea
+	model:
+		if inventor does not disclose idea to VC (1/1)
+		else inventor discloses to VC
+		(1) if VC performs, then (6/6)
+		(2) or VC does not perform (-20/20)
+		not performing two possible outcomes
+		(2a) if VC simply does not perform (50% chance) (0/20)
+		(2b) else VC additionally discloses idea (50% chance) (-40/20)
+		no deal bc VC will choose not to perform
+	contract + expectation damages:
+		if VC simply does not perform (50% chance) (6/14)
+		else VC additionally discloses idea (50% chance) (6/-26)
+		hence VC does not perform payoff (6/-6)
+		deal bc VC will choose to perform
+	assume (2a) and (2b) not distinguishable / (2b) not quantifiable:
+		if VC simply does not perform (50% chance) (6/14)
+		else VC additionally discloses idea (50% chance) (-34/14)
+		hence VC does not perform payoff (-14/14)
+		no deal bc VC will choose not to perform
+	assume liquidated damages of 16 or higher:
+		court only needs to observe breach (not quantify damage)
+		if VC simply does not perform (50% chance) (16/-4)
+		else VC additionally discloses idea (50% chance) (-24/4)
+		hence VC does not perform payoff (-4/4)
+		deal bc VC will choose to perform
+	assume liquidated damages considered excessive:
+		then in case (2a) only remedy of 6, hence only (6, 12)
+		hence VC does not perform payoff (-9/9)
+		no deal bc VC will choose not to perform
+
+plain language vs intended meaning:
+	beanstalk (marketing) vs AM general (hummer cars)
+	deal:
+		beanstalk markets brand
+		gets 35% of all deals including hummer
+	conflict:
+		AM general sells brand to GM motors
+		but does not want to pay 35%
+	question:
+		what was the mutual intent of parties at time of written contract
+		plain language (as it was written) or would that be absurd?
+	argument:
+		plain language needs to be interpreted 
+		as how reasonable parties would have agreed to deal
+		beanstalk is in the trademark business 
+		and hence gets commission for sales, merch, ...
+		but not entitled to commission for sale of whole company
+		as hardly intended in clause, as not contributed to it
+	counter arguments:
+		parties did not want to clear up all cases 
+		to prevent conflicts & sign fast
+		but possibly were aware of this potential outcome
+
+asymmetric information
+===
+
+in contrast to complete information yielding efficient outcome
+with asymmetric information only second-best possible
+happens when one party knows something the other does not
+
+phenomena:
+	(low value) seller gets information rent or
+	high value goods are not traded
+	in continuous quality case, both happen at same time
+	buyer tradeoff:
+		allocative efficiency (good goes to party valuing it highest)
+		extracting information rent (overpaying for good)
+	choosing a price:
+		if low price, then information rent
+		but no allocative efficiency (high quality units not sold)
+		if high price, then allocative efficiency 
+		but information rent (low quality sold for price of high)
+		if intermediate price both at the same time
+
+unravelling of the market:
+	model:
+		seller can observe quality, buyer can not
+		continuous value range
+		buyer value = seller value + 10
+	first-best:
+		with complete information, all goods are sold
+		as each good is worth more to buyer than to seller
+	offer 50:
+		average value to seller is 50, hence average value to buyer is 60
+		any seller value lower than 50 will sell
+		50% chance of trade, average buyer value is 25 + 10 -> payoff = -7.5
+		allocative inefficiency (because only 50% trade)
+		information rent payed for (many goods value lower than 50 sold)
+	offer 25:
+		same problem as offer 50
+		25% chance of trade, average buyer value is 12.5 + 10 -> payoff = -0.625
+	offer 5 (chosen by buyer):
+		5% chance of trade, average buyer value is 2.5 + 10 -> payoff = 0.375
+
+eliminating information asymmetry:
+	costly, sometimes impossible
+	why:
+		payoff when selling low value goods (information rent)
+		but high quality trades will not be possible anymore
+	third party verification:
+		have expert / rating systems examine good
+		but costly & risk of collusion
+	require disclosure:
+		presumes information is verifiable at some point
+		background legal rules which enable credible communication
+		(misrepresentation / fraud laws)
+
+screening:
+	when uninformed party creates contract
+	customers will all behave the same ("pooling utility")
+	but want to charge different prices ("differential utility")	
+	pooling equilibrium:
+		customers all take same contract
+		but contractual pie smaller than it has to be
+		due to allocative inefficiency (not all goods bought)
+		or information rent payed (too high a price)
+	separating equilibrium:
+		customers take different contracts
+		use differently appealing aspects to sell customer types
+		based on differential utility, design multiple types of contracts
+		maximizes joint surplus (both low / high quality goods sold)
+		like support service to frequent users
+		like excessive working hours for high quality employees
+
+signalling:
+	when informed party creates contract
+	good types might accept inefficient terms to signal high type
+	like to sell warranty as a premium product seller
+	offer generous warranty:
+		expensive, but even more for low quality
+		distortion at the top (as behaviour of top producers changes)
+		no distortion at the bottom (low quality producers will never offer warranty)
+		but creates moral hazard
+	invest in brand:
+		costly commit to high quality (marketing, actually produce high quality)
+		generate high brand value at customers
+		then very costly to defect, as brand value is lost instantly
+		for unknown brand less a problem (as not much to lose anyway)
+	education & signalling:
+		education more costly for low-types, hence signal for high-type
+		hence invest in education independently if employee benefits
+		same reasoning for low-salary internship which high-type accepts
+		as reasonable probability afterwards for job offer
+		in contrast to low-type which will be detected
+
+distortion:
+	behaviour changes suboptimally based on contract setup
+	with asymmetric information:
+		can no longer fully trade in all cases (first-best unreachable)
+		design distortion to include private incentives
+		to make the contractual pie as large as possible
+		might be necessary to reach optimal second-best contract 
+	bottom vs top:
+		top distortion when high quality goods do not trade 
+		like excessive education only to signal value
+		bottom distortion when low quality goods do not trade
+		like chip producer corrupting cheap chips
+
+contract negotiation:
+	good contractual solutions might exist
+	but difficult to negotiate
+	inefficient terms:
+		inefficiency is accepted
+		because else negative signal might be sent
+		like prenuptial agreement, tenant contract
+	default terms:
+		when contractual incompleteness likely
+		create default terms to replace negotiations
+
+asymmetric information examples
+===
+
+asymmetric information:
+	overlapping prices for high/low quality car:
+		low /high quality undetectable for buyer
+		buyer simply assumes with 50% probability if high/low quality
+		setup:
+			high quality car1 (buyer value 100, seller value 50)
+			low quality car2 (buyer value 50, seller value 20)
+		first-best:
+			sell car1 for 50 < price < 100
+			sell car2 for 20 < price < 50
+			bargaining power determines exact price
+			all cars are sold
+		price 20:
+			payoff buyer 15, payoff seller 0
+			only low quality cars traded; 50% no trade happens
+		price 50:
+			payoff buyer 25, payoff seller 30
+			seller of low quality car archives "information rent" of 30		
+	non-overlapping prices for high/low quality car:
+		low /high quality undetectable for buyer
+		buyer simply assumes with 50% probability if high/low quality
+		setup:
+			high quality car1 (buyer value 100, seller value 70)
+			low quality car2 (buyer value 50, seller value 20)
+		price 20:
+			payoff buyer 15, payoff seller 0
+			only low Q cars traded; 50% no trade happens
+		price 70:
+			payoff buyer 5, payoff seller 25
+			seller of low quality car archives "information rent" of 50
+
+unravelling markets:
+	insurance:
+		for high risk people (conditions, dangerous lifestyle) very valuable 
+		if single price set, unattractive to low risk people 
+		but then prices for remaining high risk people go up 
+		moral hazard problem (cost of dangerous activities sink)
+		adverse selection problem (high risk behaves differently as low risk)
+		=> mandate insurance
+	borrower rates:
+		good borrowers will reject bad rates
+		banks left only with bad borrowers
+
+screening:
+	selling software:
+		frequent users to which program is essential
+		infrequent users to which program is nonessential
+		frequent will disguise as infrequent
+		if high price, then infrequent will leave
+		if low price, then frequent will gain information rent
+	after sales service:
+		service more valuable to frequent users than to infrequent
+		offer high price & after sell service -> frequent have to choose this
+		offer low price & no after sell service -> infrequent will choose this
+		but distortion that infrequent users do not get service anymore
+		even though it might still be efficient to provide
+	hire for indifferent employees:
+		want to hire employees but can not differentiate ability
+		if high wage, then low quality get too much information rent
+		if low + high wage, then low quality will pretend to be high
+		assume high types work more efficiently than low type
+		offer high wage + excessive hours, low wage + normal hours
+		low types pick normal hours (as rest is not doable)
+		high types pick excessive hours (to get good wage)
+	other screening examples:
+		phone company tries to sell expensive abo
+		airline makes first class nicer, second class worse
+		chip producer sabotages chip to sell functioning version for higher price
+
+signalling:
+	excessive education:
+		as low-types much harder to finish
+		invest in education even if non-beneficial to employer
+		as it signals high-type person
+	waiving access to bankruptcy:
+		costly for anyone, but much more to low-type company
+		hence good signal; without it loans might not be granted
+		but in many cases law prevents waiving access
+
+distortion:
+	prenuptial agreement:
+		both spouses have considerable assets
+		in case of divorce, lawyers could be costly
+		hence create contract to avoid dispute
+		but suggesting the contract raises doubts
+	tenant contracts:
+		include clauses that are invalid
+		but if spoken about, then contract will not happen
+
+"cover all your bases":
+	the more the contract covers the easier to handle in court
+	includes already enforced legal doctrines / implicit claims
+	like copyright, implicit trust assumptions
+	representation:
+		assert something to be true in the moment
+		to enforce, have to show it was untrue in the moment
+		useful if sometimes fact unknown; allocates risk to claimer
+	warranties:
+		give concrete warranty to outcome or effort
+		easier enforceable in front of court
+	indemnify (=reimburse):
+		"should anything I say be untrue, I will indemnify"
+		spell out misrepresentation law
+		claimer will pay for damages caused by misrepresentation
+
+elicitation mechanisms
+===
+
+how to get private values ("elicit") of other party
+
+asset specific investment:
+	asset which is more valuable in specific relationship than else
+	hence not protected by the market, lower resell value
+	like non-adaptability to other purposes / customers
+	with high specificity, need long-term commitment for other party
+
+buy-sell agreements:
+	work well with equal partner (similar ownerships / financial capabilities)
+	protect parties in case can no longer do business together
+	put-call provision (texas shootout):
+		one party proposes price p
+		other must buy all shares or sell its own for price p
+		in general works to buy/sell at reasonable price
+		if A offers p, then B payoff is abs(v_b - p)
+		if A knows private value v_b, can choose unfair offering price p
+	unequal partners:
+		some value might be relationship specific
+		more valuable party can threaten to leave
+
+auctions:
+	take advantage of buyer's private value
+	flat price either too high or too low
+	auction process:
+		sealed bid when placing without other knowing value 
+		public auction when others learn value
+	revenue equivalence theorem:
+		if bidders are risk-neutral & values independently drawn
+		then all auctions lead to same expected revenue for seller
+		& are efficient (person with highest value gets item)
+		assumes "independent" value (own valuation does not depend on other's)
+	model:
+		item worth some value to me
+		others have independent, uniform distributed value 0-100
+	first price auction:
+		highest bidding buys for price of highest bid
+		bid value - value/n
+		might lose bid, or might make profit = value/n
+	second price auction:
+		highest bidding buys for price of second bid
+		bid honestly
+		not higher (bc maximum price want to pay)
+		not lower (bc do want item)
+	split the difference scheme:
+		highest bidding buys for price between highest/second bid
+		bid value - value/2n
+	all-pay auction:
+		all bidders pay, highest bidding gets item
+		bid value^N - value^N/N
+	common values:
+		if value of items depends on what others value is
+		then winners curse (winnner more optimistic than all others)
+		like IPO (bc want to sell stock later like others)
+		like collection items (bc want to resell)
+		like diamond sights (box full of diamonds, very short time)
+	defend against winners curse:
+		take into account what others bid
+		reevaluate / self-reflect in case own bid highest
+		choose different mechanism (like second price auction)
+	collusion:
+		likely if few participants in auction (2-4)
+		prevent designing contract only few parties can actually take
+
+impossibility theorem (myerson-sattlerwhaite):
+	if one party owns good, the other wants to buy
+	but uncertainty about gains from trade
+	there is not efficient way to trade 
+	human element:
+		in models, would never reveal true values
+		but in real work, human element outperforms game theory
+		parties engage in cheap talk
+		parties reveal their values, coordinate on price
+		face-to-face communication improves behaviour (compared to written)
+
+elicitation mechanisms examples
+===
+
+goethe:
+	wanted to know own value
+	unclear bc no copyright, sales unknown, ...
+	game:
+		sends minimal price p1 to attorney
+		attorney receives price of publisher p2
+		if p1 < p2 then no trade
+		else trade for price p1 and learn about p2
+	publisher view:
+		will bid private valuation as no information about goethes p1
+		might understate if interested in long-term relationship
+	goethes view:
+		wants to learn own market value
+		hence better than take-it-or-leave-it offer
+		but goethe might renegotiate with learned value
+	what happened:
+		attorney told publisher what minimal price was
+		goethe could sell, but did not learn own price
+		resulted in big profits for publisher
+	later auction:
+		received much more of the share
+		as not all publishers colluded
+
+relationship specific investments
+===
+
+existing vs redesigning mechanisms:
+	redesign with rationality (auguste conte):
+		create better society by redesigning it ("social engineering)
+		rationally improve over naturally evolved society
+		approach of "mechanism design"
+		assumptions about human rationality / behaviour
+		lead to mathematically reasoned mechanism 
+		to archive first-best / second-best
+	accept state of the art (edmund burke):
+		old institution performed reasonably well in the past
+		hence constructing everything from scratch is dangerous
+		underlying assumption that evolution evolves into something efficient
+		(which is not necessarily true)
+	hidden wisdom (friedrich august von hayek):
+		presumption of hidden wisdom of institutions
+		"fatal conceit" (einbildung) one could redesign all
+	piecemeal social engineering (karl popper):
+		iterative process; gradually improving upon state of the art
+		small, evidence based changes
+		archive progress without redesigning all
+
+contract completeness:
+	complete:
+		condition on every possible state (if contractable)
+		only moral hazard / adverse selection risk remains
+	incomplete:
+		might not include all contractable possible states
+		might renegotiate later if enforcement inefficient
+		bc bounded rationality (cannot predict all possible states)
+		bc transactional costs (creating contract too expensive)
+		bc non-verifiability (non-verifiable input/output)
+		bc institutional comparison (use existing as a guideline)
+
+hold up:
+	if non-contractable relationship-specific investment has to be made
+	but proceeds of this have to be shared with other party
+	like renegotiation due to changed circumstances after investment sunk
+	introduces underinvestment (trying to reduce relationship specificness)
+	reasons:
+		trade after production:
+			parties (re)negotiate trade after production
+			at point in time where investment already sunk
+		relationship-specific investment:
+			investment worth more inside relationship than outside
+			like investment specific / customized to customer
+			like specific skills, machines, software, processes
+	prevent holdup:
+		less sequential contracts:
+			combine exchange / production; for example with milestone contracts
+			like in construction contracts
+		write contract before "fundamental transformation":
+			before relationship-specific investment happens
+			leads to first-best if investment is indeed contractable
+		avoid renegotiation (sign complete contract):
+			avoid having to negotiate after some investment sunk
+			but very hard / impossible to write complete contract
+		long-term contract:
+			enter long-term contract with other party
+			allow investing party to prolong contract by itself
+	prevent holdup examples:
+		improve BATNA of investing party
+		or reduce BATNA for not investing party
+		fixed price + specific performance:
+			investing party is guaranteed performance
+			but ex-post inefficient (goods produced even if inefficient)
+			but overinvestment (as can always sell goods)
+		fixed price + expectation damages:
+			investing party will be payed out expectation performance
+			only produce iff price - cost > expectation damage
+			for expectation damage = value - price
+			hence contract breached if value < cost (which is good!)
+			hence ex-post efficient (goods produced only if production worth)
+			but overinvestment (goods with price - cost < expectation damages)
+	improve contract:
+		design threat point:
+			for investing (hence weaker) party as a BATNA / outside option
+			like acquiring ownership of underperforming party's tool 
+			like deciding whether to continue contract 
+			like option to increase/decrease default quantity sold 
+			like exclusivity (preventing to trade with others)
+		reduce sequential structure:
+			introduce milestones with deliverables on both sides
+			reduces one-shot character
+		assign bargaining power:
+			to investing party (hence weaker) party
+			then efficient investment (socially optimal) will occur
+			unclear if realistic (bc of incomplete contracts/renegotiation)
+			like take-it-or-leave-it offer, smart contracts
+
+renegotiation:
+	solves ex-post inefficient trade
+	bargaining occurs with thread point in mind
+	coarse theorem:
+		besides renegotiation cost, efficient allocation occurs
+		unless personal conflicts, time pressure, strategic games
+	for continuous trade decisions:
+		balance threats of max sales vs no sales
+		by contracting in between
+		then renegotiating with more infos
+
+vertical integration:
+	as way to redesign outside option / BATNA
+	coarse:
+		if market good, why do firms exist
+		=> market needs transaction cost to trade
+		if firms good, why not all done by same firm
+		=> too big firms inefficient
+	williamson:
+		avoid holdup with vertical integration
+		firms should produce specialized goods internally
+		firms should buy standard products on the market
+	grossman & hart:
+		vertical integration allows to redesign threat points
+		(hence can easily walk away from bad negotiations)
+		but does not solve unobservability problems
+
+legal solutions:
+	complete contracts avoid having to renegotiate
+	but renegotiation offers flexibility to avoid inefficiencies
+	economic duress doctrine:
+		limits that parties can exploit each other through renegotiation
+		if nothing changed since agreeing to first contract
+		then modifications after renegotiation can be reversed
+		else likely that one party used unfair leverage to over-compensate
+		damages for breaking contract might not be enough
+		bc other party unable to pay, damages non-materialistic, ...
+
+technical solution:
+	must be robust to error
+	doomsday machine:
+		prevent attack by threatening massive retaliation
+		not ex-post efficient (hence not negotiation proof)
+		for threat to be credible need to build doomsday machine
+		which excludes human intervention (and enemy knows about it)
+	smart-contract:
+		might allow to exclude renegotiation
+		might allow to assign bargaining power
+		anonymity critical otherwise legal system could revert effects
+
+relationship specific investments examples
+===
+
+example incomplete contract:
+	fisher body (FB) supplies general motors (GM)
+	FB build new factory next to GM has joint surplus 100
+	pro vs con:
+		pro bc lower cost, integrate better with GM
+		cont bc GM may capture part of surplus
+	no contract:
+		with equal bargaining power, payoff 50
+		with cost 40, will build it (and should!)
+		with cost 80, will not build it (but should!)
+		hence underinvestment could occur
+	fisher negotiation power after plant built:
+		threaten to withhold does not work
+		bc investment already sunk
+		threaten to sell does not work
+		bc investment worth more inside relationship than outside
+	contract:
+		predetermine price or exclusive rights
+		but depending on market, price/quantities need to change
+
+relationship-specific investment:
+	fishing company:
+		fishing company hires worker for short fishing season
+		then processes the fish in plant with large investment
+		shortly before fishing season, workers could renegotiate
+		company has no choice but to increase salary, else loses investment
+
+ex-post inefficient trade:
+	wood table production:
+		agree on wood table production with specific wood
+		but wood not deliverable anymore
+		cost for wood higher than benefit to buyer
+		with renegotiation, both parties can benefit
+
+assigned bargaining power:
+	model:
+		buyer could investment to increase value to seller
+		seller cost is unknown until buyer made investment
+		buyer investment can be 0/2/5.5, resulting in gains of 4/10/14
+		seller cost is 50% 1 else 12
+		for investment 0, benefit for low cost 3 else -8
+		for investment 2, benefit for low cost 9 else -2
+		for investment 5.5, benefit for low cost 13 else 2 
+		socially optimal is investment 2 with expected benefit 2.5
+		but trade (ex-post) only occurs if cost lower than price
+	no contract (ex-post efficiency):
+		assume buyer has 30% bargaining power
+		then buyers optimal investment is 0 (underinvestment)
+		as 0.5 * 0.3 * 3 (archived price) - 0 (investment) = 0.45
+		assume buyer has 100% bargaining power
+		then buyers optimal investment is 2 (socially optimal)
+		as 0.5 * (10 - 1) (gain - cost) - 2 (investment) = 2.5
+	fixed price + specific performance:
+		assume price must be 2 (seller only produces for low cost)
+		then buyers optimal investment is 5.5 (overinvestment)
+		as (14-5.5) (gain - investment) - 2 (price) = 6.5
+	fixed price + expectation damages:
+		assume buyer must be put in as good position as if contract performed
+		then buyers optimal investment is 5.5 (overinvestment)
+		as (14-5.5) (gain - investment) - p (price) = 8.5 - p
+	actual resolution:
+		exclusivity & cost-plus contract
+		but FB overstaffed to increase costs
+		GM bought FB in the end
+
+relational contracting
+===
+
+when able to rely on relationship & reputation
+in absence of formal contract
+
+repeated cooperation:
+	preconditions:
+		gains from future cooperations sufficiently high
+		people care about the future (discount rate sufficiently high)
+		no definite end to cooperation
+	discount rate:
+		rate < 1 which future events are less worth
+		bc uncertain about future, today preferred to tomorrow
+		payoff = payoff_today + rate * payoff_tomorrow + rate^2 * payoff_after_tomorrow ...
+		payoff = 1/(1-rate)
+		for rate 0, only today relevant
+	grim-trigger strategy:
+		cooperate unless other player defects
+		as soon as other defected, defection forever
+		cooperation happens for rate >= 0.5
+	tit-for-tat:
+		mirror last action of other player
+		if other cooperates, then cooperate
+		if other defects, then defect
+	predefined end of cooperation:
+		no cooperation in last period
+		but other player anticipates, hence no cooperation either
+		unravelling (hence no cooperation at all)
+		in practice incomplete (fail to foresee, late defection preferred)
+		reputation & contracts as substitutes
+		like retirement
+	probable end of cooperation:
+		some future event with probability p will terminate cooperation
+		payoff = payoff_today + rate * (1 - p) * payoff_tomorrow + ...
+		payoff = 1/(1-rate)(1-p)
+	spike of payoffs:
+		some future event payoffs for defection will spike
+		cooperation unsustainable
+	increasing payoffs in the future:
+		in future event payoffs will increase gradually
+		cooperation more sustainable
+
+relational contracting examples
+===
+
+cooperation:
+	price wars amongst gas station in vancouver
+	after demand shock (likely some player defects)
+	price goes up/down & is more or less chaotic
+	then after some months, again cooperation on some high price
+	collusion can not be contracted, hence had to relay on cooperation
+
+reputation:
+	diamond exchange in new york by orthodox jews
+	much trust amongst diamond merchants
+	defection increases reputation cost
+
+business relationship:
+	business partner & self
+	both may choose to cooperate & defect
+	payoffs:
+		both cooperate (1,1)
+		both defect (0,0)
+		one cooperates, one defects (2, -1)
+	one-shot:
+		same as prisoners dilemma
+		both will defect, anticipating defect of other party
+	repeated:
+		if discount rate sufficiently high
+		then cooperation chosen
+
+predefined end (centipede game):
+	parties can choose whether to give other party some amount or not
+	if money received, get additional reward from bank
+	game stops if both parties have 100 received
+	but predefined end, hence unravelling expected
+	in practice:
+		5% end at the end (both get 100)
+		5% do not event start (as parties predict defect)
+		rest ends up in the middle
+	reasons:
+		players do not foresee 100 steps
+		players want to delay defection
+
+externalities
+===
+
+parties enter contract which sets them better
+but may hurt third parties / social welfare
+government imposes regulation to prevent inefficient outcome
+
+exclusivity contract:
+	agree on price p with firm to be dealt with
+	agree on damages d on deals with other firm 
+	problems:
+		while increasing joint payoff of involved parties
+		decreases societal welfare as market entered late by competition
+		only after efficiency gain bigger than damages
+	benefit:
+		prevent free-riding
+		like advertisement benefiting whole industry
+		mitigate hold-up problem
+		like stronger partner abuses other
+		align incentives
+		like partner can focus on other
+		improve certainty
+		like knowing supply for next years
+
+externalities examples
+===
+
+exclusive dealing:
+	buyer can buy from incumbent (existing) or entrant firm
+	buyer accepts exclusive dealing contract with incumbent
+	contract specifies price p and damages d (if dealing with entrant)
+	model:
+		cost of incumbent 50 and entrant c = uniform(0,100)
+		buyers value of good 100
+	order:
+		buyer accepts contract with incumbent (price, damages)
+		entrants cost is determined (between 0 - 100)
+		entrant decides whether or not to enter market
+		production and trade take place
+	social welfare:
+		if entrant cost < 50 then entrant produces
+		else incumbent produces
+	no contract:
+		if entrant cost lower, then prices lower than incumbent 
+		else entrant stays out of market (bc incumbent undercut)
+		but then incumbent monopoly, could charge 100
+		buyer welfare 25 = 0.5 * 50 (if entrant sells) + 0.5 * 0 (if incumbent sells)
+		incumbent profit 25 = 0.5 * (100 - 50) (sell at price 100, cost 50)
+		entrant profit 12.5 = 0.5 * (50 - 25) (average cost 25)
+		social welfare 62.25 = 25 + 25 + 12.5
+	exclusive dealing for p = 75 and d = 100:
+		buyer welfare = 25 (always buys for 75)
+		incumbent profit = 25 (always sells for 75)
+		but entrant profit = 0 (no sale)
+		social welfare 50 = 25 + 25 + 0
+		buyer indifferent bc same payoff than before
+	exclusive dealing for p = 75 and d = 50:
+		buyer welfare = 25 (always buys from 75, either from incumbent/entrant)
+		incumbent profit 31.25 = 0.75 * (75 - 50) + 0.25 * 50 (damages)
+		entrant profit 3.125 = 0.25 * (25 - 12.5)
+		social welfare 59.375 
+		buyer / incumbent accept as higher payoff
+
+tort victims:
+	two victims with claim of 300, lawyer costs 400
+	together would sue firm and get full 600
+	but single victim accepts settlement 100.1 (> (600-400)/2)
+	then other victim unable to sue anymore (400-300 < 0)
+
+selling your business:
+	worth of 50, two buyers with 90 / 100 valuation
+	bargaining power is equal
+	order:
+		negotiate first with buyer1
+		then with buyer2
+	no contract:
+		agree with buyer1 to price of 70 (90-50 / 2)
+		then agree with buyer2 to price of 85 (100-70 / 2)
+		payoff seller 35, buyer1 0, buyer2 15
+	breakup fee:
+		agree with buyer1 to price of 85, breakup fee 10
+		then agree with buyer2 to price of 97.5 (100-95 / 2)
+		payoff seller 37.5, buyer1 10, buyer2 2.5
+
+observable but not verifiable
+===
+
+informational environment where performance observable
+but not verifiable (hence proofable in court)
+
+discretion clauses:
+	assigns strong power to one of the party 
+	like to terminate contract whenever see fit
+	but invites opportunism of such party
+	reputation:
+		abusing clause will prevent further exchanges
+		works if reputation of accessible & important of stronger party
+		like mc-donalds reputation under franchises
+		but franchise reputation irrelevant (can just switch provider)
+
+up and out:
+	company policy that after some time promoted or let go
+	to fulfil commitment to promote hard working employees
+	removes any temptation not to promote
+
+giving bonus to winner of tournament:
+	verifiable for all that some winner have been chosen
+	removes temptation not giving bonus
+	will give bonus to best employees as no other incentive
+
+shoot the liar:
+	transform what is observable to verifiable
+	ask observers separately to report on what has happened
+	reward if reports match, punish otherwise
+	hence if no no way to coordinate beforehand
+	then will report the truth as highest probability reports match
+	
+observable but not verifiable examples
+===
+
+not verifiable:
+	employee performance
+	group member performance 
+
+franchise business:
+	charge fee for concept & get marketing, design, procedures
+	owner of restaurant has to invest into building
+	includes clause to terminate freely without cause (discretion)
+	reasons for clause:
+		free-riding (save money but reputation cost payed by brand)
+	advantage:
+		can use discretion to terminate underperforming franchise
+		might be hard to prove underperformance in front of court
+	disadvantage:
+		could abuse discretion to terminate well-performing franchise
+		to take over restaurant and operate it self
+		for franchise discretion clause like having no contract
+		hence franchise will underinvest
+
+behavioural
+===
+
+contract are way to give commitment
+to reach first-best need to align incentives
+but might need additional behaviours
+
+shading:
+	perfunctionary performance (follows contract to the letter)
+	has to be delivered, enforced by court in any case
+	consummate performance (follows contract to the spirit)
+	followed by parties if their interest ("sharding")
+	avoid shading by including more specific conditions in contract
+	but too fix contract may deliver inefficient outcome
+
+promises:
+	use promises to get commitment
+	where central enforcement costly / impossible
+	relying vs expectation:
+		"expectation" when only set internally 
+		"relying" when basing decisions / investments off it
+	why promises are kept:
+		third party enforcement
+		like begin forced to perform or having to pay damages
+		reputational concerns
+		like value of future relationship is lost
+		moral force
+		like value system motivates to keep promises
+	observed moral effects:
+		expectation per-se effect
+		want to deliver expectation (irrespective of promise)
+		promising per-se effect
+		want to keep promise (irrespective of expectation)
+		interaction effect
+		if promise given even higher effort to fulfil expectation
+	overreliance:
+		to guilt-trip others into performance
+		introducing legal enforcement makes investments more stable
+		less underinvestment (as enforcement exists)
+		less overinvestment (as guilt-trip can disappear)
+	punishment by third party:
+		if third-party observes interactions
+		will likely punish promisor
+		increasingly so if promise given, expectation high
+	irrationality:
+		need to be able to understand / predict other party
+		but rationality assumption might not be suited
+		might results in additional negotiation power 
+		like vietnam/kissenger, fighting witches
+
+implications for contract design:
+	include difficult to enforce clauses (unverifiable, ...)
+	encourage explicit promise making (oaths, ...)
+	explicitly invite expectations (advertisement, ...)
+	make expectations visible (link expectations / promises)
+	undesirable effects:
+		even efficient breach is avoided
+		might circumvents public policy/unconscionability defenses
+		parties feel compelled to fulfil invalid clauses
+
+realistic goals:
+	might be desirable to set realistic goals
+	lower performance observable with too high / low threshold 
+	spillover from aspirational goals to realistic goals observable
+	low variance from low threshold
+	it matters if people are in win / loss frame
+	impacts constitutional design, international agreements
+	
+legal theory:
+	expectations / reliance relevant for legal enforcement
+	legal enforcement solves over and underinvestments
+
+questions:
+	50% do not follow moral objectives when unpunished
+	=> how to generalize
+
+behavioural examples
+===
+
+trust / guilt:
+	kindergarden example:
+		parents had to pay fine being late
+		but now can pay-out of moral obligation
+		parents came even more often late		
+	50% suspectible to guilt:
+		in study could choose to keep / break promise
+		no reciprocity / reputation effects
+		50% broke promise for monetary benefits
+		25% traded off money against morality
+		25% did keep integrity not matter cost
+		might be dependent on social circles / cultural effects 
+
+irrationality:
+	scorpion and the turtle:
+		scorpion asks turtle to transfer over shore
+		but scorpion stings turtle in the middle of the river
+		turtle asks "why", scorpion responds "bc its in my nature"
+	kissenger:
+		pretended in negotiations US president is crazy
+		and would drop nuclear bomb on vietnam
+		if unable to return with concessions
+	bar fight:
+		would be likely to get caught after violent dispute
+		but if actor irrational might not risk an encounter
+		puts actor in better state
+	goya's fighting witches:
+		witches are fighting over who is the bigger witch
+		can get witches together if shared interest
+		but will never have trust / friendship (because evil)
+
+source of commitment:
+	third-party observation:
+		third party observes interaction between promisor/promisee
+		higher/lower reliance investments, choose keep/break promise
+		third party can then decide to pay to punish promisor
+		punishment higher when promise was given
+		and when reliance investments were higher
+	delegation with low-powered incentives:
+		like manager of company with flat salary
+		then might feel obligated by own ethics to keep promise
+		hence contracts with such delegates could be much simpler
+		as you would not expect this party to defect
+		observed in civil service, family owned enterprises
+		but then need to solve moral hazard problem differently
+
+trust game (charness):
+	like farmer (trustor) vs viper (trustee)
+	truster puts itself at mercy of other
+	model:
+		trustor can opt out (3/3) else can trust
+		if trust honoured (10/10), else (14, 0)
+		=> nash solution would be expected
+	observation:
+		25% cooperation in simple case
+		50% cooperation with enabling communication
+	interpretation:
+		communication enabled cooperation
+		even if only cheap talk (non-enforceable)
+		reputation impact zero as one-shot game
+
+promises study:
+	keep word to not disappoint promisees expectation
+	set expectation game:
+		seller/buyer learn deliver has to be over device
+		promise made that deliver will be made
+		then both learn if delivery with high/low probability possible
+		then seller can decide whether to deliver the goods
+	observations:
+		reliable device motived higher performance
+
+loss frame:
+	bridge:
+		goal of suspension was unreachable
+		needed to pay damages depending on goal miss		
+	factory workers:
+		some workers got payment + deductions
+		others got base payment + bonus
+		loss frame vs win frame
+		workers of loss frame performed better
+	contract variants:
+		vanilla (payed by element)
+		threshold with bonus / malus (target given)
+		best performing if threshold realistic
+		worse than vanilla if threshold aspirational (unrealistic)
+		low variance with low threshold (nice for safety / coordination)
+	realistic vs aspirational goals:
+		if some goals unreachable
+		then spillover effect to other goals observable
+		like UNO climate commits to 2°, while 1.5° would be great
+		like sustainable development goals too ambitious

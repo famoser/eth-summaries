@@ -46,6 +46,7 @@ Generally, the newer the summary, the more consistent is the structure & the wor
 | 2020-1 Wirtschaftssoziologie | ★★★★☆ |
 | 2020-2 Applied Negotiation Seminar | ★★★★☆ |
 | 2020-2 Contract Design | ★★★★☆ |
+| 2020-2 Einfuehrung in die Cybersicherheitspolitik | ★★★☆☆ |
 
 Comments:  
 Object Databases (short) is without general statements like "can be configured" and perceived irrelevant details (syntax for dead libraries) but may not be complete.

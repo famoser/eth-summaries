@@ -8,7 +8,7 @@ Summaries created for ETHZ courses. If you want to use some of these please be a
 I will list all summaries and my perceived level of quality. 
 Generally, the newer the summary, the more consistent is the structure & the wording. 
 
-| course | perceived quality |
+| course | perceived quality of summary |
 |---|---|
 | 2017-1 Data Modelling And Databases | ★★★☆☆ | 
 | 2017-1 Introduction To Negotiation Science | ★★☆☆☆ | 

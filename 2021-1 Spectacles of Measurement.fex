@@ -1,0 +1,963 @@
+Introduction
+===
+
+measure real-world for decision making, prediction
+	
+messfehler (p. profos):
+	what (material properties of existing objects by physical quantities)
+	why (to get quantitative & object information about point of interest)
+	what for (as a basis of decision making)
+	how (relate property to unit of same physical dimension)
+
+criteria:
+	if fulfilled result y = x + s + e
+	for x measurement, s systematic error, e random error, 
+	objective:
+		independent of person involved
+		both at operation & interpretation
+	reliable:
+		consistent across context
+		repeated measurements yield equivalent results
+	valid:
+		correspondence with goals
+		actual representation of property
+
+representation:
+	assigning numerals to (properties of) objects
+	\phi: S (property) -> X (numerals)
+	properties of objects like states, events
+	numerals like reals, rationals, integers
+	criteria:
+		implies objectivity & reliability
+		but not validity or rules
+	example:
+		object=person, property=height, mapping=cm
+		object=person, property=hair, mapping=color
+		mapping depending on required precision, reliability, scale
+		mapping may compare measurement (like >= 120cm giving predicate result)
+	china population 2 AC:
+		"door" & "mouth" count
+		determines taxes & military service
+		allows to strictly enforce it
+	US constitution:
+		representatives & tax relative to number of persons
+		#free persons + #military + 0.6(#indians + #slaves)
+		still done every 10 years
+	CH:
+		continuous population counting depending on population register
+		quarterly integration of cantonal registers
+		completion based on 5% sample surveys
+
+temperature (2nd century):
+	galen (2nd century):
+		medical condition determined by hot vs cold & moist vs dry
+		neutral = equal amounts of hottest & coldest (boiling & ice)
+		remained medical authority for over 1000 years
+	haslerus (1578):
+		distance from equator = expected body temperature
+		extension from galen theory
+	romer scale (1701):
+		0 = freezing point of brine (salted water; -21°)
+		because colder than water, same under different pressures
+		60 = boiling point of water
+		because 60 divisible by much more, same as clock
+	thomasiums (1691):
+		measure personality
+		motives are hedonism, avarice, ambition, altruism
+		ratings 0, 5, ..., 60 by analyzing conversations, writings
+		claims objectivity as three persons came to same measurements
+		relates properties to each other
+
+empirical structure:
+	equivalence:
+		some properties are same than those of others
+		body height, threshhold pass, hair color, personality
+	comparison:
+		ordering properties
+		by height, pass/fail, character trait intensity
+	combination:
+		properties are related to each other, merged
+		like average temperature, height
+
+preserving structure:
+	when \phi: S -> X is homomophism
+	each empirical relation (S) reflected in numerical relation
+	i ~ j <=> \phi(i) = \phi(j)
+	if one-to-one (bijective) also called isomorphism
+	representation:
+		(1) homomorphism \phi: S -> X
+		(2) for empirical (S; =, <, +, ...)
+		(3) to numerical (X; =, <, +, ...)
+		aigns numerals to properties while preserving laws
+		valid as a basis for decision making
+		can assign color to number
+	problems representation:
+		existence (is it actually possible)
+		uniqueness (are mappings independent = contribute information)
+		meaningful (different mappings might create different results)
+		operationalization (is it implementable)
+		errors (how solid is it)
+
+sealed envelopes:
+	two sealed envelopes with x and 2x money
+	you are given one, then have choice to switch
+	do you take it?
+	trivial multiplication:
+		assuming own envelope contains y
+		then other envelope contains either x/2 or 2x 
+		E[amount swapping] = 0.5*x/2 + 0.5*2x = 5/4*x
+	reasoning mistake:
+		reference point in "either x/2 or 2x" is changed
+		hence argument invalid
+
+references:
+	unit is given; counted for measurement
+	different units through historic reasons
+	definition by authority, agreement, cultural norms
+	scales:
+		differnet base units
+		ratios might be preserved (big unit = 2 small unit or so)
+	
+length:
+	foot & metric system
+	jakob köbel (1535):
+		16 men (because power of 2)
+		tall & small ones, left feet one behind the other
+		measure & divide by 16
+	metric system:
+		1791 defined as 1/10'000 the distance north pole-equator
+		1889 reference created out of non-deforming metal alloy
+		now defined by 1/299'792'458s speed of light
+
+topology:
+	dufour map 1832 - 1865
+	measurement by triangulation
+	with baseline im "grossen moos"
+	extremely exact baseline measurement:
+		placed metal rods one-after-the-other
+		aligned perfectly with stoppers in between
+		temperature tracking (to measure metal deformity)
+		adjusted for lag between temperature measurement & development over day
+
+temperature:
+	rømer scale:
+		idea is divisibility (64 is power of two)
+		0 (brine freezing), 60 (water boiling)
+	fahrenheit:
+		idea is tripling (32 + 64 + 128); real-world is close
+		0 (brine freezing), 32 water (fluid)
+		96 (human body temperature), 212 (water boiling)
+	celsius:
+		for 100 change of scale is easy (as base 10 number system)
+		0 water freezing, 100 water boiling
+	kelvin:
+		discovered absolute 0, uses celsious unit difference
+		273.15 as water boiling, 373.15 water boiling
+
+transformations:
+	which implications has changing the scale 
+	nominal (=):
+		isomophism (x(i) = x(j) <=> y(i) = y(j))
+		like people
+	ordinal (<=):
+		isotone (x(i) <= x(j) <=> y(i) <= y(j)
+		like "higher-than"
+	interval (+ <=):
+		positive linear (x = \beta*y + \alpha; \beta > 0)
+		like bucketed measurement (eg days)
+	ratio (/ + <=):
+		similarities (x = \beta*y; \beta > 0)
+		like m to cm
+	absolute (/, + <=):
+		identity (y = x)
+		like counting
+
+existance theorem:
+	map emiprical structure to numerical ground ("assign numbers to properties")
+	want to nummerics to preserve homomophism / other properties
+	examples under which this is possible the following theorem
+	theorem (<):
+		empirial structure (S, <) with S finite
+		admits order-preserving representation \phi : S -> N
+		iff < is strict weak order (assymetric, negatively transitive)
+		negative transitivity avoids enforcing everything to be comparative
+	theorem (<=):
+		empirial structure (S, <=) with S finite
+		admits order-preserving representation \phi : S -> N
+		iff <= is weak order (reflexive, complete, transitive)
+	utility function \phi:
+		descriptive (define, then verify empirically)
+		normative (derive logically  / rationally / by axiomatization)
+		\phi might not exist for everything (like job preference)
+	theorem (<, +):
+		empirial structure (S, <, +)
+		admits order-preserving representation \phi : S -> N
+		iff < is strict weak order (assymetric, negatively transitive)
+		and associativity, order preserved if same element added, inflated (multiplied)
+
+datafication:
+	\phi : S -> X
+	S (scope, selection like course attendees, schools)
+	X (nested, labels like degrees, tracks)
+	relations (equality, equivalence)
+	analysis (counting, shares which requires knowledge about |S|)
+	exclusiveness (single or multiple labels; mapping)
+	exhaustiveness (completeness of domain S; total mapping)	
+	measuring degrees of course attendees:
+		scope is course attendees (but could be school, world, ..)
+		labels are degrees (but could include tracks, schools, ...)
+		relations (some degrees might be equal but different schools)
+	further examples:
+		dress codes (orderable, not additive)
+		music genres (but labeling exhaustiveness, exclusiveness hard)
+		wind speed (relative measurement, beaufort is descriptive)
+	quotes:
+		to measure is to know
+		if you cannot measure it, you cannot improve it
+		when you can measure you know something about it (kelvin)
+
+free fall:
+	odd numbers by galileo (1,3,5,7, ...)
+	natural numbers by fabri (1,2,3,4, ...)
+	doubling numbers by caze (1,2,4,8, ...)
+	scale invariance:
+		necessary condition for any law to hold
+		if measured in different time unit, space should still hold
+		assume steps 2t, then galileo results in 4, 12, 20, ...
+		can rescale (divide by 4), results again in 1,3,5
+		=> galileo's proposal only one to fulfil this
+
+temperature:
+	compare °K, °C, °F, rankine °R (like °F starting at absolute 0)
+	comparison always works, but "5% more", "double" might be nonsensical
+
+meaningful:
+	if truth value invariant under admissible (homomophy-preserving) transformations
+	then statement about measured property is meaningful
+	change of scale:
+		might affect truth value
+		hence meaningfulness relative to scale type
+		meaningful when statements only use preserved relations 
+	scale types & their preserved relations:
+		norminal preserve mode
+		ordinal preserve mode, median
+		interval preserve mode, median, arithmetic mean
+		ratio preserve mode, median, arithmetic mean, geometric mean
+
+health of newborn children:
+	check skin, heart, reflexes, muscle tone, breathing
+	each category 0,1,2 value depending on observable properties
+	then sum for assessent (critical until 3, low until 7, normal until 10)
+	analysis:
+		for example bpm measure in none, <100 or >100
+		but when measured 0, 90 vs 110, same difference 
+		=> interval criteria not satisfied
+	measure childrens health:
+		all are proxys of childrens health
+		multiple measurements might increase accuracy
+		accuracy overall OK for quick assessment
+
+indirect measurement:
+	unobservability:
+		cost
+		physical size (too small or big)
+		accessibility in time / space
+		theoretical construct (like state of baby)
+	way around:
+		instead of measuring property(object) (\phi)
+		measure property'(object)
+		map to numerical space with \psi into proxy
+		then apply transformation f
+		\phi = \psi * f (ideal case)
+	length:
+		comparison meter stick, translation range scanner
+		sends light & registers reflection time
+		length = c/2 * t
+		corrects for non-vaccuum conditions
+	mass:
+		comparison balance scale, translation spring scale
+		length = 1/k * F; translate length to weight
+	temperature:
+		no direct comparison, translation thermometer
+		expansion of quicksilver as length
+	egg sizes:
+		regulations define which sizes eggs can be labeled at
+		<= 53 S, <= 63 M, <= 73 L, else XL
+		weight taken as proxy of size
+		use springs which open hole if heavy enough
+	radiocarbon dating:
+		C^12 stable, C^14 unstable; C^12 to C^14 in predictable ratio
+		C^14 production by cosmic rays; ratio is kept in environment
+		organism has same ratio as environment due to exchange (like photosynthesis)
+		when organism dies, exchange is stopped and ratio deteriorates (as C^14 decaying)
+		measure ratio of C^12 / C^14 in dead organism to determine time of death
+	big mac index:
+		indication of purchasing power 
+		expect that price ratio = currency ratio
+		adjust with gross domestic product per capita
+		https://www.economist.com/big-mac-index
+	world health:
+		plot income vs lifespan
+		see log-linear relationship between income / life expectancy
+		https://www.gapminder.org/downloads/updated-gapminder-world-poster-2019/
+
+conjoint measurement
+===
+
+archimedes (EUREKA):
+	measure if all gold used for gold crown
+	ensure weight & volumina match
+	volumina match by immersing into water, measure pegel change
+
+multiplicative composition:
+	density = mass (kg) / volume (m^3)
+	has inverse, hence order-reversing transformation
+	log(density) = log(mass) - log(volume)
+	alters neither equivalence nor ordering
+
+conjoint measurement:
+	conjoint representation:
+		\phi: S_1 x ... x S_n -> X
+		with \phi(s_1, ..., s_n) -> f(\phi_1(s_1), ..., \phi_n(s_n))
+		for \phi_i: S_i -> X_i, aggregation f: X_1 x ... x X_n -> X
+	additive conjoint representation:
+		when f sums up representations
+		s <= t <=> \phi(s) <= \phi(t)
+		(s_1, s_2) <= \phi_1(s_1) + \phi_2(s_2) <= \phi_1(t_1) + \phi_2(t_2) 
+	properties conjoint representation:
+		<= is a weak ordering on S
+		solvability (\exists s_2 for any condition (s_1, ?) = (t_1, t_2))
+		double cancellation
+	double cancellation:
+		when (s_1, r_2) <= (t_1, s_2)
+		and (r_1, s_2) <= (s_1, t_2)
+		then (r_1, r_2) <= (t_1, t_2)
+		"double cancellation" because we remove (s_1, s_2)
+	independence:
+		when (s_1, s_2) <= (t_1, s_2)
+		then (s_1, t_2) <= (t_1, t_2)
+	standard sequence:
+		for sequence s_1, s_1', s_1'', ...
+		it holds (s_1, s_2) ~ (s_1', t_2)
+		strictly bounded if some s_bottom <= s_1 <= s_top
+	additive representation:
+		sufficient conditions for (S_1 x S_2, <=)
+		a) <= is a weak order
+		b) solvability
+		c) double cancellation
+		d) every strictly bounded standard sequence is finite
+		(means scales cannot be infinitely small)
+		standard sequence if s_1^(i)
+	conjoint additive representation:
+		necessary conditions for (S_1 x S_2, <=)
+		a) <= is complete
+		b) let standard sequences of length k and permutations \pi_1 \pi_2
+		if (s_1^i, s_2^i) <= (s_1^j, s_2^j) for j permuted i
+		then (s_1^k, s_2^k) <= (s_1^1, s_2^1) for k permuted 1
+		b condition summarizes theoretic conditions
+		but hard to test empirically 
+
+measuring loundness:
+	loundness = (amplitude, frequency)
+	weak order:
+		every pair of sound comparable, transitive
+	solvability:
+		for given sound (a, f) and frequency (f')
+		come up with a' such equally lound
+	double cancellation:
+		empirical tests hard (as many combinations)
+		instead show conjoint commutativity
+	sound compression:
+		average DB & peak points plotted
+		in old song, average db lower & different peaks
+		in newer song, higher average db & peaks all on line
+		=> improved mastering likely increases sales
+
+examples:
+	BMI:
+		weight / m^2
+		18.5 - 25 is OK
+	h-index:
+		plot #citations for each paper
+		fit largest square in there
+		45 means => 45 papers with each at least 45 citations
+		does not capture few high-valued, many low-valued
+
+units & scales
+===
+
+scale types:
+	nominal (labels are all distinct)
+	ordinal (order of label preserved relative to empirical observation)
+	interval (distance between labels always same)
+	ratio (fixed reference point; like absolute 0)
+	absolute (fixed unit; like counting people)
+	analysis:
+		interval enables reasoning about differences
+		ratio enables multiples & fractions
+
+example:
+	(mechanical) horsepower:
+		lifting 550 lbs up 1 feet in 1 second (=745.7 watt)
+		used as a unit for "rate of work"
+	other horsepowers:
+		 hydraulic/air (rate of flow times pressure)
+		 boiler (rate of heating)
+		 electrical (directly defined in watt)
+		 tax (power of cars)
+
+historic developments:
+	want measurements to depend on environment (not authorities)
+	1795 decimal meter system (france)
+	1799 meter & kilogram (archives de la republique)
+	1875 May 20th agreement signed between 17 countries
+	introduced buro for administration (BIPM)
+	governed by conference of member states (CGPM)
+	adviced by scientific committee (CIPM)
+	1889 prototypes sanctioned (officially recognised)
+	1954 kelvin, ampere & candela as base units
+	1960 systeme international d'unites (SI units)
+	1971 mole introduced as seventh base unit
+	2018 new definitions for kilogram, ampere, kelvin, mole
+	(allowed to remove the need for prototypes)
+	2019 new SI base units in effect
+
+SI base units:
+	since 2019, one natural constant per unit
+	time (t):
+		in seconds (s)
+		duration of ca 9 billion caesium radiation periods
+		9 192 631 770 Hz
+	length (l):
+		in meter (m)
+		length of path traveled by light in 1/299 792 458s
+		c / 299 792 458 for c speed of light
+	mass (m):
+		in kilogram (kg)
+		the mass of the international prototype of kilogram (until 2019)
+		h / (6.626 * 10^34) for h planck constant
+	thermodynamic temperature (T):
+		in kelvin (K)
+		the change of thermodynamic temperature 
+		to result in energy kT = 1.38 * 10^-23 J
+	luminous intensity (I_v):
+		in candela (cd)
+		from source to given direction 
+		with frequency 540 * 10^12
+		with radiant intensity of 1/683 watt per steradian
+	electric current (I):
+		in ampere (A)
+		flow of 1/(1.6 * 10^19) elementary charges e per second
+	amount of substance (n):
+		in mole (mol)
+		6.02 * 10^23 specified elementary entities
+
+derived units:
+	SI base units are fixed
+	all other units can be derived from this
+	might have other name / symbol defined
+	examples:
+		square meter as area
+		metre pre second as velocity
+		kilogram per cubic meter as density
+	special examples:
+		weight (which is actually a force)
+		richter scale (log_10 (measurement / f(distance)))
+		frequencies (hertz for periodic processes, becquerel for random)
+		angular velocity (actually a ratio; has no unit)
+
+unit of information:
+	information to be measured in bit
+	log(n) bits necessary for n items
+
+constants:
+	planck constant (very hard to measure)
+	half-life (randomized)
+	day, moon cycle, year (varies)
+	\pi (infinite)
+	UNIX-time (1.1.1970)
+
+legal & scientific:
+	want scientific input & legal backing
+	for meterology alone, 9 different institutions
+
+financing BIPM:
+	the burea international des poids et mesures
+	capacity to pay:
+		GNI (gross national income)
+		PPP (purchasing power parity)
+		scaled to capita
+	BIPM donation:
+		fixed budget, payed in percentage by capacity to pay
+		upper limit (US at 22.000)
+		lower limit (small, poor countries 0.001)
+		adjustments (like "welcome discount")
+
+thresholds:
+	poverty line:
+		60% of median household income of population
+		median guards against outlines
+		household includes "economies of scale", non-earners
+	process deviation:
+		manufacturing process might has some uncontrolled factors
+		want to reach 6 \sigma of correctness (management strategy)
+	basel accords:
+		formulated recommendation of how much money banks have to actually have
+		members of committee adapt recommendations into law
+
+sensors & intruments
+===
+
+y = x + s + \epsilon
+for y result, x measurement, s structural error, \epsilon random error
+
+intrument:
+	sensor
+	transformation
+	display
+	read out
+	errors:
+		gross errors, blunders (inappropriate setup / operator)
+		conditions (heat, stability, ...)
+		range (measure room length vs distance to moon)
+		transmission, conversion (quicksilver)
+		feedback (
+		drift (changes in error with repeated measurements)
+	prevent errors:
+		conversion (change scale to normalize)
+		correction (remove predicted error)
+		calibration (reset to known measure)
+
+length:
+	ruler, measurement band, roller
+	vernier (measure fraction of milimeter)
+	laser
+	angles (sextant, triangle ruler)
+
+mass:
+	balance scale
+	spring scales (force => length)
+	strain gauge (force => resistance)
+
+temperatue:
+	thermometer
+	bimetal (different metals bend differently)
+	thermocouple (current)
+	pyrometer (radiation)
+
+weather:
+	temperature
+	humidity
+	precipitation
+	wind direction / speed
+	atmospheric pressure
+
+height of trees:
+	given (laser) range finder & and angle measurement
+	tan measure length until tree middle
+	but high variation (small errors * angle has large effect)
+	sin measures length until tip of tree
+	but systematic error (underestimation of height of tree)
+
+measure effort
+===
+
+classical test theory:
+	y = x + \epsilon (target observation is the value we observe)
+	\epsilon = 0 (no systematic error)
+	corr(x, \epsilon) = 0 (no correlation between value / error)
+	uncorrelated errors between items, repondents
+	averaging:
+		no systematic error => many measurements lead to good average
+		assumption is measurement on interval scale
+
+likert scale:
+	to address single, one-dimensional concept
+	bipolar (+ and -), discrete levels (1, 2, ...) & centered (0 exists)
+	both positives & negative orientations
+	score is average (or total) level (aligned orientations)
+	example:
+		environmental consciousness, knowledge, behaviour
+		for each dimension measure likert scale
+		"we should doing more" (+), "we are doing enough" (-)
+	constructing scale:
+		create items pool (variation, coverage, refinement)
+		pretest (difficulty, selectivity, correlation)
+		selection (single dimension, variying difficulties,  high selecitivity)
+		finalization (instruct terms, reduce order effects)
+		aftwards, report on observed properties
+	measurement criteria:
+		objectivity (usually granted if administred same way)
+		reliability (test-retest, parallel tests, split-half test)
+	validity:
+		content (theory, personal expertise)
+		criterion (correlation to other observable variable)
+		construct (consistency of associations)
+
+guttman scale:
+	single, one-dimensional concept
+	items of increasing difficulty with binary answers
+	score is number of items checked
+	personal answered most correctly => best one
+	formally:
+		subjects S, items I, checkings Y \subseteq S \times I
+		can define consistency of guttman scale 
+		(higher ratings only answered by better persons
+		reproducability = 1 - errors
+
+thurstone scale:
+	single, one-dimensional concept
+	weighted items, binary answers
+	score is sum of weights of items checked
+	weights by expert assessment / pairwise comparison
+	example neighborhood:
+		feel like a stranger (-2)
+		no secrets (+3)
+		know everyone (+1)
+		no one notices if I'm gone (-3)
+	pairwise comparison:
+		dominance matrix ("prefer X over Y?")
+		normalized matrix (replaced counts by percentages)
+		with (observation - average) / standard diviation
+		get z-score (preference to other items in standard deviations)
+		use minimal z-score as 0-point (shift scale upwards)
+
+item response theory:
+	latent trait (invisible) manifests observation probabilistically
+	plot & parameters:
+		ability plotted against probability of correct answer
+		guessing chance c_i (if too diffcult)
+		difficulty b_i (before random guess, after always correct)
+		discrimination a_i (how exact difficulty separates)
+
+indices
+===
+
+indices:
+	item response theory:
+		latent variables (invisible)
+		result probabilistically in manifest variables
+	reflective indicators (descriptive):
+		latent variables (invisible)
+		assumed to effect in manifest variables 
+		like prices of products reflect inflation (consumer price index)
+	formative indicators (normative):
+		latent variables (invisble)
+		declared to be cause of manifest variables
+		like IQ defines intelligence (IQ test)
+
+index construction:
+	C-OAR-SE model:
+		Construction definition (object, attributes, ...)
+		Object representation (concrete through open-ended interviews)
+		Attribute classification (concrete through open-ended interviews)
+		Rater identification (experts)
+		Scale formation (combine items, pretest)
+		Enumeration (derive total score)
+	common composition methods:
+		index additive or multiplicative, unweighted or weigthed
+		like consumer price index is additive, weighted score
+		like swiss market index resuting is additive, unweighted score
+		like human development index is multiplicative, unweighted score
+		like water quality index is multiplicative, weighted score
+	consumer price index:
+		tries to measure inflation to guide monetary policy
+		how much products the money is actually worth
+		1000 fairly common items (milk, cars, rent, ...)
+		collected at 5400 locations in 11 regions
+		for each product, geometric weight taken
+		for each region/distribution channel, weighted sum
+		for each product category / consumption share, weighted sum 
+
+conjoint analysis:
+	latent preference (willingness to pay) for multi-featured product
+	features are package design, brand name, price, ...
+	study design:
+		give each participant exhaustive list
+		but too large, likely ranking takes too long
+		give each participant different sublist covering range
+		faster to do, can then run regression
+	regression:
+		rank defined as sum of weighted components
+		regression calculates weight
+		then can infer utility for each value of property
+		like price (low-middle-high), brand (name1-name2-name3)
+
+event horizon telescope:
+	measurements of telescopes over the world
+	then combined into image of black hole
+	april 2019 first measurement, update april 2021
+	confirms that simulations were / are on the right track
+
+big data:
+	3V (2013):
+		Volume (how much data there is)
+		Velocity (rate at which data arrives)
+		Variety (heterogeneity of data)
+	6V definition:
+		Veracity (correctness)
+		Variability (change over time)
+		Value (usefulness of data)
+	the end of theory:
+		enough data makes extrapolation unnecessary
+		models are not needed anymore
+		but disagreeable as observations likely biased
+
+measurement vs datafication:
+	measurement part of datafication
+	measurement:
+		assignment of numerals
+		to represent properties
+		while preserving laws (homomophy)
+	measurement process:
+		many empirical testing to ensure representation makes sense
+		issues with existence, scales, meaningfulness, operationalization, bias
+	datafication:	
+		assignment of values (not numerals anymore)
+		to represent properties (or values are used directly)
+	datafication critique:
+		on much less empirical grounds
+		much less reliable, systematic
+		but still used as basis for decisions as it were a measurement
+
+measurement politics
+===
+
+measurement to understand phenomena better & predict future behaviour
+helps us organize social structure & societies
+but once number is accepted, then arising does no longer matter
+numbers are compared "the same" with different validities
+
+objectivity:
+	negotiation/agreement from same basis
+	required for coordination (trade, division of labor)
+	required for ethics (like impersonal trade due to objective price discrimination)
+	might be relative to specific group (required understanding of topic)
+	expert judgements where objectivity cannot be archived 
+
+usage:
+	engineering & science (natural)
+	bureaucracy & technocracy (social)
+	technocracy powered by objective expert opinions
+	further examples:
+		taxation (contribute according to principles, fairness)
+		insurance (pooling of risks)
+		risk & cost-benefit analysis
+		environmental policy
+	administrating goods 3000 BCE:
+		mesopotamia had warehouses & needed to keep track of inventory
+		objects with different indents (1, 10, 60, 120; bisexagesimal system)
+		clay table documents sign of product & quantity
+		may includes signature of authority 
+		clay balls storing quantities exist too 
+	rosetta stone (300 BCE):
+		three different translations of same text
+		divine pharao (clear leader makes god-given rule)
+		decentralized government (local rulers decided by pharao)
+		taxes to central government depending on population, land, state
+		governance-organised central storage of supplies
+	french engineering school (1794):
+		also motivated founding of ETH (1855)
+		introduced quantification to steer social structures 
+		like fair price of rail travel (cost of operation / passengers)
+		like building canal (break even point after high investment)
+		factor in societal benefits (less traffic) and user behaviour (canal slower)
+	amalgamal:
+		argues that averaging cost/usage not fair due to different gains/efficiency
+		writes 600 pages about how to calculate price more faily
+		but concludes that it is likely still not enough
+	population-level averages:
+		crime rates (>1830)
+		for elite/rich people, police budget
+		unemployment rates (>1900)
+		for poor people, only relevant if social services exist
+	life insurance (>19th century GB):
+		no longer government, but private companies offering product
+		insure "law of nature" (sudden death, murder, ...) but not sickness
+		administrative basis uses general vital statistics
+		selective admission only for applicants passing medical tests
+
+tools:
+	bushels of grain (GB middle ages):
+		way to measure grain (volumnia)
+		local reference at town hall ("more appropriate", local power demonstration)
+		price is fixed, but measurement can be influenced (wet, quality, ...)
+	declaration of grievances (french revolution):
+		demands (besides other) measurements should be democratized
+		leaded into meter / kilogram development, but unfamiliar for peasants
+	weather predictions nature:
+		off measurement (1993) in strasbourg yielded cyclone (which was never there)			
+		lothar (1999) forecasting wrong due to wrong measurement on island
+		lead to damages of around 6 billion
+		weather derivatives traded on stock markets
+
+measurement in social systems:
+	standardization:
+		precision, reliability not enough for validity, accuracy
+		want define variables (probability distributions that make sense to measure)
+		with units & standards, sensing & analysis
+		add legal framework & regulation
+	implications:
+		power (regulation, convincing laws)
+		scalability (able to master over many peasents)
+		universal competence (illusion of management pure by the numbers)
+		like impact management of scientifics with seemingly objective measurements
+		delegation of responsibility (as responsibility now delegated to numbers)
+		like (unknowingly) wrong/delayed numbers decision problem
+		behavioural adaptation (gaming the system)
+		like beginner PhDs writing survey articles (instead of seasoned researchers)
+
+discrimination and behavior
+===
+
+reactions to measurements:
+	system is modified
+	do what is desired (which might not be a good thing)
+	do something that looks good in measurement system
+	they lie (create untrue measurements)
+	find ways to avoid being measured
+	example reading tests:
+		modified (easier tests in some schools)
+		do what desired (school focuses on reading)
+		something that looks good (training to pass tests)
+		lies (cheating scandals in many states)
+		avoidance (parents/teachers avoid tests)
+
+university ranking:
+	indicators:
+		outcome (graduation/retention rate, income higher than parents)
+		student excellence (SAT scores, top 10%)
+		faculty (class size, salary, student/faculty ratio)
+		financial resources
+		alumni giving rate
+		expert opinion
+	northeast university (boston):
+		from place 162 to place 99 in 10 years, to place 40 into 25 years
+		building dorms to improve retention rate
+		hiring faculty (student/factory, hiring starts, high salary)
+		caps of 19 to classes (as extra points <20)
+		admission recruiting (finding good students)
+		many international students, only high-SAT- scores-domestic
+		incentives for worse students to enroll in spring
+
+online advertising:
+	100 billion industry (2018), exponential growth
+	seach engine:
+		around 50% of market share
+		incremental ad clicks (total clicks - unpaid clicks) at 89%
+	controlled experiment:
+		for branded search, no effect
+		for new customers has positive return
+		for existing customers ROI negative 
+	micro-targeting:
+		direct marketing (recency, frequency, monetary, customer churn)
+		political campaigns (agenda setting, tailored arguments)
+		commercial, political databases (cambridge analytica)
+
+modeled data:
+	measurement/datafication:
+		direct observation
+		indirect 
+		empirical regularity (statistics, machine learning)
+	assumed regularities:
+		prejudice, stereotypes
+		market segmentations
+
+regularities:
+	city/country divide:
+		democrats/republicans
+		cheap housing initiative
+	cultural divide:
+		french part of switzerland for fair-food initiative
+	relation outcomes:
+		homophily (similar people attract each other)
+		social selection (similar attributes attract each other)
+		social influence (related people adapt to each other)
+
+social circles:
+	individuals characterized by interactions in different social circles
+	multiple overlapping social circles might create stronger relationships
+	stronger relationships constrain decisions
+	estimate relationships:
+		count triangles (joint friends)
+		count quads (joint friends that do not know each others)
+		then count among top neighbours how many are common
+	evaluation:
+		can use the estimation to remove irrelevant edges
+		can deduce common attributes of groups if other members leak
+	cambridge analytica:
+		around 100k users used app, then could also access their facebook friends profiles
+		facebook shut down API capability, but too late
+		used to influence populistic elections
+		
+smart living
+===
+
+definitions:
+	by technology:
+		electronic (some technological device)
+		connected (to some network)
+		information processing (some actual data processed)
+		simplified human-computer interaction
+		context-aware
+	by behaviour:
+		reactive (behaviour reacts to environment)
+		adaptive (behaviour changes over time)
+		autonomous (no reliance on others)
+
+smart homes:
+	comfort:
+		ease interaction with devices
+		for heating, lighting, watering, cleaning
+		like vacuum cleaner, lawn mower
+	monitoring:
+		use for surveillance
+		for security, occupancy, movement
+		like cameras, sensors
+	control:
+		use to control industrial applicances
+		for control, saving
+		like sensors
+	access:
+		to enter secured area
+		for entering house, authentication
+		like doors, locks, windows
+
+quantified self:
+	indentification (DNA / biometrics)
+	status (weight, fitness)
+	activity (status time series)
+
+nudging:
+	permanent:
+		"typical customers use.."
+		"in your neighbourhood typical consumption is..."
+		opt-in / opt-out
+		organ donation default
+	situated:
+		"your speed is (smilie/frauny)"
+		"you balance this month ..."
+		apps of amusement parks
+
+model:
+	indirect measurement of behaviour to understand type
+	requires surveilled interaction forming a trace
+	then classifying / regressing over the trace
+	personalization/discrimination:
+		new / loyal / special / rich customers
+		driving history motivates car insurance
+		browser history hint online shopping desires
+		...
+
+health insurance:
+	pooling risks
+	escalation levels:
+		nudging (brochures, health risks)
+		incentivizing (check-ups, benefits)
+		controlling (behaviour monitoring)
+
+data access:
+	opendata.swiss
+	bitaboutme (analyse data of large services like spotify)
+	mitdata cooperative (controlled access to medical data for research)
+	GDPR & california laws

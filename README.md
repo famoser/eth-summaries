@@ -8,7 +8,7 @@ Summaries created for ETHZ courses. If you want to use some of these please be a
 I will list all summaries and my perceived level of quality. 
 Generally, the newer the summary, the more consistent is the structure & the wording. 
 
-| course | perceived quality of summary |
+| course | perceived quality of **summary** (not course) |
 |---|---|
 | 2017-1 Data Modelling And Databases | ★★★☆☆ | 
 | 2017-1 Introduction To Negotiation Science | ★★☆☆☆ | 
@@ -48,7 +48,9 @@ Generally, the newer the summary, the more consistent is the structure & the wor
 | 2020-2 Contract Design | ★★★★☆ |
 | 2020-2 Einfuehrung in die Cybersicherheitspolitik | ★★★☆☆ |
 | 2020-2 Informal Methods | ★★☆☆☆ |
-| 2021-1 Applied Cryptography (Part 1) | ★★★★☆ |
+| 2021-1 Applied Cryptography (Part 1) | ★★★★★ |
+| 2021-1 Applied Cryptography (Part 2) | ★★★★☆ |
+| 2021-1 Spectacles of Measurement | ★★☆☆☆ |
 
 Comments:  
 Object Databases (short) is without general statements like "can be configured" and perceived irrelevant details (syntax for dead libraries) but may not be complete.

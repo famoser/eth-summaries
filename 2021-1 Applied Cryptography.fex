@@ -61,10 +61,9 @@ reduction proofs:
 	runtime:
 		keep track of queries / other resources consumed by B
 	overall argumentation:
-		constrain B's success probabilities by calculated probabilities
-		like in edge cases using difference lemma etc
+		constrain A's success probabilities by calculated probabilities
 		or other attackers we assume win only with low probability
-		like Adv(A) < Adv(B); as B breaks hardness assumption Adv(B) negligible
+		like Adv(A) < Adv(B) for B negligble as breaking hardness assumption
 	argue =:
 		let B simulate environment of A
 		Adv(A) = |Pr[b{_d}'=0|b_d=0] - Pr[b{_d}'=0|b_d=1]| = |p{_0}' - p{_1}'|
@@ -75,18 +74,21 @@ reduction proofs:
 		let B simulate environment of A
 		It follows from the construction that B wins at least whenever A wins
 		therefore Adv(B) >= Adv(A)
+	advantage definitions:
+		Adv(A) = 2 * |Pr[Game DDH(A) => true] - 0.5| (for games with true/false)
+		Adv(B) = |Pr[b' = b] - 0.5| (for bit output which is compared)
 
 game hoping proofs:
-	start with desired attack game
-	define altered attack games, until advantage definition possible
-	show that difference between games is negligible
-	show single game difference negligible:
-		let adversary attack two different games
-		let advantage of attacker be equal to win difference of the games
-	overall argumentation:
-		ensure probability of last game is given / calculatable
-		do telescoping sum to include the other games with success q_i
-		then argue size of each q_i - q{_i+1} is small
+	define start game G_0 (what to proof)
+	define end game G_n (with known Adv like hardness assumption)
+	define games G_i i<n continuously transforming G_0 into G_n
+	then argue that G_n is negligible / known
+	then show that each G_i - G{_i+1} is negligible
+	advantage argumentation:
+		Adv(A) = 2*| Pr[G_0] - 0.5 | (by definition)
+		= 2*| Pr[G_0] - Pr[G_1] + Pr[G_1] - (...) - 0.5 | (telescoping sum)
+		= 2*| Pr[G_0] - Pr[G_1] | + 2 * |Pr[G_1] - (...) - 0.5 | (triangle equation)
+		then show each | Pr[G_0] - Pr[G_1] | is negligible
 
 nonce-based cryptography:
 	nonce is number-used-once
@@ -112,14 +114,14 @@ exhaustive key search:
 	complexity:
 		data complexity small (few pairs needed)
 		computational complexity high, dominated by first step
-		need t=1 2^k * #pairs tries, afterwards only surviving keys
+		first step requires 2^k * #pairs tries, afterwards only surviving keys
 	practicality:
 		works with ciphertext-only attacks if plaintexts are meaningful 
 		meaningful = can decide if plaintext makes sense
 		exhaustive search is embarrassingly parallelizable
 
 birthday attack analysis:
-	sample t times from set with s object
+	sample t times from set of size s
 	all sampled different = 1 * (s-1)/s * ... * (s-t+1)/s
 	collision probability:
 		1 - (1-1/s)*(1-2/s)*...*(1-(t-1)/s) (bc - all sampled different)
@@ -139,14 +141,14 @@ birthday attack analysis:
 	hash function implications:
 		n-bit hash function offers only n/2 bits of security
 		(hence produce collision with 2^n/2 operations + memory)
-		so need 256 bit outputs for 128 bit security level
+		like require 256 bit output for 128 bit security level
 
 one-time pads / perfect security
 ===
 
 perfect security:
 	Pr[P=p|C=c] = Pr[P=p]
-	hence posterior of some P, given ciphertext C
+	posterior of plaintext P, given ciphertext C
 	equals prior probability of P
 
 caesars cipher:
@@ -337,10 +339,10 @@ block cipher constructions:
 		like DES
 	substitution-permutation (SP) network:
 		first perform substitution on bits ("confusion")
+		increases complexity (relation plain/cipher)
 		then permute / diffuse ("diffusion")
-		confusion increases complexity (relation plain/cipher)
-		diffusion to make each bit dependent on each other bit
-		directly follows shannons's principles
+		makes each bit dependent on each other bit
+		hence follow directly shannons's principles
 		like AES
 
 DES:
@@ -476,7 +478,7 @@ modes of operations:
 			dedicated designs for arbitrary length encryptions
 			might also be supported by hardware
 
-IND-CPA (indistinguishable under chosen-plaintext attacks):
+indistinguishable under CPA (IND-CPA):
 	challenger C chooses b <- ${0,1} and K <- $KGen
 	adversary A can query equal length (m_0, m_1) 
 	left-or-right (LoR) encryption oracle responds with c <- $Enc{_K}(m_b)
@@ -494,9 +496,9 @@ IND-CPA (indistinguishable under chosen-plaintext attacks):
 		if for all adversary A under #time < t, #query < q
 		Adv{_SE}{^IND-CPA}(A) = 2 * |Pr[Game IND-CPA(A, SE) => true] - 1/2|
 	captured attack notions:
-		message recovery attacks (c => m)
-		key recovery attacks ((c,m) => K)
-		in each case, the attacker can be converted in IND-CPA adversary
+		message recovery attacks (given c, get m)
+		key recovery attacks (given (c,m), get K)
+		(as the attacker can be converted in IND-CPA adversary)
 	deterministic schemes:
 		generic game automatically breaks IND-CPA
 		A sends (m_0, m_0) to LoR, gets c
@@ -518,7 +520,7 @@ game hopping lemmas:
 		= Pr[b'=b|b=1]*0.5 + ... - 0.5 (bc Pr[b=0] = 0.5)
 		= 0.5*(Pr[b'=1|b=1] + Pr[b'=0|b=0]) - 1) (evaluate b, extract 0.5)
 		= 0.5*(Pr[b'=1|b=1] - (1-Pr[b'=0|b=0])) (rewriting -1)
-		= 0.5*(Pr[b'=1|b=1] - Pr[b'=0|b=1]) (invert 1-)
+		= 0.5*(Pr[b'=1|b=1] - Pr[b'=1|b=0]) (invert 1-)
 	difference lemma:
 		given that events W_1 ^ \lnot Z iff W_2 ^ \lnot Z
 		then |Pr[W_2] - Pr[W_1]| <= Pr[Z]
@@ -623,10 +625,10 @@ block mode attacks
 padding oracle attacks:
 	arbitrary length plaintexts have to be padded (except CBC)
 	after message decryption, have to again remove padding
-	exploit error behaviour upon invalid padding detected
+	exploit error behaviour when invalid padding is detected
 	pad(.):
 		map of {0,1}* -> {{0,1}^n}*
-		necessarily explaining
+		necessarily expaning
 		needs to be efficient
 		may be randomized or deterministic
 	padding oracle:
@@ -645,10 +647,10 @@ padding oracle attacks:
 		CBC-mode with padding particularly vulnerable
 		integrity via MAC (of ciphertext) required
 
-simplified TLS padding (CCA):
+simplified TLS padding (CBC-AES) has CCA:
 	adds t+1 copies of byte value t; for 0 <= t <= n/8
 	like 0x00 or 0x01 || 0x01 or 0x02 || 0x02 || 0x02
-	for AES with n=128, at most 16 bytes appended, at least 1
+	for CBC-AES with n=128, at most 16 bytes appended, at least 1
 	padding oracle attack:
 		for p_t unknown plaintext, and c_t its cipherblock
 		c{_t-1} XOR with 0x0... || (d_t = 0x..) for all 256 possibilities of d_t
@@ -694,7 +696,7 @@ BEAST full plaintext recovery:
 		assume chosen boundary privilege
 		hence can set position of unknown byte relative to CBC boundary
 		now do part 1, shift, do part 1 again, shift again, ...
-	part 3 (browser implementation):
+	browser implementation:
 		https cookie of target site included automatically in requests
 		js of malicious webpage executes request to target site
 		can pads requests for part 2, part 1 also possible (but complicated)
@@ -711,28 +713,37 @@ BEAST full plaintext recovery:
 hash functions
 ===
 
-applications:
-	message fingerprinting
-	signature schemes (hash-then-sign)
-	message authentication codes
-	key derivations (raw data -> key)
-	password hashing
-	commitment schemes
+arbitrary length to fixed length hash value
+based on block ciphers or own design
+		
+introduction:
+	applications:
+		message fingerprinting
+		signature schemes (hash-then-sign)
+		message authentication codes
+		key derivations (raw data -> key)
+		password hashing
+		commitment schemes
 	standards:
 		nist (SHA-224 - SHA-512, Keccak)
 		nessie (SHA-256 - SHA-512, whirlpool)
 		cryptrec (SHA-256 - SHA-512)
+	non-crypto hash function:
+		used for hash tables, caching strategies, bloom filters, ...
+		but unsuitable for crypto purposes
+		sometimes misused, like WEP using CRC
+		but CRC is linear in message bits
 
-definition:
-	n-bit hash function:
+formal:
+	definition:
 		H: {0,1}* -> {0,1}^n
-		arbitrary length to fixed length hash value
+		called n-bit hash function
 	random oracle model:
 		given any input, outputs n-bit random string
 		useful for formal security analysis, but formally unsound
 
 security goals:
-	primary:
+	primary (easy to hard):
 		pre-image resistance (given H(m), infeasible to find m)
 		second pre-image resistance (given m_1, find m_2 for H(m_1) = H(m_2))
 		collision resistance (find m_1 != m_2 such that H(m_1) = H(m_2))
@@ -741,6 +752,9 @@ security goals:
 		partial pre-image resistance 1 (given H(m), find parts of m)
 		partial pre-image resistance 2 (given H(m), find m' for H(m') prefix)
 		prefix of length l must be found in much less than 2^l hash evaluations
+	implications:
+		CR => sPre (unconditionally, as attacker construction trivial)
+		sPre => Pre (when |R| > |D|, as attacker-output m must be different)
 
 generic attacks:
 	for secure hash functions, generic attacks must be best known attacks
@@ -776,18 +790,9 @@ formalizing collision resistance (CR):
 		else H(m) = 0 || G(m)
 		attacker has 50% probability to find pre-image (when bit 0 is 1)
 
-constructions:
-	non-crypto hash function:
-		used for hash tables, caching strategies, bloom filters, ...
-		but unsuitable for crypto purposes
-		sometimes misused, like WEP using CRC
-		but CRC is linear in message bits
-	design paradigms:
-		based on block ciphers or own design
-		need iterative design to process arbitrary length
-
 merkle-damgard construction:
 	construct hash function from compression function
+	iterative design to process arbitrary length
 	like MD5, SHA-1, WHIRLPOOL
 	iterated hashing:
 		let n output length, IV of length n, block length k
@@ -823,7 +828,7 @@ construct compression function h:
 	analysis davies-mayer:
 		if E ideal cipher => collision resistant compression function
 		hash output size = block size
-		hence need big blog size to avoid birthday attacks
+		hence need big block size to avoid birthday attacks
 		message blocks set keys
 		hence need fast rekeying
 
@@ -842,7 +847,7 @@ SHA-1:
 	merkle-damgard with output size n
 	compression function:
 		iterate 80 times
-		uses block cipher in David-Meyer mode (k=512, n=160)
+		uses block cipher in Davis-Meyer mode (k=512, n=160)
 		round function operating on 5*32 bit words
 		some shifts, additions, simple bit operations
 	timeline:
@@ -870,13 +875,13 @@ SHA-1:
 SHA-2:
 	similar to SHA-1 with (k=512, n=256)
 	64 rounds, 8*32 bit words
-	twice as slow as SHA-1 
-	but now attacks faster than collision finding
-
+	no attacks known faster than generic birthday attack
+	but twice as slow as SHA-1 
+	
 SHA-3 (Ketchak):
 	result of 2007 - 2015 competition
 	will replace SHA-2 if (ever) broken
-	giant-bit permutation at core (instead of David-Meyer)
+	giant-bit permutation at core (instead of Davis-Meyer)
 	15% slower than SHA-256
 	sponge-construction:
 		let outer state R, |R|=r=1088
@@ -890,8 +895,7 @@ SHA-3 (Ketchak):
 		repeat as often as required output size
 
 password hashing:
-	store passwords so breach has less impact
-	might want to combine multiple methods
+	store passwords hashed so breach has less impact
 	hash:
 		random, account specific value
 		long enough (64bits) to prevent collisions for random choice
@@ -922,8 +926,8 @@ limitations:
 
 definition:
 	KGen: {} -> {0,1}^k = K
-	Tag: {0,1}^k x {0,1}^* -> {0,1}^t called \tau
-	Vfy: {0,1}^k x {0,1}^* -> {0,1}
+	Tag: {0,1}^k \times {0,1}^* -> {0,1}^t called \tau
+	Vfy: {0,1}^k \times {0,1}^* \times {0,1}^t -> {0,1}
 	correctness requires Vfy(K, m, Tag(K, m)) = 1 for all messages, keys
 	notes:
 		keys usually uniform random
@@ -932,14 +936,14 @@ definition:
 	deterministic Tag ("standard"):
 		hence unique tag t for each (K,m) 
 		construct generic Vfy as Tag(K,m) == \tau
-
-security through unforgeability:
-	hard for adversary to compute valid \tau without key K
-	potential attacker capabilities:
-		multiple message/tag pairs
+	target security:
+		security through unforgeability
+		hard for adversary to compute valid \tau without key K
+	attacker capabilities:
+		got multiple message/tag pairs
 		tag(m) -> \tau oracle (to choose messages for MAC)
-		verify(m, \tau) -> true|false oracle (to check if forges correct)
-	notes:
+		verify(m, \tau) -> true|false oracle (to check if forgeries valid)
+	trivially broken schemes:
 		\tau must depend on every bit of the message
 		like H(m XOR K) gives same MAC for same key-long message prefix
 		must be hand to recover K given (m, \tau)
@@ -948,8 +952,7 @@ security through unforgeability:
 		like mercle-damgard construction can easily be forged
 
 formalising security:
-	challenger generates KGen -> K
-	adversary oracles:
+	oracles:
 		tag oracle (send m, receive \tau = Tag(K,m))
 		verify oracle (send (m,\tau), receive {0,1} = Vfy(K,m,\tau))
 	weak unforgeability (WUF):
@@ -981,11 +984,11 @@ formalising security:
 		leads to success p = \epsilon / q_v
 
 generic attacks:
-	random k-git Key guess (2^-k)
+	random k-bit key guess (2^-k)
 	use some (m, \tau) pairs for exhaustive key search
 	q_v queries to verify oracle with random \tau (q_v ^ 2^-t)
 	conclusion:
-		hence need large enough tags, keys and few queries
+		need large enough tags, keys and few queries
 		as q_v queries are inherently online, can constrain in protocol
 		like TLS accepting only single q_v
 	
@@ -1005,7 +1008,7 @@ MAC from PRF (MAC(F)):
 	games:
 		G_0 SUF-CMA game, oracle answers using F(K, m)
 		W_0 when A outputs (m*, \tau*) such that \tau* = F(K, m*)
-		hence A breaks SUF-CMA (= WUF-CMA as "standard" Vfy) 
+		hence A breaks SUF-CMA 
 		G_1 SUF-CMA game, oracle answers using random function f
 		W_1 when A outputs (m*, \tau*) such that \tau* = f(m*)
 		m* of W_0, W_1 must be different from tag queries m_1, ..., m_q
@@ -1013,7 +1016,7 @@ MAC from PRF (MAC(F)):
 		let attacker A break SUF-CMA of MAC(F)
 		let B's challenger execute either F(K,m) (b=0) or f(m) (b=1)
 		B simulates MAC(F) tag oracle for A
-		when A outputs (m*, \tau*), B queries one last time into \tau'
+		when A outputs (m*, \tau*), B queries m* into \tau'
 		B outputs iff \tau' = \tau* b'=1 else b'=0
 		(note b' is "inverted"; iff \tau' = \tau* then B detected F(K, m))
 	proof lemmas:
@@ -1029,7 +1032,7 @@ MAC from PRF (MAC(F)):
 		= Adv{_F}{^PRF}(B) + 1/2^t (by (1) and (2))
 
 MAC from hashing (HtMAC):
-	if H CR and then MAC SUF-CMA, then HtMAC SUF-CMA
+	if H CR and MAC SUF-CMA, then HtMAC SUF-CMA
 	works on message input domain X' (constrained by H)
 	construction:
 		let MAC = (KGen, Tag, Vfy) with input space X, tag-length t, key-length K
@@ -1102,8 +1105,8 @@ HMAC:
 nonce-based MAC (NMAC):
 	add nonce space N compared to standard definition
 	KGen: {} -> {0,1}^k = K
-	Tag: {0,1}^k x N x {0,1}^* -> {0,1}^t = \tau
-	Vfy: {0,1}^k x N x {0,1}^* -> {0,1}
+	Tag: {0,1}^k \times N \times {0,1}^* -> {0,1}^t = \tau
+	Vfy: {0,1}^k \times N \times {0,1}^* \times {0,1}^t -> {0,1}
 	correctness requires Vfy(K, m, N, Tag(K, N, m)) = 1
 	security game:
 		adversary must not query same nonce twice
@@ -1114,6 +1117,9 @@ nonce-based MAC (NMAC):
 		for forgery in unforgeability game
 
 universal hash functions (UHF):
+	useful for (very fast) compression
+	but does not hide input/key (hence recoverable from hash)
+	in real-world usecase, hide output by XORing with PRG or similar
 	\epsilon-UHF:
 		when Adv{_H}{^UHF}(A) <= \epsilon in universal hash function security game
 		A plays against challenger with K <-$ K
@@ -1168,10 +1174,12 @@ H_xpoly (DUHF from polynomials):
 
 Carter-Wegman MAC (CW-MAC(F, H)):
 	builds up MAC out of \epsilon-DUHF H and PRF F	
-	let K_1, K_2 keys, N nonce
-	\tau = H(K_1, m) XOR F(K_2, N)
-	like one-time pad encryption for output of H
-	results in tags of size |N| + |\tau|
+	used in AES-GCM
+	construction:
+		let K_1, K_2 keys, N nonce
+		\tau = H(K_1, m) XOR F(K_2, N)
+		like one-time pad encryption for output of H
+		results in tags of size |N| + |\tau|
 	SUF-CMA security:
 		for H \epsilon-DUHF and F PRF; both with (T, +) target group
 		Adv{_CV-MAC(F,H)}{^SUF-CMA}(A) <= Adv{_F}{^PRF}(B) + \epsilon + 1 / |T|
@@ -1194,6 +1202,7 @@ Carter-Wegman MAC (CW-MAC(F, H)):
 
 other constructions:
 	CBC-MAC:
+		with IV = 0, do CBC-encryption, return last cipherblock as \tau
 		SUF-CMA secure if IV constant & fixed-length messages (#blocks equal)
 		SUF-CMA secure if message length prepended & padding sensible
 		
@@ -1216,7 +1225,7 @@ security definitions:
 		adversary wins if c* new and decryption of c* succeeds
 	integrity of plaintexts (INT-PTXT):
 		same game as INT-CTXT
-		additionally require the decrypted m* to has not been queried
+		additionally require the decrypted m* has not been queried
 	INT-CTXT => INT-PTXT:
 		follows from definitions (any INT-PTXT adversary breaks INT-CTXT)
 		& correctness of decryption (different plain must mean different cipher)
@@ -1229,7 +1238,7 @@ security definitions:
 
 authenticated encryption (AE-security):
 	IND-CPA (cannot differentiate encryptions)
-	INT-CTXT (cannot force new ciphertexts)
+	INT-CTXT (cannot forge new ciphertexts)
 	adversary has access to an encryption oracle
 	
 IND-CCA:
@@ -1365,7 +1374,6 @@ further constructions:
 	EtM to AEAD:
 		c <- Enc{_KE}(M), \tau <- Tag{_KM}(len(A) || AD || c)
 		can use nonce-based MAC and Enc (using same nonce)
-		
 
 AES-GCM:
 	using nonce-based CTR-mode AES, CW-MAC

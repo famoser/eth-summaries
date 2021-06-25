@@ -50,6 +50,7 @@ Generally, the newer the summary, the more consistent is the structure & the wor
 | 2020-2 Informal Methods | ★★☆☆☆ |
 | 2021-1 Applied Cryptography (Part 1) | ★★★★★ |
 | 2021-1 Applied Cryptography (Part 2) | ★★★★☆ |
+| 2021-1 Formal Methods for Information Security | ★★★☆☆ |
 | 2021-1 Spectacles of Measurement | ★★☆☆☆ |
 
 Comments:  

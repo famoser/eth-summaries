@@ -52,6 +52,7 @@ Generally, the newer the summary, the more consistent is the structure & the wor
 | 2021-1 Applied Cryptography (Part 2) | ★★★★☆ |
 | 2021-1 Formal Methods for Information Security | ★★★☆☆ |
 | 2021-1 Spectacles of Measurement | ★★☆☆☆ |
+| 2021-1 Grundzuege des Rechts | ★★★★☆ |
 
 Comments:  
 Object Databases (short) is without general statements like "can be configured" and perceived irrelevant details (syntax for dead libraries) but may not be complete.
